@@ -1,0 +1,36 @@
+Inhalt:
+1. Introduction
+				Mach ich ganz am Ende
+2. l2-Betti numbers of groups
+				Allgemeines Zeug dazu
+3. Turing dynamical systems
+				Fertig
+4. Computing l2-Betti numbers
+		4.1.Groupoids
+				Fertig
+		4.2.Groupoid ring
+				TODO: Group ring isomorph zu groupoid ring
+		4.3.Pontryagin duality
+				Das entsprechende Kapitel dazu
+		4.4.l2-Betti numbers of groupoids
+				Alles was in Kapitel 2 zur Berechnung drankommt
+		4.5.l2-Betti numbers of Turing dynamical systems
+				Der Satz aus Kapitel 3
+				Endberechnung
+5. The lamplighter group
+				Meine eigenen Überlegungen
+
+
+				
+TODO:
+1: Grober Text
+		4.2
+		Pontryagin duality ordentlich verstehen und aufbessern
+2: Inhaltliche Überarbeitung
+3: Struktur und Textüberarbeitung
+
+
+
+
+Fragen:
+Soll ich seine Berechnungen (also eingeführte Turingmaschinen usw.) auch noch machen?

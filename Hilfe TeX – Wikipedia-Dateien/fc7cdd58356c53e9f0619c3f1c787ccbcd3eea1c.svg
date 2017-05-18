@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.326ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 2293 1223.9" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="10" id="E1-MJAMS-2571" d="M19 -195Q13 -195 7 -188T0 -176Q0 -169 18 -151L822 683Q835 694 840 694T852 688T860 674Q860 667 810 614T460 252Q57 -167 44 -179Q27 -195 19 -195Z"></path>
+<path stroke-width="10" id="E1-MJAMS-2572" d="M0 675Q0 681 6 687T19 694Q27 694 44 678L460 247Q759 -62 809 -115T860 -175Q860 -183 852 -189T840 -195Q835 -195 822 -184L18 649Q0 667 0 675Z"></path>
+<path stroke-width="10" id="E1-MJMAIN-2216" d="M56 731Q56 740 62 745T75 750Q85 750 92 740Q96 733 270 255T444 -231Q444 -239 438 -244T424 -250Q414 -250 407 -240Q404 -236 230 242T56 731Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJAMS-2571" x="0" y="0"></use>
+ <use xlink:href="#E1-MJAMS-2572" x="894" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2216" x="1788" y="0"></use>
+</g>
+</svg>

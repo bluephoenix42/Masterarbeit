@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.069ex" height="3.343ex" style="vertical-align: -1.171ex;" viewBox="0 -934.9 2612.9 1439.2" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="10" id="E1-MJAMS-3DD" d="M477 261Q477 257 473 256T455 253T417 251T348 250H235L155 -77L146 -82Q137 -85 109 -85Q55 -85 55 -77L139 261Q224 596 226 598Q229 603 239 603Q240 603 254 603T290 603T341 604T405 605T477 605Q656 603 687 602T719 596Q719 589 692 588T513 585H319L282 427L242 272Q242 270 351 270Q388 270 410 270T444 269T460 267T469 265T477 261Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJAMS-3DD" x="0" y="0"></use>
+<g transform="translate(783,0)">
+<text font-family="STIXGeneral,'Arial Unicode MS',serif" font-style="italic" font-weight="" stroke="none" style="font-family: monospace" transform="scale(71.759) matrix(1 0 0 -1 0 0)">ϛ</text>
+</g>
+<g transform="translate(1392,0)">
+<text font-family="STIXGeneral,'Arial Unicode MS',serif" font-style="italic" font-weight="" stroke="none" style="font-family: monospace" transform="scale(71.759) matrix(1 0 0 -1 0 0)">ϙ</text>
+</g>
+<g transform="translate(2002,0)">
+<text font-family="STIXGeneral,'Arial Unicode MS',serif" font-style="italic" font-weight="" stroke="none" style="font-family: monospace" transform="scale(71.759) matrix(1 0 0 -1 0 0)">ϡ</text>
+</g>
+</g>
+</svg>

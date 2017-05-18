@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.166ex" height="2.009ex" style="vertical-align: -0.671ex;" viewBox="0 -576.1 1793.7 865.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="10" id="E1-MJAMS-2234" d="M273 411Q273 437 291 454T334 471Q358 471 375 454T393 411T376 368T333 351Q307 351 290 368T273 411ZM84 38Q110 38 126 21T143 -22Q143 -46 127 -64T83 -82Q57 -82 41 -65T24 -22Q24 4 41 21T84 38ZM524 -22Q524 4 541 21T584 38Q608 38 625 21T643 -22Q643 -45 627 -63T583 -82Q557 -82 541 -65T524 -22Z"></path>
+<path stroke-width="10" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+<path stroke-width="10" id="E1-MJAMS-2235" d="M23 411Q23 437 41 454T84 471Q108 471 125 454T143 411T126 368T83 351Q57 351 40 368T23 411ZM523 411Q523 437 541 454T584 471Q608 471 625 454T643 411T626 368T583 351Q557 351 540 368T523 411ZM274 -22Q274 4 291 21T334 38Q356 38 374 22T392 -22T375 -65T333 -82Q307 -82 291 -65T274 -22Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJAMS-2234" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="672" y="0"></use>
+ <use xlink:href="#E1-MJAMS-2235" x="1121" y="0"></use>
+</g>
+</svg>

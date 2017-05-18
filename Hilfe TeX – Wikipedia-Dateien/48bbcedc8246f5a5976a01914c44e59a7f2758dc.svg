@@ -1,0 +1,26 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.674ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 3303.9 1223.9" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="10" id="E1-MJMAIN-2260" d="M166 -215T159 -215T147 -212T141 -204T139 -197Q139 -190 144 -183L306 133H70Q56 140 56 153Q56 168 72 173H327L406 327H72Q56 332 56 347Q56 360 70 367H426Q597 702 602 707Q605 716 618 716Q625 716 630 712T636 703T638 696Q638 692 471 367H707Q722 359 722 347Q722 336 708 328L451 327L371 173H708Q722 163 722 153Q722 140 707 133H351Q175 -210 170 -212Q166 -215 159 -215Z"></path>
+<path stroke-width="10" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+<path stroke-width="10" id="E1-MJMATHI-2F" d="M166 -215T159 -215T147 -212T141 -204T139 -197Q139 -190 144 -183Q157 -157 378 274T602 707Q605 716 618 716Q625 716 630 712T636 703T638 696Q638 691 406 241T170 -212Q166 -215 159 -215Z"></path>
+<path stroke-width="10" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="10" id="E1-MJMAIN-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMAIN-2260" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="783" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2260" x="1232" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="2015" y="0"></use>
+<g transform="translate(2465,0)">
+<g>
+ <use xlink:href="#E1-MJMATHI-2F" x="0" y="0"></use>
+</g>
+</g>
+<g transform="translate(2520,0)">
+ <use xlink:href="#E1-MJMAIN-3D" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-5E" x="139" y="-37"></use>
+</g>
+</g>
+</svg>

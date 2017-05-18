@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="9.078ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 3908.7 1080.4" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="10" id="E1-MJAMS-21BE" d="M188 258V694H208L215 682Q246 628 293 594T375 551V528Q375 505 374 505Q369 505 351 510T299 534T237 578L228 587V205Q228 -178 226 -182Q221 -194 208 -194T190 -182Q188 -178 188 258Z"></path>
+<path stroke-width="10" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+<path stroke-width="10" id="E1-MJAMS-21C2" d="M190 682Q195 694 208 694T226 683Q228 679 228 296V-87L237 -78Q265 -52 299 -34T351 -11T374 -5Q375 -5 375 -28V-51Q340 -60 293 -92T215 -182L208 -194H188V242Q188 678 190 682Z"></path>
+<path stroke-width="10" id="E1-MJAMS-21BF" d="M41 551Q76 559 123 592T201 682L208 694H228V258Q228 -178 226 -182Q221 -194 208 -194T190 -182Q188 -178 188 205V587L179 578Q151 552 117 534T65 511T42 505Q41 505 41 528V551Z"></path>
+<path stroke-width="10" id="E1-MJAMS-21C3" d="M188 295V573Q188 657 189 672T200 692Q206 694 208 694Q221 694 226 683Q228 679 228 242V-194H208L201 -182Q170 -128 123 -94T41 -51V-28Q41 -5 42 -5Q47 -5 65 -10T117 -34T179 -78L188 -87V295Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJAMS-21BE" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="422" y="0"></use>
+ <use xlink:href="#E1-MJAMS-21BE" x="871" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="1293" y="0"></use>
+ <use xlink:href="#E1-MJAMS-21C2" x="1743" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="2165" y="0"></use>
+ <use xlink:href="#E1-MJAMS-21BF" x="2614" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="3036" y="0"></use>
+ <use xlink:href="#E1-MJAMS-21C3" x="3486" y="0"></use>
+</g>
+</svg>

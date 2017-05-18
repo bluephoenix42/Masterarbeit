@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="10.045ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 4325 1223.9" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="10" id="E1-MJMAIN-22A2" d="M55 678Q55 679 56 681T58 684T61 688T65 691T70 693T77 694Q88 692 95 679V367H540Q555 359 555 347Q555 334 540 327H95V15Q88 2 77 0Q73 0 70 1T65 3T61 6T59 9T57 13T55 16V678Z"></path>
+<path stroke-width="10" id="E1-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path>
+<path stroke-width="10" id="E1-MJMAIN-22A3" d="M515 678Q515 679 516 681T518 684T521 688T525 691T530 693T537 694Q548 692 555 679V15Q548 2 537 0Q533 0 530 1T525 3T521 6T519 9T517 13T515 16V327H71Q70 327 67 329T59 336T55 347T59 358T66 365T71 367H515V678Z"></path>
+<path stroke-width="10" id="E1-MJMAIN-22A8" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V367H796Q811 359 811 347Q811 336 797 328L479 327H161L159 328V172L161 173H797Q798 172 800 171T803 169T805 167T808 164T809 162T810 158T811 153Q811 140 796 133H159V-235Q151 -249 141 -249H139Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+ <use xlink:href="#E1-MJMAIN-22A2" x="0" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="616" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-22A3" x="1065" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="1681" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-22A8" x="2131" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2C" x="3003" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-22A8" x="3453" y="0"></use>
+</g>
+</svg>

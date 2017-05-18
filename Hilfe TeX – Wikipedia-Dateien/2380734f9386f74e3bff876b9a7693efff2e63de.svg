@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="9.776ex" height="3.343ex" style="vertical-align: -1.171ex;" viewBox="0 -934.9 4208.9 1439.2" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<path stroke-width="10" id="E1-MJMAIN-5C" d="M56 731Q56 740 62 745T75 750Q85 750 92 740Q96 733 270 255T444 -231Q444 -239 438 -244T424 -250Q414 -250 407 -240Q404 -236 230 242T56 731Z"></path>
+<path stroke-width="10" id="E1-MJSS-63" d="M34 223Q34 327 99 393T245 460Q290 460 301 459Q328 455 354 445T395 427T410 415L396 338L386 344Q377 349 362 357T335 370Q305 381 258 381H252Q182 381 146 315Q126 275 126 224Q126 158 159 113T255 68Q329 68 394 106L408 114L410 93Q411 72 412 52L414 32Q407 27 394 20T338 2T252 -10Q156 -10 95 58T34 223Z"></path>
+<path stroke-width="10" id="E1-MJSS-6F" d="M28 222Q28 323 95 391T244 460Q275 460 281 459Q364 445 417 377T471 219Q471 124 408 57T250 -10Q158 -10 93 57T28 222ZM377 230Q377 277 364 310T328 358T287 379T248 385Q233 385 219 382T186 369T155 342T132 297T122 230Q122 146 159 108T250 69H253Q263 69 274 70T305 81T339 106T365 154T377 230Z"></path>
+<path stroke-width="10" id="E1-MJSS-70" d="M166 404Q194 424 241 439T337 455H341Q410 455 451 370Q483 307 483 222Q483 128 433 59T306 -10Q282 -10 260 -5T222 7T194 21T176 33T168 38V-194H75V444H165V424L166 404ZM390 222Q390 287 354 331T266 376T177 340L168 332V118Q200 66 257 66Q313 66 351 112T390 222Z"></path>
+<path stroke-width="10" id="E1-MJSS-61" d="M236 387Q209 387 184 382T141 370T111 355T91 342T83 337L82 355Q80 373 79 393T77 417Q77 419 81 421Q86 423 91 426Q155 460 227 460H238Q319 460 368 400Q393 371 400 341T408 252Q408 240 408 207T407 152V0H317V39L306 32Q244 -10 159 -10H152Q109 -10 77 22Q38 61 38 126Q38 142 39 146Q55 199 130 223T295 252H314V277Q314 305 313 310Q308 342 287 364T236 387ZM303 186Q124 180 124 126Q124 105 144 86T208 66Q284 66 309 124Q314 137 314 166V186H303Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+<text font-family="STIXGeneral,'Arial Unicode MS',serif" font-style="italic" font-weight="" stroke="none" style="font-family: monospace" transform="scale(71.759) matrix(1 0 0 -1 0 0)">ϛ</text>
+<g transform="translate(609,0)">
+ <use xlink:href="#E1-MJMAIN-5C"></use>
+ <use xlink:href="#E1-MJSS-63" x="505" y="0"></use>
+ <use xlink:href="#E1-MJSS-6F" x="954" y="0"></use>
+ <use xlink:href="#E1-MJSS-70" x="1459" y="0"></use>
+ <use xlink:href="#E1-MJSS-70" x="1981" y="0"></use>
+ <use xlink:href="#E1-MJSS-61" x="2503" y="0"></use>
+</g>
+<g transform="translate(3598,0)">
+<text font-family="STIXGeneral,'Arial Unicode MS',serif" font-style="italic" font-weight="" stroke="none" style="font-family: monospace" transform="scale(71.759) matrix(1 0 0 -1 0 0)">ϟ</text>
+</g>
+</g>
+</svg>
