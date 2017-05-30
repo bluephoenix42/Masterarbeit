@@ -3,11 +3,11 @@
 \contentsline {subsection}{\numberline {2.1}Von Neumann Dimension}{3}
 \contentsline {subsection}{\numberline {2.2}$l^2$-Betti numbers of $G$-CW-complexes}{4}
 \contentsline {subsection}{\numberline {2.3}$l^2$-Betti numbers arising from a group}{5}
-\contentsline {section}{\numberline {3}Turing dynamical systems}{5}
-\contentsline {section}{\numberline {4}Computing $l^2$-Betti numbers}{7}
-\contentsline {subsection}{\numberline {4.1}Groupoids}{7}
-\contentsline {subsection}{\numberline {4.2}Groupoid ring}{8}
-\contentsline {subsection}{\numberline {4.3}Pontryagin duality}{9}
-\contentsline {subsection}{\numberline {4.4}$l^2$-Betti numbers of groupoids}{10}
-\contentsline {subsection}{\numberline {4.5}$l^2$-Betti numbers of Turing dynamical systems}{10}
-\contentsline {section}{\numberline {5}The lamplighter group}{10}
+\contentsline {section}{\numberline {3}Turing dynamical systems}{6}
+\contentsline {section}{\numberline {4}Computing $l^2$-Betti numbers}{8}
+\contentsline {subsection}{\numberline {4.1}Groupoids}{8}
+\contentsline {subsection}{\numberline {4.2}Groupoid ring}{9}
+\contentsline {subsection}{\numberline {4.3}Pontryagin duality}{10}
+\contentsline {subsection}{\numberline {4.4}$l^2$-Betti numbers of groupoids}{12}
+\contentsline {subsection}{\numberline {4.5}$l^2$-Betti numbers of Turing dynamical systems}{12}
+\contentsline {section}{\numberline {5}The lamplighter group}{12}
