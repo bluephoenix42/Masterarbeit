@@ -222,6 +222,9 @@ One can show that the trace is independent of the chosen embedding and therefore
 \begin{Remark}
 	One can show that the Theorem also holds if $G$ is not finitely generated. See e.g. \cite[p. 371]{LUECK}.
 \end{Remark}
+\begin{Definition}
+	We say thet a number $x \in \R$ arises from a discrete countable group $G$ if it fulfills one of the above conditions.
+\end{Definition}
 \section{Turing dynamical systems}
 %Hier definiere ich TDS
 Let us first give a definition of a Turing machine. For convenience we will only allow 1 and 0 as symbols on our tape.
@@ -245,31 +248,33 @@ Let $Ind: X \to \N$ be the map which assigns to each $x \in X$ the corresponding
 \textbf{all data spezifizieren}
 Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. \textbf{Tinfty definiert-hält}
 
-Now let  $T=(S,\delta, \tilde{A}, \tilde{R}, \tilde{I})$ be a Turing machine. We will show how to emulate it with a Turing dynamical system. Lets first fix notation. For a subset $M$ of a set $N^\Z$ with $M = \{(n_i)_{i \in \Z} \in N^\Z | n_{-k} = m_{-k}, \cdots, n_l = m_l \}$ \textbf{erklären, was es mit k und l auf sich hat}we simply write $[m_{-k} \cdots \underline{m_0} \cdots m_l]$ and $[m_{-k} \cdots \underline{m_0} \cdots m_l][\sigma]$ for $M \times \{\sigma\}$. We define $X = \2^\Z \times S$ and $\Gamma = Bij(S) \times \2 \times \Z$. \textbf{in unserem fall ist sigma usw., S Menge, Bij Grupper erwähnen}
-\textbf{Stimmt das?}
-The action of $\Gamma$ on $X$ is defined by the following rules:
-\begin{itemize}
-	\item $Bij(S)$ acts on $S$ in the natural way.
-	\item The generator $\overline{1}$ of the group $\Z / 2\Z$ acts on the $\Z / 2\Z^\Z$ part of $X$ by adding $\overline{1}$ to the element with index $0$.
-	\item The generator $1$ of the group $\Z$ acts also on the $\Z / 2\Z^\Z$ part by shifting every element 1 to the right, e.g. increasing the index of every element by 1. \textbf{nochmal ausführlich}
-\end{itemize}
-We will now use the transition function to construct the Turing map. We choose the following devision of $X$:
-\begin{align*}
+\begin{Example}\label{TMtoTDS}
+	Now let  $T=(S,\delta, \tilde{A}, \tilde{R}, \tilde{I})$ be a Turing machine. We will show how to emulate it with a Turing dynamical system. Lets first fix notation. For a subset $M$ of a set $N^\Z$ with $M = \{(n_i)_{i \in \Z} \in N^\Z | n_{-k} = m_{-k}, \cdots, n_l = m_l \}$ \textbf{erklären, was es mit k und l auf sich hat}we simply write $[m_{-k} \cdots \underline{m_0} \cdots m_l]$ and $[m_{-k} \cdots \underline{m_0} \cdots m_l][\sigma]$ for $M \times \{\sigma\}$. We define $X = \2^\Z \times S$ and $\Gamma = Bij(S) \times \2 \times \Z$. \textbf{in unserem fall ist sigma usw., S Menge, Bij Grupper erwähnen}
+	\textbf{Stimmt das?}
+	The action of $\Gamma$ on $X$ is defined by the following rules:
+	\begin{itemize}
+		\item $Bij(S)$ acts on $S$ in the natural way.
+		\item The generator $\overline{1}$ of the group $\Z / 2\Z$ acts on the $\Z / 2\Z^\Z$ part of $X$ by adding $\overline{1}$ to the element with index $0$.
+		\item The generator $1$ of the group $\Z$ acts also on the $\Z / 2\Z^\Z$ part by shifting every element 1 to the right, e.g. increasing the index of every element by 1. \textbf{nochmal ausführlich}
+	\end{itemize}
+	We will now use the transition function to construct the Turing map. We choose the following devision of $X$:
+	\begin{align*}
 	X = \bigcup_{x \in \2, \sigma \in S} [\underline{x}][\sigma]
-\end{align*}
-For $X_i = [\underline{x}][\sigma]$ we get $\delta(\sigma, x) = (\tilde{\sigma}, \alpha, \beta)$.\textbf{sigma und x reihenfolge Satz neu} Let $\tau \in Bij(S)$ map $\sigma$ to $\tilde{\sigma}$ and $y \in \2$ be $y=x-\alpha$, i.e. an Automorphism \textbf{Quatsch Operation} which maps $x$ to $\alpha$. Our element $\gamma_i$ corresponding to $X_i$ is given by 
-\begin{align*}
+	\end{align*}
+	For $X_i = [\underline{x}][\sigma]$ we get $\delta(\sigma, x) = (\tilde{\sigma}, \alpha, \beta)$.\textbf{sigma und x reihenfolge Satz neu} Let $\tau \in Bij(S)$ map $\sigma$ to $\tilde{\sigma}$ and $y \in \2$ be $y=x-\alpha$, i.e. an Automorphism \textbf{Quatsch Operation} which maps $x$ to $\alpha$. Our element $\gamma_i$ corresponding to $X_i$ is given by 
+	\begin{align*}
 	\gamma_i = \begin{cases}
 	(id, \overline{0}, 0) & \text{if } X_i \subset A \cup R \\
 	(\tau, y, \beta) & \text{else}
 	\end{cases}
-\end{align*} 
-\textbf{tau nicht eindeutig}
-We only need to define $A$, $R$ and $I$. $A$ is given by
-\begin{align*}
+	\end{align*} 
+	\textbf{tau nicht eindeutig}
+	We only need to define $A$, $R$ and $I$. $A$ is given by
+	\begin{align*}
 	A = \bigcup_{x \in \2, \sigma \in \tilde{A}}[\underline{x}][\sigma]
-\end{align*}
-which is of course a union of some $X_i$. $R$ and $I$ can be defined analogous. \textbf{Abschlusssatz}
+	\end{align*}
+	which is of course a union of some $X_i$. $R$ and $I$ can be defined analogous.
+\end{Example} \textbf{Abschlusssatz, reihenfolge vertauschen}
 
 To conclude this chapter we will give some definition which we will use later on. 
 \begin{Definition}
@@ -290,13 +295,19 @@ To conclude this chapter we will give some definition which we will use later on
 \end{Definition}
 \textbf{Will ich das wirklich so nennen? Ist X richtig definiert? Warum cont group autos? Indexmenge J beim Produkt, andere Xi defintion}
 \textbf{maß}
-\textbf{Beispiel read-only}
 
+Before we give an example of a computing Turing dynamical system we fix the notation of the shifting operation, because we will need it later on.
+\begin{Definition} \label{shift}
+	An element $z \in \Z$ acts on $\2^{\Z} = \prod_{i \in \Z} \2$ by decreasing every index by $z$. We call this action the shift action and denote it by $\zeta$. $\Z$ acts on $\bigoplus_{i \in \Z} \2$ in the same way which we will also call $\zeta$.
+\end{Definition}
+\begin{Example} \label{roTMtoTDS}
+	Let $T$ be a read-only Turing machine which holds for every input. Let $(T_X)$ be the corresponding Turing dynamical system as constructed in \ref{TMtoTDS}. We assume that $T$ is in such a way that $(T_X)$ has disjoint accepting chains (which is not always the case). We will construct a computable Turing dynamical system from $T$.  We can easily assure that $(T_X)$ does not restart by adding a new state $I'$ to $T$ with $\delta(I', x) = \delta(I, x) \ \forall x \in \{0,1\}$ and setting $I'$ as the initial state of $T$. Because we do not change the symbols of the tape it suffices to use $\Gamma = \Z \times Bij(S)$ where $\Z$ operates on $X = \2^\Z \times S$ via shifting and $Bij(S)$ acts on $S$ in the natural way. Because a Turing machine has only finitely many states there exists a number $n \in \N$ such that $|S| < 2^n$. We identify every state with a different element $z \in \2^n$ with $z \neq 0$. We can then assume that $X = \2^\Z \times \2^n$ by filling $\2^n$ with "dummy states" which will never be used. Because $Aut(\2^n)$ acts transitively on all of $\2^n / \{0\}$ we can assume that $\Gamma = \Z \times Aut(S)$. Because in the sets $X_i$ in \ref{TMtoTDS} there are only $n+1$ fixed components they are of the desired form and therefore the resulting Turing dynamical system is computing.
+\end{Example}
 
 
 \section{Computing $l^2$-Betti numbers}
 In this chapter we want to prove the following central theorem which connects $l^2$-Betti numbers to the concept of Turing dynamical systems.
-\begin{Theorem}
+\begin{Theorem} \label{HS}
 	Let $(T_X)$ be a computing Touring dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $l^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
 \end{Theorem}
 We will give the definition of Pontryagin duals and the semidirect product later in this chapter. The rest of this chapter is used to prove this theorem and give the needed definitions.
@@ -439,14 +450,15 @@ For more information about semidirect products see e.g. \cite{ALG}.
 \begin{Definition}
 	The lamplighter group $L$ is defined as
 	\begin{align*}
-		L = (\bigoplus_{i \in \Z} (\2)_{i}) \rtimes_{\rho} \Z 
+		L = (\bigoplus_{i \in \Z} \2) \rtimes_{\zeta} \Z.
 	\end{align*}
-	where $\Z$ acts on the left part via 
-	\begin{align*}
-		\rho(z)((x)_i) = (x)_{i+z} 
-	\end{align*}
-	with $z \in \Z$ and $(x)_i \in \bigoplus_{i \in \Z} (\2)_{i})$.
+	where $\zeta$ is the shift operation defined in \ref{shift}.
 \end{Definition}
+Lets first look at the Turing dynamical system corresponding to a read-only Turing machine as constructed in \ref{roTMtoTDS}. By using \ref{HS} we see that $\mu (I) - \Omega_1(T_X)$ is a $l^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$.
+\begin{Theorem}
+	Every rational number arises from the lamplighter group.
+\end{Theorem}
+
   % Literaturverzeichnis (beginnt auf einer ungeraden Seite)
   \newpage
 
