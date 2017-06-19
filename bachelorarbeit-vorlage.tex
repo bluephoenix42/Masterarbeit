@@ -49,6 +49,9 @@
 \newcommand{\N}{\mathbb{N}} % natuerliche
 \newcommand{\2}{\mathbb{Z} / 2 \mathbb{Z}}
 \newcommand{\G}{\mathcal{G}}
+\newcommand{\1}{\overline{1}}
+\newcommand{\0}{\overline{0}}
+
 
 \renewcommand{\labelenumi}{\roman{enumi})}
 
@@ -229,7 +232,7 @@ One can show that the trace is independent of the chosen embedding and therefore
 %Hier definiere ich TDS
 Let us first give a definition of a Turing machine. For convenience we will only allow 1 and 0 as symbols on our tape.
 \begin{Definition}
-	A Turing machine is a x-tuple $T=(S,\delta, A, R, I)$ where S is a finite set of states and $\delta: S \times \{0,1\} \to S \times \2 \times \{-1, 1\}$ is called the transition function. $A \subset S$ is called the set of accepting states, $R \subset S$ is called the set of rejecting states and $I \in S$ is called the initial state.
+	A Turing machine is a x-tuple $T=(S,\delta, A, R, I)$ where S is a finite set of states and $\delta: S \setminus(A \cup R) \times \{0,1\} \to S \times \2 \times \{-1, 0, 1\}$ is called the transition function. $A \subset S$ is called the set of accepting states, $R \subset S$ is called the set of rejecting states and $I \in S$ is called the initial state.
 \end{Definition}
 In addition each Turing machine uses a tape, e.g. a set $\Z / 2\Z ^{\Z}$ with a head on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$. We start with the initial state and use the transition function $\delta$ to get $\delta(I, Y_0)$ . The first coordinate corresponds to the new element $Y_0$, the second to the new state and the third corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$. We repeat this step until we get a state in $A \cup R$. We say, that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$. We say that the Turing machine holds for $Y$ if it accepts or rejects it. We will only look at Turing machines which hold for every input.
 \textbf{mach das mit den Y0 mal ordentlich, du kacknoob! input = Y}
@@ -454,10 +457,78 @@ For more information about semidirect products see e.g. \cite{ALG}.
 	\end{align*}
 	where $\zeta$ is the shift operation defined in \ref{shift}.
 \end{Definition}
-Lets first look at the Turing dynamical system corresponding to a read-only Turing machine as constructed in \ref{roTMtoTDS}. By using \ref{HS} we see that $\mu (I) - \Omega_1(T_X)$ is a $l^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$.
+Lets first look at the Turing dynamical system corresponding to a read-only Turing machine as constructed in \ref{roTMtoTDS}. If we can assure that the resulting Turing dynamical system has disjoint accepting chains and stops at any configuration we can assure that it is computing. By using \ref{HS} we see that $\mu (I) - \Omega_1(T_X)$ is a $l^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$. We then get
+\begin{align*}
+	\hat{X} \rtimes_{\hat{\rho}} \Gamma = (\widehat{(\prod_{i \in \Z} \2) \times \2^n}) \rtimes_{\hat{\rho}} (\Z \times Aut(\2^n)) \\
+	= (\bigoplus_{i \in \Z} \2 \times \2^n) \rtimes_{\rho} (\Z \times Aut(\2^n)).
+\end{align*}
+Because $\Z$ acts by shift on the first part of $X$ we get
+\begin{align*}
+	\hat{X} \rtimes_{\hat{\rho}} \Gamma = ((\bigoplus_{i \in \Z} \2) \rtimes_{\zeta} \Z) \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)) \\
+	= L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)).
+\end{align*}
+Therefore we see that read-only Turing machines correspond in a natural way with the lamplighter group. We will use this fact to prove the following theorem.
+
 \begin{Theorem}
-	Every rational number arises from the lamplighter group.
+	Every positive rational number arises from the lamplighter group.
 \end{Theorem}
+But first let us fix notation.
+\begin{Definition}
+	A Turing dynamical system is called read-only if $X = \prod_{i \in \Z} \2) \times \2^n$ for some $n \in \N$ and $\Gamma = \Z \times Aut(\2^n)$ where $\Z$  acts only on $\prod_{i \in \Z} \2$ via shift and $Aut(\2^n)$ acts only on $\2^n$ in the natural way.
+\end{Definition}
+\begin{Remark}
+	In this chapter we will often describe Turing machines instead of Turing dynamical systems but because of \ref{roTMtoTDS} we can always construct the corresponding Turing dynamical system.
+\end{Remark}
+\begin{Lemma}
+	For every $m \in \N$ such that $\frac{1}{m}$ has a finite binary expansion and there exists a read-only computing Turing dynamical system $T_X$ with $\frac{\Omega_1(T_X)}{\mu(I)} = \frac{1}{m}$.
+\end{Lemma}
+\begin{proof}
+	If $m = 1$ we can just construct a Turing machine which accepts every input. So let $m \neq 1$
+	Let $0, a_1 a_2 \ldots a_k = \frac{1}{m}$ be the binary expansion of $\frac{1}{m}$. We construct a Turing machine $T$ with $k+3$ states. These states are divided into
+	\begin{itemize}
+		\item one accepting and one rejecting state called $s_A$ and $s_R$
+		\item one initial state called $s_I$
+		\item $k$ states called $s_1, s_2 \ldots s_k$.
+	\end{itemize}
+	The transition function is defined through 
+	\begin{align*}
+		\delta(s_I, x) = (s_1, x, 1) \ \forall x \in \2 \\
+		\delta(s_i, \overline{0}) = \begin{cases}
+			(s_{i+1}, \overline{0}, 1) & if \ i \neq k \\
+			(s_R, \overline{0}, 0) & if \ i = k
+		\end{cases} \\
+		\delta(s_i, \overline{1}) = \begin{cases}
+			(s_A, \overline{1}, 0) & if \ a_i = 1 \\
+			(s_R, \overline{1}, 0) & if \ a_i = 0
+		\end{cases}
+	\end{align*}
+	for all $i \in \{1 \ldots k\}$.	We now see that the Turing machine holds after at most $k+2$ steps and therefore the resulting Turing dynamical system $(T_X)$ stops at any configuration. It is also clear that it does not restart. To ensure that $(T_X)$ has disjoint accepting chains we reduce the initial set $I$ of $(T_X)$ from $[\underline{x}][s_I]$ to $[\underline{\1}][s_I]$ (with $x \in \2$). Because $T$ holds at the first $\overline{1}$ it reads on the right side of its starting point we see that each configuration in the accepting or rejecting set of $(T_X)$ must be contained in
+	\begin{align*}
+		[\1 \ \0^n \ \underline{\1}][s] \ \text{with} \ s \in \{s_A, s_R\}, \ n \in \N \ \text{or} \ [\1 \ \0^{k-1} \ \underline{\0}][s_R].
+	\end{align*} 
+	Each of these elements can be traced back to a single element in
+	\begin{align*}
+	[\underline{\1} \ \0^{n} \ \1][s_I] \ \text{or} \ [\underline{\1}  \ \0^{k}][s_I].
+	\end{align*} 
+	where each entry which is not fixed stays the same. 
+	It remains to show that $\frac{\Omega_1(T_X)}{\mu(I)} = \frac{1}{m}$. Let $K \subset \N$ be such that $a_i = 1 \Leftrightarrow i \in K$. It then holds that
+	\begin{align*}
+		\mathcal{F}_1(T_X) = \bigcup_{i \in K}[\underline{\1} \ \0^{i-1} \1][s_I].
+	\end{align*}
+	Let $n \in \N$ denote the number such that the space $X$ of $(T_X)$ equals $\prod_{i \in \Z} \2) \times \2^n$, e.q. the smallest $n \in \N$ such that $k+3 < 2^n$. Then 
+	\begin{align*}
+		\mu([\underline{\1} \ \0^{i-1} \1][s_I]) = \frac{1}{2^n \cdot 2^ {i + 1}}
+	\end{align*}
+	and
+	\begin{align*}
+		\mu(I) = \mu([\underline{\1}][s_I]) = \frac{1}{2^{n + 1}}.
+	\end{align*}
+	Therefore 
+	\begin{align*}
+		\frac{\Omega_1(T_X)}{\mu(I)} = \sum_{i \in K} \frac{1}{2^i}
+	\end{align*}
+	which is exactly $\frac{1}{m}$.
+\end{proof}
 
   % Literaturverzeichnis (beginnt auf einer ungeraden Seite)
   \newpage
