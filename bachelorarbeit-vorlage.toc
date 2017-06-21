@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {2.2}$l^2$-Betti numbers of $G$-CW-complexes}{4}
 \contentsline {subsection}{\numberline {2.3}$l^2$-Betti numbers arising from a group}{5}
 \contentsline {section}{\numberline {3}Turing dynamical systems}{6}
-\contentsline {section}{\numberline {4}Computing $l^2$-Betti numbers}{8}
+\contentsline {section}{\numberline {4}Computing $l^2$-Betti numbers}{9}
 \contentsline {subsection}{\numberline {4.1}Groupoids}{9}
 \contentsline {subsection}{\numberline {4.2}Groupoid ring}{10}
 \contentsline {subsection}{\numberline {4.3}Pontryagin duality}{11}
