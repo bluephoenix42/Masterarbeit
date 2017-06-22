@@ -469,25 +469,22 @@ Lets first look at the Turing dynamical system corresponding to a read-only Turi
 	\hat{X} \rtimes_{\hat{\rho}} \Gamma = (\widehat{(\prod_{i \in \Z} \2) \times \2^n}) \rtimes_{\hat{\rho}} (\Z \times Aut(\2^n)) \\
 	= (\bigoplus_{i \in \Z} \2 \times \2^n) \rtimes_{\rho} (\Z \times Aut(\2^n)).
 \end{align*}
-Because $\Z$ acts by shift on the first part of $X$ we get
+Because $\Z$ acts only on the first part and $Aut(\2^n)$ only on the second part of $X$ and $\Z$ acts by shift we get
 \begin{align*}
 	\hat{X} \rtimes_{\hat{\rho}} \Gamma = ((\bigoplus_{i \in \Z} \2) \rtimes_{\zeta} \Z) \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)) \\
 	= L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)).
 \end{align*}
-Therefore we see that read-only Turing machines correspond in a natural way with the lamplighter group. We will use this fact to prove the following theorem.
+Therefore we see that read-only Turing machines offer a way to compute the $l^2$-betti number of $L \times H$ for some discrete finite group $H$. We will use this fact to prove the following theorem.
 
 \begin{Theorem} \label{mainTh}
 	Every positive rational number arises from the lamplighter group.
 \end{Theorem}
-But first let us fix notation.
-\begin{Definition}
-	A Turing dynamical system is called read-only if $X = \prod_{i \in \Z} \2) \times \2^n$ for some $n \in \N$ and $\Gamma = \Z \times Aut(\2^n)$ where $\Z$  acts only on $\prod_{i \in \Z} \2$ via shift and $Aut(\2^n)$ acts only on $\2^n$ in the natural way.
-\end{Definition}
+Lets start by constructing the used Turing dynamical system. 
 \begin{Remark}
 	In this chapter we will often describe Turing machines instead of Turing dynamical systems but because of \ref{roTMtoTDS} we can always construct the corresponding Turing dynamical system.
 \end{Remark}
 \begin{Lemma} \label{1TM}
-	For every $m \in \N$ such that $\frac{1}{m}$ has a finite binary expansion there exists a read-only computing Turing dynamical system $T_X$ with $\frac{\Omega_1(T_X)}{\mu(I)} = \frac{1}{m}$.
+	For every $m \in \N$ such that $\frac{1}{m}$ has a finite binary expansion there exists a computing Turing dynamical system $T_X$ with $\frac{\Omega_1(T_X)}{\mu(I)} = \frac{1}{m}$.
 \end{Lemma}
 \begin{proof}
 	If $m = 1$ we can just construct a Turing machine which accepts every input. So let $m \neq 1$
@@ -509,7 +506,8 @@ But first let us fix notation.
 			(s_R, \overline{1}, 0) & if \ a_i = 0
 		\end{cases}
 	\end{align*}
-	for all $i \in \{1 \ldots k\}$.	We now see that the Turing machine holds after at most $k+2$ steps and therefore the resulting Turing dynamical system $(T_X)$ stops at any configuration. It is also clear that it does not restart. To ensure that $(T_X)$ has disjoint accepting chains we reduce the initial set $I$ of $(T_X)$ from $[\underline{x}][s_I]$ to $[\underline{\1}][s_I]$ (with $x \in \2$). Because $T$ holds at the first $\overline{1}$ it reads on the right side of its starting point we see that each configuration in the accepting or rejecting set of $(T_X)$ must be contained in
+	for all $i \in \{1 \ldots k\}$.	We now see that the Turing machine holds after at most $k+2$ steps and therefore the resulting Turing dynamical system $(T_X)$ stops at any configuration.
+	\textbf{das ist anders definiertr} It is also clear that it does not restart. To ensure that $(T_X)$ has disjoint accepting chains we reduce the initial set $I$ of $(T_X)$ from $[\underline{x}][s_I]$ to $[\underline{\1}][s_I]$ (with $x \in \2$). Because $T$ holds at the first $\overline{1}$ it reads on the right side of its starting point we see that each configuration in the accepting or rejecting set of $(T_X)$ must be contained in
 	\begin{align*}
 		[\1 \ \0^n \ \underline{\1}][s] \ \text{with} \ s \in \{s_A, s_R\}, \ n \in \N \ \text{or} \ [\1 \ \0^{k-1} \ \underline{\0}][s_R].
 	\end{align*} 
@@ -522,7 +520,7 @@ But first let us fix notation.
 	\begin{align*}
 		\mathcal{F}_1(T_X) = \bigcup_{i \in K}[\underline{\1} \ \0^{i-1} \1][s_I].
 	\end{align*}
-	Let $n \in \N$ denote the number such that the space $X$ of $(T_X)$ equals $\prod_{i \in \Z} \2) \times \2^n$, e.q. the smallest $n \in \N$ such that $k+3 < 2^n$. Then 
+	Let $n \in \N$ denote the number such that the space $X$ of $(T_X)$ equals $(\prod_{i \in \Z} \2) \times \2^n$, i.e. the smallest $n \in \N$ such that $k+3 < 2^n$. Then 
 	\begin{align*}
 		\mu([\underline{\1} \ \0^{i-1} \1][s_I]) = \frac{1}{2^n \cdot 2^ {i + 1}}
 	\end{align*}
@@ -538,16 +536,15 @@ But first let us fix notation.
 \end{proof}
 
 \begin{Lemma} \label{frac}
-	For every $m \in \N$ with $m \neq 1$ the binary expansion of $\frac{1}{m}$ is of the form $0. a \overline{b}$ where $a$ is a nonrepeating and $b$ a repeating part. The length of $a$ and the length of $b$, e.g. the period length are both finite and the sum of these two lengths is lower than $2m$.
+	For every $m \in \N$ with $m \neq 1$ the binary expansion of $\frac{1}{m}$ is of the form $0. a \overline{b}$ where $a$ is a nonrepeating and $b$ a repeating part. The length of $a$ and the length of $b$ are both finite.
 \end{Lemma}
 \textbf{Kann man vllt. noch beweisen...}
 \begin{Lemma} \label{2TM}
-	For every $m \in \N$ there exists a read-only computing Turing dynamical system $T_X$ with $\frac{\Omega_1(T_X)}{\mu(I)} = \frac{1}{m}$.
+	For every $m \in \N$ there exists a computing Turing dynamical system $T_X$ with $\frac{\Omega_1(T_X)}{\mu(I)} = \frac{1}{m}$.
 \end{Lemma}
 \begin{proof}
-	W.l.o.g. $m \neq 1$. Then with \ref{frac} follows that $\frac{1}{m} = 0.a_1a_2 \ldots a_k b_1 b_2 \ldots b_h$ where $a_1a_2 \ldots a_k$ is nonrepeating and $b_1 b_2 \ldots b_h$ is repeating. We then construct the same Turing machine as in \ref{1TM} but add $h$ many states called $r_1, r_2 \ldots r_h$. In addition we set 
+	W.l.o.g. $m \neq 1$. Then with \ref{frac} follows that $\frac{1}{m} = 0.a_1a_2 \ldots a_k b_1 b_2 \ldots b_h$ where $a_1a_2 \ldots a_k$ is nonrepeating and $b_1 b_2 \ldots b_h$ is repeating. We then construct the same Turing machine as in \ref{1TM} but add $h$ many states called $r_1, r_2 \ldots r_h$. In addition we replace $\delta(s_k, \0) = (s_R, \0, 0)$ with $\delta(s_k, \0) = (r_1, \0, 1)$ and set
 	\begin{align*}
-		\delta(s_k, \0) = (r_1, \0, 1) \\
 		\delta(r_i, \overline{0}) = \begin{cases}
 			(r_{i+1}, \overline{0}, 1) & if \ i \neq h \\
 			(r_1, \overline{0}, 1) & if \ i = h
@@ -564,11 +561,11 @@ We can now start to proof \ref{mainTh}. Because of \ref{add} it suffices to show
 \begin{align*}
 	\mu (I) - \Omega_1(X) = \mu (I) (1 - \frac{\Omega_1(T_X)}{\mu(I)}) = \mu (I) (1 - \frac{1}{m})
 \end{align*}
-is a $l^2$-Betti number of $L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n))$ for some $n \in \N$. We now change $(T_X)$ by adding a large amount of "dummy states" which do not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now construct a Turing dynamical system $(T_{X'})$ in the same way as in \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, e.g.
+is a $l^2$-Betti number of $L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n))$ for some $n \in \N$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now change $(T_X)$ by adding "dummy states" until $(T_X)$ has $2^{k'}$ many states. Doing so does not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. We now construct a Turing dynamical system $(T_{X'})$ in the same way as in \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, i.e.
 \begin{align*}
-	\phi : \2^{k'} \to \2^{k'}, \sum_{i =1}^{\2^{k'}}z_i \cdot e_i \mapsto \sum_{i =2}^{\2^{k'}}z_{i - 1} \cdot e_i + z_{\2^{k'}} \cdot e_1
+	\phi : \2^{k'} \to \2^{k'}, \sum_{i =1}^{k'}z_i \cdot e_i \mapsto \sum_{i =2}^{k'}z_{i - 1} \cdot e_i + z_{k'} \cdot e_1
 \end{align*}
-where $e_i$ denotes the standard basis of $\2^{k'}$ and each $z_i \in \2$. Then $Rot$ acts transitively on all used states of $(T_{X'})$ and has exactly $k' = 2^{h}$ elements. Then $\frac{1}{2^{k' + 1}} (1 - \frac{1}{m})$ is a $l^2$-Betti number of $L \times (\2^{k'} \rtimes_{\rho|_{Rot}} Rot)$. With \ref{mult} follows that 
+where $e_i$ denotes the standard basis of $\2^{k'}$ and each $z_i \in \2$. Then $Rot$ acts transitively on the standard basis of $\2^{k'}$ and has exactly $k' = 2^{h}$ elements. Then $\frac{1}{2^{k' + 1}} (1 - \frac{1}{m})$ is a $l^2$-Betti number of $L \times (\2^{k'} \rtimes_{\rho|_{Rot}} Rot)$. With \ref{mult} follows that 
 \begin{align*}
 	|(\2^{k'} \rtimes_{\rho|_{Rot}} Rot)| \cdot \frac{1}{2^{k' + 1}} (1 - \frac{1}{m}) = 2^{k'} \cdot 2^h \cdot \frac{1}{2^{k' + 1}} (1 - \frac{1}{m}) = 2^{h -1} (1 - \frac{1}{m})
 \end{align*}
