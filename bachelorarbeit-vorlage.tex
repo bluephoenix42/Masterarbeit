@@ -506,8 +506,7 @@ Lets start by constructing the used Turing dynamical system.
 			(s_R, \overline{1}, 0) & if \ a_i = 0
 		\end{cases}
 	\end{align*}
-	for all $i \in \{1 \ldots k\}$.	We now see that the Turing machine holds after at most $k+2$ steps and therefore the resulting Turing dynamical system $(T_X)$ stops at any configuration.
-	\textbf{das ist anders definiertr} It is also clear that it does not restart. To ensure that $(T_X)$ has disjoint accepting chains we reduce the initial set $I$ of $(T_X)$ from $[\underline{x}][s_I]$ to $[\underline{\1}][s_I]$ (with $x \in \2$). Because $T$ holds at the first $\overline{1}$ it reads on the right side of its starting point we see that each configuration in the accepting or rejecting set of $(T_X)$ must be contained in
+	for all $i \in \{1 \ldots k\}$.	We now see that the Turing machine holds after at most $k+2$ steps independent of the current configuration. Therefore the resulting Turing dynamical system $(T_X)$ stops at any configuration. It is also clear that it does not restart. To ensure that $(T_X)$ has disjoint accepting chains we reduce the initial set $I$ of $(T_X)$ from $[\underline{x}][s_I]$ to $[\underline{\1}][s_I]$ (with $x \in \2$). Because $T$ holds at the first $\overline{1}$ it reads on the right side of its starting point we see that each configuration in the accepting or rejecting set of $(T_X)$ must be contained in
 	\begin{align*}
 		[\1 \ \0^n \ \underline{\1}][s] \ \text{with} \ s \in \{s_A, s_R\}, \ n \in \N \ \text{or} \ [\1 \ \0^{k-1} \ \underline{\0}][s_R].
 	\end{align*} 
@@ -554,7 +553,7 @@ Lets start by constructing the used Turing dynamical system.
 			(s_R, \overline{1}, 0) & if \ b_i = 0
 		\end{cases}
 	\end{align*}
-	which takes care of the repeating part of $\frac{1}{m}$. The rest of the transition function $\delta$ stays the same as in \ref{1TM}. We can see that this Turing machines does not hold for every input, because if we have only zeros on the right side of our staring point we never arrive at $s_A$ or $s_R$. But because the set $[\1 \ \0 \ \0 \ldots][s_I]$ has measure zero the resulting Turing dynamical system still stops at any configuration. The rest follows exactly like in the proof of \ref{1TM} because the infinite sum of measures converges.
+	which takes care of the repeating part of $\frac{1}{m}$. The rest of the transition function $\delta$ stays the same as in \ref{1TM}. We can see that this Turing machines does not hold for every input, because if we have only zeros on the right side of our staring point we never arrive at $s_A$ or $s_R$. But because the set $[\underline{x} \ \0 \ \0 \ldots][\sigma]$ (with $x \in \2$ and $\sigma$ an arbitrary state) has measure zero the resulting Turing dynamical system still stops at any configuration. The rest follows exactly like in the proof of \ref{1TM} because the infinite sum of measures converges.
 \end{proof}
 
 We can now start to proof \ref{mainTh}. Because of \ref{add} it suffices to show that for every $m \in \N$ $\frac{1}{m}$ arises from $L$. Let $m \in \N$  and $(T_X)$ be the Turing dynamical system constructed in the proof of \ref{2TM}. First we see that
