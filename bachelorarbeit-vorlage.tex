@@ -12,6 +12,7 @@
 % die folgenden Packete erlauben den Gebrauch von Umlauten und ß
 % in der Latex Datei
 \usepackage[utf8]{inputenc}
+
 %\usepackage[latin1]{inputenc} %  Alternativ unter Windows
 \usepackage[T1]{fontenc}
 %\usepackage[ngerman]{babel}
@@ -23,7 +24,7 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{latexsym}
 \usepackage{amsmath,amssymb,amsthm}
-
+\usepackage[]{todonotes}
 
 % Abstand obere Blattkante zur Kopfzeile ist 2.54cm - 15mm
 \setlength{\topmargin}{-15mm}
@@ -107,7 +108,7 @@
 In this whole chapter $G$ is always a discrete countable group with multiplication $\cdot_G$.
 \subsection{Von Neumann Dimension}
 
-\begin{Definition}
+\begin{Definition} \label{GR}
 	The group ring $RG$ over a Ring $R$ is the free module over $G$ with the additional multiplication
 	\begin{align*}
 		\sum_{h \in H} \alpha_h \cdot h \cdot_{RG} \sum_{k \in K} \beta_k \cdot k = \sum_{h \in H} \sum_{k \in K} \alpha_h \beta_k \cdot h \cdot_G k
@@ -115,12 +116,12 @@ In this whole chapter $G$ is always a discrete countable group with multiplicati
 	with $\alpha_h, \beta_k \in R$ and $H, K \in G$ finite subsets.
 \end{Definition}
 \begin{Definition}
-	$l^2(G)$ is the Hilbert space consisting of formal sums $\sum_{g \in G} \lambda_g \cdot g$ such that $\lambda_g \in \C$ and $\sum_{g \in G} |\lambda_g|^2 < \infty$. The scalar product is defined through
+	$l^2(G)$ is the Hilbert space consisting of formal sums $\sum_{g \in G} \lambda_g \cdot g$ such that $\lambda_g \in \C$ and $\sum_{g \in G} |\lambda_g|^2 < \infty$. The multiplication is defined as in \ref{GR} and the scalar product is defined through
 	\begin{align*}
 		\langle \sum_{g \in G} \alpha_g \cdot g, \sum_{g \in G} \beta_g \cdot g \rangle := \sum_{g \in G} \alpha_g \overline{\beta_g}.
 	\end{align*}
 \end{Definition}
-\textbf{hier hab ich nicht gezeigt, dass es ein Skalarprodukt ist}
+\todo{hier hab ich nicht gezeigt, dass es ein Skalarprodukt ist}
 \begin{Definition}
 	The group von Neumann algebra $\mathcal{N}(G)$ is defined as the algebra of $G$-equivariant bounded operators from $l^2(G)$ to $l^2(G)$ where $G$ acts on $l^2(G)$ by left multiplication.
 \end{Definition}
@@ -145,7 +146,7 @@ We will denote the bounded operators of a Hilbert space $H_1$ with $\mathcal{B}(
 	\end{align*}
 	is called the von Neumann trace on $H$.
 \end{Definition}
-One can show that the trace is independent of the chosen embedding and therefore well-defined. \textbf{eine oder mehrere Projektionen?} 
+One can show that the trace is independent of the chosen embedding and therefore well-defined. \todo{eine oder mehrere Projektionen?} 
 \begin{Definition}
 	Let $H$ be a Hilbert $\mathcal{N}(G)$-module. We define the von Neumann dimension of $H$ as
 	\begin{align*}
@@ -154,7 +155,7 @@ One can show that the trace is independent of the chosen embedding and therefore
 \end{Definition}
 
 \subsection{$l^2$-Betti numbers of $G$-CW-complexes}
-\textbf{Quelle für CW-Komplexe und für Homologie}
+In this chapter we will require some basic knowledge of CW-complexes and regular homology. For more information on this topic see e.g.\cite{HATCH}.
 \begin{Definition}
 	Let $X$ be a CW-complex and $\rho: G \to Homeo(X)$ an action of $G$ on $X$ by homeomorphism such that for every open cell $E \subset X$ and every $g \in G$ it holds that $\rho(g)(E)$ is again an open cell and $\rho(g)|_{E} = id_E$ if $\rho(g)(E) \cap E \neq \emptyset$. Then $\rho$ is called a cellular action.
 \end{Definition}
@@ -164,29 +165,32 @@ One can show that the trace is independent of the chosen embedding and therefore
 \end{Definition}
 
 \begin{Definition}
+	The orbit of an $n$-cell in a $G$-CW-complex is called a $G$-equivariant $n$-cell.
+\end{Definition}
+
+\begin{Definition}
 	Let $X$ be a $G$-CW complex. $X$ is called
 	\begin{itemize}
 		\item proper if all stabilizer groups are finite,
 		\item free if all stabilizer groups are trivial,
-		\item finite type if for every $n \in \N$ the set of all $n$-cells consists of only finitely many orbits
+		\item finite type if for every $n \in \N$ it has only finitely many $G$-equivariant $n$-cell.
 	\end{itemize}
 \end{Definition}
 \begin{Remark}
 	One can show that the chain complex of a $G$-CW complex $X$ is a chain complex $C_*(X)$ of left $\Z G$-modules, i.e. each $C_n(X)$ is a left $\Z G$-module and the differentials are homomorphisms of these modules.
 \end{Remark}
-\textbf{ZG definieren}
 \begin{Definition}
 	The $l^2$-chain complex of a $G$-CW complex $X$ is
 	\begin{align*}
 		C_*^{(2)}(X) = l^2G \otimes_{\Z G} C_*(X).
 	\end{align*}
 \end{Definition}
-\textbf{Hier muss man die Definition evtl noch an das richtige Cstar anpassen, l2G ist rechtes ZG modul, was heißt es an chain complex zu tensoren, der Abschluss?}
+\todo{Hier muss man die Definition evtl noch an das richtige Cstar anpassen, l2G ist rechtes ZG modul, was heißt es an chain complex zu tensoren, der Abschluss?}
 
 \begin{Definition}
 	Let $X$ be a proper, finite type $G$-CW complex and $C_*^{(2)}(X)$ the corresponding $l^2$-chain complex with its differential $d_*^{(2)}$. Then 
 	\begin{align*}
-		H_n^{(2)}(X) := \nicefrac{ker(d_n^{(2)})}{\overline{im(d_{n+1}^{(2)})}}
+		H_n^{(2)}(X) := ker(d_n^{(2)}) / \overline{im(d_{n+1}^{(2)})}
 	\end{align*}
 	is called the $n$-th $l^2$-homology and 
 	\begin{align*}
@@ -195,16 +199,15 @@ One can show that the trace is independent of the chosen embedding and therefore
 	the $n$-th $l^2$-Betti number.
 \end{Definition}
 \begin{Remark}
-	\label{MAB}
 	One can show that for a proper, finite type $G$-CW complex $H_n^{(2)}(X)$ is a Hilbert $\mathcal{N}(G)$-module and therefore the $l^2$-Betti number is in fact well-defined.
 \end{Remark}
 
 \subsection{$l^2$-Betti numbers arising from a group}
-\begin{Remark}
+\begin{Remark}\label{MAB}
 	A Matrix $A \in \C G^{n \times m}$ can be seen as a map from $l^2G^n \to l^2G^m$ via $x \mapsto x^{\top} \cdot A$. Therefore $ker(A)$ is a Hilbert $\mathcal{N}(G)$-module and has a well-defined von-Neumann-dimension. 
 \end{Remark}
 \begin{Theorem}
-	Let $x \in \R$ and $G$ be a discrete, countable, finitely generated group. The following are equivalent:
+	Let $x \in \R$ and $G$ be a discrete, countable group. The following are equivalent:
 	\begin{enumerate}
 		\item There exists a cocompact free finite type $G$-CW-complex $X$ and a $n \in \N$ such that $b_n^{(2)}(X)=x$
 		\item There exists a Matrix $A \in \Q G^{n \times n}$ for a natural numbers $n \in \N$ such that \newline $dim_{\mathcal{N}(G)}(ker (A))=x$
@@ -215,16 +218,15 @@ One can show that the trace is independent of the chosen embedding and therefore
 	\begin{align*}
 		\Delta_n^{(2)} = d_n^{(2)*} d_n^{(2)} + d_{n+1}^{(2)} d_{n+1}^{(2)*},
 	\end{align*}
-	which is a map from $C_n^{(2)}(X)$ to $C_n^{(2)}(X)$ and for which $ker(\Delta_n^{(2)}) = H_n^{(2)}$ holds. With \ref{MAB} $ii)$ follows. \textbf{Warum ist das ne Matrix mit Eintraegen aus Q?}
+	which is a map from $C_n^{(2)}(X)$ to $C_n^{(2)}(X)$ and for which $ker(\Delta_n^{(2)}) = H_n^{(2)}$ holds. With \ref{MAB} $ii)$ follows. \todo{Warum ist das ne Matrix mit Eintraegen aus Q?}
 	
-	$"ii) \Rightarrow i)"$ Let $n \in \N$ and $A\in \Q G^{n \times n}$. Because $k \cdot A$ has the same kernel as $A$ for every $k \in \Z$ we can assume that $A \in \Z G^{n \times n}$. The corresponding map will be also called $A$.   We will construct a $G$-CW-complex $X$ with $d_3^{(2)} = A$ and $d_4^{(2)}$ trivial. Therefore $H_3^{(2)}(X) = ker(A)$ and $i)$ follows.
+	$"ii) \Rightarrow i)"$ Let $n \in \N$ and $A\in \Q G^{n \times n}$. Because $k \cdot A$ has the same kernel as $A$ for every $k \in \Z$ we can assume that $A \in \Z G^{n \times n}$. The corresponding map will be also called $A$. We will construct a $G$-CW-complex $X$ with $d_3^{(2)} = A$ and $d_4^{(2)}$ trivial. Therefore $H_3^{(2)}(X) = ker(A)$ and $i)$ follows.
 	
-	We denote by $g \in \N$ the number of generators of $G$. Let $Y$ be the $G$-covering of $\bigvee_{i = 1}^{g} S^1$ corresponding to an epimorphism $F_g \to G$, where $F_g$ denotes the free group on $g$ generators. \textbf{dazu noch mehr erklaeren? stimmt das alles?} Now $Y$ has $G$ as deck transformation group and therefore a natural free $G$-action. In addition it has exactly $g$ many orbits of $0$ and $1$-cells and no other cells. We then glue $n$ many $2$ on each $0$-cell, i.e. we attach them via the attaching map which sends all of $S^1$ to a single point. Now let $a = \sum_{g \ in G} z_g g \in \Z G$ denote the first entry of $A$. We fix one $2$-cell and call it $e$. We now glue in $G \times D^3$ where $h \times D^3$ is attached via the map which sends $S^2$ to $z_g$ times $g \cdot h \cdot e$ for each $g \in G$.  \textbf{Formulierung} We repeat this for every $a$ in the first row of $A$. At last we repeat the whole process for every row of $A$ where we take a different $2$-cell $e$ for each new row which is glued to the same $0$-cell as the first $e$. The resulting space $X$ is still a free, finite type $G$-CW-complex. Because we have no $4$-cells $d_4^{(2)}$ is trivial and because of the construction $d_3^{(2)} = A$ holds.  
+	First we can see that a graph can always be seen as a CW-complex with the edges as 1-cells and the vertices as 0-cells. Let $Y$ be the Cayley graph of $G$ which has a natural cellular free $G$-action and is therefore a free, finite type $G$-CW-complex. In addition it has exactly $1$ $G$-equivariant $0$-cell and $1$ $G$-equivariant $1$-cell and no other cells. We then glue $n$ many $2$-cells on each $0$-cell, i.e. we attach them via the attaching map which sends all of $S^1$ to a single point. 
+	
+	We now glue in $n$ many $G$-equivariant $3$-cells in such a way that $A$ corresponds to $d_3^{(2)}$. Let $A_{ij} = \sum_{g \in G} z_{(g, i, j)} g \in \Z G$ denote the entry in the i-th row and the j-th column of $A$. We fix one $2$-cell and call it $e$ and we call the corresponding $2$-cells $e_1 \ldots e_n$. We glue in $G \times D^3$ where each element $h \times D^3$ is glued $z_{(g, 1, j)}$ many times to $h g \cdot e_j$ for each $g \in G$ and $j \in \{1, \ldots, n\}$. We then see that $d_3^{(2)}$ maps the vector $(\sum_{g \in G} \lambda_g g, 0 , \ldots , 0) \in (l^2 G)^n$ to $(\sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, 1)} g h, \ldots , \sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, n)}) \in (l^2 G)^n$. We then repeat this for every row of $A$ and get that $d_3^{(2)} = A$. The resulting $G$-CW-complex $X$ is still free, finite type and because $X/G$ is finite $X$ is cocompact.
 \end{proof}
-\textbf{ker(delta) = homology zeigen? cocompact? Man braucht nur n Zellen, Caleygraph, erwaehnen dass G darauf operiert}
-\begin{Remark}
-	One can show that the Theorem also holds if $G$ is not finitely generated. See e.g. \cite[p. 371]{LUECK}.
-\end{Remark}
+\todo{ker(delta) = homology zeigen?}
 \begin{Definition}
 	We say that a number $x \in \R$ arises from a discrete countable group $G$ if it fulfills one of the above conditions.
 \end{Definition}
@@ -234,17 +236,18 @@ One can show that the trace is independent of the chosen embedding and therefore
 \begin{Lemma}\label{mult}
 	Let $G$ is a discrete countable Group and $H$ a discrete finite Group. If $x \in \R$ arises from $G \times H$ then $x \cdot |H|$ arises from $G$.
 \end{Lemma}
-\textbf{Vllt. noch beweisen}
+\todo{Vllt. noch beweisen}
 \section{Turing dynamical systems}
 %Hier definiere ich TDS
 Let us first give a definition of a Turing machine. For convenience we will only allow 1 and 0 as symbols on our tape.
 \begin{Definition}
-	A Turing machine is a x-tuple $T=(S,\delta, A, R, I)$ where S is a finite set of states and $\delta: S \setminus(A \cup R) \times \{0,1\} \to S \times \2 \times \{-1, 0, 1\}$ is called the transition function. $A \subset S$ is called the set of accepting states, $R \subset S$ is called the set of rejecting states and $I \in S$ is called the initial state.
+	A Turing machine is a 5-tuple $T=(S,\delta, A, R, I)$ where S is a finite set of states and $\delta: S \setminus(A \cup R) \times \2 \to S \times \2 \times \{-1, 0, 1\}$ is called the transition function. $A \subset S$ is called the set of accepting states, $R \subset S$ is called the set of rejecting states and $I \in S$ is called the initial state.
 \end{Definition}
-In addition each Turing machine uses a tape, e.g. a set $\Z / 2\Z ^{\Z}$ with a head on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$. We start with the initial state and use the transition function $\delta$ to get $\delta(I, Y_0)$ . The first coordinate corresponds to the new element $Y_0$, the second to the new state and the third corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$. We repeat this step until we get a state in $A \cup R$. We say, that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$. We say that the Turing machine holds for $Y$ if it accepts or rejects it. We will only look at Turing machines which hold for every input.
-\textbf{mach das mit den Y0 mal ordentlich, du kacknoob! input = Y}
+In addition each Turing machine uses a "tape", i.e. a set $\Z / 2\Z ^{\Z}$ with a "head" on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$ which is called an input. We start with the initial state and use the transition function $\delta$ to get $\delta(I, Y_0)$. The first coordinate corresponds to the new element $Y_0$, the second to the new state and the third corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$, e.g. if $\delta(I, Y_0)_3 = 1$ we shift the whole tape one to the left, therefore our new $Y_0$ is our old $Y_1$. We repeat this step until we get a state in $A \cup R$. We say, that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$ after finitely many steps. We say that the Turing machine holds for $Y$ if it accepts or rejects it.
 
-For the purpose of calculating $l^2$-Betti numbers of groups we need to extend this definition. For the rest of this chapter let $(X, \mu)$ be a probability measure space divided into finitely many disjoint measurable subsets $X_i$. Let $\Gamma$ be a countable discrete group and $\rho$ be a right measure preserving action of $\Gamma$ on X.
+\todo{Quelle fuer TMs}
+
+For the purpose of calculating $l^2$-Betti numbers of groups we need to extend this definition. Let $(X, \mu)$ be a probability measure space divided into finitely many disjoint measurable subsets $X_i$. Let $\Gamma$ be a countable discrete group and $\rho$ be a right measure preserving action of $\Gamma$ on X.
 We now choose 3 disjoint subsets $A$, $R$, $I$, where each of them is a union of certain $X_i$. They will be called the accepting set, the rejecting set and the initial set. In addition we choose a $\gamma_i \in \Gamma$ for each $X_i \subset X$ such that for each $i$ with $X_i \subset A$ or $X_i \subset R$ it holds that $\gamma_i = e$ where $e$ is the neutral element in $\Gamma$. 
 Let $Ind: X \to \N$ be the map which assigns to each $x \in X$ the corresponding index of the $X_i$ it is contained in.
 \begin{Definition}
@@ -253,38 +256,37 @@ Let $Ind: X \to \N$ be the map which assigns to each $x \in X$ the corresponding
 	 T_X:X \to X, x \mapsto \rho(\gamma_{Ind(x)})(x)
 	 \end{align*}
 	 is called the Turing map.
-	 All the data required for a Turing map together with the map itself will be called a Turing dynamical system and will be denoted by $(T_X)$
+	 The group $\Gamma$ and the space $X$ (with all the choices of subsets and corresponding $\gamma_i$ made in the last paragraph) together with the Turing map will be called a Turing dynamical system and will be denoted by $(T_X)$
 \end{Definition}
-\textbf{all data spezifizieren}
-Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. \textbf{Tinfty definiert-hält}
+Let $x \in X$. If there is a $k \in \N$ such that $T_X^k(x) = T_X^{k + 1}(x)$ there also holds $T_X^h(x) = T_X^{h + 1}(x) \ \forall h \in \N$ with $h \geq k$. We then define $T_X^\infty (x) = T_X^k(x)$. Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system $(T_X)$ accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. In addition we say that $(T_X)$ holds for $y$ if it accepts or rejects it.
 
 \begin{Example}\label{TMtoTDS}
-	Now let  $T=(S,\delta, \tilde{A}, \tilde{R}, \tilde{I})$ be a Turing machine. We will show how to emulate it with a Turing dynamical system. Lets first fix notation. For a subset $M$ of a set $N^\Z$ with $M = \{(n_i)_{i \in \Z} \in N^\Z | n_{-k} = m_{-k}, \cdots, n_l = m_l \}$ \textbf{erklären, was es mit k und l auf sich hat}we simply write $[m_{-k} \cdots \underline{m_0} \cdots m_l]$ and $[m_{-k} \cdots \underline{m_0} \cdots m_l][\sigma]$ for $M \times \{\sigma\}$. We define $X = \2^\Z \times S$ and $\Gamma = Bij(S) \times \2 \times \Z$. \textbf{in unserem fall ist sigma usw., S Menge, Bij Grupper erwähnen}
-	\textbf{Stimmt das?}
+	Now let  $T=(S,\delta, \tilde{A}, \tilde{R}, \tilde{I})$ be a Turing machine. We will show how to emulate it with a Turing dynamical system. Lets first fix notation. For a subset $M$ of a set $N^\Z$ with $M = \{(n_i)_{i \in \Z} \in N^\Z | n_{-k} = m_{-k}, \cdots, n_l = m_l \}$ \todo{erklären, was es mit k und l auf sich hat}we simply write $[m_{-k} \cdots \underline{m_0} \cdots m_l]$ and $[m_{-k} \cdots \underline{m_0} \cdots m_l][\sigma]$ for $M \times \{\sigma\}$. We define $X = \2^\Z \times S$ and $\Gamma = Bij(S) \times \2 \times \Z$. \todo{in unserem fall ist sigma usw., S Menge, Bij Grupper erwähnen}
+	\todo{Stimmt das?}
 	The action of $\Gamma$ on $X$ is defined by the following rules:
 	\begin{itemize}
 		\item $Bij(S)$ acts on $S$ in the natural way.
 		\item The generator $\overline{1}$ of the group $\Z / 2\Z$ acts on the $\Z / 2\Z^\Z$ part of $X$ by adding $\overline{1}$ to the element with index $0$.
-		\item The generator $1$ of the group $\Z$ acts also on the $\Z / 2\Z^\Z$ part by shifting every element 1 to the right, e.g. increasing the index of every element by 1. \textbf{nochmal ausführlich}
+		\item The generator $1$ of the group $\Z$ acts also on the $\Z / 2\Z^\Z$ part by shifting every element 1 to the right, e.g. increasing the index of every element by 1. \todo{nochmal ausführlich}
 	\end{itemize}
 	We will now use the transition function to construct the Turing map. We choose the following devision of $X$:
 	\begin{align*}
 	X = \bigcup_{x \in \2, \sigma \in S} [\underline{x}][\sigma]
 	\end{align*}
-	For $X_i = [\underline{x}][\sigma]$ we get $\delta(\sigma, x) = (\tilde{\sigma}, \alpha, \beta)$.\textbf{sigma und x reihenfolge Satz neu} Let $\tau \in Bij(S)$ map $\sigma$ to $\tilde{\sigma}$ and $y \in \2$ be $y=x-\alpha$, i.e. an Automorphism \textbf{Quatsch Operation} which maps $x$ to $\alpha$. Our element $\gamma_i$ corresponding to $X_i$ is given by 
+	For $X_i = [\underline{x}][\sigma]$ we get $\delta(\sigma, x) = (\tilde{\sigma}, \alpha, \beta)$.\todo{sigma und x reihenfolge Satz neu} Let $\tau \in Bij(S)$ map $\sigma$ to $\tilde{\sigma}$ and $y \in \2$ be $y=x-\alpha$, i.e. an Automorphism \todo{Quatsch Operation} which maps $x$ to $\alpha$. Our element $\gamma_i$ corresponding to $X_i$ is given by 
 	\begin{align*}
 	\gamma_i = \begin{cases}
 	(id, \overline{0}, 0) & \text{if } X_i \subset A \cup R \\
 	(\tau, y, \beta) & \text{else}
 	\end{cases}
 	\end{align*} 
-	\textbf{tau nicht eindeutig}
+	\todo{tau nicht eindeutig}
 	We only need to define $A$, $R$ and $I$. $A$ is given by
 	\begin{align*}
 	A = \bigcup_{x \in \2, \sigma \in \tilde{A}}[\underline{x}][\sigma]
 	\end{align*}
 	which is of course a union of some $X_i$. $R$ and $I$ can be defined analogous.
-\end{Example} \textbf{Abschlusssatz, reihenfolge vertauschen}
+\end{Example} \todo{Abschlusssatz, reihenfolge vertauschen}
 
 To conclude this chapter we will give some definition which we will use later on. 
 \begin{Definition}
@@ -303,15 +305,17 @@ To conclude this chapter we will give some definition which we will use later on
 \begin{Definition}
 	A Turing dynamical system $(T_X)$ where $X$ is a infinite product of $\2$, each $X_i$ is of the form $X_i = \{(x_j) \in X \ | \ x_k = 0 \ \forall k \in I_1, x_j = 1 \ \forall j \in I_2\, \ I_1, I_2 \subset J \ finite\}$, the action of $\Gamma$ is by continuous group automorphisms and  $(T_X)$ stops an any configuration, has disjoint accepting chains and does not restart is called a computing Touring dynamical system.
 \end{Definition}
-\textbf{Will ich das wirklich so nennen? Ist X richtig definiert? Warum cont group autos? Indexmenge J beim Produkt, andere Xi defintion}
-\textbf{maß}
+\todo{Will ich das wirklich so nennen? Ist X richtig definiert? Warum cont group autos? Indexmenge J beim Produkt, andere Xi defintion}
+\todo{maß}
 
 Before we give an example of a computing Turing dynamical system we fix the notation of the shifting operation, because we will need it later on.
 \begin{Definition} \label{shift}
 	An element $z \in \Z$ acts on $\2^{\Z} = \prod_{i \in \Z} \2$ by decreasing every index by $z$. We call this action the shift action and denote it by $\zeta$. $\Z$ acts on $\bigoplus_{i \in \Z} \2$ in the same way which we will also call $\zeta$.
 \end{Definition}
 \begin{Example} \label{roTMtoTDS}
-	Let $T$ be a read-only Turing machine which holds for every input. Let $(T_X)$ be the corresponding Turing dynamical system as constructed in \ref{TMtoTDS}. We assume that $T$ is in such a way that $(T_X)$ has disjoint accepting chains (which is not always the case). We will construct a computable Turing dynamical system from $T$.  We can easily assure that $(T_X)$ does not restart by adding a new state $I'$ to $T$ with $\delta(I', x) = \delta(I, x) \ \forall x \in \{0,1\}$ and setting $I'$ as the initial state of $T$. Because we do not change the symbols of the tape it suffices to use $\Gamma = \Z \times Bij(S)$ where $\Z$ operates on $X = \2^\Z \times S$ via shifting and $Bij(S)$ acts on $S$ in the natural way. Because a Turing machine has only finitely many states there exists a number $n \in \N$ such that $|S| < 2^n$. We identify every state with a different element $z \in \2^n$ with $z \neq 0$. We can then assume that $X = \2^\Z \times \2^n$ by filling $\2^n$ with "dummy states" which will never be used. Because $Aut(\2^n)$ acts transitively on all of $\2^n / \{0\}$ we can assume that $\Gamma = \Z \times Aut(S)$. Because in the sets $X_i$ in \ref{TMtoTDS} there are only $n+1$ fixed components they are of the desired form and therefore the resulting Turing dynamical system is computing.
+	Let $T$ be a read-only Turing machine. Let $(T_X)$ be the corresponding Turing dynamical system as constructed in \ref{TMtoTDS}. We assume that $T$ is in such a way that $(T_X)$ has disjoint accepting chains and stops at any configuration (which is not always the case). We will construct a computable Turing dynamical system from $T$.  We can easily assure that $(T_X)$ does not restart by adding a new state $I'$ to $T$ with $\delta(I', x) = \delta(I, x) \ \forall x \in \{0,1\}$ and setting $I'$ as the initial state of $T$. Because we do not change the symbols of the tape it suffices to use $\Gamma = \Z \times Bij(S)$ where $\Z$ operates on $X = \2^\Z \times S$ via shifting and $Bij(S)$ acts on $S$ in the natural way. Because a Turing machine has only finitely many states there exists a number $n \in \N$ such that $|S| < 2^n$. We identify every state with a different element $z \in \2^n$ with $z \neq 0$.
+	
+	 We can then assume that $X = \2^\Z \times \2^n$ by filling $\2^n$ with "dummy states" which will never be used. Because $Aut(\2^n)$ acts transitively on all of $\2^n / \{0\}$ we can assume that $\Gamma = \Z \times Aut(S)$. Because in the sets $X_i$ in \ref{TMtoTDS} there are only $n+1$ fixed components they are of the desired form and therefore the resulting Turing dynamical system is computing.
 \end{Example}
 
 
@@ -322,7 +326,7 @@ In this chapter we want to prove the following central theorem which connects $l
 \end{Theorem}
 We will give the definition of Pontryagin duals and the semidirect product later in this chapter. The rest of this chapter is used to prove this theorem and give the needed definitions.
 \subsection{Groupoids}
-We begin by giving some algebraic definitions, namely the construct of groupoids which extends the definition of groups\textbf{so sicher bin ich mir dabei jetzt net}. Therefore we require some basic knowledge about categories. \textbf{Quelle zu Kategorientheorie}
+We begin by giving some algebraic definitions, namely the construct of groupoids which extends the definition of groups\todo{so sicher bin ich mir dabei jetzt net}. Therefore we require some basic knowledge about categories. \todo{Quelle zu Kategorientheorie}
 \begin{Definition}
 	A groupoid is a small category whose morphisms are all invertible.
 \end{Definition}
@@ -334,7 +338,7 @@ We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathca
 \begin{Definition}
 	For every Groupoid $\mathcal{G}$ we define the maps $s: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto X$ and $r: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto Y$ which will be called source and range map.
 \end{Definition}
-\textbf{das mit den Pfeilen ist doof}
+\todo{das mit den Pfeilen ist doof}
 \begin{Definition}
 	A discrete measurable groupoid is a groupoid where $\mathcal{G}$ is also a measurable space, $s, r$ and the maps gained through inverting or composition are all measurable and the fibers of $s$ and $r$ are countable.
 	If in addition we have a measure $\mu$ such that 
@@ -343,11 +347,11 @@ We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathca
 	\end{align*}
 	holds we call $\mathcal{G}$ discrete measured
 \end{Definition}
-\textbf{Warum braucht man das eigentlich nochmal, was bedeutet das genau und stimmt das eigentlich? inverting map}
+\todo{Warum braucht man das eigentlich nochmal, was bedeutet das genau und stimmt das eigentlich? inverting map}
 \begin{Definition}
 	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho: \Gamma \to Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined through $(x, \gamma_1) \cdot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
 \end{Definition}
-\textbf{Beispiel oder Erklärung und wie das bei TDS ist}
+\todo{Beispiel oder Erklärung und wie das bei TDS ist}
 
 \subsection{Groupoid ring}
 A fundamental concept used for the calculation of $l^2$-Betti numbers of groups was the group ring. We will transfer this to the notion of groupoids.
@@ -355,21 +359,21 @@ A fundamental concept used for the calculation of $l^2$-Betti numbers of groups 
 \begin{Definition}
 	Let $U$ be a subset of $\G_0$. A measurable edge is a map $\Phi:U \to \G$ such that $s \circ \Phi = id$ and $r \circ \Phi$ is injective.
 \end{Definition}
-\textbf{Warum heißt das eigentlich messbar?}
+\todo{Warum heißt das eigentlich messbar?}
 From the definition we see, that defining a measurable edge means taking a subset of $\G_0$ and associating a morphism to every object such that the morphism starts in this object and no two such morphisms end in the same object. We want to define the inverse of a measurable edge in such a way, that it is also a measurable edge. Therefore it does not suffice to take the inverse of the map $\Phi$. Instead we invert every morphism in the image of $\Phi$.
 \begin{Definition}
 	Let $\Phi: U \to \G$ be a measurable edge. The inverse of $\Phi$ will be called $\Phi^{-1}$ and is defined as $\Phi^{-1}:r(Im(\Phi)) \to \G$ such that $\Phi^{-1}$ is a measurable edge and $\Phi^{-1} \circ r \circ \Phi = \Phi$.
 \end{Definition}
-\textbf{am ende muss noch invertierung ans phi}
+\todo{am ende muss noch invertierung ans phi}
 
-We now come to the definition of the groupoid ring. We want it to be ring of operators of $L^2(\G)$ \textbf{Das sollte ich vorher mal irgendwann definiert haben}, such that it is in a way generated by measurable edges. For a measurable edge $\Phi$ we define a operator $\tilde \Phi$ through
+We now come to the definition of the groupoid ring. We want it to be ring of operators of $L^2(\G)$ \todo{Das sollte ich vorher mal irgendwann definiert haben}, such that it is in a way generated by measurable edges. For a measurable edge $\Phi$ we define a operator $\tilde \Phi$ through
 \begin{align*}
 	\tilde \Phi: L^2(\G) \to L^2(\G), F \mapsto \left[ \tilde \Phi (F): \G \to \C, \gamma \mapsto \begin{cases}
 	F(\gamma \cdot_{\G} \Phi^{-1}(r(\gamma)) & \text{if } r(\gamma) \in Dom(\Phi^{-1}) \\
 	0 & \text{otherwise}
 	\end{cases} \right] .
 \end{align*}
-\textbf{da sollte man ein Bild zu malen}
+\todo{da sollte man ein Bild zu malen}
 In addition for a map $f \in L^\infty (\G_0)$ we also define a operator $\tilde f$ on $L^2(\G)$ through
 \begin{align*}
 	\tilde f: L^2(\G) \to L^2(\G), F \mapsto [\tilde f(F): \G \to \C, \gamma \mapsto F(\gamma) \cdot f(r(\gamma))].
@@ -377,11 +381,11 @@ In addition for a map $f \in L^\infty (\G_0)$ we also define a operator $\tilde 
 \begin{Definition}
 	For a groupoid $\G$ the groupoid ring $\C\G$ is the ring of bounded operators on $L^2(\G)$ generated by all measurable edges and all elements of $L^\infty(\G)$.
 \end{Definition}
-We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} \tilde \Phi_i \cdot_{\C \G} \tilde f_i$ where $\Phi$ is a measurable edge, $f \in L^\infty(\G_0)$ and $I$ is a finite set. One can show that each element of $\C \G$ can be (although non-uniquely) represented in such a way. \textbf{Evtl. könnte ich dazu noch ein bisschen was schreiben}
+We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} \tilde \Phi_i \cdot_{\C \G} \tilde f_i$ where $\Phi$ is a measurable edge, $f \in L^\infty(\G_0)$ and $I$ is a finite set. One can show that each element of $\C \G$ can be (although non-uniquely) represented in such a way. \todo{Evtl. könnte ich dazu noch ein bisschen was schreiben}
 \begin{Example}
 	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ is isomorphic to the g $\C G$. Because we have only one element in $\G_0$ the only measurable edges we have are the maps from $\bullet$ to a specific group element of $G$. The elements of $L^\infty(\G_0)$ are just maps from $\bullet$ to a specific element in $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. Now let $\Phi_1: \bullet \mapsto g_1$ and $\Phi_2: \bullet \mapsto g_2$ be measurable edges. 
 \end{Example}
-\textbf{Das muss ich noch zuende machen}
+\todo{Das muss ich noch zuende machen}
 \begin{Remark}
 	Let $\G(\rho)$ be an action Groupoid of $\rho: \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}: X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
 \end{Remark}
@@ -390,11 +394,11 @@ We will now create a link between the groupoid ring and the group ring. For this
 \begin{Definition}
 	A character of $X$ is a homomorphism $\hat{x}: X \to S$, where $S$ is the multiplicative group of complex numbers of absolute value 1.The group of all characters of $X$ is called the character group or Pontryagin dual group of $X$ and is denoted by $\hat{X}$.
 \end{Definition}
-\textbf{Beweis, dass das duale eine Gruppe ist?}
+\todo{Beweis, dass das duale eine Gruppe ist?}
 \begin{Definition}
 	The Pontryagin dual $\hat{\rho}:\Gamma \to Aut(\hat{X})$ of the action $\rho$ is an action on $\hat{X}$ and defined as $\hat{\rho}(\gamma)(f)(x) = f(\rho(\gamma^{-1})(x))$ for $f \in \hat{X}$ and $x \in X$.
 \end{Definition}
-\textbf{Um das ganze Auto-Zeug muss man sich mal noch Gedanken machen.}
+\todo{Um das ganze Auto-Zeug muss man sich mal noch Gedanken machen.}
 \begin{Remark}
 	An element of the Pontryagin dual $\hat{x} \in \hat{X}$ can also be seen as an element of $L^{\infty}(X)$. We call this element $P(x)$
 \end{Remark}
@@ -452,7 +456,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 	
 	$ii)$ 
 \end{proof}
-\textbf{braucht man *?, Elemente aus C an GR multiplizieren , mehr erklaeren?}
+\todo{braucht man *?, Elemente aus C an GR multiplizieren , mehr erklaeren?}
 \subsection{$l^2$-Betti numbers of groupoids}
 \subsection{$l^2$-Betti numbers of Turing dynamical systems}
 %Hier kommen die ganzen Sätze/Beweise usw.
@@ -537,7 +541,7 @@ Lets start by constructing the used Turing dynamical system.
 \begin{Lemma} \label{frac}
 	For every $m \in \N$ with $m \neq 1$ the binary expansion of $\frac{1}{m}$ is of the form $0. a \overline{b}$ where $a$ is a nonrepeating and $b$ a repeating part. The length of $a$ and the length of $b$ are both finite.
 \end{Lemma}
-\textbf{Kann man vllt. noch beweisen...}
+\todo{Kann man vllt. noch beweisen...}
 \begin{Lemma} \label{2TM}
 	For every $m \in \N$ there exists a computing Turing dynamical system $T_X$ with $\frac{\Omega_1(T_X)}{\mu(I)} = \frac{1}{m}$.
 \end{Lemma}

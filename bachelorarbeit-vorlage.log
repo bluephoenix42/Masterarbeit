@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.12)  22 JUN 2017 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.12)  29 JUN 2017 16:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -441,7 +441,7 @@ Class scrartcl Warning: Usage of package `parskip' together
 (scrartcl)              I'd suggest to use option
 (scrartcl)              `parskip' with one of it's several values.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `parskip' on input line 19.
+(scrartcl)              package `parskip' on input line 20.
 
 (/usr/share/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
@@ -569,37 +569,322 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@headsep=\skip63
 \dth@everypar=\toks27
 )
-\c@Theorem=\count101
+(/usr/share/texmf-dist/tex/latex/todonotes/todonotes.sty
+Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
+Package: todonotes 2012/07/25
+
+(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks28
+\XKV@tempa@toks=\toks29
+)
+\XKV@depth=\count101
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks30
+\pgfutil@tempdima=\dimen114
+\pgfutil@tempdimb=\dimen115
+
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box30
+
+(/usr/share/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks31
+\pgfkeys@temptoks=\toks32
+
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks33
+))
+\pgf@x=\dimen116
+\pgf@y=\dimen117
+\pgf@xa=\dimen118
+\pgf@ya=\dimen119
+\pgf@xb=\dimen120
+\pgf@yb=\dimen121
+\pgf@xc=\dimen122
+\pgf@yc=\dimen123
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count102
+\c@pgf@countb=\count103
+\c@pgf@countc=\count104
+\c@pgf@countd=\count105
+\t@pgf@toka=\toks34
+\t@pgf@tokb=\toks35
+\t@pgf@tokc=\toks36
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count106
+\pgfsyssoftpath@bigbuffer@items=\count107
+)
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen124
+\pgfmath@count=\count108
+\pgfmath@box=\box31
+\pgfmath@toks=\toks37
+\pgfmath@stack@operand=\toks38
+\pgfmath@stack@operation=\toks39
+)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code
+.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.te
+x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
+.code.tex))) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count109
+)) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen125
+\pgf@picmaxx=\dimen126
+\pgf@picminy=\dimen127
+\pgf@picmaxy=\dimen128
+\pgf@pathminx=\dimen129
+\pgf@pathmaxx=\dimen130
+\pgf@pathminy=\dimen131
+\pgf@pathmaxy=\dimen132
+\pgf@xx=\dimen133
+\pgf@xy=\dimen134
+\pgf@yx=\dimen135
+\pgf@yy=\dimen136
+\pgf@zx=\dimen137
+\pgf@zy=\dimen138
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen139
+\pgf@path@lasty=\dimen140
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen141
+\pgf@shorten@start@additional=\dimen142
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
+\pgf@picture@serial@count=\count110
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen143
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.t
+ex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen144
+\pgf@pt@y=\dimen145
+\pgf@pt@temp=\dimen146
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.te
+x
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen147
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen148
+\pgf@sys@shading@range@num=\count111
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box35
+))
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box36
+)
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen149
+\pgf@nodesepend=\dimen150
+)
+(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen151
+\pgffor@skip=\dimen152
+\pgffor@stack=\toks40
+\pgffor@toks=\toks41
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
+x
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count112
+\pgfplotmarksize=\dimen153
+)
+\tikz@lastx=\dimen154
+\tikz@lasty=\dimen155
+\tikz@lastxsaved=\dimen156
+\tikz@lastysaved=\dimen157
+\tikzleveldistance=\dimen158
+\tikzsiblingdistance=\dimen159
+\tikz@figbox=\box37
+\tikz@figbox@bg=\box38
+\tikz@tempbox=\box39
+\tikz@tempbox@bg=\box40
+\tikztreelevel=\count113
+\tikznumberofchildren=\count114
+\tikznumberofcurrentchild=\count115
+\tikz@fig@count=\count116
+ (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count117
+\pgfmatrixcurrentcolumn=\count118
+\pgf@matrix@numberofcolumns=\count119
+)
+\tikz@expandcount=\count120
+
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+topaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+positioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+) (/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count121
+\calc@Bcount=\count122
+\calc@Adimen=\dimen160
+\calc@Bdimen=\dimen161
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count123
+\calc@Cskip=\skip66
+)
+\c@@todonotes@numberoftodonotes=\count124
+)
+\c@Theorem=\count125
 
 (./bachelorarbeit-vorlage.aux)
 \openout1 = `bachelorarbeit-vorlage.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
-\scratchdimen=\dimen114
-\scratchbox=\box30
-\nofMPsegments=\count103
-\nofMParguments=\count104
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count105
-\MPscratchDim=\dimen115
-\MPnumerator=\count106
-\makeMPintoPDFobject=\count107
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count126
+\scratchdimen=\dimen162
+\scratchbox=\box41
+\nofMPsegments=\count127
+\nofMParguments=\count128
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count129
+\MPscratchDim=\dimen163
+\MPnumerator=\count130
+\makeMPintoPDFobject=\count131
+\everyMPtoPDFconversion=\toks43
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -649,15 +934,16 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<kit-logo.jpg, id=1, 199.7061pt x 91.3011pt>
+ABD: EveryShipout initializing macros
+<kit-logo.jpg, id=4, 199.7061pt x 91.3011pt>
 File: kit-logo.jpg Graphic file (type jpg)
  <use kit-logo.jpg>
-Package pdftex.def Info: kit-logo.jpg used on input line 67.
+Package pdftex.def Info: kit-logo.jpg used on input line 68.
 (pdftex.def)             Requested size: 89.86691pt x 41.08511pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./kit-logo.jpg>]
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 94.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 95.
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -677,50 +963,488 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 2.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
-\tf@toc=\write3
-\openout3 = `bachelorarbeit-vorlage.toc'.
+\tf@toc=\write4
+\openout4 = `bachelorarbeit-vorlage.toc'.
 
- [2] [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 169.
+ [2]
+Overfull \hbox (12.00809pt too wide) in paragraph at lines 124--124
+\T1/cmr/m/n/12 Skalarpro- 
+ []
 
+
+Overfull \hbox (12.00809pt too wide) in paragraph at lines 124--124
+\T1/cmr/m/n/12 Skalarpro- 
+ []
+
+
+Overfull \hbox (12.00809pt too wide) in paragraph at lines 124--124
+\T1/cmr/m/n/12 Skalarpro- 
+ []
+
+
+Overfull \hbox (12.00809pt too wide) in paragraph at lines 124--124
+\T1/cmr/m/n/12 Skalarpro- 
+ []
+
+[3]
+Overfull \hbox (0.58736pt too wide) in paragraph at lines 149--149
+\T1/cmr/m/n/12 mehrere 
+ []
+
+
+Overfull \hbox (0.58736pt too wide) in paragraph at lines 149--149
+\T1/cmr/m/n/12 mehrere 
+ []
+
+
+Overfull \hbox (0.58736pt too wide) in paragraph at lines 149--149
+\T1/cmr/m/n/12 mehrere 
+ []
+
+
+Overfull \hbox (0.58736pt too wide) in paragraph at lines 149--149
+\T1/cmr/m/n/12 mehrere 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 174.
 
 (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 169.
- [4] [5] [6] [7] [8] [9]
-Overfull \hbox (13.78085pt too wide) in paragraph at lines 371--371
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 174.
+ [4] [5]
+Overfull \hbox (9.72397pt too wide) in paragraph at lines 229--229
+[][][][]\T1/cmr/m/n/12 ker(delta) 
+ []
+
+
+Overfull \hbox (9.72397pt too wide) in paragraph at lines 229--229
+[][][][]\T1/cmr/m/n/12 ker(delta) 
+ []
+
+
+Overfull \hbox (9.72397pt too wide) in paragraph at lines 229--229
+[][][][]\T1/cmr/m/n/12 ker(delta) 
+ []
+
+
+Overfull \hbox (9.72397pt too wide) in paragraph at lines 229--229
+[][][][]\T1/cmr/m/n/12 ker(delta) 
+ []
+
+[6]
+Overfull \hbox (4.1767pt too wide) in paragraph at lines 264--264
+[][][][]\T1/cmr/m/n/12 erklären, 
+ []
+
+
+Overfull \hbox (4.1767pt too wide) in paragraph at lines 264--264
+[][][][]\T1/cmr/m/n/12 erklären, 
+ []
+
+
+Overfull \hbox (4.1767pt too wide) in paragraph at lines 264--264
+[][][][]\T1/cmr/m/n/12 erklären, 
+ []
+
+
+Overfull \hbox (4.1767pt too wide) in paragraph at lines 264--264
+[][][][]\T1/cmr/m/n/12 erklären, 
+ []
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+Overfull \hbox (2.54512pt too wide) in paragraph at lines 270--270
+[][][][]\T1/cmr/m/n/12 nochmal 
+ []
+
+
+Overfull \hbox (2.54512pt too wide) in paragraph at lines 270--270
+[][][][]\T1/cmr/m/n/12 nochmal 
+ []
+
+
+Overfull \hbox (2.54512pt too wide) in paragraph at lines 270--270
+[][][][]\T1/cmr/m/n/12 nochmal 
+ []
+
+
+Overfull \hbox (2.54512pt too wide) in paragraph at lines 270--270
+[][][][]\T1/cmr/m/n/12 nochmal 
+ []
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+Overfull \hbox (1.63145pt too wide) in paragraph at lines 276--276
+[][][][]\T1/cmr/m/n/12 Quatsch 
+ []
+
+
+Overfull \hbox (1.63145pt too wide) in paragraph at lines 276--276
+[][][][]\T1/cmr/m/n/12 Quatsch 
+ []
+
+
+Overfull \hbox (1.63145pt too wide) in paragraph at lines 276--276
+[][][][]\T1/cmr/m/n/12 Quatsch 
+ []
+
+
+Overfull \hbox (1.63145pt too wide) in paragraph at lines 276--276
+[][][][]\T1/cmr/m/n/12 Quatsch 
+ []
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+Overfull \hbox (33.47499pt too wide) in paragraph at lines 289--289
+[][][][]\T1/cmr/m/n/12 Abschlusssatz, 
+ []
+
+
+Overfull \hbox (4.24196pt too wide) in paragraph at lines 289--289
+\T1/cmr/m/n/12 tauschen  
+ []
+
+
+Overfull \hbox (33.47499pt too wide) in paragraph at lines 289--289
+[][][][]\T1/cmr/m/n/12 Abschlusssatz, 
+ []
+
+
+Overfull \hbox (4.24196pt too wide) in paragraph at lines 289--289
+\T1/cmr/m/n/12 tauschen  
+ []
+
+
+Overfull \hbox (33.47499pt too wide) in paragraph at lines 289--289
+[][][][]\T1/cmr/m/n/12 Abschlusssatz, 
+ []
+
+
+Overfull \hbox (4.24196pt too wide) in paragraph at lines 289--289
+\T1/cmr/m/n/12 tauschen  
+ []
+
+
+Overfull \hbox (33.47499pt too wide) in paragraph at lines 289--289
+[][][][]\T1/cmr/m/n/12 Abschlusssatz, 
+ []
+
+
+Overfull \hbox (4.24196pt too wide) in paragraph at lines 289--289
+\T1/cmr/m/n/12 tauschen  
+ []
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+[7]
+Overfull \hbox (7.43982pt too wide) in paragraph at lines 308--308
+\T1/cmr/m/n/12 definiert? 
+ []
+
+
+Overfull \hbox (7.43982pt too wide) in paragraph at lines 308--308
+\T1/cmr/m/n/12 definiert? 
+ []
+
+
+Overfull \hbox (7.43982pt too wide) in paragraph at lines 308--308
+\T1/cmr/m/n/12 definiert? 
+ []
+
+
+Overfull \hbox (7.43982pt too wide) in paragraph at lines 308--308
+\T1/cmr/m/n/12 definiert? 
+ []
+
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+[8]
+
+LaTeX Warning: Marginpar on page 9 moved.
+
+
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 eigentlich 
+ []
+
+
+Overfull \hbox (5.8082pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 nochmal, 
+ []
+
+
+Overfull \hbox (13.31334pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 eigentlich? 
+ []
+
+
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 eigentlich 
+ []
+
+
+Overfull \hbox (5.8082pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 nochmal, 
+ []
+
+
+Overfull \hbox (13.31334pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 eigentlich? 
+ []
+
+
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 eigentlich 
+ []
+
+
+Overfull \hbox (5.8082pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 nochmal, 
+ []
+
+
+Overfull \hbox (13.31334pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 eigentlich? 
+ []
+
+
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 eigentlich 
+ []
+
+
+Overfull \hbox (5.8082pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 nochmal, 
+ []
+
+
+Overfull \hbox (13.31334pt too wide) in paragraph at lines 350--350
+\T1/cmr/m/n/12 eigentlich? 
+ []
+
+[9]
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 362--362
+\T1/cmr/m/n/12 eigentlich 
+ []
+
+
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 362--362
+\T1/cmr/m/n/12 eigentlich 
+ []
+
+
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 362--362
+\T1/cmr/m/n/12 eigentlich 
+ []
+
+
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 362--362
+\T1/cmr/m/n/12 eigentlich 
+ []
+
+
+Overfull \hbox (11.68182pt too wide) in paragraph at lines 367--367
+\T1/cmr/m/n/12 vertierung 
+ []
+
+
+Overfull \hbox (11.68182pt too wide) in paragraph at lines 367--367
+\T1/cmr/m/n/12 vertierung 
+ []
+
+
+Overfull \hbox (11.68182pt too wide) in paragraph at lines 367--367
+\T1/cmr/m/n/12 vertierung 
+ []
+
+
+Overfull \hbox (11.68182pt too wide) in paragraph at lines 367--367
+\T1/cmr/m/n/12 vertierung 
+ []
+
+
+Overfull \hbox (1.89256pt too wide) in paragraph at lines 369--369
+\T1/cmr/m/n/12 definiert 
+ []
+
+
+Overfull \hbox (1.89256pt too wide) in paragraph at lines 369--369
+\T1/cmr/m/n/12 definiert 
+ []
+
+
+Overfull \hbox (1.89256pt too wide) in paragraph at lines 369--369
+\T1/cmr/m/n/12 definiert 
+ []
+
+
+Overfull \hbox (1.89256pt too wide) in paragraph at lines 369--369
+\T1/cmr/m/n/12 definiert 
+ []
+
+
+LaTeX Warning: Marginpar on page 10 moved.
+
+
+Overfull \hbox (13.78085pt too wide) in paragraph at lines 375--375
 [] 
  []
 
-[10] [11]
-Overfull \hbox (1.17775pt too wide) in paragraph at lines 450--450
+
+LaTeX Warning: Marginpar on page 10 moved.
+
+
+Overfull \hbox (7.17873pt too wide) in paragraph at lines 384--384
+\T1/cmr/m/n/12 schreiben  
+ []
+
+
+Overfull \hbox (7.17873pt too wide) in paragraph at lines 384--384
+\T1/cmr/m/n/12 schreiben  
+ []
+
+
+Overfull \hbox (7.17873pt too wide) in paragraph at lines 384--384
+\T1/cmr/m/n/12 schreiben  
+ []
+
+
+Overfull \hbox (7.17873pt too wide) in paragraph at lines 384--384
+\T1/cmr/m/n/12 schreiben  
+ []
+
+
+LaTeX Warning: Marginpar on page 10 moved.
+
+[10]
+Overfull \hbox (10.45714pt too wide) in paragraph at lines 401--401
+\T1/cmr/m/n/12 Gedanken 
+ []
+
+
+Overfull \hbox (1.56622pt too wide) in paragraph at lines 401--401
+\T1/cmr/m/n/12 machen.  
+ []
+
+
+Overfull \hbox (10.45714pt too wide) in paragraph at lines 401--401
+\T1/cmr/m/n/12 Gedanken 
+ []
+
+
+Overfull \hbox (1.56622pt too wide) in paragraph at lines 401--401
+\T1/cmr/m/n/12 machen.  
+ []
+
+
+Overfull \hbox (10.45714pt too wide) in paragraph at lines 401--401
+\T1/cmr/m/n/12 Gedanken 
+ []
+
+
+Overfull \hbox (1.56622pt too wide) in paragraph at lines 401--401
+\T1/cmr/m/n/12 machen.  
+ []
+
+
+Overfull \hbox (10.45714pt too wide) in paragraph at lines 401--401
+\T1/cmr/m/n/12 Gedanken 
+ []
+
+
+Overfull \hbox (1.56622pt too wide) in paragraph at lines 401--401
+\T1/cmr/m/n/12 machen.  
+ []
+
+
+LaTeX Warning: Marginpar on page 11 moved.
+
+[11]
+Overfull \hbox (1.17775pt too wide) in paragraph at lines 454--454
 [] 
+ []
+
+
+Overfull \hbox (2.54514pt too wide) in paragraph at lines 459--459
+\T1/cmr/m/n/12 plizieren 
+ []
+
+
+Overfull \hbox (2.54514pt too wide) in paragraph at lines 459--459
+\T1/cmr/m/n/12 plizieren 
+ []
+
+
+Overfull \hbox (2.54514pt too wide) in paragraph at lines 459--459
+\T1/cmr/m/n/12 plizieren 
+ []
+
+
+Overfull \hbox (2.54514pt too wide) in paragraph at lines 459--459
+\T1/cmr/m/n/12 plizieren 
  []
 
 [12]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 493.
- [13] [14] [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 600--601
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 497.
+ [13]
+Overfull \hbox (2.28407pt too wide) in paragraph at lines 544--544
+\T1/cmr/m/n/12 weisen...  
+ []
+
+
+Overfull \hbox (2.28407pt too wide) in paragraph at lines 544--544
+\T1/cmr/m/n/12 weisen...  
+ []
+
+
+Overfull \hbox (2.28407pt too wide) in paragraph at lines 544--544
+\T1/cmr/m/n/12 weisen...  
+ []
+
+
+Overfull \hbox (2.28407pt too wide) in paragraph at lines 544--544
+\T1/cmr/m/n/12 weisen...  
+ []
+
+[14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 604--605
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--604
+Underfull \hbox (badness 10000) in paragraph at lines 606--608
 
  []
 
 [17] (./bachelorarbeit-vorlage.aux) ) 
 Here is how much of TeX's memory you used:
- 5150 strings out of 493013
- 78544 string characters out of 6139317
- 229742 words of memory out of 5000000
- 8583 multiletter control sequences out of 15000+600000
- 25992 words of font info for 73 fonts, out of 8000000 for 9000
+ 15932 strings out of 493013
+ 307586 string characters out of 6139317
+ 516373 words of memory out of 5000000
+ 19137 multiletter control sequences out of 15000+600000
+ 25293 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,17n,51p,8833b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,17n,76p,8833b,1019s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-
 super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cme
 x10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/
@@ -733,19 +1457,18 @@ ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></u
-sr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/share/texmf-
-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type
-1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-sup
-er/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb
-></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/te
-xmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/
-type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm
--super/sfsx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200
-.pfb>
-Output written on bachelorarbeit-vorlage.pdf (17 pages, 1070729 bytes).
+sr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-
+dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type
+1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-sup
+er/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb
+></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/te
+xmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/
+type1/public/cm-super/sfsx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm
+-super/sfti1200.pfb>
+Output written on bachelorarbeit-vorlage.pdf (17 pages, 1037609 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
+ 153 PDF objects out of 1000 (max. 8388607)
  109 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
