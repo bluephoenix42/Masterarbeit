@@ -206,8 +206,8 @@ In this chapter we will require some basic knowledge of CW-complexes and regular
 \begin{Remark}\label{MAB}
 	A Matrix $A \in \C G^{n \times m}$ can be seen as a map from $l^2G^n \to l^2G^m$ via $x \mapsto x^{\top} \cdot A$. Therefore $ker(A)$ is a Hilbert $\mathcal{N}(G)$-module and has a well-defined von-Neumann-dimension. 
 \end{Remark}
-\begin{Theorem}
-	Let $x \in \R$ and $G$ be a discrete, countable group. The following are equivalent:
+\begin{Theorem} \label{MCW}
+	Let $x \in \R$ and $G$ be a discrete, countable, finitely generated group. The following are equivalent:
 	\begin{enumerate}
 		\item There exists a cocompact free finite type $G$-CW-complex $X$ and a $n \in \N$ such that $b_n^{(2)}(X)=x$
 		\item There exists a Matrix $A \in \Q G^{n \times n}$ for a natural numbers $n \in \N$ such that \newline $dim_{\mathcal{N}(G)}(ker (A))=x$
@@ -222,11 +222,14 @@ In this chapter we will require some basic knowledge of CW-complexes and regular
 	
 	$"ii) \Rightarrow i)"$ Let $n \in \N$ and $A\in \Q G^{n \times n}$. Because $k \cdot A$ has the same kernel as $A$ for every $k \in \Z$ we can assume that $A \in \Z G^{n \times n}$. The corresponding map will be also called $A$. We will construct a $G$-CW-complex $X$ with $d_3^{(2)} = A$ and $d_4^{(2)}$ trivial. Therefore $H_3^{(2)}(X) = ker(A)$ and $i)$ follows.
 	
-	First we can see that a graph can always be seen as a CW-complex with the edges as 1-cells and the vertices as 0-cells. Let $Y$ be the Cayley graph of $G$ which has a natural cellular free $G$-action and is therefore a free, finite type $G$-CW-complex. In addition it has exactly $1$ $G$-equivariant $0$-cell and $1$ $G$-equivariant $1$-cell and no other cells. We then glue $n$ many $2$-cells on each $0$-cell, i.e. we attach them via the attaching map which sends all of $S^1$ to a single point. 
+	First we can see that a graph can always be seen as a CW-complex with the edges as 1-cells and the vertices as 0-cells. Let $g_1 \ldots g_m$ be generators of $G$ and let $Y$ be the corresponding Cayley graph of $G$ which has a natural cellular free $G$-action and is therefore a free, finite type $G$-CW-complex. In addition it has exactly $1$ $G$-equivariant $0$-cell and $m$ $G$-equivariant $1$-cell and no other cells. We then glue $n$ many $2$-cells on each $0$-cell, i.e. we attach them via the attaching map which sends all of $S^1$ to a single point. 
 	
-	We now glue in $n$ many $G$-equivariant $3$-cells in such a way that $A$ corresponds to $d_3^{(2)}$. Let $A_{ij} = \sum_{g \in G} z_{(g, i, j)} g \in \Z G$ denote the entry in the i-th row and the j-th column of $A$. We fix one $2$-cell and call it $e$ and we call the corresponding $2$-cells $e_1 \ldots e_n$. We glue in $G \times D^3$ where each element $h \times D^3$ is glued $z_{(g, 1, j)}$ many times to $h g \cdot e_j$ for each $g \in G$ and $j \in \{1, \ldots, n\}$. We then see that $d_3^{(2)}$ maps the vector $(\sum_{g \in G} \lambda_g g, 0 , \ldots , 0) \in (l^2 G)^n$ to $(\sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, 1)} g h, \ldots , \sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, n)}) \in (l^2 G)^n$. We then repeat this for every row of $A$ and get that $d_3^{(2)} = A$. The resulting $G$-CW-complex $X$ is still free, finite type and because $X/G$ is finite $X$ is cocompact.
+	We now glue in $n$ many $G$-equivariant $3$-cells in such a way that $A$ corresponds to $d_3^{(2)}$. Let $A_{ij} = \sum_{g \in G} z_{(g, i, j)} g \in \Z G$ denote the entry in the i-th row and the j-th column of $A$. We fix one $0$-cell and call it $e$ and we call the corresponding $2$-cells $e_1 \ldots e_n$. We glue in $G \times D^3$ where each element $h \times D^3$ is glued $z_{(g, 1, j)}$ many times to $h g \cdot e_j$ for each $g \in G$ and $j \in \{1, \ldots, n\}$. We then see that $d_3^{(2)}$ maps the vector $(\sum_{g \in G} \lambda_g g, 0 , \ldots , 0) \in (l^2 G)^n$ to $(\sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, 1)} g h, \ldots , \sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, n)}) \in (l^2 G)^n$. We then repeat this for every row of $A$ and get that $d_3^{(2)} = A$. The resulting $G$-CW-complex $X$ is still free, finite type and because $X/G$ is finite $X$ is cocompact.
 \end{proof}
 \todo{ker(delta) = homology zeigen?}
+\begin{Remark}
+	One can show that \ref{MCW} also holds if $G$ is not finitely generated.
+\end{Remark}
 \begin{Definition}
 	We say that a number $x \in \R$ arises from a discrete countable group $G$ if it fulfills one of the above conditions.
 \end{Definition}
@@ -361,10 +364,8 @@ A fundamental concept used for the calculation of $l^2$-Betti numbers of groups 
 \todo{Warum heißt das eigentlich messbar?}
 From the definition we see, that defining a measurable edge means taking a subset of $\G_0$ and associating a morphism to every object such that the morphism starts in this object and no two such morphisms end in the same object. We want to define the inverse of a measurable edge in such a way, that it is also a measurable edge. Therefore it does not suffice to take the inverse of the map $\Phi$. Instead we invert every morphism in the image of $\Phi$.
 \begin{Definition}
-	Let $\Phi: U \to \G$ be a measurable edge. The inverse of $\Phi$ will be called $\Phi^{-1}$ and is defined as $\Phi^{-1}:r(Im(\Phi)) \to \G$ such that $\Phi^{-1}$ is a measurable edge and $\Phi^{-1} \circ r \circ \Phi = \Phi$.
+	Let $\Phi: U \to \G$ be a measurable edge. The inverse of $\Phi$ will be called $\Phi^{-1}$ and is defined as $\Phi^{-1}:r(Im(\Phi)) \to \G$ such that $\Phi^{-1}$ is a measurable edge and $\Phi^{-1} \circ r \circ \Phi (x) = \Phi (x)^{-1} \ \forall x \in r(Im(\Phi))$ where $\Phi (x)^{-1}$ is the inverse of the morphism $\Phi (x)$.
 \end{Definition}
-\todo{am ende muss noch invertierung ans phi}
-
 We now come to the definition of the groupoid ring. We want it to be ring of operators of $L^2(\G)$ \todo{Das sollte ich vorher mal irgendwann definiert haben}, such that it is in a way generated by measurable edges. For a measurable edge $\Phi$ we define a operator $\tilde \Phi$ through
 \begin{align*}
 	\tilde \Phi: L^2(\G) \to L^2(\G), F \mapsto \left[ \tilde \Phi (F): \G \to \C, \gamma \mapsto \begin{cases}
@@ -382,7 +383,7 @@ In addition for a map $f \in L^\infty (\G_0)$ we also define a operator $\tilde 
 \end{Definition}
 We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} \tilde \Phi_i \cdot_{\C \G} \tilde f_i$ where $\Phi$ is a measurable edge, $f \in L^\infty(\G_0)$ and $I$ is a finite set. One can show that each element of $\C \G$ can be (although non-uniquely) represented in such a way. \todo{Evtl. könnte ich dazu noch ein bisschen was schreiben}
 \begin{Example}
-	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ is isomorphic to the g $\C G$. Because we have only one element in $\G_0$ the only measurable edges we have are the maps from $\bullet$ to a specific group element of $G$. The elements of $L^\infty(\G_0)$ are just maps from $\bullet$ to a specific element in $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. Now let $\Phi_1: \bullet \mapsto g_1$ and $\Phi_2: \bullet \mapsto g_2$ be measurable edges. 
+	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ is isomorphic to the g $\C G$. Because we have only one element in $\G_0$ the only measurable edges we have are the maps from $\bullet$ to a specific group element of $G$. The elements of $L^\infty(\G_0)$ are just maps from $\bullet$ to a specific element in $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. Now let $\Phi_1: \bullet \mapsto g_1$ and $\Phi_2: \bullet \mapsto g_2$ be measurable edges. $\ldots$
 \end{Example}
 \todo{Das muss ich noch zuende machen}
 \begin{Remark}
