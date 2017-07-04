@@ -245,8 +245,6 @@ Let us first give a definition of a Turing machine. For convenience we will only
 \end{Definition}
 In addition each Turing machine uses a "tape", i.e. a set $\Z / 2\Z ^{\Z}$ with a "head" on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$ which is called an input. We start with the initial state and use the transition function $\delta$ to get $\delta(I, Y_0)$. The first coordinate corresponds to the new element $Y_0$, the second to the new state and the third corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$, e.g. if $\delta(I, Y_0)_3 = 1$ we shift the whole tape one to the left, therefore our new $Y_0$ is our old $Y_1$. We repeat this step until we get a state in $A \cup R$. We say, that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$ after finitely many steps. We say that the Turing machine holds for $Y$ if it accepts or rejects it.
 
-\todo{Quelle fuer TMs}
-
 For the purpose of calculating $l^2$-Betti numbers of groups we need to extend this definition. Let $(X, \mu)$ be a probability measure space divided into finitely many disjoint measurable subsets $X_i$. Let $\Gamma$ be a countable discrete group and $\rho$ be a right measure preserving action of $\Gamma$ on X.
 We now choose 3 disjoint subsets $A$, $R$, $I$, where each of them is a union of certain $X_i$. They will be called the accepting set, the rejecting set and the initial set. In addition we choose a $\gamma_i \in \Gamma$ for each $X_i \subset X$ such that for each $i$ with $X_i \subset A$ or $X_i \subset R$ it holds that $\gamma_i = e$ where $e$ is the neutral element in $\Gamma$. 
 Let $Ind: X \to \N$ be the map which assigns to each $x \in X$ the corresponding index of the $X_i$ it is contained in.
@@ -260,35 +258,36 @@ Let $Ind: X \to \N$ be the map which assigns to each $x \in X$ the corresponding
 \end{Definition}
 Let $x \in X$. If there is a $k \in \N$ such that $T_X^k(x) = T_X^{k + 1}(x)$ there also holds $T_X^h(x) = T_X^{h + 1}(x) \ \forall h \in \N$ with $h \geq k$. We then define $T_X^\infty (x) = T_X^k(x)$. Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system $(T_X)$ accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. In addition we say that $(T_X)$ holds for $y$ if it accepts or rejects it.
 
+We can see that a Turing machine can be emulated with a Turing dynamical system. But first lets fix notation
+\begin{Remark}
+	Let $M \subset N^\Z$  be defined through $M = \{(n_i)_{i \in \Z} \in N^\Z | n_{-k} = m_{-k}, \cdots, n_l = m_l \} \ k,l \in \N$, i.e. a set where $k+l$ coordinates including the $0$-coordinate are fixed. We then simply write $[m_{-k} \cdots \underline{m_0} \cdots m_l]$ for $M$ and $[m_{-k} \cdots \underline{m_0} \cdots m_l][\sigma]$ for $M \times \{\sigma\}$.
+\end{Remark}
 \begin{Example}\label{TMtoTDS}
-	Now let  $T=(S,\delta, \tilde{A}, \tilde{R}, \tilde{I})$ be a Turing machine. We will show how to emulate it with a Turing dynamical system. Lets first fix notation. For a subset $M$ of a set $N^\Z$ with $M = \{(n_i)_{i \in \Z} \in N^\Z | n_{-k} = m_{-k}, \cdots, n_l = m_l \}$ \todo{erklären, was es mit k und l auf sich hat}we simply write $[m_{-k} \cdots \underline{m_0} \cdots m_l]$ and $[m_{-k} \cdots \underline{m_0} \cdots m_l][\sigma]$ for $M \times \{\sigma\}$. We define $X = \2^\Z \times S$ and $\Gamma = Bij(S) \times \2 \times \Z$. \todo{in unserem fall ist sigma usw., S Menge, Bij Grupper erwähnen}
-	\todo{Stimmt das?}
+	Let  $T=(S,\delta, \tilde{A}, \tilde{R}, \tilde{I})$ be a Turing machine. We define $X = \2^\Z \times S$ and $\Gamma =   \2 \times \Z \times Bij(S)$.
 	The action of $\Gamma$ on $X$ is defined by the following rules:
 	\begin{itemize}
-		\item $Bij(S)$ acts on $S$ in the natural way.
 		\item The generator $\overline{1}$ of the group $\Z / 2\Z$ acts on the $\Z / 2\Z^\Z$ part of $X$ by adding $\overline{1}$ to the element with index $0$.
-		\item The generator $1$ of the group $\Z$ acts also on the $\Z / 2\Z^\Z$ part by shifting every element 1 to the right, e.g. increasing the index of every element by 1. \todo{nochmal ausführlich}
+		\item The generator $1$ of the group $\Z$ acts also on the $\Z / 2\Z^\Z$ part by shifting every element 1 to the left, i.e. decreasing the index of every element by 1.
+		\item $Bij(S)$ acts on $S$ in the natural way.
 	\end{itemize}
 	We will now use the transition function to construct the Turing map. We choose the following devision of $X$:
 	\begin{align*}
 	X = \bigcup_{x \in \2, \sigma \in S} [\underline{x}][\sigma]
 	\end{align*}
-	For $X_i = [\underline{x}][\sigma]$ we get $\delta(\sigma, x) = (\tilde{\sigma}, \alpha, \beta)$.\todo{sigma und x reihenfolge Satz neu} Let $\tau \in Bij(S)$ map $\sigma$ to $\tilde{\sigma}$ and $y \in \2$ be $y=x-\alpha$, i.e. an Automorphism \todo{Quatsch Operation} which maps $x$ to $\alpha$. Our element $\gamma_i$ corresponding to $X_i$ is given by 
+	For an arbitrary $X_i = [\underline{x}][\sigma]$ we can use the transition function of the Turing machine and get $\delta(\sigma, x) = (\tilde{\sigma}, \alpha, \beta)$.\todo{sigma und x reihenfolge} Let $\tau \in Bij(S)$ be some map which sends $\sigma$ to $\tilde{\sigma}$ and let $y \in \2$ be $y=x-\alpha$. We can then see $y$ as a map from $\2$ to itself which sends $x$ to $\alpha$. Our element $\gamma_i$ corresponding to $X_i$ is then given by 
 	\begin{align*}
 	\gamma_i = \begin{cases}
 	(id, \overline{0}, 0) & \text{if } X_i \subset A \cup R \\
-	(\tau, y, \beta) & \text{else}
+	(y, \beta, \tau) & \text{else}
 	\end{cases}
 	\end{align*} 
-	\todo{tau nicht eindeutig}
 	We only need to define $A$, $R$ and $I$. $A$ is given by
 	\begin{align*}
 	A = \bigcup_{x \in \2, \sigma \in \tilde{A}}[\underline{x}][\sigma]
 	\end{align*}
-	which is of course a union of some $X_i$. $R$ and $I$ can be defined analogous.
-\end{Example} \todo{Abschlusssatz, reihenfolge vertauschen}
-
-To conclude this chapter we will give some definition which we will use later on. 
+	which is of course a union of some $X_i$. $R$ and $I$ can be defined analogous. The resulting Turing dynamical system emulates the Turing machine in the following way: 
+	If we have an input $Y \in \2$ of the Turing machine we can transform it to an element $Y \times \tilde{I} \in X$. The Turing dynamical system accepts (rejects) $Y \times \tilde{I}$ exactly when the Turing machine accepts (rejects) $Y$.
+\end{Example} 
 \begin{Definition}
 	The first fundamental set $\mathcal{F}_1(T_X)$ is the subset of $I$ consisting of those points $x$ with $T_X^\infty(x) \in A$ and there is no point $y$ with $T_X(y)=x$. The second fundamental set is the subset of $A$ defined as $\mathcal{F}_2(T_X)=T_X^\infty(\mathcal{F}_1(T_X))$. The first (second) fundamental value $\Omega_1(T_X) ( \Omega_2(T_X))$ is the measure of the corresponding fundamental set.
 \end{Definition}
@@ -303,9 +302,9 @@ To conclude this chapter we will give some definition which we will use later on
 \end{Definition}
 
 \begin{Definition}
-	A Turing dynamical system $(T_X)$ where $X$ is a infinite product of $\2$, each $X_i$ is of the form $X_i = \{(x_j) \in X \ | \ x_k = 0 \ \forall k \in I_1, x_j = 1 \ \forall j \in I_2\, \ I_1, I_2 \subset J \ finite\}$, the action of $\Gamma$ is by continuous group automorphisms and  $(T_X)$ stops an any configuration, has disjoint accepting chains and does not restart is called a computing Touring dynamical system.
+	Let $(T_X)$ be a Turing dynamical system where $X = \Pi_{j \in J} \2$ is an infinite product of $\2$ and each $X_i$  has only finitely many fixed elements, i.e. is of the form $X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \ finite\}$. If in addition the action of $\Gamma$ is by continuous group automorphisms and $(T_X)$ stops at any configuration, has disjoint accepting chains and does not restart it is called a computing Touring dynamical system.
 \end{Definition}
-\todo{Will ich das wirklich so nennen? Ist X richtig definiert? Warum cont group autos? Indexmenge J beim Produkt, andere Xi defintion}
+\todo{Warum cont group autos?}
 \todo{maß}
 
 Before we give an example of a computing Turing dynamical system we fix the notation of the shifting operation, because we will need it later on.
