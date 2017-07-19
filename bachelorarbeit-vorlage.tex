@@ -24,7 +24,7 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{latexsym}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage[]{todonotes}
+\usepackage[disable]{todonotes}
 
 % Abstand obere Blattkante zur Kopfzeile ist 2.54cm - 15mm
 \setlength{\topmargin}{-15mm}
@@ -73,14 +73,14 @@
     Masterarbeit
     \vspace*{2cm}
 
-    {\huge Titel der Bachelorarbeit}
+    {\huge Turing machines and irrational values of $l^2$-Betti numbers}
     \vspace*{2.5cm}
 
     Jan Kohlmüller
     \vspace*{1.5cm}
 
-    Datum der Abgabe
-    \vspace*{4.5cm}
+    20.08.2017
+    \vspace*{4cm}
 
 
     Betreuung: Roman Sauer \\[1cm]
@@ -350,9 +350,7 @@ We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathca
 	holds we call $\mathcal{G}$ discrete measured
 \end{Definition}
 \todo{Warum braucht man das eigentlich nochmal, was bedeutet das genau und stimmt das eigentlich? inverting map}
-\begin{Definition}
-	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho: \Gamma \to Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined through $(x, \gamma_1) \cdot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
-\end{Definition}
+
 \todo{Beispiel oder Erklärung und wie das bei TDS ist}
 
 \subsection{Groupoid ring}
@@ -389,6 +387,29 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 \begin{Remark}
 	Let $\G(\rho)$ be an action Groupoid of $\rho: \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}: X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
 \end{Remark}
+
+\subsection{Groupoids of Turing dynamical systems}
+\begin{Definition}
+	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho: \Gamma \to Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined through $(x, \gamma_1) \cdot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
+\end{Definition}
+
+\begin{Remark}
+	If $G$ is a locally compact Hausdorff topological group then there exists a unique normalized left Haar measure on $G$ which is in particular left translation invariant. Let $(T_X)$ be a computing Turing dynamical system. Then the Haar measure is defined on $X = \Pi_{j \in J} \2$. From now on every computing Turing dynamical system will always be equipped with the corresponding normalized Haar measure.
+\end{Remark}
+\todo{Quelle fuer Haar measure}
+\begin{Lemma}
+	Let $(T_X)$ be a computing Turing dynamical system with $X = \Pi_{j \in J} \2$ and equipped with the normalized Haar measure $\mu$. For a set $M = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \}$ it holds that
+	\begin{align*}
+		\mu (M) = \begin{cases}
+		\frac{1}{2^{|I_1| \cdot |I_2|}} & if \ I_1 \ and \ I_2 \ are \ finite \\
+		0 & if \ I_1 \ or \ I_2 \ is \ infinite
+		\end{cases}.
+	\end{align*}
+\end{Lemma}
+\begin{proof}
+	Let $x \in X$ be an element with $\overline{0}$ on every coordinate $i \notin I_1 \cup I_2$. Then $xM$ is disjoint with $M$ and because of the left translation invariance of the measure it holds that $\mu (M) = \mu (xM)$. Because for every $i \in I_1 \cup I_2$ we can set the corresponding coordinate either to $\overline{1}$ or to $\overline{0}$ we get $2^{|I_1| \cdot |I_2|}$ of these sets if $I_1$ and $I_2$ are finite and an infinite amount of sets if one of them is infinite. The disjoint union of all of these sets is the whole set $X$ so the sum of these measures equals 1 and the claim follows.
+\end{proof}
+\subsection{Traces of Turing dynamical systems}
 \subsection{Pontryagin duality}
 We will now create a link between the groupoid ring and the group ring. For this we need the Pontryagin duals. For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho: \Gamma \to Aut(X)$.
 \begin{Definition}
@@ -457,8 +478,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 	$ii)$ 
 \end{proof}
 \todo{braucht man *?, Elemente aus C an GR multiplizieren , mehr erklaeren?}
-\subsection{$l^2$-Betti numbers of groupoids}
-\subsection{$l^2$-Betti numbers of Turing dynamical systems}
+
 %Hier kommen die ganzen Sätze/Beweise usw.
 \section{The lamplighter group}
 \begin{Definition}
