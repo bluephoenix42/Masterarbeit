@@ -8,6 +8,6 @@
 \contentsline {subsection}{\numberline {4.1}Groupoids}{9}
 \contentsline {subsection}{\numberline {4.2}Groupoid ring}{10}
 \contentsline {subsection}{\numberline {4.3}Groupoids of Turing dynamical systems}{11}
-\contentsline {subsection}{\numberline {4.4}Traces of Turing dynamical systems}{11}
-\contentsline {subsection}{\numberline {4.5}Pontryagin duality}{11}
-\contentsline {section}{\numberline {5}The lamplighter group}{13}
+\contentsline {subsection}{\numberline {4.4}Traces of Turing dynamical systems}{12}
+\contentsline {subsection}{\numberline {4.5}Pontryagin duality}{13}
+\contentsline {section}{\numberline {5}The lamplighter group}{14}

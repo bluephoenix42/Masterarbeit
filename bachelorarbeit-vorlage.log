@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.7.18)  19 JUL 2017 15:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.7.18)  21 JUL 2017 18:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -962,38 +962,38 @@ File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 \openout4 = `bachelorarbeit-vorlage.toc'.
 
 [2] [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 174.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 177.
 
  (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 174.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 177.
  [4] [5] [6] [7]
 [8] [9]
-Overfull \hbox (13.78085pt too wide) in paragraph at lines 373--373
+Overfull \hbox (13.78085pt too wide) in paragraph at lines 391--391
 [] 
  []
 
-[10] [11]
-Overfull \hbox (1.17775pt too wide) in paragraph at lines 475--475
+[10] [11] [12] [13]
+Overfull \hbox (1.17775pt too wide) in paragraph at lines 555--555
 [] 
  []
 
-[12]
+[14]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 517.
- [13] [14] [15] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 624--625
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 597.
+ [15] [16] [17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 626--628
+Underfull \hbox (badness 10000) in paragraph at lines 706--708
 
  []
 
-[18] (./bachelorarbeit-vorlage.aux) ) 
+[19] (./bachelorarbeit-vorlage.aux) ) 
 Here is how much of TeX's memory you used:
  15618 strings out of 492995
  299843 string characters out of 6138756
@@ -1023,10 +1023,10 @@ xmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/
 type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm
 -super/sfsx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200
 .pfb>
-Output written on bachelorarbeit-vorlage.pdf (18 pages, 1041617 bytes).
+Output written on bachelorarbeit-vorlage.pdf (19 pages, 1048715 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
+ 164 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

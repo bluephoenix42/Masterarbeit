@@ -122,6 +122,9 @@ In this whole chapter $G$ is always a discrete countable group with multiplicati
 	\end{align*}
 \end{Definition}
 \todo{hier hab ich nicht gezeigt, dass es ein Skalarprodukt ist}
+\begin{Remark}
+	If $G$ is a set instead of a group we can also define a Hilbert space $l^2(G)$. Of course we don not have a multiplication in this case.
+\end{Remark}
 \begin{Definition}
 	The group von Neumann algebra $\mathcal{N}(G)$ is defined as the algebra of $G$-equivariant bounded operators from $l^2(G)$ to $l^2(G)$ where $G$ acts on $l^2(G)$ by left multiplication.
 \end{Definition}
@@ -340,6 +343,13 @@ We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathca
 \begin{Definition}
 	For every Groupoid $\mathcal{G}$ we define the maps $s: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto X$ and $r: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto Y$ which will be called source and range map.
 \end{Definition}
+\begin{Definition}
+	A relation groupoid is a groupoid with with $|mor(X, Y)| \leq 1 \ \forall X,Y \in \G_0$.
+\end{Definition}
+
+\begin{Remark}
+	if $X \in \G_0$ we denote by $\G X \subset \G_0$ the set of all those objects $Y \in \G_0$ with $mor(X, Y) \neq \emptyset$.
+\end{Remark}
 \todo{das mit den Pfeilen ist doof}
 \begin{Definition}
 	A discrete measurable groupoid is a groupoid where $\mathcal{G}$ is also a measurable space, $s, r$ and the maps gained through inverting or composition are all measurable and the fibers of $s$ and $r$ are countable.
@@ -350,7 +360,15 @@ We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathca
 	holds we call $\mathcal{G}$ discrete measured
 \end{Definition}
 \todo{Warum braucht man das eigentlich nochmal, was bedeutet das genau und stimmt das eigentlich? inverting map}
-
+\begin{Definition}
+	We say that a groupoid $\G$ has finite orbits if $\G X$ is finite for almost all $X \in \G_0$.
+\end{Definition}
+\begin{Definition}
+	Let $\G$ be a relation groupoid with finite orbits. A measurable subset $D$ such that $|D \cap \G X| = 1$ for every $X \in \G$ with $\G X$ finite is called a fundamental domain.
+\end{Definition}
+\begin{Remark}
+	One can show that every relation groupoid with finite orbits has a fundamental domain.
+\end{Remark}
 \todo{Beispiel oder Erklärung und wie das bei TDS ist}
 
 \subsection{Groupoid ring}
@@ -384,14 +402,16 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ is isomorphic to the g $\C G$. Because we have only one element in $\G_0$ the only measurable edges we have are the maps from $\bullet$ to a specific group element of $G$. The elements of $L^\infty(\G_0)$ are just maps from $\bullet$ to a specific element in $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. Now let $\Phi_1: \bullet \mapsto g_1$ and $\Phi_2: \bullet \mapsto g_2$ be measurable edges. $\ldots$
 \end{Example}
 \todo{Das muss ich noch zuende machen}
-\begin{Remark}
-	Let $\G(\rho)$ be an action Groupoid of $\rho: \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}: X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
-\end{Remark}
+
 
 \subsection{Groupoids of Turing dynamical systems}
 \begin{Definition}
 	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho: \Gamma \to Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined through $(x, \gamma_1) \cdot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
 \end{Definition}
+
+\begin{Remark}
+	Let $\G(\rho)$ be an action Groupoid of $\rho: \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}: X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
+\end{Remark}
 
 \begin{Remark}
 	If $G$ is a locally compact Hausdorff topological group then there exists a unique normalized left Haar measure on $G$ which is in particular left translation invariant. Let $(T_X)$ be a computing Turing dynamical system. Then the Haar measure is defined on $X = \Pi_{j \in J} \2$. From now on every computing Turing dynamical system will always be equipped with the corresponding normalized Haar measure.
@@ -409,7 +429,67 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 \begin{proof}
 	Let $x \in X$ be an element with $\overline{0}$ on every coordinate $i \notin I_1 \cup I_2$. Then $xM$ is disjoint with $M$ and because of the left translation invariance of the measure it holds that $\mu (M) = \mu (xM)$. Because for every $i \in I_1 \cup I_2$ we can set the corresponding coordinate either to $\overline{1}$ or to $\overline{0}$ we get $2^{|I_1| \cdot |I_2|}$ of these sets if $I_1$ and $I_2$ are finite and an infinite amount of sets if one of them is infinite. The disjoint union of all of these sets is the whole set $X$ so the sum of these measures equals 1 and the claim follows.
 \end{proof}
+\begin{Remark}
+	If $(T_X)$ is a Turing dynamical system with group action $\rho$, then we get a discrete measured groupoid through the action groupoid $\G(\rho)$.
+\end{Remark}
+\todo{warum discrete measured?}
+\begin{Definition}
+	Let $(T_X)$ be a Turing dynamical system with group action $\rho$. Then $\G (T_X) \subset \G(\rho)$ is the smallest groupoid with $\G (T_X)_0 = \G(\rho)_0$ and which contains all morphisms of the form $(x, \gamma_i)$ where $i = Ind(x)$ is the index of the corresponding $X_i$ that $x$ is contained in.
+\end{Definition}
+\begin{Lemma}
+	$\G (T_X)$ is a relation groupoid with finite orbits for every computing Turing dynamical system $(T_X)$.
+\end{Lemma}
+\begin{proof}
+	First let us have a look at $\G (T_X)$. We can generate it by setting $\G_0 = X$. We then add all morphisms of the form $(x, \gamma_{Ind(x)})$. We call this subset $\G'$. Of course $\G'$ is not a category in most cases. To ensure that $\G (T_X)$ is a groupoid we add a morphism from $x$ to $y$ for all $x, y \in \G_0$ where there already exist a path of morphisms from $x$ to $y$. In addition we add an identity morphism to every $ x\in \G_0$ which does not already have one and an inverse morphism to every morphism which does not already have one. 
+	
+	We can then see that we get one morphism from $x$ to $y$ in $\G (T_X)$ for every path of morphisms from $x$ to $y$ in $\G'$.But $x$ can have at maximum one outgoing morphism, therefore $\G (T_X)$ is a relation groupoid.
+	
+\end{proof}
+\begin{Definition}
+	Let $\G$ be a groupoid. The trace of an element $T \in \C \G$ in the groupoid ring is defined through
+	\begin{align*}
+		tr(T) = \langle T \chi_0, \chi_0 \rangle_{L^2 \G}
+	\end{align*}
+	where $\chi_0$ is the characteristic function of the objects $\G_0$ of $\G$.
+\end{Definition}
+\begin{Remark}
+	Let $X \subset l^2G$ be an arbitrary subspace and $pr_X$ a projection onto $X$. Then $dim_{\mathcal{N}(G)}(X) = tr_{\mathcal{N}(G)}(pr_X)$.
+\end{Remark}
+\begin{Definition}
+	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $pr_X: L^2 \G \to X$ be projection onto $X$. The von-Neumann dimension of $X$ is defined through
+	\begin{align*}
+		dim_{\mathcal{N}(G)}(X) = tr_{\mathcal{N}(G)}(pr_X).
+	\end{align*}
+\end{Definition}
 \subsection{Traces of Turing dynamical systems}
+\begin{Theorem}
+	Let $T_X$ be a computing Turing dynamical system with action $\rho$, division $\cup_i X_i$ with associated $\gamma_i$ and $\chi_i : \G \to \C$ be the characteristic function of $X_i$. Then for the element
+	\begin{align*}
+		S = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \chi_X - \chi_I - \chi_A - \chi_R)*(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \chi_X - \chi_I - \chi_A - \chi_R) + \chi_A
+	\end{align*}
+	of the groupoid ring $\C \G(\rho)$ it holds that
+	\begin{align*}
+		dim_{\mathcal{N}(G)}(ker S) = \mu(I) - \Omega_1(T_X).
+	\end{align*}
+\end{Theorem}
+Before we can proof this Theorem we have to do some preparations. 
+\begin{Definition}
+	Let $\G$ be a relation groupoid, $x \in \G_0$ and $T = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $T_x: l^2\G x \to l^2\G x$ which sends a basis element $1 \cdot y \in l^2\G x$ to $\sum_{i \in I'} r(\Phi_i(y)) f_i(y)$ where $I' \subset I$ is the set of indices where $y$ is in the domain of $\Phi_i$. 
+\end{Definition}
+\begin{Remark}
+	If $\G$ is a relation groupoid with finite orbits then for almost all $x \in \G$ $l^2\G x$ is finite dimensional because $\G x$ is finite. Therefore $T_x$ has a finite dimensional kernel.
+\end{Remark}
+We will state the following fact without proof. For a complete proof see \cite{GRAB}.
+\begin{Lemma}
+	Let $\G$ be a relation groupoid with finite orbits and $D$ a fundamental domain of $\G$. Then for every $T \in \C \G$ it holds that
+	\begin{align*}
+		dim_{\mathcal{N}(G)}(ker T) = \int_D dim (ker T_x) \ d \mu (x).
+	\end{align*} 
+\end{Lemma}
+
+\begin{Lemma}
+	
+\end{Lemma}
 \subsection{Pontryagin duality}
 We will now create a link between the groupoid ring and the group ring. For this we need the Pontryagin duals. For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho: \Gamma \to Aut(X)$.
 \begin{Definition}
