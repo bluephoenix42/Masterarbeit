@@ -116,7 +116,7 @@ In this whole chapter $G$ is always a discrete countable group with multiplicati
 	with $\alpha_h, \beta_k \in R$ and $H, K \in G$ finite subsets.
 \end{Definition}
 \begin{Definition}
-	$l^2(G)$ is the Hilbert space consisting of formal sums $\sum_{g \in G} \lambda_g \cdot g$ such that $\lambda_g \in \C$ and $\sum_{g \in G} |\lambda_g|^2 < \infty$. The multiplication is defined as in \ref{GR} and the scalar product is defined through
+	$l^2(G)$ is the Hilbert space consisting of formal sums $\sum_{g \in G} \lambda_g \cdot g$ such that $g \in G$, $\lambda_g \in \C$ and $\sum_{g \in G} |\lambda_g|^2 < \infty$. The multiplication is defined as in \ref{GR} and the scalar product is defined through
 	\begin{align*}
 		\langle \sum_{g \in G} \alpha_g \cdot g, \sum_{g \in G} \beta_g \cdot g \rangle := \sum_{g \in G} \alpha_g \overline{\beta_g}.
 	\end{align*}
@@ -347,9 +347,9 @@ We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathca
 	A relation groupoid is a groupoid with with $|mor(X, Y)| \leq 1 \ \forall X,Y \in \G_0$.
 \end{Definition}
 
-\begin{Remark}
-	if $X \in \G_0$ we denote by $\G X \subset \G_0$ the set of all those objects $Y \in \G_0$ with $mor(X, Y) \neq \emptyset$.
-\end{Remark}
+\begin{Definition}
+	if $X \in \G_0$ we denote by $\G X \subset \G_0$ the set of all those objects $Y \in \G_0$ with $mor(X, Y) \neq \emptyset0$ and call it the orbit of $X$.
+\end{Definition}
 \todo{das mit den Pfeilen ist doof}
 \begin{Definition}
 	A discrete measurable groupoid is a groupoid where $\mathcal{G}$ is also a measurable space, $s, r$ and the maps gained through inverting or composition are all measurable and the fibers of $s$ and $r$ are countable.
@@ -364,7 +364,7 @@ We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathca
 	We say that a groupoid $\G$ has finite orbits if $\G X$ is finite for almost all $X \in \G_0$.
 \end{Definition}
 \begin{Definition}
-	Let $\G$ be a relation groupoid with finite orbits. A measurable subset $D$ such that $|D \cap \G X| = 1$ for every $X \in \G$ with $\G X$ finite is called a fundamental domain.
+	Let $\G$ be a relation groupoid with finite orbits. A measurable subset $D \subset \G_0$ such that $|D \cap \G X| = 1$ for every $X \in \G$ with $\G X$ finite is called a fundamental domain.
 \end{Definition}
 \begin{Remark}
 	One can show that every relation groupoid with finite orbits has a fundamental domain.
@@ -436,14 +436,21 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 \begin{Definition}
 	Let $(T_X)$ be a Turing dynamical system with group action $\rho$. Then $\G (T_X) \subset \G(\rho)$ is the smallest groupoid with $\G (T_X)_0 = \G(\rho)_0$ and which contains all morphisms of the form $(x, \gamma_i)$ where $i = Ind(x)$ is the index of the corresponding $X_i$ that $x$ is contained in.
 \end{Definition}
-\begin{Lemma}
-	$\G (T_X)$ is a relation groupoid with finite orbits for every computing Turing dynamical system $(T_X)$.
+\begin{Lemma} \label{TX_rel_groupoid}
+	$\G (T_X)$ is a relation groupoid with finite orbits for every computing Turing dynamical system $(T_X)$. In addition $A \cup R$ is a fundamental domain of $\G (T_X)$.
 \end{Lemma}
 \begin{proof}
 	First let us have a look at $\G (T_X)$. We can generate it by setting $\G_0 = X$. We then add all morphisms of the form $(x, \gamma_{Ind(x)})$. We call this subset $\G'$. Of course $\G'$ is not a category in most cases. To ensure that $\G (T_X)$ is a groupoid we add a morphism from $x$ to $y$ for all $x, y \in \G_0$ where there already exist a path of morphisms from $x$ to $y$. In addition we add an identity morphism to every $ x\in \G_0$ which does not already have one and an inverse morphism to every morphism which does not already have one. 
 	
 	We can then see that we get one morphism from $x$ to $y$ in $\G (T_X)$ for every path of morphisms from $x$ to $y$ in $\G'$.But $x$ can have at maximum one outgoing morphism, therefore $\G (T_X)$ is a relation groupoid.
+
+	Because $(T_X)$ stops at any configuration the orbit of almost any point $x \in \G (T_X)$ contains exactly one point in $A \cup R$ because there has to be a path of morphisms from $x$ to a single point in $A \cup R$ in $\G'$ which ends in this point. Therefore $A \cup R$ is a fundamental domain.
 	
+	To prove the statement about the orbits we restrict the groupoid $\G (T_X)$ to a groupoid $\G (T_X)^\#$ in such a way that $T_X$ is injective and that for every point $x \in \G (T_X)^\#$ $\G x$ contains a point in $A \cup R$. Because $(T_X)$ stops at any configuration and has disjoint accepting chains $\G (T_X)^\#$ still has measure $1$. We can see that the map $T_X$ applied to $\G (T_X)^\#$ is measure-preserving.
+	
+	We define the set $Y_i \subset \G (T_X)_0^\#$ such that from every point $y \in Y_i$ there is a path of length $i$ to a point in $A \cup R$. These sets are disjoint and measurable and $\sum_{i \in \N} \mu(Y_i) = 1$. Therefore $\mu(Y_i)$ has to be a zero sequence.
+	
+	Now look at the set $Y \subset A \cup R$ such that for every $y \in Y$ the orbit $\G y$ is infinite. We see that it equals $\bigcap_{i \in \N} T_X^i(Y_i)$ and therefore has measure $0$. Of course $\bigcup_{i \in \N }T_X^{-i}(Y)$ contains all infinite orbits and has measure $0$ because it is a countable union of sets of measure $0$.
 \end{proof}
 \begin{Definition}
 	Let $\G$ be a groupoid. The trace of an element $T \in \C \G$ in the groupoid ring is defined through
@@ -462,19 +469,19 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 	\end{align*}
 \end{Definition}
 \subsection{Traces of Turing dynamical systems}
-\begin{Theorem}
+\begin{Theorem} \label{groserSatz}
 	Let $T_X$ be a computing Turing dynamical system with action $\rho$, division $\cup_i X_i$ with associated $\gamma_i$ and $\chi_i : \G \to \C$ be the characteristic function of $X_i$. Then for the element
 	\begin{align*}
-		S = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \chi_X - \chi_I - \chi_A - \chi_R)*(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \chi_X - \chi_I - \chi_A - \chi_R) + \chi_A
+		S = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \tilde{\chi_X} - \tilde{\chi_I} - \tilde{\chi_A} - \tilde{\chi_R})^*(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \tilde{\chi_X} - \tilde{\chi_I} - \tilde{\chi_A} - \tilde{\chi_R}) + \tilde{\chi_A}
 	\end{align*}
-	of the groupoid ring $\C \G(\rho)$ it holds that
+	of the groupoid ring $\C \G(T_X)$ it holds that
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(ker S) = \mu(I) - \Omega_1(T_X).
+		dim_{\mathcal{N}(G)}(ker \ S) = \mu(I) - \Omega_1(T_X).
 	\end{align*}
 \end{Theorem}
 Before we can proof this Theorem we have to do some preparations. 
 \begin{Definition}
-	Let $\G$ be a relation groupoid, $x \in \G_0$ and $T = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $T_x: l^2\G x \to l^2\G x$ which sends a basis element $1 \cdot y \in l^2\G x$ to $\sum_{i \in I'} r(\Phi_i(y)) f_i(y)$ where $I' \subset I$ is the set of indices where $y$ is in the domain of $\Phi_i$. 
+	Let $\G$ be a relation groupoid, $x \in \G_0$ and $T = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $T_x: l^2\G x \to l^2\G x$ which sends a basis element $1 \cdot y \in l^2\G x$ to $\sum_{i \in I'} r(\Phi_i(y)) f_i(y)$ where $I' \subset I$ is the set of indices $i$ where $y$ is in the domain of $\Phi_i$. 
 \end{Definition}
 \begin{Remark}
 	If $\G$ is a relation groupoid with finite orbits then for almost all $x \in \G$ $l^2\G x$ is finite dimensional because $\G x$ is finite. Therefore $T_x$ has a finite dimensional kernel.
@@ -483,13 +490,56 @@ We will state the following fact without proof. For a complete proof see \cite{G
 \begin{Lemma}
 	Let $\G$ be a relation groupoid with finite orbits and $D$ a fundamental domain of $\G$. Then for every $T \in \C \G$ it holds that
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(ker T) = \int_D dim (ker T_x) \ d \mu (x).
+		dim_{\mathcal{N}(G)}(ker \ T) = \int_D dim (ker \ T_x) \ d \mu (x).
 	\end{align*} 
 \end{Lemma}
-
+In addition with \ref{TX_rel_groupoid} we get that $dim_{\mathcal{N}(G)}(ker \ S) = \int_{A \cup R} dim (ker \ S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X$ is injective on all of $X$, $T_X^\infty(x) \in A \cup R$ for all $x$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} dim (ker \ S_x) \ d \mu (x)$. 
 \begin{Lemma}
-	
+	\begin{align*}
+	ker \ S_x = ker((\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x) \cap ker \ \tilde{\chi_A}_x
+	\end{align*}
 \end{Lemma}
+\begin{proof}
+	First we can see, that for all Operators $A$ on a Hilbert space $H$ it holds that $ker \ A = ker \ A*A$. To show this let $x \in ker \ A*A$. It follows that
+	\begin{align*}
+		0 = \langle A*Ax, x \rangle = \langle Ax, Ax \rangle
+	\end{align*}
+	and therefore $x \in ker \ A$. The other inclusion is trivial. 
+	
+	From the definition it is clear that $(S_1)_x + (S_2)_x = (S_1 + S_2)_x$ for every $S_1, S_2 \in \G$. In for an element$\sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$ of the  groupoid ring it follows that both $\tilde f_i$ and $\tilde {f_i}_x$ are self-adjoint. In addition $(\widetilde {\Phi_i}^*)_x = \widetilde {\Phi_i^{-1}}_x = (\widetilde {\Phi_i}_x)^*$ \todo{Genauer?} and therefore changing an operator $T$ to $T_x$ is $*$-preserving. Of course both summands of $S$ are positive operators and the claim follows.
+\end{proof}
+\begin{Lemma}
+	It holds that
+	\begin{align*}
+		dim (ker \ S_x) = \begin{cases}
+		1 & if \ x \in T_X^\infty(I) \cap R\\
+		0 & otherwise 
+		\end{cases}
+	\end{align*}
+	for every $x \in A \cup R$.
+\end{Lemma}
+\begin{proof}
+	First we see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $l^2(A \cup R \cup I) \cap l^2 \G (T_X)x$ and the identity on the rest of $l^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be the one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A$. It then holds that $\bigcup_{i = 1}^{k} \{x_i\} = \G (T_X)x$. If we consider the points $x_i$ as elements of $l^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
+	\begin{align*}
+		P(x_i) = \begin{cases}
+		x_{i + 1} & if \ i = 1 \\
+		x_{i - 1} + x_{i + 1} & if \ i \neq 1, k \\
+		x_{i} & if \ i = k
+		\end{cases}
+	\end{align*}
+	and therefore 
+	\begin{align*}
+		P(\sum_{i = 1}^{k} (-1)^{i + 1} x_i) = (\sum_{i = 2}^{k} (-1)^{i} x_{i} + x_k) + \sum_{i = 2}^{k - 1} (-1)^{i + 1} x_{i} = 0.
+	\end{align*}
+	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in ker \ P$ is a basis vector of $ ker \ P$ and therefore $dim(ker \ P) = 1$. In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $ker \ P = ker \ S_x$. If $x \in A$ then $x_k \notin ker \ \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in ker \ \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin ker \ \tilde{\chi_A}_x$ and thus $ker \ S_x = \{0\}$.
+\end{proof}
+\begin{proof}[Proof of Theorem \ref{groserSatz}]
+	We now get
+	\begin{align*}
+		dim_{\mathcal{N}(G)}(ker \ S) = \int_{A \cup R} dim (ker \ S_x) \ d \mu (x) = \int_{T_X^\infty(I) \cap R} 1 \ \mu (x) = \\ \int_{T_X^\infty(I) / A} 1 \ \mu (x) = \int_{T_X^\infty(I)} 1 \ \mu (x) - \int_{\Omega_1(T_X)} 1 \ \mu (x) = \mu(I) - \Omega_1(T_X)
+	\end{align*}
+	which concludes the proof. \todo{Vllt. muss ich hier noch was zu den masen sagen und warum sie unter Tx erhalten bleiben.}
+\end{proof}
 \subsection{Pontryagin duality}
 We will now create a link between the groupoid ring and the group ring. For this we need the Pontryagin duals. For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho: \Gamma \to Aut(X)$.
 \begin{Definition}
