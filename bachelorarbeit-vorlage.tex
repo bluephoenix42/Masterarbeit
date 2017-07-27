@@ -50,8 +50,8 @@
 \newcommand{\N}{\mathbb{N}} % natuerliche
 \newcommand{\2}{\mathbb{Z} / 2 \mathbb{Z}}
 \newcommand{\G}{\mathcal{G}}
-\newcommand{\1}{\overline{1}}
-\newcommand{\0}{\overline{0}}
+\newcommand{\1}{\bar{1}}
+\newcommand{\0}{\bar{0}}
 
 
 \renewcommand{\labelenumi}{\roman{enumi})}
@@ -611,6 +611,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 
 %Hier kommen die ganzen Sätze/Beweise usw.
 \section{The lamplighter group}
+\subsection{Rational $l^2$-Betti numbers}
 \begin{Definition}
 	The lamplighter group $L$ is defined as
 	\begin{align*}
@@ -727,6 +728,74 @@ is a $l^2$-Betti number of $L$. By changing $I$ to
 	[\1^{h-1} \underline{\1}][s_I]
 \end{align*}
 we get that $(1 - \frac{1}{m})$ is a $l^2$-Betti number of $L$. At last by interchanging $s_A$ and $s_R$ we get that $\frac{1}{m}$ is a $l^2$-Betti number of $L$ which concludes the proof.
+
+\subsection{Irrational $l^2$-Betti numbers}
+\begin{Remark}
+	The definition of a Turing machine can easily be expanded to a Turing machine with multiple tapes, i.e. a Turing machine which acts on $(\2^\Z)^k$ for $k \in \N$ instead of just $\2^\Z$. In this case we get a transition function $\delta: S \setminus(A \cup R) \times \2^k \to S \times \2^k \times \{-1, 0, 1\}^k$.\todo{Vllt. noch genauer}
+\end{Remark}
+\begin{Remark}
+	Let $T$ be a Turing machine on $3$ tapes. For a subset $M \subset X$ of the corresponding Turing dynamical system $(T_X)$ with $M = \{((a_i)_{i \in \Z}, (b_i)_{i \in \Z}, (c_i)_{i \in \Z}) \in (\2^\Z)^3 | a_{-\alpha} = l_{-\alpha}, \cdots, a_\beta = l_\beta, b_{-\gamma} = m_{-\gamma}, \cdots, b_\delta = m_\delta, c_{-\epsilon} = n_{-\epsilon}, \cdots, c_\zeta = n_\zeta \} \ \alpha, \beta, \gamma, \delta, \epsilon\ \zeta \in \N$ we simply write
+	\begin{align*}
+		\begin{bmatrix}
+			l_{-\alpha} \cdots l_\beta \\
+			m_{-\gamma} \cdots m_\delta \\
+			n_{-\epsilon} \cdots n_\zeta
+		\end{bmatrix}.
+	\end{align*}
+\end{Remark}
+\begin{Theorem}
+	The number
+	\begin{align*}
+		\frac{1}{64} - \frac{1}{8} \sum_{i = 1}^{\infty} \frac{1}{2^{i^2 + 4i + 6}}
+	\end{align*}
+	arises from $L^3$.
+\end{Theorem}
+\begin{proof}
+	To proof this fact we will first construct a read-only Turing machine $T$ on $3$ tapes with $6$ states. These states are again divided into
+	\begin{itemize}
+		\item one accepting and one rejecting state called $s_A$ and $s_R$
+		\item one initial state called $s_I$
+		\item $3$ states called $s_1, s_2$ and $s_3$.
+	\end{itemize}
+	The transition function is defined through
+	\begin{align*}
+		\delta(s_I, (x_1, x_2, x_3)) = \begin{cases}
+			(s_1, (x_1, x_2, x_3), (1, 1, 0)) & if \ x_1 = x_2 = x_3 = \1 \\
+			(s_R, (x_1, x_2, x_3), (0, 0, 0)) & otherwise
+		\end{cases} \\
+		\delta(s_1, (x_1, x_2, x_3)) = \begin{cases}
+		(s_1, (x_1, x_2, x_3), (1, 1, 0)) & if \ x_1 = x_2 = \0 \ and \ x_3 = \1 \\
+		(s_2, (x_1, x_2, x_3), (-1, -1, 1)) & if \ x_1 = x_2 = x_3 = \1 \\
+		(s_R, (x_1, x_2, x_3), (0, 0, 0)) & otherwise
+		\end{cases} \\
+		\delta(s_2, (x_1, x_2, x_3)) = \begin{cases}
+		(s_2, (x_1, x_2, x_3), (-1, 0, 0)) & if \ x_1 = x_2 = x_3 = \0  \\
+		(s_3, (x_1, x_2, x_3), (1, 0, 0)) & if \ x_1 = \0 \ and \ x_2 = x_3 = \1 \\
+		(s_A, (x_1, x_2, x_3), (0, 0, 0)) & if \ x_1 = \0 \ and \ x_2 = x_3 = \1  \\ 
+		(s_R, (x_1, x_2, x_3), (0, 0, 0)) & otherwise
+		\end{cases} \\
+		\delta(s_1, (x_1, x_2, x_3)) = \begin{cases}
+		(s_3, (x_1, x_2, x_3), (1, 0, 1)) & if \ x_1 = x_2 = x_3 = \0 \\
+		(s_2, (x_1, x_2, x_3), (-1, -1, 1)) & if \ x_1 = \1 \ and \ x_2 = x_3 = \1 \\
+		(s_R, (x_1, x_2, x_3), (0, 0, 0)) & otherwise
+		\end{cases}.
+	\end{align*}
+	Of course we will again look at the corresponding Turing dynamical system $(T_X)$ where we will set $I = \begin{bmatrix}
+	\1 \\
+	\1 \\
+	\1 
+	\end{bmatrix}[s_I]$.
+	
+	Now let us look at $T$ and figure out which input is accepted by $T$. Because of our definition of $I$ we can suppose that each of our tapes has a $\1$ at the zero-position at the beginning. So it is clear that we are at the state $s_1$ after one step with a secure $\1$ at the third tape. If we have $\0$ on our first two tapes we remain at $s_1$ and if we have $\1$ on our first two tapes we get to $s_2$. Therefore to get to $s_2$ our input has to be of the form 
+	\begin{align*}
+		\begin{bmatrix}
+			\underline{\1} \0^j \1 \\
+			\underline{\1} \0^j \1 \\
+			\underline{\1} 
+		\end{bmatrix}
+	\end{align*}
+	with $j \in \N$
+\end{proof}
   % Literaturverzeichnis (beginnt auf einer ungeraden Seite)
   \newpage
 
