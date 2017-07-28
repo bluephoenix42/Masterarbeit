@@ -794,8 +794,27 @@ we get that $(1 - \frac{1}{m})$ is a $l^2$-Betti number of $L$. At last by inter
 			\underline{\1} 
 		\end{bmatrix}
 	\end{align*}
-	with $j \in \N$
+	with $j \in \N$ which transform to
+	\begin{align*}
+	\begin{bmatrix}
+	\1 \0^j \underline{\1}  \\
+	\1 \0^j \underline{\1}  \\
+	\underline{\1} 
+	\end{bmatrix}[s_2]
+	\end{align*}.
 \end{proof}
+When we are at state $s_2$ we shift our first tape back until we reach our first $\1$. We then go to $s_3$ and shift our first and third tape forward until we reach our second $\1$ on the first time, i.e. we do $j$-many shifts. We then shift our second tape one to the right and repeat this whole process because we are again at state $s_2$. We do this until we get a $\1$ on our third tape. If we then are at $s_2$ with a $\1$ at our second tape we accept. In each other case we reject. The only case where we have a $\1$ on our second tape is if we repeated the above process $j$ times. Therefore in order to accept we need to have $j \cdot (j + 1) = j^2 + j$ \todo{2j?} many $\0$ on the third tape. Therefore it holds that
+\begin{align*}
+	\mathcal{F}_1(T_X) = \bigcup_{j \in \N}\begin{bmatrix}
+	 	\underline{\1} \0^j \1 \\
+	 	\underline{\1} \0^j \1 \\
+	 	\underline{\1} \0^{j^2 + j} \1
+	\end{bmatrix}[s_I]
+\end{align*}. 
+Because our Turing dynamical system  has $8$ states this set has measure 
+\begin{align*}
+	\Omega_1(T_X) = \mu(\mathcal{F}_1(T_X)) = \frac{1}{8} \sum_{j = 1}^{\infty} \frac{1}{2^{j^2 + 3j + 6}}
+\end{align*}.
   % Literaturverzeichnis (beginnt auf einer ungeraden Seite)
   \newpage
 
