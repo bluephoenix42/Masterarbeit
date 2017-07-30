@@ -302,11 +302,12 @@ We can see that a Turing machine can be emulated with a Turing dynamical system.
 	We say that a Turing dynamical system $(T_X)$
 	\begin{itemize}
 		\item stops at any configuration if $T_X^\infty (x) \in A \cup R$ for almost all $x \in X$
-		\item has disjoint accepting chains if $T_X^\infty (x) \neq T_X^\infty (y)$ for almost all $x, y \in I$ with $x \neq y$
+		\item has disjoint accepting chains if $T_X^\infty (x) \neq T_X^\infty (y)$ for almost all $x, y \in \mathcal{F}_1(T_X)$ with $x \neq y$
 		\item does not restart if the set $T_X(X) \cap I$ has measure $0$
 	\end{itemize}
 \end{Definition}
-
+ 
+ 
 \begin{Definition}
 	Let $(T_X)$ be a Turing dynamical system where $X = \Pi_{j \in J} \2$ is an infinite product of $\2$ and each $X_i$  has only finitely many fixed elements, i.e. is of the form $X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \ finite\}$. If in addition the action of $\Gamma$ is by continuous group automorphisms and $(T_X)$ stops at any configuration, has disjoint accepting chains and does not restart it is called a computing Touring dynamical system.
 \end{Definition}
@@ -746,7 +747,7 @@ we get that $(1 - \frac{1}{m})$ is a $l^2$-Betti number of $L$. At last by inter
 \begin{Theorem}
 	The number
 	\begin{align*}
-		\frac{1}{64} - \frac{1}{8} \sum_{i = 1}^{\infty} \frac{1}{2^{i^2 + 4i + 6}}
+		\frac{1}{64} - \frac{1}{8} \sum_{i = 1}^{\infty} \frac{1}{2^{i^2 + 3i + 6}}
 	\end{align*}
 	arises from $L^3$.
 \end{Theorem}
@@ -815,6 +816,42 @@ Because our Turing dynamical system  has $8$ states this set has measure
 \begin{align*}
 	\Omega_1(T_X) = \mu(\mathcal{F}_1(T_X)) = \frac{1}{8} \sum_{j = 1}^{\infty} \frac{1}{2^{j^2 + 3j + 6}}
 \end{align*}.
+In addition it holds that $\mu (I) = \frac{1}{64}$ and therefore 
+\begin{align*}
+	\mu (I) - \Omega_1(T_X) = \frac{1}{64} - \frac{1}{8} \sum_{j = 1}^{\infty} \frac{1}{2^{j^2 + 3j + 6}}.
+\end{align*}
+
+It remains to show that $(T_X)$ is computable. First let us look at the set $\{x \in X | T_X^\infty \notin A \cup R\}$. We will show that this set is contained in
+\begin{align*}
+	\begin{bmatrix}
+		\underline{x} \0^\infty \\
+		\underline{y} \0^\infty \\
+		\underline{z}
+	\end{bmatrix} [\sigma] \ \cup \
+	\begin{bmatrix}
+		\underline{x} \\
+		\underline{y} \\
+		\underline{z} \0^\infty
+	\end{bmatrix} [\sigma]
+\end{align*} for $x, y, z \in \2$ and $\sigma \in \{s_I, s_A, s_R, s_1, s_2, s_3\}$.
+To see this let us look at $T$. There are only two ways to get into an infinite loop. We can remain indefinitely at $s_1$ if we do not find any $\1$ on the right side of one of the first two tapes. The second possibility is that we remain forever in $s_2$ and $s_3$. Bat as we can see from the transition function this is only possible if we do not find any $\1$ on the  right side of the third tapes. So we see the above containment and because each of these two sets has measure zero $(T_X)$ stops at any configuration. 
+Because there is no way to get back to $s_I$ $(T_X)$ does not restart. IN addition each element $x$ of the set $A$ is contained in some set
+\begin{align*}
+	\begin{bmatrix}
+		\1 \0^{j - 1} \underline{\0} \1 \\
+		\underline{\1} \0^j \1 \\
+		\1 \0^{j^2 + j} \underline{\1}
+	\end{bmatrix}[s_A]
+\end{align*}
+which can be traced back to a single element of 
+\begin{align*}
+	\begin{bmatrix}
+		\underline{\1} \0^j \1 \\
+		\underline{\1} \0^j \1 \\
+		\underline{\1} \0^{j^2 + j} \1
+	\end{bmatrix}[s_I]
+\end{align*}
+where each entry which is not fixed stay the same. Therefore $(T_X)$ has disjoint accepting chains and the claim follows.
   % Literaturverzeichnis (beginnt auf einer ungeraden Seite)
   \newpage
 
