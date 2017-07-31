@@ -469,6 +469,16 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 		dim_{\mathcal{N}(G)}(X) = tr_{\mathcal{N}(G)}(pr_X).
 	\end{align*}
 \end{Definition}
+\begin{Lemma} \label{trgroupoid}
+	Let $\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho: \Gamma \to Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of an action groupoid. Then
+	\begin{align*}
+		tr(\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i}) = \int_{\G(\rho)_0} f_e(x) d\mu(x)
+	\end{align*}
+	where $e$ is the index such that $\gamma_e$ is the neutral element of $\Gamma$. If no such index exists the trace is zero.
+\end{Lemma}
+\begin{proof} \todo{hab ich jetzt keinen bock mehr drauf}
+	content...
+\end{proof}
 \subsection{Traces of Turing dynamical systems}
 \begin{Theorem} \label{groserSatz}
 	Let $T_X$ be a computing Turing dynamical system with action $\rho$, division $\cup_i X_i$ with associated $\gamma_i$ and $\chi_i : \G \to \C$ be the characteristic function of $X_i$. Then for the element
@@ -570,12 +580,13 @@ For more information about semidirect products see e.g. \cite{ALG}.
 \begin{Theorem}
 	The map 
 	\begin{align*}
-		P \otimes 1: \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma) \to \C\G(\rho), \sum_I c_i \cdot (\hat{x_i}, \gamma_i) \mapsto \sum_I c_i \cdot \widetilde{P(\hat{x_i})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma_i}} 
+		P \otimes 1: \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma) \to \C\G(\rho), \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i) \mapsto \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}} 
 	\end{align*}
-	 with $c_i \in \C$, $\hat{(x_i)} \in \hat{X}$ and $\gamma_i \in \Gamma$ is
+	 with $c_i \in \C$ is
 	\begin{enumerate}
 		\item a ringhomomorphism
 		\item trace-preserving
+		\item preserves $*$
 		%\item injective
 	\end{enumerate}
 \end{Theorem}
@@ -606,7 +617,22 @@ For more information about semidirect products see e.g. \cite{ALG}.
 	\end{align*}
 	which is the same.
 	
-	$ii)$ 
+	$ii)$ Let $\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i) \in \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ be an element in the group ring. It then holds that
+	\begin{align*}
+		tr_{\mathcal{N}(G)}(\sum_I c_i \cdot (\hat{x_i}, \gamma_i)) = \langle \sum_I c_i \cdot (\hat{x_i}, \gamma_i)(1 \cdot e_{\hat{X} \rtimes_{\hat{\rho}} \Gamma}), 1 \cdot e_{\hat{X} \rtimes_{\hat{\rho}} \Gamma} \rangle = c_{(\hat{e_X}, e_\Gamma)}
+	\end{align*}.
+	For $\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}} = P \otimes 1 (\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i))$ we can use \ref{trgroupoid} to get
+	\begin{align*}
+		tr(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}}) = \sum_{(\hat{x}, e) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} \int_{\mathcal{G(\rho)}_0} c_{(\hat{x}, e)} P(\hat{x})(y) d\mu(y)
+	\end{align*}
+	where $e$ is the netral element of $\Gamma$.\todo{die zweiten idizes muessen Teilmenge der ersten sein}
+	Because $dmu(\G_0) = 1$ it remains to show that $\int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y) = 0$ if $\hat{x}$ is not the neutral element. First note that if $\hat{x}$ is not the neutral element then $P(\hat{x})$ is not constant and therefore there exists $y_1, y_2 \in \C\G(\rho)_0$ with $P(\hat{x})(y_1) \neq P(\hat{x})(y_2) \neq 1$. We use the invariance of the Haar measure to get
+	\begin{align*}
+		\int_{\G(\rho)_0} P(\hat{x})(y_1) d\mu(y_1) = \int_{\G(\rho)_0} P(\hat{x})(y_2 y_1) d\mu(y_2 y_1) = \int_{\G(\rho)_0} P(\hat{x})(y_2) P(\hat{x})(y_1) d\mu(y_1) = P(\hat{x})(y_2) \int_{\G(\rho)_0} P(\hat{x})(y_1) d\mu(y_1)
+	\end{align*}
+	which is only possible if $\int_{\G(\rho)_0} P(\hat{x})(y_1) d\mu(y_1) = 0$.
+	
+	\todo{hab ich das mit dem haarmas genug gesagt?}
 \end{proof}
 \todo{braucht man *?, Elemente aus C an GR multiplizieren , mehr erklaeren?}
 
