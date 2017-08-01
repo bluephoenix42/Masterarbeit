@@ -193,7 +193,7 @@ In this chapter we will require some basic knowledge of CW-complexes and regular
 \begin{Definition}
 	Let $X$ be a proper, finite type $G$-CW complex and $C_*^{(2)}(X)$ the corresponding $l^2$-chain complex with its differential $d_*^{(2)}$. Then 
 	\begin{align*}
-		H_n^{(2)}(X) := ker(d_n^{(2)}) / \overline{im(d_{n+1}^{(2)})}
+		H_n^{(2)}(X) := \ker(d_n^{(2)}) / \overline{im(d_{n+1}^{(2)})}
 	\end{align*}
 	is called the $n$-th $l^2$-homology and 
 	\begin{align*}
@@ -207,13 +207,13 @@ In this chapter we will require some basic knowledge of CW-complexes and regular
 
 \subsection{$l^2$-Betti numbers arising from a group}
 \begin{Remark}\label{MAB}
-	A Matrix $A \in \C G^{n \times m}$ can be seen as a map from $l^2G^n \to l^2G^m$ via $x \mapsto x^{\top} \cdot A$. Therefore $ker(A)$ is a Hilbert $\mathcal{N}(G)$-module and has a well-defined von-Neumann-dimension. 
+	A Matrix $A \in \C G^{n \times m}$ can be seen as a map from $l^2G^n \to l^2G^m$ via $x \mapsto x^{\top} \cdot A$. Therefore $\ker(A)$ is a Hilbert $\mathcal{N}(G)$-module and has a well-defined von-Neumann-dimension. 
 \end{Remark}
 \begin{Theorem} \label{MCW}
 	Let $x \in \R$ and $G$ be a discrete, countable, finitely generated group. The following are equivalent:
 	\begin{enumerate}
 		\item There exists a cocompact free finite type $G$-CW-complex $X$ and a $n \in \N$ such that $b_n^{(2)}(X)=x$
-		\item There exists a Matrix $A \in \Q G^{n \times n}$ for a natural numbers $n \in \N$ such that \newline $dim_{\mathcal{N}(G)}(ker (A))=x$
+		\item There exists a Matrix $A \in \Q G^{n \times n}$ for a natural numbers $n \in \N$ such that \newline $dim_{\mathcal{N}(G)}(\ker (A))=x$
 	\end{enumerate}
 \end{Theorem}
 \begin{proof}
@@ -221,15 +221,15 @@ In this chapter we will require some basic knowledge of CW-complexes and regular
 	\begin{align*}
 		\Delta_n^{(2)} = d_n^{(2)*} d_n^{(2)} + d_{n+1}^{(2)} d_{n+1}^{(2)*},
 	\end{align*}
-	which is a map from $C_n^{(2)}(X)$ to $C_n^{(2)}(X)$ and for which $ker(\Delta_n^{(2)}) = H_n^{(2)}$ holds. With \ref{MAB} $ii)$ follows. \todo{Warum ist das ne Matrix mit Eintraegen aus Q?}
+	which is a map from $C_n^{(2)}(X)$ to $C_n^{(2)}(X)$ and for which $\ker(\Delta_n^{(2)}) = H_n^{(2)}$ holds. With \ref{MAB} $ii)$ follows. \todo{Warum ist das ne Matrix mit Eintraegen aus Q?}
 	
-	$"ii) \Rightarrow i)"$ Let $n \in \N$ and $A\in \Q G^{n \times n}$. Because $k \cdot A$ has the same kernel as $A$ for every $k \in \Z$ we can assume that $A \in \Z G^{n \times n}$. The corresponding map will be also called $A$. We will construct a $G$-CW-complex $X$ with $d_3^{(2)} = A$ and $d_4^{(2)}$ trivial. Therefore $H_3^{(2)}(X) = ker(A)$ and $i)$ follows.
+	$"ii) \Rightarrow i)"$ Let $n \in \N$ and $A\in \Q G^{n \times n}$. Because $k \cdot A$ has the same kernel as $A$ for every $k \in \Z$ we can assume that $A \in \Z G^{n \times n}$. The corresponding map will be also called $A$. We will construct a $G$-CW-complex $X$ with $d_3^{(2)} = A$ and $d_4^{(2)}$ trivial. Therefore $H_3^{(2)}(X) = \ker(A)$ and $i)$ follows.
 	
 	First we can see that a graph can always be seen as a CW-complex with the edges as 1-cells and the vertices as 0-cells. Let $g_1 \ldots g_m$ be generators of $G$ and let $Y$ be the corresponding Cayley graph of $G$ which has a natural cellular free $G$-action and is therefore a free, finite type $G$-CW-complex. In addition it has exactly $1$ $G$-equivariant $0$-cell and $m$ $G$-equivariant $1$-cell and no other cells. We then glue $n$ many $2$-cells on each $0$-cell, i.e. we attach them via the attaching map which sends all of $S^1$ to a single point. 
 	
 	We now glue in $n$ many $G$-equivariant $3$-cells in such a way that $A$ corresponds to $d_3^{(2)}$. Let $A_{ij} = \sum_{g \in G} z_{(g, i, j)} g \in \Z G$ denote the entry in the i-th row and the j-th column of $A$. We fix one $0$-cell and call it $e$ and we call the corresponding $2$-cells $e_1 \ldots e_n$. We glue in $G \times D^3$ where each element $h \times D^3$ is glued $z_{(g, 1, j)}$ many times to $h g \cdot e_j$ for each $g \in G$ and $j \in \{1, \ldots, n\}$. We then see that $d_3^{(2)}$ maps the vector $(\sum_{g \in G} \lambda_g g, 0 , \ldots , 0) \in (l^2 G)^n$ to $(\sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, 1)} g h, \ldots , \sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, n)}) \in (l^2 G)^n$. We then repeat this for every row of $A$ and get that $d_3^{(2)} = A$. The resulting $G$-CW-complex $X$ is still free, finite type and because $X/G$ is finite $X$ is cocompact.
 \end{proof}
-\todo{ker(delta) = homology zeigen?}
+\todo{\ker(delta) = homology zeigen?}
 \begin{Remark}
 	One can show that \ref{MCW} also holds if $G$ is not finitely generated.
 \end{Remark}
@@ -309,7 +309,7 @@ We can see that a Turing machine can be emulated with a Turing dynamical system.
  
  
 \begin{Definition}
-	Let $(T_X)$ be a Turing dynamical system where $X = \Pi_{j \in J} \2$ is an infinite product of $\2$ and each $X_i$  has only finitely many fixed elements, i.e. is of the form $X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \ finite\}$. If in addition the action of $\Gamma$ is by continuous group automorphisms and $(T_X)$ stops at any configuration, has disjoint accepting chains and does not restart it is called a computing Touring dynamical system.
+	Let $(T_X)$ be a Turing dynamical system where $X = \Pi_{j \in J} \2$ is an infinite product of $\2$ and each $X_i$  has only finitely many fixed elements, i.e. is of the form $X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \ finite\}$. If in addition the action of $\Gamma$ is by continuous group automorphisms and $(T_X)$ stops at any configuration, has disjoint accepting chains and does not restart it is called a computing Turing dynamical system.
 \end{Definition}
 \todo{Warum cont group autos?}
 \todo{maß}
@@ -328,7 +328,7 @@ Before we give an example of a computing Turing dynamical system we fix the nota
 \section{Computing $l^2$-Betti numbers}
 In this chapter we want to prove the following central theorem which connects $l^2$-Betti numbers to the concept of Turing dynamical systems.
 \begin{Theorem} \label{HS}
-	Let $(T_X)$ be a computing Touring dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $l^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
+	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $l^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
 \end{Theorem}
 We will give the definition of Pontryagin duals and the semidirect product later in this chapter. The rest of this chapter is used to prove this theorem and give the needed definitions.
 \subsection{Groupoids}
@@ -466,18 +466,24 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 \begin{Definition}
 	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $pr_X: L^2 \G \to X$ be projection onto $X$. The von-Neumann dimension of $X$ is defined through
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(X) = tr_{\mathcal{N}(G)}(pr_X).
+		dim_{\mathcal{N}(G)}(X) = tr_(pr_X).
 	\end{align*}
 \end{Definition}
 \begin{Lemma} \label{trgroupoid}
 	Let $\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho: \Gamma \to Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of an action groupoid. Then
 	\begin{align*}
-		tr(\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i}) = \int_{\G(\rho)_0} f_e(x) d\mu(x)
+		tr(\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i}) = \sum_{e \in E} \int_{\G(\rho)_0} f_e(x) d\mu(x)
 	\end{align*}
-	where $e$ is the index such that $\gamma_e$ is the neutral element of $\Gamma$. If no such index exists the trace is zero.
+	where $E$ is the set of indices such that $\gamma_e$ is the neutral element of $\Gamma$ for each $e \in E$. If no such index exists the trace is zero.
 \end{Lemma}
-\begin{proof} \todo{hab ich jetzt keinen bock mehr drauf}
-	content...
+\begin{proof} 
+	If $\gamma \in \Gamma$ is not the neutral element then the corresponding measurable edge $\bar{\gamma}$ sends every element of $\C\G(\rho)_0$, i.e. every identity morphism to a different morphism not contained in $\C\G(\rho)_0$. Therefore the trace is $0$ for each such element.
+	
+	Let $e \in \Gamma$ be the neutral element then it holds that
+	\begin{align*}
+		tr(\tilde{\bar{e}} \tilde{f}) = tr(id_{L^2 \G} \tilde{f}) = \langle \tilde{f} (\chi_0), \chi_0 \rangle_{L^2 \G} = \langle f, \chi_0 \rangle_{L^2 \G} = int_{\G(\rho)_0} f(x) \cdot \chi_0(x) d\mu(x) = int_{\G(\rho)_0} f(x) d\mu(x)
+	\end{align*}
+	which concludes the proof.
 \end{proof}
 \subsection{Traces of Turing dynamical systems}
 \begin{Theorem} \label{groserSatz}
@@ -487,7 +493,7 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 	\end{align*}
 	of the groupoid ring $\C \G(T_X)$ it holds that
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(ker \ S) = \mu(I) - \Omega_1(T_X).
+		dim_{\mathcal{N}(G)}(\ker \ S) = \mu(I) - \Omega_1(T_X).
 	\end{align*}
 \end{Theorem}
 Before we can proof this Theorem we have to do some preparations. 
@@ -501,28 +507,28 @@ We will state the following fact without proof. For a complete proof see \cite{G
 \begin{Lemma}
 	Let $\G$ be a relation groupoid with finite orbits and $D$ a fundamental domain of $\G$. Then for every $T \in \C \G$ it holds that
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(ker \ T) = \int_D dim (ker \ T_x) \ d \mu (x).
+		dim_{\mathcal{N}(G)}(\ker \ T) = \int_D dim (\ker \ T_x) \ d \mu (x).
 	\end{align*} 
 \end{Lemma}
-In addition with \ref{TX_rel_groupoid} we get that $dim_{\mathcal{N}(G)}(ker \ S) = \int_{A \cup R} dim (ker \ S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X$ is injective on all of $X$, $T_X^\infty(x) \in A \cup R$ for all $x$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} dim (ker \ S_x) \ d \mu (x)$. 
+In addition with \ref{TX_rel_groupoid} we get that $dim_{\mathcal{N}(G)}(\ker \ S) = \int_{A \cup R} dim (\ker \ S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X$ is injective on all of $X$, $T_X^\infty(x) \in A \cup R$ for all $x$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} dim (\ker \ S_x) \ d \mu (x)$. 
 \begin{Lemma}
 	\begin{align*}
-	ker \ S_x = ker((\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x) \cap ker \ \tilde{\chi_A}_x
+	\ker \ S_x = \ker((\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x) \cap \ker \ \tilde{\chi_A}_x
 	\end{align*}
 \end{Lemma}
 \begin{proof}
-	First we can see, that for all Operators $A$ on a Hilbert space $H$ it holds that $ker \ A = ker \ A*A$. To show this let $x \in ker \ A*A$. It follows that
+	First we can see, that for all Operators $A$ on a Hilbert space $H$ it holds that $\ker \ A = \ker \ A*A$. To show this let $x \in \ker \ A*A$. It follows that
 	\begin{align*}
 		0 = \langle A*Ax, x \rangle = \langle Ax, Ax \rangle
 	\end{align*}
-	and therefore $x \in ker \ A$. The other inclusion is trivial. 
+	and therefore $x \in \ker \ A$. The other inclusion is trivial. 
 	
 	From the definition it is clear that $(S_1)_x + (S_2)_x = (S_1 + S_2)_x$ for every $S_1, S_2 \in \G$. In for an element$\sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$ of the  groupoid ring it follows that both $\tilde f_i$ and $\tilde {f_i}_x$ are self-adjoint. In addition $(\widetilde {\Phi_i}^*)_x = \widetilde {\Phi_i^{-1}}_x = (\widetilde {\Phi_i}_x)^*$ \todo{Genauer?} and therefore changing an operator $T$ to $T_x$ is $*$-preserving. Of course both summands of $S$ are positive operators and the claim follows.
 \end{proof}
 \begin{Lemma}
 	It holds that
 	\begin{align*}
-		dim (ker \ S_x) = \begin{cases}
+		dim (\ker \ S_x) = \begin{cases}
 		1 & if \ x \in T_X^\infty(I) \cap R\\
 		0 & otherwise 
 		\end{cases}
@@ -542,12 +548,12 @@ In addition with \ref{TX_rel_groupoid} we get that $dim_{\mathcal{N}(G)}(ker \ S
 	\begin{align*}
 		P(\sum_{i = 1}^{k} (-1)^{i + 1} x_i) = (\sum_{i = 2}^{k} (-1)^{i} x_{i} + x_k) + \sum_{i = 2}^{k - 1} (-1)^{i + 1} x_{i} = 0.
 	\end{align*}
-	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in ker \ P$ is a basis vector of $ ker \ P$ and therefore $dim(ker \ P) = 1$. In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $ker \ P = ker \ S_x$. If $x \in A$ then $x_k \notin ker \ \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in ker \ \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin ker \ \tilde{\chi_A}_x$ and thus $ker \ S_x = \{0\}$.
+	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in \ker \ P$ is a basis vector of $ \ker \ P$ and therefore $dim(\ker \ P) = 1$. In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $\ker \ P = \ker \ S_x$. If $x \in A$ then $x_k \notin \ker \ \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in \ker \ \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin \ker \ \tilde{\chi_A}_x$ and thus $\ker \ S_x = \{0\}$.
 \end{proof}
 \begin{proof}[Proof of Theorem \ref{groserSatz}]
 	We now get
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(ker \ S) = \int_{A \cup R} dim (ker \ S_x) \ d \mu (x) = \int_{T_X^\infty(I) \cap R} 1 \ \mu (x) = \\ \int_{T_X^\infty(I) / A} 1 \ \mu (x) = \int_{T_X^\infty(I)} 1 \ \mu (x) - \int_{\Omega_1(T_X)} 1 \ \mu (x) = \mu(I) - \Omega_1(T_X)
+		dim_{\mathcal{N}(G)}(\ker \ S) = \int_{A \cup R} dim (\ker \ S_x) \ d \mu (x) = \int_{T_X^\infty(I) \cap R} 1 \ \mu (x) = \\ \int_{T_X^\infty(I) / A} 1 \ \mu (x) = \int_{T_X^\infty(I)} 1 \ \mu (x) - \int_{\Omega_1(T_X)} 1 \ \mu (x) = \mu(I) - \Omega_1(T_X)
 	\end{align*}
 	which concludes the proof. \todo{Vllt. muss ich hier noch was zu den masen sagen und warum sie unter Tx erhalten bleiben.}
 \end{proof}
@@ -580,7 +586,11 @@ For more information about semidirect products see e.g. \cite{ALG}.
 \begin{Theorem}
 	The map 
 	\begin{align*}
-		P \otimes 1: \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma) \to \C\G(\rho), \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i) \mapsto \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}} 
+		P \otimes 1: \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma) \to \C\G(\rho), 
+		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma}
+		 c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i) \mapsto 
+		 \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} 
+		 c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}} 
 	\end{align*}
 	 with $c_i \in \C$ is
 	\begin{enumerate}
@@ -626,17 +636,83 @@ For more information about semidirect products see e.g. \cite{ALG}.
 		tr(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}}) = \sum_{(\hat{x}, e) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} \int_{\mathcal{G(\rho)}_0} c_{(\hat{x}, e)} P(\hat{x})(y) d\mu(y)
 	\end{align*}
 	where $e$ is the netral element of $\Gamma$.\todo{die zweiten idizes muessen Teilmenge der ersten sein}
-	Because $dmu(\G_0) = 1$ it remains to show that $\int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y) = 0$ if $\hat{x}$ is not the neutral element. First note that if $\hat{x}$ is not the neutral element then $P(\hat{x})$ is not constant and therefore there exists $y_1, y_2 \in \C\G(\rho)_0$ with $P(\hat{x})(y_1) \neq P(\hat{x})(y_2) \neq 1$. We use the invariance of the Haar measure to get
+	Because $d \mu(\G_0) = 1$ it remains to show that $\int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y) = 0$ if $\hat{x}$ is not the neutral element. First note that if $\hat{x}$ is not the neutral element then $P(\hat{x})$ is not constant and therefore there exists $y_1, y_2 \in \C\G(\rho)_0$ with $P(\hat{x})(y_1) \neq P(\hat{x})(y_2) \neq 1$. We use the invariance of the Haar measure to get
 	\begin{align*}
 		\int_{\G(\rho)_0} P(\hat{x})(y_1) d\mu(y_1) = \int_{\G(\rho)_0} P(\hat{x})(y_2 y_1) d\mu(y_2 y_1) = \int_{\G(\rho)_0} P(\hat{x})(y_2) P(\hat{x})(y_1) d\mu(y_1) = P(\hat{x})(y_2) \int_{\G(\rho)_0} P(\hat{x})(y_1) d\mu(y_1)
 	\end{align*}
 	which is only possible if $\int_{\G(\rho)_0} P(\hat{x})(y_1) d\mu(y_1) = 0$.
 	
 	\todo{hab ich das mit dem haarmas genug gesagt?}
+	$iii)$ Let us fist look at an element of the group ring $c g \in \C G$ of an arbitrary group $G$. Then for $c_1 g_1, c_2 g_2 \in l^2G$ it follows that 
+	\begin{align*}
+		\langle c g c_1 g_1, c_2 g_2 \rangle = \begin{cases}
+		 	c \cdot c_1 \cdot c_2 & if \ g g_1 = g_2 \\
+		 	0 & otherwise
+		\end{cases}  = \begin{cases}
+		c \cdot c_1 \cdot c_2 & if \ g_1 = g^{-1} g_2 \\
+		0 & otherwise
+		\end{cases}
+		= \langle  c_1 g_1, c g^{-1} c_2 g_2 \rangle
+	\end{align*}.
+	Because the same follows for sums in $\C G$ or $l^2 G$ it follows that the adjoint of an element $\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i)$ is given by 
+	\begin{align*}
+		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i)^{-1} = \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{\rho}(\gamma_i)(\hat{x_i}^{-1}), \gamma_i^{-1})
+	\end{align*}. 
+	Now let $\tilde{\bar{\gamma}} \tilde{f} \in \C \G(\rho)$ be an element of the groupoid ring of an arbitrary action groupoid. Then for $\phi_1, \phi_2 \in L^2 \G$ it follows that
+	\begin{align*}
+		\langle \tilde{\bar{\gamma}} \tilde{f} (\phi_1), \phi_2 \rangle_{L^2 \G} =
+		 \int_{\bigcup r^{-1}(Dom(\bar{\gamma}^{-1}))} f(r(x)) \phi_1(x \cdot_{\G (\rho)} \bar{\gamma}^{-1}(r(x))) \cdot \phi_2 (x) d \mu (x) \\
+		 = \int_{\bigcup r^{-1}(Dom(\bar{\gamma}))} f(r(x \cdot_{\G (\rho)} \bar{\gamma}(r(x)))) \phi_1(x ) \cdot \phi_2 (x \cdot_{\G (\rho)} \bar{\gamma}(r(x))) d \mu (x) \\
+		 = \langle \phi_1 ,\tilde{\bar{\gamma^{-1}}} \tilde{f'} (\phi_2) \rangle_{L^2 \G}
+	\end{align*}.
+	If $f$ is of the form $\widetilde{P(\hat{x})}$ for some $\hat{x} \in \hat{X}$ then $f' = \widetilde{P(\hat{\rho}(\gamma_i)(\hat{x_i}^{-1}))}$ \todo{kann man auch noch zeigen} which concludes the proof.
 \end{proof}
 \todo{braucht man *?, Elemente aus C an GR multiplizieren , mehr erklaeren?}
+\begin{Theorem}
+	Let $T \in \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ be self-adjoint. Then $dim_{\mathcal{N}(G)}(\ker \ T) = dim_{\mathcal{N}(G)}(\ker \ P \otimes 1(T))$.
+\end{Theorem} \label{pontr}
+\begin{proof}
+	First suppose $X$ and $\Gamma$ are finite. Therefore $l^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is finite dimensional and $T$ is just a linear map. With the spectral theorem it follows that all eigenvalues of $T$ are real and there exist a basis of eigenvectors. Let $\lambda_1, \lambda_2, \ldots, \lambda_n$ denote the different non-zero eigenvalues of $T$. Then
+	\begin{align*}
+		S = \frac{(T - \lambda_1 id) \circ (T - \lambda_2 id) \circ \ldots \circ (T - \lambda_n id)}{(-1)^n \cdot \lambda_1 \cdot \lambda_2 \cdot \ldots \cdot \lambda_n}
+	\end{align*}
+	is a projection onto $\ker T$ and 
+	\begin{align*}
+		P \otimes 1 (S) = \frac{(P \otimes 1(T) - \lambda_1 id) \circ (P \otimes 1(T) - \lambda_2 id) \circ \ldots \circ (P \otimes 1(T) - \lambda_n id)}{(-1)^n \cdot \lambda_1 \cdot \lambda_2 \cdot \ldots \cdot \lambda_n}
+	\end{align*}.
+	Because $L^2 \G (\rho)$ is also finite dimensional and $P \otimes 1(T)$ is still self-adjoint we can again use the spectral theorem. In addition the eigenvalues stay the same and therefore $P \otimes 1 (S)$ is a projection onto $\ker P \otimes 1 (T)$. Because $\ker T \subset l^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma) $ it follows that
+	\begin{align*}
+		dim_{\mathcal{N}(G)}(\ker \ T) = tr_{\mathcal{N}(G)}(S) = tr(P \otimes 1 (S)) = dim_{\mathcal{N}(G)}(\ker P \otimes 1 (T)).
+	\end{align*}
+	If $X$ or $\Gamma$ are infinite then $l^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is infinite dimensional. Let $l_1 \subset l_2 \subset \ldots$ be a series of finite dimensional $\C$-vector spaces converging to $l^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$. For each $l_i$ we can restrict $T$ to $l_i$ and the above argument holds. Because $T|_{l_i}$ converges to $T$ the claim follows also for the infinite dimensional case.
+\end{proof}\todo{klappt das mit dem Konvergieren?}
+\begin{Theorem}
+	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $l^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
+\end{Theorem}
+\begin{proof}
+	With \ref{pontr} it remains to show that the map $S$ from \ref{groserSatz} is contained in $P \otimes 1(\Q (\hat{X} \rtimes_{\hat{\rho}} \Gamma))$
+	
+	Because our Turing dynamical system is computable $X$ is an infinite product of $\2$. The group $\hat{\2}$ consists of only two elements. The neutral element which send all of $\2$ to $1$ and the map which sends $\0$ to $1$ and $\1$ to $-1$. Therefore $\hat{\2}$ is isomorphic to $\2$. In addition one can see \todo{Quelle} that the Pontryagin dual of an infinite product is an infinite sum. Therefore $\hat{X} = \hat{\Pi_{j \in J} \2} \cong \sum_{j \in J} \hat{\2} \cong \sum_{j \in J} \2$ holds.
+		
+	Let $g_i \in \hat{X}$ be a map with
+	\begin{align*}
+		g_i: X \to \C, (x_j)_{j \in J} \mapsto \begin{cases}
+			1 & if \ x_j = \0 \\
+			0 & if \ x_j = \1
+		\end{cases}.
+	\end{align*} 
+	and $e_{\hat{X}} \in \hat{X}$ be the neutral element, i.e. a map which send every element of $X$ to $1$. Let $e_{\Gamma}$ denote the neutral element of $\Gamma$. Then it holds that
+	\begin{align*}
+		P \otimes 1(\frac{1}{2} \cdot (e_{\hat{X}}, e_{\Gamma}) + \frac{1}{2}(g_i, e_{\Gamma})) = \frac{1}{2} \cdot \widetilde{P(e_{\hat{X}})} + \frac{1}{2} \widetilde{P(g_i)} = \widetilde{\frac{1}{2}(P(e_{\hat{X}}) + P(g_i))} = \tilde{\chi_{Y_i}}
+	\end{align*}
+	with $Y_i = \{(x_j)_{j \in J} \in X = \G (\rho)_0| x_i = \0\}$. It follows similarly that $P \otimes 1(\frac{1}{2} \cdot (e_{\hat{X}}, e_{\Gamma}) - \frac{1}{2}(g_i, e_{\Gamma})) = \tilde{\chi_{Z_i}}$ with $Z_i = \{(x_j)_{j \in J} \in X = \G (\rho)_0| x_i = \1\}$. 
+	Let $X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \ finite\}$ be one of subsets defined by $(T_X)$. Then 
+	\begin{align*}
+		\widetilde{\chi_{X_i}} = \widetilde{\Pi_{k \in I_1} \chi_{Y_k} \cdot \Pi_{h \in I_2} \chi_{Z_h}}
+	\end{align*}
+	lies in $P \otimes 1(\Q (\hat{X} \rtimes_{\hat{\rho}} \Gamma))$ because $P \otimes 1$ preserves the multiplication. Because of the definition of $P \otimes 1$ all $\tilde{\bar{\gamma}}$ lie also in the above image.
+\end{proof}
 
-%Hier kommen die ganzen Sätze/Beweise usw.
 \section{The lamplighter group}
 \subsection{Rational $l^2$-Betti numbers}
 \begin{Definition}
