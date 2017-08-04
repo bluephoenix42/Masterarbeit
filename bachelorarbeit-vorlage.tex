@@ -73,7 +73,7 @@
     Masterarbeit
     \vspace*{2cm}
 
-    {\huge Turing machines and irrational values of $l^2$-Betti numbers}
+    {\huge Turing machines and irrational values of $\ell^2$-Betti numbers}
     \vspace*{2.5cm}
 
     Jan Kohlmüller
@@ -104,116 +104,136 @@
 \section{Introduction}
 
 
-\section{$l^2$-Betti numbers}
-In this whole chapter $G$ is always a discrete countable group with multiplication $\cdot_G$.
-\subsection{Von Neumann Dimension}
+\section{$\ell^2$-Betti numbers}
+At first we will give a short introduction into the theory of $\ell^2$-Betti numbers. For a wider approach see \cite{LUECK}. We will assume some basic knowledge about cellular homology and the associated Betti numbers. For more information on this topic see e.g. \cite{HATCH}. As an alternative a reader not familiar with these topics may just accept the results of \ref{MCW} and study the definitions given in section \ref{fiss}.
 
+In this whole chapter $G$ is always a discrete countable group with multiplication $\cdot_G$.
+\subsection{Von Neumann Dimension} \label{fiss}
+At first let us begin with some basic definitions.
 \begin{Definition} \label{GR}
-	The group ring $RG$ over a Ring $R$ is the free module over $G$ with the additional multiplication
+	The \emph{group ring} $RG$ over a Ring $R$ is the free module over $G$ with the additional multiplication
 	\begin{align*}
 		\sum_{h \in H} \alpha_h \cdot h \cdot_{RG} \sum_{k \in K} \beta_k \cdot k = \sum_{h \in H} \sum_{k \in K} \alpha_h \beta_k \cdot h \cdot_G k
 	\end{align*}
 	with $\alpha_h, \beta_k \in R$ and $H, K \in G$ finite subsets.
 \end{Definition}
+If $R$ is a field then $RG$ is an algebra and in particular a vector space with dimension $|G|$ if $G$ is finite. We will often see the group ring $\C G$. If $G$ is infinite then $\C G$ is an infinite dimensional vector space with scalar product. In this case $\C G$ is not a Hilbert space. Therefore we will introduce the space $\ell^2(G)$ which is in fact the Hilbert space completion of $\C G$.
 \begin{Definition}
-	$l^2(G)$ is the Hilbert space consisting of formal sums $\sum_{g \in G} \lambda_g \cdot g$ such that $g \in G$, $\lambda_g \in \C$ and $\sum_{g \in G} |\lambda_g|^2 < \infty$. The multiplication is defined as in \ref{GR} and the scalar product is defined through
+	$\ell^2(G)$ is the Hilbert space consisting of formal sums $\sum_{g \in G} \lambda_g \cdot g$ such that $\lambda_g \in \C$ and $\sum_{g \in G} |\lambda_g|^2 < \infty$. The multiplication is defined as in \ref{GR} and the scalar product is defined through
 	\begin{align*}
 		\langle \sum_{g \in G} \alpha_g \cdot g, \sum_{g \in G} \beta_g \cdot g \rangle := \sum_{g \in G} \alpha_g \overline{\beta_g}.
 	\end{align*}
 \end{Definition}
-\todo{hier hab ich nicht gezeigt, dass es ein Skalarprodukt ist}
 \begin{Remark}
-	If $G$ is a set instead of a group we can also define a Hilbert space $l^2(G)$. Of course we don not have a multiplication in this case.
+	If $G$ is a set instead of a group we can also define a Hilbert space $\ell^2(G)$. Of course we don not have a multiplication in this case.
 \end{Remark}
+We now want to define a dimension for spaces embedded in $\ell^2(G)$. In most cases the normal vector space dimension of these spaces will be infinite and therefore not useful. We will instead use the von Neumann dimension which requires some preliminary work.
 \begin{Definition}
-	The group von Neumann algebra $\mathcal{N}(G)$ is defined as the algebra of $G$-equivariant bounded operators from $l^2(G)$ to $l^2(G)$ where $G$ acts on $l^2(G)$ by left multiplication.
+	The \emph{group von Neumann} algebra $\mathcal{N}(G)$ is defined as the algebra of $G$-equivariant bounded operators from $\ell^2(G)$ to $\ell^2(G)$ where $G$ acts on $\ell^2(G)$ by left multiplication.
 \end{Definition}
-We will denote the bounded operators of a Hilbert space $H_1$ with $\mathcal{B}(H_1)$. If $G$ acts on a Hilbert Space $H_2$ we will call the subspace of $G$-equivariant elements of $H_2$ by $H_2^G$. Therefore we can also define the group von Neumann algebra through $\mathcal{N}(G) := \mathcal{B}(l^2(G))^G$.
+We will denote the bounded operators of a Hilbert space $H_1$ with $\mathcal{B}(H_1)$. If $G$ acts on a Hilbert Space $H_2$ we will call the subspace of $G$-equivariant elements of $H_2$ by $H_2^G$. Therefore we can also define the group von Neumann algebra through $\mathcal{N}(G) := \mathcal{B}(\ell^2(G))^G$.
 \begin{Definition}
 	Let $e_G \in G$ be the unit element of $G$. Then
 	\begin{align*}
 		tr_{\mathcal{N}(G)}: \mathcal{N}(G) \to \C, A  \mapsto \langle A(1 \cdot e_G), 1 \cdot e_G \rangle
 	\end{align*}
-	is called the von Neumann trace on $\mathcal{N}(G)$.
+	is called the \emph{von Neumann trace} on $\mathcal{N}(G)$.
 \end{Definition}
 \begin{Remark}
-	Right multiplication with an element of the Group ring $\C G$ is a $G$-equivariant operator on $l^2(G)$ and therefore has a well defined von Neumann trace.
+	Right multiplication with an element of the group ring $\C G$ is a $G$-equivariant operator on $\ell^2(G)$ and therefore has a well defined von Neumann trace.
 \end{Remark}
 \begin{Definition}
-	A Hilbert $\mathcal{N}(G)$-module is a Hilbert space $H$ with a linear isometric $G$-action such that there exists an isometric linear $G$-embedding from $H$ to $l^2(G)^n$ for some $n \in \N$.
+	A \emph{Hilbert $\mathcal{N}(G)$-module} is a Hilbert space $H$ with a linear isometric $G$-action such that there exists an isometric linear $G$-embedding from $H$ to $\ell^2(G)^n$ for some $n \in \N$.
 \end{Definition}
 \begin{Definition}
-	Let $H$ be a Hilbert $\mathcal{N}(G)$-module with corresponding embedding $\iota: H \to l^2(G)^n$ and let $pr_{\iota(H)}: l^2(G)^n \to H$ be the corresponding $G$-equivariant projection. Let $\iota_i: l^2(G) \to l^2(G)^n, y \mapsto (x_1, \ldots, x_n)$ with $x_j = \delta_{i,j} \cdot y$ the inclusion of the i-th $l^2(G)$ and $pr_i: l^2(G)^n \to l^2(G), (x_1, \ldots, x_n) \mapsto x_i$ the corresponding projection. Then 
+	Let $H$ be a Hilbert $\mathcal{N}(G)$-module with corresponding embedding $\iota: H \to \ell^2(G)^n$ and let $pr_{\iota(H)}: \ell^2(G)^n \to H$ be the corresponding $G$-equivariant projection. Let $\iota_i: \ell^2(G) \to \ell^2(G)^n, y \mapsto (x_1, \ldots, x_n)$ with $x_j = \delta_{i,j} \cdot y$ the inclusion of the i-th $\ell^2(G)$ and $pr_i: \ell^2(G)^n \to \ell^2(G), (x_1, \ldots, x_n) \mapsto x_i$ the corresponding projection. Then 
 	\begin{align*}
 		tr_{\mathcal{N}(G)}: \mathcal{B}(H)^G \to \C, A \mapsto \sum_{i = 1}^{n} tr_{\mathcal{N}(G)}(pr_i \circ \iota \circ A \circ pr_{\iota(H)} \circ \iota_i)
 	\end{align*}
-	is called the von Neumann trace on $H$.
+	is called the \emph{von Neumann trace} on $H$.
 \end{Definition}
-One can show that the trace is independent of the chosen embedding and therefore well-defined. \todo{eine oder mehrere Projektionen?} 
+One can show that the trace is independent of the chosen embedding and therefore well-defined.
 \begin{Definition}
-	Let $H$ be a Hilbert $\mathcal{N}(G)$-module. We define the von Neumann dimension of $H$ as
+	Let $H$ be a Hilbert $\mathcal{N}(G)$-module. We define the \emph{von Neumann dimension} of $H$ as
 	\begin{align*}
 		dim_{\mathcal{N}(G)}(H) = tr_{\mathcal{N}(G)}(id_H).
 	\end{align*}
 \end{Definition}
+\begin{Remark}
+	Let $H \subset \ell^2(G)$ be a $G$-equivariant subset and $pr_H: \ell^2(G) \to H$ a $G$-equivariant projection. Then\begin{align*}
+	dim_{\mathcal{N}(G)}(H) = tr_{\mathcal{N}(G)}(pr_H) = \langle pr_H (1 \cdot e_G), 1 \cdot e_G \rangle.
+	\end{align*}
+\end{Remark}
+\todo{ueberall g-equivariant ueberpruefen}
 
-\subsection{$l^2$-Betti numbers of $G$-CW-complexes}
-In this chapter we will require some basic knowledge of CW-complexes and regular homology. For more information on this topic see e.g.\cite{HATCH}.
+\subsection{$\ell^2$-Betti numbers of $G$-CW-complexes}
+One can now define the $\ell^2$-Betti numbers of CW-complexes in a very similar way as for cellular homology. But first we have to define a group action on CW-complexes.
 \begin{Definition}
-	Let $X$ be a CW-complex and $\rho: G \to Homeo(X)$ an action of $G$ on $X$ by homeomorphism such that for every open cell $E \subset X$ and every $g \in G$ it holds that $\rho(g)(E)$ is again an open cell and $\rho(g)|_{E} = id_E$ if $\rho(g)(E) \cap E \neq \emptyset$. Then $\rho$ is called a cellular action.
+	Let $X$ be a CW-complex and $\rho: G \to Homeo(X)$ an action of $G$ on $X$ by homeomorphism such that for every open cell $E \subset X$ and every $g \in G$ it holds that $\rho(g)(E)$ is again an open cell and $\rho(g)|_{E} = id_E$ if $\rho(g)(E) \cap E \neq \emptyset$. Then $\rho$ is called a \emph{cellular action}.
 \end{Definition}
 
 \begin{Definition}
-	A $G$-CW-complex is a CW-complex together with a cellular $G$-action.
+	A \emph{$G$-CW-complex} is a CW-complex together with a cellular $G$-action.
 \end{Definition}
 
 \begin{Definition}
-	The orbit of an $n$-cell in a $G$-CW-complex is called a $G$-equivariant $n$-cell.
+	The \emph{orbit} of an $n$-cell in a $G$-CW-complex is called a $G$-equivariant $n$-cell.
 \end{Definition}
 
 \begin{Definition}
 	Let $X$ be a $G$-CW complex. $X$ is called
 	\begin{itemize}
-		\item proper if all stabilizer groups are finite,
-		\item free if all stabilizer groups are trivial,
-		\item finite type if for every $n \in \N$ it has only finitely many $G$-equivariant $n$-cell.
+		\item \emph{proper} if all stabilizer groups are finite,
+		\item \emph{free} if all stabilizer groups are trivial,
+		\item \emph{finite type} if for every $n \in \N$ it has only finitely many $G$-equivariant $n$-cell.
 	\end{itemize}
 \end{Definition}
+\
 \begin{Remark}
 	One can show that the chain complex of a $G$-CW complex $X$ is a chain complex $C_*(X)$ of left $\Z G$-modules, i.e. each $C_n(X)$ is a left $\Z G$-module and the differentials are homomorphisms of these modules.
 \end{Remark}
 \begin{Definition}
-	The $l^2$-chain complex of a $G$-CW complex $X$ is
+	The \emph{$\ell^2$-chain complex} of a $G$-CW complex $X$ is
 	\begin{align*}
-		C_*^{(2)}(X) = l^2G \otimes_{\Z G} C_*(X).
+		C_*^{(2)}(X) = \ell^2(G) \otimes_{\Z G} C_*(X).
 	\end{align*}
 \end{Definition}
-\todo{Hier muss man die Definition evtl noch an das richtige Cstar anpassen, l2G ist rechtes ZG modul, was heißt es an chain complex zu tensoren, der Abschluss?}
 
 \begin{Definition}
-	Let $X$ be a proper, finite type $G$-CW complex and $C_*^{(2)}(X)$ the corresponding $l^2$-chain complex with its differential $d_*^{(2)}$. Then 
+	Let $X$ be a proper, finite type $G$-CW complex and $C_*^{(2)}(X)$ the corresponding $\ell^2$-chain complex with its differential $d_*^{(2)}$. Then 
 	\begin{align*}
 		H_n^{(2)}(X) := \ker(d_n^{(2)}) / \overline{im(d_{n+1}^{(2)})}
 	\end{align*}
-	is called the $n$-th $l^2$-homology and 
+	is called the \emph{$n$-th $\ell^2$-homology} and 
 	\begin{align*}
 		b_n^{(2)}(X)=dim_{\mathcal{N}(G)}H_n^{(2)}(X)
 	\end{align*}
-	the $n$-th $l^2$-Betti number.
+	the \emph{$n$-th $\ell^2$-Betti number}.
 \end{Definition}
 \begin{Remark}
-	One can show that for a proper, finite type $G$-CW complex $H_n^{(2)}(X)$ is a Hilbert $\mathcal{N}(G)$-module and therefore the $l^2$-Betti number is in fact well-defined.
+	One can show that for a proper, finite type $G$-CW complex $H_n^{(2)}(X)$ is a Hilbert $\mathcal{N}(G)$-module and therefore the $\ell^2$-Betti number is in fact well-defined.
 \end{Remark}
 
-\subsection{$l^2$-Betti numbers arising from a group}
+\subsection{$\ell^2$-Betti numbers arising from a group}
+We will now show that it is sufficient for our purpose to calculate the von Neumann trace of the kernel of elements of the group ring without mentioning CW-complexes.
 \begin{Remark}\label{MAB}
-	A Matrix $A \in \C G^{n \times m}$ can be seen as a map from $l^2G^n \to l^2G^m$ via $x \mapsto x^{\top} \cdot A$. Therefore $\ker(A)$ is a Hilbert $\mathcal{N}(G)$-module and has a well-defined von-Neumann-dimension. 
+	A matrix $A \in \C G^{n \times m}$ can be seen as a map from $\ell^2(G)^n \to \ell^2(G)^m$ via $x \mapsto x^{\top} \cdot A$. We will refer to this map also by $A$. Be aware that if $G$ is not abelian this is not the same map as $A^\top x$.
 \end{Remark}
+\begin{Lemma}
+	For a matrix $A \in \C G^{n \times m}$ $\ker(A)$ is a Hilbert $\mathcal{N}(G)$-module and therefore has a well-defined von Neumann-dimension.
+\end{Lemma}
+\begin{proof}
+	Of course $\ker(A)$ is a subspace of $\ell^2 (G)^n$. We can use $id|_{\ker(A)}$ as embedding. It remains to show that $\ker(A)$ is closed under the natural $G$-action on $\ell^2 (G)^n$. So let $x \in \ker(A)$ be an element in the kernel and $g \in G$ be an element of the group. It now holds that
+	\begin{align*}
+		(g \cdot x)^\top \cdot A = g \cdot (x^\top A) = g \cdot 0 = 0
+	\end{align*}
+	because the action is linear.
+\end{proof}
 \begin{Theorem} \label{MCW}
 	Let $x \in \R$ and $G$ be a discrete, countable, finitely generated group. The following are equivalent:
 	\begin{enumerate}
-		\item There exists a cocompact free finite type $G$-CW-complex $X$ and a $n \in \N$ such that $b_n^{(2)}(X)=x$
-		\item There exists a Matrix $A \in \Q G^{n \times n}$ for a natural numbers $n \in \N$ such that \newline $dim_{\mathcal{N}(G)}(\ker (A))=x$
+		\item There exists a cocompact free finite type $G$-CW-complex $X$ and an integer $n \in \N$ such that $b_n^{(2)}(X)=x$.
+		\item There exists a matrix $A \in \Q G^{n \times n}$ for an integer $n \in \N$ such that \newline $dim_{\mathcal{N}(G)}(\ker (A))=x$.
 	\end{enumerate}
 \end{Theorem}
 \begin{proof}
@@ -221,28 +241,32 @@ In this chapter we will require some basic knowledge of CW-complexes and regular
 	\begin{align*}
 		\Delta_n^{(2)} = d_n^{(2)*} d_n^{(2)} + d_{n+1}^{(2)} d_{n+1}^{(2)*},
 	\end{align*}
-	which is a map from $C_n^{(2)}(X)$ to $C_n^{(2)}(X)$ and for which $\ker(\Delta_n^{(2)}) = H_n^{(2)}$ holds. With \ref{MAB} $ii)$ follows. \todo{Warum ist das ne Matrix mit Eintraegen aus Q?}
+	which is a map from $C_n^{(2)}(X)$ to $C_n^{(2)}(X)$. The differential can be written as a matrix $A' \in \Z G$ and therefore $\Delta_n^{(2)}$ also lies in $\Z G$. It remains to show that $\ker(\Delta_n^{(2)}) = H_n^{(2)}$ holds. 
 	
 	$"ii) \Rightarrow i)"$ Let $n \in \N$ and $A\in \Q G^{n \times n}$. Because $k \cdot A$ has the same kernel as $A$ for every $k \in \Z$ we can assume that $A \in \Z G^{n \times n}$. The corresponding map will be also called $A$. We will construct a $G$-CW-complex $X$ with $d_3^{(2)} = A$ and $d_4^{(2)}$ trivial. Therefore $H_3^{(2)}(X) = \ker(A)$ and $i)$ follows.
 	
-	First we can see that a graph can always be seen as a CW-complex with the edges as 1-cells and the vertices as 0-cells. Let $g_1 \ldots g_m$ be generators of $G$ and let $Y$ be the corresponding Cayley graph of $G$ which has a natural cellular free $G$-action and is therefore a free, finite type $G$-CW-complex. In addition it has exactly $1$ $G$-equivariant $0$-cell and $m$ $G$-equivariant $1$-cell and no other cells. We then glue $n$ many $2$-cells on each $0$-cell, i.e. we attach them via the attaching map which sends all of $S^1$ to a single point. 
+	First we can see that a graph can always be seen as a CW-complex with the edges as 1-cells and the vertices as 0-cells. Let $g_1 \ldots g_m$ be generators of $G$ and let $Y$ be the corresponding Cayley graph of $G$ which has a natural cellular free $G$-action and is therefore a free, finite type $G$-CW-complex. In addition it has exactly $1$ $G$-equivariant $0$-cell and $m$ $G$-equivariant $1$-cells and no other cells. We then glue $n$ many $2$-cells on each $0$-cell, i.e. we attach them via the attaching map which sends all of $S^1$ to a single point. 
 	
-	We now glue in $n$ many $G$-equivariant $3$-cells in such a way that $A$ corresponds to $d_3^{(2)}$. Let $A_{ij} = \sum_{g \in G} z_{(g, i, j)} g \in \Z G$ denote the entry in the i-th row and the j-th column of $A$. We fix one $0$-cell and call it $e$ and we call the corresponding $2$-cells $e_1 \ldots e_n$. We glue in $G \times D^3$ where each element $h \times D^3$ is glued $z_{(g, 1, j)}$ many times to $h g \cdot e_j$ for each $g \in G$ and $j \in \{1, \ldots, n\}$. We then see that $d_3^{(2)}$ maps the vector $(\sum_{g \in G} \lambda_g g, 0 , \ldots , 0) \in (l^2 G)^n$ to $(\sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, 1)} g h, \ldots , \sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, n)}) \in (l^2 G)^n$. We then repeat this for every row of $A$ and get that $d_3^{(2)} = A$. The resulting $G$-CW-complex $X$ is still free, finite type and because $X/G$ is finite $X$ is cocompact.
+	We now glue in $n$ many $G$-equivariant $3$-cells in such a way that $A$ corresponds to $d_3^{(2)}$:
+	Let $A_{ij} = \sum_{g \in G} z_{(g, i, j)} g \in \Z G$ denote the entry in the i-th row and the j-th column of $A$. We fix one $0$-cell and call it $e$ and we call the corresponding $2$-cells $e_1 \ldots e_n$. We glue in $G \times D^3$ where each element $h \times D^3$ is glued $z_{(g, 1, j)}$ many times to $h g \cdot e_j$ for each $g \in G$ and $j \in \{1, \ldots, n\}$. We then see that $d_3^{(2)}$ maps the vector $(\sum_{g \in G} \lambda_g g, 0 , \ldots , 0) \in (\ell^2 G)^n$ to $(\sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, 1)} g h, \ldots , \sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, n)}) \in (\ell^2 G)^n$. We then repeat this for every row of $A$ and get that $d_3^{(2)} = A$. The resulting $G$-CW-complex $X$ is still free, finite type and because $X/G$ is finite $X$ is cocompact.
 \end{proof}
-\todo{\ker(delta) = homology zeigen?}
+\todo{\ker(delta) = homology zeigen? Graphik und etwas genauer?}
 \begin{Remark}
 	One can show that \ref{MCW} also holds if $G$ is not finitely generated.
 \end{Remark}
 \begin{Definition}
-	We say that a number $x \in \R$ arises from a discrete countable group $G$ if it fulfills one of the above conditions.
+	We say that a number $x \in \R$ \emph{arises} from a discrete countable group $G$ if it fulfills one (and therefore both) of the conditions of \ref{MCW}.
 \end{Definition}
+The statement of \ref{MCW} will be implicitly used in many points of this work. In fact we will never construct a $G$-Cw-complex and instead construct an element of a group ring $\Q (G)$ of $G$ which kernel has the desired von Neumann dimension.
+
+
 \begin{Lemma}\label{add}
-	If $x \in \R$ and $z \in \R$ both arise from a discrete, countable Group $G$, then so does $x + z$.
+	If $x \in \R$ and $z \in \R$ both arise from a discrete, countable group $G$, then so does $x + z$.
 \end{Lemma}
 \begin{Lemma}\label{mult}
-	Let $G$ is a discrete countable Group and $H$ a discrete finite Group. If $x \in \R$ arises from $G \times H$ then $x \cdot |H|$ arises from $G$.
+	Let $G$ is a discrete countable group and $H$ a discrete finite group. If $x \in \R$ arises from $G \times H$ then $x \cdot |H|$ arises from $G$.
 \end{Lemma}
-\todo{Vllt. noch beweisen}
+\todo{Vllt. noch beweisen oder Quelle}
 \section{Turing dynamical systems}
 %Hier definiere ich TDS
 Let us first give a definition of a Turing machine. For convenience we will only allow 1 and 0 as symbols on our tape.
@@ -251,7 +275,7 @@ Let us first give a definition of a Turing machine. For convenience we will only
 \end{Definition}
 In addition each Turing machine uses a "tape", i.e. a set $\Z / 2\Z ^{\Z}$ with a "head" on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$ which is called an input. We start with the initial state and use the transition function $\delta$ to get $\delta(I, Y_0)$. The first coordinate corresponds to the new element $Y_0$, the second to the new state and the third corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$, e.g. if $\delta(I, Y_0)_3 = 1$ we shift the whole tape one to the left, therefore our new $Y_0$ is our old $Y_1$. We repeat this step until we get a state in $A \cup R$. We say, that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$ after finitely many steps. We say that the Turing machine holds for $Y$ if it accepts or rejects it.
 
-For the purpose of calculating $l^2$-Betti numbers of groups we need to extend this definition. Let $(X, \mu)$ be a probability measure space divided into finitely many disjoint measurable subsets $X_i$. Let $\Gamma$ be a countable discrete group and $\rho$ be a right measure preserving action of $\Gamma$ on X.
+For the purpose of calculating $\ell^2$-Betti numbers of groups we need to extend this definition. Let $(X, \mu)$ be a probability measure space divided into finitely many disjoint measurable subsets $X_i$. Let $\Gamma$ be a countable discrete group and $\rho$ be a right measure preserving action of $\Gamma$ on X.
 We now choose 3 disjoint subsets $A$, $R$, $I$, where each of them is a union of certain $X_i$. They will be called the accepting set, the rejecting set and the initial set. In addition we choose a $\gamma_i \in \Gamma$ for each $X_i \subset X$ such that for each $i$ with $X_i \subset A$ or $X_i \subset R$ it holds that $\gamma_i = e$ where $e$ is the neutral element in $\Gamma$. 
 Let $Ind: X \to \N$ be the map which assigns to each $x \in X$ the corresponding index of the $X_i$ it is contained in.
 \begin{Definition}
@@ -325,10 +349,10 @@ Before we give an example of a computing Turing dynamical system we fix the nota
 \end{Example}
 
 
-\section{Computing $l^2$-Betti numbers}
-In this chapter we want to prove the following central theorem which connects $l^2$-Betti numbers to the concept of Turing dynamical systems.
+\section{Computing $\ell^2$-Betti numbers}
+In this chapter we want to prove the following central theorem which connects $\ell^2$-Betti numbers to the concept of Turing dynamical systems.
 \begin{Theorem} \label{HS}
-	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $l^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
+	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
 \end{Theorem}
 We will give the definition of Pontryagin duals and the semidirect product later in this chapter. The rest of this chapter is used to prove this theorem and give the needed definitions.
 \subsection{Groupoids}
@@ -342,7 +366,7 @@ We begin by giving some algebraic definitions, namely the construct of groupoids
 We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathcal{G}_0$ and we can identify it with a subset of the set of morphisms of $\mathcal{G}$ by the embedding $\textbf{1}: \mathcal{G}_0 \to mor(\mathcal{G}), x \mapsto [id: x \to x]$ which sends every object to the corresponding identity morphism. Therefore we will only only look at $mor(\mathcal{G})$ and also call it $\mathcal{G}$. 
 
 \begin{Definition}
-	For every Groupoid $\mathcal{G}$ we define the maps $s: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto X$ and $r: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto Y$ which will be called source and range map.
+	For every groupoid $\mathcal{G}$ we define the maps $s: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto X$ and $r: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto Y$ which will be called source and range map.
 \end{Definition}
 \begin{Definition}
 	A relation groupoid is a groupoid with with $|mor(X, Y)| \leq 1 \ \forall X,Y \in \G_0$.
@@ -373,7 +397,7 @@ We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathca
 \todo{Beispiel oder Erklärung und wie das bei TDS ist}
 
 \subsection{Groupoid ring}
-A fundamental concept used for the calculation of $l^2$-Betti numbers of groups was the group ring. We will transfer this to the notion of groupoids.
+A fundamental concept used for the calculation of $\ell^2$-Betti numbers of groups was the group ring. We will transfer this to the notion of groupoids.
 
 \begin{Definition}
 	Let $U$ be a subset of $\G_0$. A measurable edge is a map $\Phi:U \to \G$ such that $s \circ \Phi = id$ and $r \circ \Phi$ is injective.
@@ -411,7 +435,7 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 \end{Definition}
 
 \begin{Remark}
-	Let $\G(\rho)$ be an action Groupoid of $\rho: \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}: X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
+	Let $\G(\rho)$ be an action groupoid of $\rho: \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}: X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
 \end{Remark}
 
 \begin{Remark}
@@ -461,10 +485,10 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 	where $\chi_0$ is the characteristic function of the objects $\G_0$ of $\G$.
 \end{Definition}
 \begin{Remark}
-	Let $X \subset l^2G$ be an arbitrary subspace and $pr_X$ a projection onto $X$. Then $dim_{\mathcal{N}(G)}(X) = tr_{\mathcal{N}(G)}(pr_X)$.
+	Let $X \subset \ell^2(G)$ be an arbitrary subspace and $pr_X$ a projection onto $X$. Then $dim_{\mathcal{N}(G)}(X) = tr_{\mathcal{N}(G)}(pr_X)$.
 \end{Remark}
 \begin{Definition}
-	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $pr_X: L^2 \G \to X$ be projection onto $X$. The von-Neumann dimension of $X$ is defined through
+	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $pr_X: L^2 \G \to X$ be projection onto $X$. The von Neumann dimension of $X$ is defined through
 	\begin{align*}
 		dim_{\mathcal{N}(G)}(X) = tr_(pr_X).
 	\end{align*}
@@ -498,10 +522,10 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 \end{Theorem}
 Before we can proof this Theorem we have to do some preparations. 
 \begin{Definition}
-	Let $\G$ be a relation groupoid, $x \in \G_0$ and $T = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $T_x: l^2\G x \to l^2\G x$ which sends a basis element $1 \cdot y \in l^2\G x$ to $\sum_{i \in I'} r(\Phi_i(y)) f_i(y)$ where $I' \subset I$ is the set of indices $i$ where $y$ is in the domain of $\Phi_i$. 
+	Let $\G$ be a relation groupoid, $x \in \G_0$ and $T = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $T_x: \ell^2\G x \to \ell^2\G x$ which sends a basis element $1 \cdot y \in \ell^2\G x$ to $\sum_{i \in I'} r(\Phi_i(y)) f_i(y)$ where $I' \subset I$ is the set of indices $i$ where $y$ is in the domain of $\Phi_i$. 
 \end{Definition}
 \begin{Remark}
-	If $\G$ is a relation groupoid with finite orbits then for almost all $x \in \G$ $l^2\G x$ is finite dimensional because $\G x$ is finite. Therefore $T_x$ has a finite dimensional kernel.
+	If $\G$ is a relation groupoid with finite orbits then for almost all $x \in \G$ $\ell^2\G x$ is finite dimensional because $\G x$ is finite. Therefore $T_x$ has a finite dimensional kernel.
 \end{Remark}
 We will state the following fact without proof. For a complete proof see \cite{GRAB}.
 \begin{Lemma}
@@ -536,7 +560,7 @@ In addition with \ref{TX_rel_groupoid} we get that $dim_{\mathcal{N}(G)}(\ker \ 
 	for every $x \in A \cup R$.
 \end{Lemma}
 \begin{proof}
-	First we see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $l^2(A \cup R \cup I) \cap l^2 \G (T_X)x$ and the identity on the rest of $l^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be the one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A$. It then holds that $\bigcup_{i = 1}^{k} \{x_i\} = \G (T_X)x$. If we consider the points $x_i$ as elements of $l^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
+	First we see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and the identity on the rest of $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be the one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A$. It then holds that $\bigcup_{i = 1}^{k} \{x_i\} = \G (T_X)x$. If we consider the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
 	\begin{align*}
 		P(x_i) = \begin{cases}
 		x_{i + 1} & if \ i = 1 \\
@@ -643,7 +667,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 	which is only possible if $\int_{\G(\rho)_0} P(\hat{x})(y_1) d\mu(y_1) = 0$.
 	
 	\todo{hab ich das mit dem haarmas genug gesagt?}
-	$iii)$ Let us fist look at an element of the group ring $c g \in \C G$ of an arbitrary group $G$. Then for $c_1 g_1, c_2 g_2 \in l^2G$ it follows that 
+	$iii)$ Let us fist look at an element of the group ring $c g \in \C G$ of an arbitrary group $G$. Then for $c_1 g_1, c_2 g_2 \in \ell^2(G)$ it follows that 
 	\begin{align*}
 		\langle c g c_1 g_1, c_2 g_2 \rangle = \begin{cases}
 		 	c \cdot c_1 \cdot c_2 & if \ g g_1 = g_2 \\
@@ -654,7 +678,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 		\end{cases}
 		= \langle  c_1 g_1, c g^{-1} c_2 g_2 \rangle
 	\end{align*}.
-	Because the same follows for sums in $\C G$ or $l^2 G$ it follows that the adjoint of an element $\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i)$ is given by 
+	Because the same follows for sums in $\C G$ or $\ell^2 G$ it follows that the adjoint of an element $\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i)$ is given by 
 	\begin{align*}
 		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i)^{-1} = \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{\rho}(\gamma_i)(\hat{x_i}^{-1}), \gamma_i^{-1})
 	\end{align*}. 
@@ -672,7 +696,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 	Let $T \in \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ be self-adjoint. Then $dim_{\mathcal{N}(G)}(\ker \ T) = dim_{\mathcal{N}(G)}(\ker \ P \otimes 1(T))$.
 \end{Theorem} \label{pontr}
 \begin{proof}
-	First suppose $X$ and $\Gamma$ are finite. Therefore $l^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is finite dimensional and $T$ is just a linear map. With the spectral theorem it follows that all eigenvalues of $T$ are real and there exist a basis of eigenvectors. Let $\lambda_1, \lambda_2, \ldots, \lambda_n$ denote the different non-zero eigenvalues of $T$. Then
+	First suppose $X$ and $\Gamma$ are finite. Therefore $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is finite dimensional and $T$ is just a linear map. With the spectral theorem it follows that all eigenvalues of $T$ are real and there exist a basis of eigenvectors. Let $\lambda_1, \lambda_2, \ldots, \lambda_n$ denote the different non-zero eigenvalues of $T$. Then
 	\begin{align*}
 		S = \frac{(T - \lambda_1 id) \circ (T - \lambda_2 id) \circ \ldots \circ (T - \lambda_n id)}{(-1)^n \cdot \lambda_1 \cdot \lambda_2 \cdot \ldots \cdot \lambda_n}
 	\end{align*}
@@ -680,14 +704,14 @@ For more information about semidirect products see e.g. \cite{ALG}.
 	\begin{align*}
 		P \otimes 1 (S) = \frac{(P \otimes 1(T) - \lambda_1 id) \circ (P \otimes 1(T) - \lambda_2 id) \circ \ldots \circ (P \otimes 1(T) - \lambda_n id)}{(-1)^n \cdot \lambda_1 \cdot \lambda_2 \cdot \ldots \cdot \lambda_n}
 	\end{align*}.
-	Because $L^2 \G (\rho)$ is also finite dimensional and $P \otimes 1(T)$ is still self-adjoint we can again use the spectral theorem. In addition the eigenvalues stay the same and therefore $P \otimes 1 (S)$ is a projection onto $\ker P \otimes 1 (T)$. Because $\ker T \subset l^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma) $ it follows that
+	Because $L^2 \G (\rho)$ is also finite dimensional and $P \otimes 1(T)$ is still self-adjoint we can again use the spectral theorem. In addition the eigenvalues stay the same and therefore $P \otimes 1 (S)$ is a projection onto $\ker P \otimes 1 (T)$. Because $\ker T \subset \ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma) $ it follows that
 	\begin{align*}
 		dim_{\mathcal{N}(G)}(\ker \ T) = tr_{\mathcal{N}(G)}(S) = tr(P \otimes 1 (S)) = dim_{\mathcal{N}(G)}(\ker P \otimes 1 (T)).
 	\end{align*}
-	If $X$ or $\Gamma$ are infinite then $l^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is infinite dimensional. Let $l_1 \subset l_2 \subset \ldots$ be a series of finite dimensional $\C$-vector spaces converging to $l^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$. For each $l_i$ we can restrict $T$ to $l_i$ and the above argument holds. Because $T|_{l_i}$ converges to $T$ the claim follows also for the infinite dimensional case.
+	If $X$ or $\Gamma$ are infinite then $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is infinite dimensional. Let $l_1 \subset l_2 \subset \ldots$ be a series of finite dimensional $\C$-vector spaces converging to $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$. For each $l_i$ we can restrict $T$ to $l_i$ and the above argument holds. Because $T|_{l_i}$ converges to $T$ the claim follows also for the infinite dimensional case.
 \end{proof}\todo{klappt das mit dem Konvergieren?}
 \begin{Theorem}
-	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $l^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
+	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
 \end{Theorem}
 \begin{proof}
 	With \ref{pontr} it remains to show that the map $S$ from \ref{groserSatz} is contained in $P \otimes 1(\Q (\hat{X} \rtimes_{\hat{\rho}} \Gamma))$
@@ -714,7 +738,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 \end{proof}
 
 \section{The lamplighter group}
-\subsection{Rational $l^2$-Betti numbers}
+\subsection{Rational $\ell^2$-Betti numbers}
 \begin{Definition}
 	The lamplighter group $L$ is defined as
 	\begin{align*}
@@ -722,7 +746,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 	\end{align*}
 	where $\zeta$ is the shift operation defined in \ref{shift}.
 \end{Definition}
-Lets first look at the Turing dynamical system corresponding to a read-only Turing machine as constructed in \ref{roTMtoTDS}. If we can assure that the resulting Turing dynamical system has disjoint accepting chains and stops at any configuration we can assure that it is computing. By using \ref{HS} we see that $\mu (I) - \Omega_1(T_X)$ is a $l^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$. We then get
+Lets first look at the Turing dynamical system corresponding to a read-only Turing machine as constructed in \ref{roTMtoTDS}. If we can assure that the resulting Turing dynamical system has disjoint accepting chains and stops at any configuration we can assure that it is computing. By using \ref{HS} we see that $\mu (I) - \Omega_1(T_X)$ is a $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$. We then get
 \begin{align*}
 	\hat{X} \rtimes_{\hat{\rho}} \Gamma = (\widehat{(\prod_{i \in \Z} \2) \times \2^n}) \rtimes_{\hat{\rho}} (\Z \times Aut(\2^n)) \\
 	= (\bigoplus_{i \in \Z} \2 \times \2^n) \rtimes_{\rho} (\Z \times Aut(\2^n)).
@@ -732,7 +756,7 @@ Because $\Z$ acts only on the first part and $Aut(\2^n)$ only on the second part
 	\hat{X} \rtimes_{\hat{\rho}} \Gamma = ((\bigoplus_{i \in \Z} \2) \rtimes_{\zeta} \Z) \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)) \\
 	= L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)).
 \end{align*}
-Therefore we see that read-only Turing machines offer a way to compute the $l^2$-betti number of $L \times H$ for some discrete finite group $H$. We will use this fact to prove the following theorem.
+Therefore we see that read-only Turing machines offer a way to compute the $\ell^2$-betti number of $L \times H$ for some discrete finite group $H$. We will use this fact to prove the following theorem.
 
 \begin{Theorem} \label{mainTh}
 	Every positive rational number arises from the lamplighter group.
@@ -818,21 +842,21 @@ We can now start to proof \ref{mainTh}. Because of \ref{add} it suffices to show
 \begin{align*}
 	\mu (I) - \Omega_1(X) = \mu (I) (1 - \frac{\Omega_1(T_X)}{\mu(I)}) = \mu (I) (1 - \frac{1}{m})
 \end{align*}
-is a $l^2$-Betti number of $L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n))$ for some $n \in \N$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now change $(T_X)$ by adding "dummy states" until $(T_X)$ has $2^{k'}$ many states. Doing so does not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. We now construct a Turing dynamical system $(T_{X'})$ in the same way as in \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, i.e.
+is a $\ell^2$-Betti number of $L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n))$ for some $n \in \N$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now change $(T_X)$ by adding "dummy states" until $(T_X)$ has $2^{k'}$ many states. Doing so does not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. We now construct a Turing dynamical system $(T_{X'})$ in the same way as in \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, i.e.
 \begin{align*}
 	\phi : \2^{k'} \to \2^{k'}, \sum_{i =1}^{k'}z_i \cdot e_i \mapsto \sum_{i =2}^{k'}z_{i - 1} \cdot e_i + z_{k'} \cdot e_1
 \end{align*}
-where $e_i$ denotes the standard basis of $\2^{k'}$ and each $z_i \in \2$. Then $Rot$ acts transitively on the standard basis of $\2^{k'}$ and has exactly $k' = 2^{h}$ elements. Then $\frac{1}{2^{k' + 1}} (1 - \frac{1}{m})$ is a $l^2$-Betti number of $L \times (\2^{k'} \rtimes_{\rho|_{Rot}} Rot)$. With \ref{mult} follows that 
+where $e_i$ denotes the standard basis of $\2^{k'}$ and each $z_i \in \2$. Then $Rot$ acts transitively on the standard basis of $\2^{k'}$ and has exactly $k' = 2^{h}$ elements. Then $\frac{1}{2^{k' + 1}} (1 - \frac{1}{m})$ is a $\ell^2$-Betti number of $L \times (\2^{k'} \rtimes_{\rho|_{Rot}} Rot)$. With \ref{mult} follows that 
 \begin{align*}
 	|(\2^{k'} \rtimes_{\rho|_{Rot}} Rot)| \cdot \frac{1}{2^{k' + 1}} (1 - \frac{1}{m}) = 2^{k'} \cdot 2^h \cdot \frac{1}{2^{k' + 1}} (1 - \frac{1}{m}) = 2^{h -1} (1 - \frac{1}{m})
 \end{align*}
-is a $l^2$-Betti number of $L$. By changing $I$ to
+is a $\ell^2$-Betti number of $L$. By changing $I$ to
 \begin{align*}
 	[\1^{h-1} \underline{\1}][s_I]
 \end{align*}
-we get that $(1 - \frac{1}{m})$ is a $l^2$-Betti number of $L$. At last by interchanging $s_A$ and $s_R$ we get that $\frac{1}{m}$ is a $l^2$-Betti number of $L$ which concludes the proof.
+we get that $(1 - \frac{1}{m})$ is a $\ell^2$-Betti number of $L$. At last by interchanging $s_A$ and $s_R$ we get that $\frac{1}{m}$ is a $\ell^2$-Betti number of $L$ which concludes the proof.
 
-\subsection{Irrational $l^2$-Betti numbers}
+\subsection{Irrational $\ell^2$-Betti numbers}
 \begin{Remark}
 	The definition of a Turing machine can easily be expanded to a Turing machine with multiple tapes, i.e. a Turing machine which acts on $(\2^\Z)^k$ for $k \in \N$ instead of just $\2^\Z$. In this case we get a transition function $\delta: S \setminus(A \cup R) \times \2^k \to S \times \2^k \times \{-1, 0, 1\}^k$.\todo{Vllt. noch genauer}
 \end{Remark}

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.7.18)  1 AUG 2017 18:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.3)  4 AUG 2017 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **bachelorarbeit-vorlage.tex
 (./bachelorarbeit-vorlage.tex
 LaTeX2e <2017-04-15>
-Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
+Babel <3.12> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2017/04/13 v3.23 KOMA-Script document class (article)
 (/usr/share/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -452,10 +452,10 @@ Package: nicefrac 1998/08/04 v0.9b Nice fractions
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ))
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -466,15 +466,7 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
 (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
-
-(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count88
+File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
@@ -505,13 +497,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count89
+\inf@bad=\count88
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count90
-\leftroot@=\count91
+\uproot@=\count89
+\leftroot@=\count90
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count92
-\DOTSCASE@=\count93
+\classnum@=\count91
+\DOTSCASE@=\count92
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
@@ -520,15 +512,15 @@ LaTeX Info: Redefining \cdots on input line 596.
 \big@size=\dimen107
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count94
-\c@MaxMatrixCols=\count95
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
-\c@parentequation=\count96
-\dspbrk@lvl=\count97
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
 \tag@help=\toks18
-\row@=\count98
-\column@=\count99
-\maxfields@=\count100
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
 \andhelp@=\toks19
 \eqnshift@=\dimen108
 \alignsep@=\dimen109
@@ -577,7 +569,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks28
 \XKV@tempa@toks=\toks29
 )
-\XKV@depth=\count101
+\XKV@depth=\count100
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -639,10 +631,10 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 \pgf@yc=\dimen123
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count102
-\c@pgf@countb=\count103
-\c@pgf@countc=\count104
-\c@pgf@countd=\count105
+\c@pgf@counta=\count101
+\c@pgf@countb=\count102
+\c@pgf@countc=\count103
+\c@pgf@countd=\count104
 \t@pgf@toka=\toks34
 \t@pgf@tokb=\toks35
 \t@pgf@tokc=\toks36
@@ -660,8 +652,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count106
-\pgfsyssoftpath@bigbuffer@items=\count107
+\pgfsyssoftpath@smallbuffer@items=\count105
+\pgfsyssoftpath@bigbuffer@items=\count106
 )
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -674,7 +666,7 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen124
-\pgfmath@count=\count108
+\pgfmath@count=\count107
 \pgfmath@box=\box31
 \pgfmath@toks=\toks37
 \pgfmath@stack@operand=\toks38
@@ -691,7 +683,7 @@ x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
 .code.tex))) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count109
+\c@pgfmathroundto@lastzeros=\count108
 )) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@picminx=\dimen125
@@ -723,7 +715,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box32
 \pgf@hbox=\box33
 \pgf@layerbox@main=\box34
-\pgf@picture@serial@count=\count110
+\pgf@picture@serial@count=\count109
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
@@ -751,7 +743,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen148
-\pgf@sys@shading@range@num=\count111
+\pgf@sys@shading@range@num=\count110
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -803,7 +795,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
 x
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count112
+\pgf@plot@mark@count=\count111
 \pgfplotmarksize=\dimen153
 )
 \tikz@lastx=\dimen154
@@ -816,17 +808,17 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box38
 \tikz@tempbox=\box39
 \tikz@tempbox@bg=\box40
-\tikztreelevel=\count113
-\tikznumberofchildren=\count114
-\tikznumberofcurrentchild=\count115
-\tikz@fig@count=\count116
+\tikztreelevel=\count112
+\tikznumberofchildren=\count113
+\tikznumberofcurrentchild=\count114
+\tikz@fig@count=\count115
  (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count117
-\pgfmatrixcurrentcolumn=\count118
-\pgf@matrix@numberofcolumns=\count119
+\pgfmatrixcurrentrow=\count116
+\pgfmatrixcurrentcolumn=\count117
+\pgf@matrix@numberofcolumns=\count118
 )
-\tikz@expandcount=\count120
+\tikz@expandcount=\count119
 
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 topaths.code.tex
@@ -837,20 +829,20 @@ positioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 ) (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count121
-\calc@Bcount=\count122
+\calc@Acount=\count120
+\calc@Bcount=\count121
 \calc@Adimen=\dimen160
 \calc@Bdimen=\dimen161
 \calc@Askip=\skip64
 \calc@Bskip=\skip65
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count123
+\calc@Ccount=\count122
 \calc@Cskip=\skip66
 )
-\c@@todonotes@numberoftodonotes=\count124
+\c@@todonotes@numberoftodonotes=\count123
 )
-\c@Theorem=\count125
+\c@Theorem=\count124
 
 (./bachelorarbeit-vorlage.aux)
 \openout1 = `bachelorarbeit-vorlage.aux'.
@@ -870,42 +862,32 @@ LaTeX Font Info:    ... okay on input line 61.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
+\scratchcounter=\count125
 \scratchdimen=\dimen162
 \scratchbox=\box41
-\nofMPsegments=\count127
-\nofMParguments=\count128
+\nofMPsegments=\count126
+\nofMParguments=\count127
 \everyMPshowfont=\toks42
-\MPscratchCnt=\count129
+\MPscratchCnt=\count128
 \MPscratchDim=\dimen163
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
 \everyMPtoPDFconversion=\toks43
-) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
 (/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
 (/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
@@ -914,15 +896,32 @@ Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
+(/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 
@@ -933,9 +932,11 @@ e
 ABD: EveryShipout initializing macros
 <kit-logo.jpg, id=4, 199.7061pt x 91.3011pt>
 File: kit-logo.jpg Graphic file (type jpg)
- <use kit-logo.jpg>
-Package pdftex.def Info: kit-logo.jpg used on input line 68.
-(pdftex.def)             Requested size: 89.86691pt x 41.08511pt.
+<use kit-logo.jpg>
+Package pdftex.def Info: kit-logo.jpg  used on input line 68. on input line 68.
+
+Package pdftex.def Info: Requested size: 89.86691pt x 41.08511pt on input line 
+68.
 LaTeX Font Info:    Try loading font information for U+lasy on input line 76.
 
 (/usr/share/texmf-dist/tex/latex/base/ulasy.fd
@@ -961,27 +962,27 @@ File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 \tf@toc=\write4
 \openout4 = `bachelorarbeit-vorlage.toc'.
 
-[2] [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 177.
+[2] [3] [4]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 186.
 
  (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 177.
- [4] [5] [6] [7]
-[8] [9]
-Overfull \hbox (13.78085pt too wide) in paragraph at lines 392--392
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
+ [5] [6] [7]
+[8] [9] [10]
+Overfull \hbox (13.78085pt too wide) in paragraph at lines 416--416
 [] 
  []
 
-[10] [11] [12]
-Overfull \hbox (47.79922pt too wide) in paragraph at lines 485--485
+[11] [12]
+Overfull \hbox (47.79922pt too wide) in paragraph at lines 509--509
 [] 
  []
 
-[13]
-Overfull \hbox (12.67487pt too wide) in paragraph at lines 550--552
+[13] [14]
+Overfull \hbox (12.67487pt too wide) in paragraph at lines 574--576
 \T1/cmr/m/n/12 It fol-lows that $[][]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OT1/
 cmr/m/n/12 1)[]\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12 2 []  \OML/cmm/m/it/12 P$ 
 \T1/cmr/m/n/12 is a ba-sis vec-tor of $[]  \OML/cmm/m/it/12 P$ \T1/cmr/m/n/12 a
@@ -989,13 +990,13 @@ nd there-fore $\OML/cmm/m/it/12 dim\OT1/cmr/m/n/12 ([]  \OML/cmm/m/it/12 P\OT1/
 cmr/m/n/12 ) =
  []
 
-[14] [15]
-Overfull \hbox (1.17775pt too wide) in paragraph at lines 627--627
+[15]
+Overfull \hbox (1.17775pt too wide) in paragraph at lines 651--651
 [] 
  []
 
-
-Overfull \hbox (49.51064pt too wide) in paragraph at lines 637--640
+[16]
+Overfull \hbox (49.51064pt too wide) in paragraph at lines 661--664
 \T1/cmr/m/n/12 where $\OML/cmm/m/it/12 e$ \T1/cmr/m/n/12 is the ne-tral el-e-me
 nt of $\OT1/cmr/m/n/12 ^^@$\T1/cmr/m/n/12 .Because $\OML/cmm/m/it/12 d^^V\OT1/c
 mr/m/n/12 (\OMS/cmsy/m/n/12 G[]\OT1/cmr/m/n/12 ) = 1$ \T1/cmr/m/n/12 it re-main
@@ -1005,12 +1006,12 @@ r/m/n/12 ) =
  []
 
 
-Overfull \hbox (140.47647pt too wide) in paragraph at lines 642--642
+Overfull \hbox (140.47647pt too wide) in paragraph at lines 666--666
 [] 
  []
 
-[16]
-Overfull \hbox (24.90999pt too wide) in paragraph at lines 672--673
+
+Overfull \hbox (24.90999pt too wide) in paragraph at lines 696--697
 []\T1/cmr/bx/n/12 Theorem 4.37. []\T1/cmr/m/it/12 Let $\OML/cmm/m/it/12 T \OMS/
 cmsy/m/n/12 2 \U/msb/m/n/12 C\OT1/cmr/m/n/12 ([] \U/msb/m/n/12 o[] \OT1/cmr/m/n
 /12 ^^@)$ \T1/cmr/m/it/12 be self-adjoint. Then $\OML/cmm/m/it/12 dim[]\OT1/cmr
@@ -1019,11 +1020,11 @@ mr/m/n/12 ([]  \OML/cmm/m/it/12 P \OMS/cmsy/m/n/12
 
  []
 
-[17] [18]
+[17] [18] [19]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 751.
- [19] [20]
-Overfull \hbox (49.61978pt too wide) in paragraph at lines 840--841
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 775.
+ [20] [21]
+Overfull \hbox (49.61978pt too wide) in paragraph at lines 864--865
 \OT1/cmr/m/n/12 (\U/msb/m/n/12 Z\OML/cmm/m/it/12 =\OT1/cmr/m/n/12 2\U/msb/m/n/1
 2 Z[]\OT1/cmr/m/n/12 )[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 
 = \OML/cmm/m/it/12 l[]; []  ; a[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 l[]; b[] \
@@ -1033,22 +1034,22 @@ t/12 m[]; c[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 n[]; []  ; c[] \OT1/cmr/m/n/12
 O ^^P \OMS/cmsy/m/n/12 2
  []
 
-[21] [22] [23] [24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 981--982
+[22] [23] [24] [25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 1005--1006
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 983--985
+Underfull \hbox (badness 10000) in paragraph at lines 1007--1009
 
  []
 
-[26] (./bachelorarbeit-vorlage.aux) ) 
+[27] (./bachelorarbeit-vorlage.aux) ) 
 Here is how much of TeX's memory you used:
- 15622 strings out of 492995
- 299891 string characters out of 6138756
- 428909 words of memory out of 5000000
- 18836 multiletter control sequences out of 15000+600000
+ 15571 strings out of 492990
+ 299168 string characters out of 6138689
+ 423672 words of memory out of 5000000
+ 18790 multiletter control sequences out of 15000+600000
  28597 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,17n,66p,8833b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1073,10 +1074,10 @@ re/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfs
 x1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on bachelorarbeit-vorlage.pdf (26 pages, 1092599 bytes).
+Output written on bachelorarbeit-vorlage.pdf (27 pages, 1095237 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
+ 193 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
