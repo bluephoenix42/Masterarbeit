@@ -16,9 +16,9 @@
 %\usepackage[latin1]{inputenc} %  Alternativ unter Windows
 \usepackage[T1]{fontenc}
 %\usepackage[ngerman]{babel}
-\usepackage{parskip}
+%\usepackage{parskip}
 
-\usepackage{nicefrac}
+%\usepackage{nicefrac}
 
 
 \usepackage[pdftex]{graphicx}
@@ -29,15 +29,21 @@
 % Abstand obere Blattkante zur Kopfzeile ist 2.54cm - 15mm
 \setlength{\topmargin}{-15mm}
 
+%\setlength{\parindent}{0pt}
+
 
 % Umgebungen für Definitionen, Sätze, usw.
 % Es werden Sätze, Definitionen etc innerhalb einer Section mit
 % 1.1, 1.2 etc durchnummeriert, ebenso die Gleichungen mit (1.1), (1.2) ..
+\theoremstyle{plain}
 \newtheorem{Theorem}{Theorem}[section]
-\newtheorem{Definition}[Theorem]{Definition} 
 \newtheorem{Lemma}[Theorem]{Lemma}	
+\newtheorem{Remark}[Theorem]{Remark} 
+
+\theoremstyle{definition}
+\newtheorem{Definition}[Theorem]{Definition} 
 \newtheorem{Example}[Theorem]{Example}
-\newtheorem{Remark}[Theorem]{Remark} 	   
+	   
                   
 \numberwithin{equation}{section} 
 
@@ -146,7 +152,7 @@ We will denote the bounded operators of a Hilbert space $H_1$ with $\mathcal{B}(
 	A \emph{Hilbert $\mathcal{N}(G)$-module} is a Hilbert space $H$ with a linear isometric $G$-action such that there exists an isometric linear $G$-embedding from $H$ to $\ell^2(G)^n$ for some $n \in \N$.
 \end{Definition}
 \begin{Definition}
-	Let $H$ be a Hilbert $\mathcal{N}(G)$-module with corresponding embedding $\iota: H \to \ell^2(G)^n$ and let $pr_{\iota(H)}: \ell^2(G)^n \to H$ be the corresponding $G$-equivariant projection. Let $\iota_i: \ell^2(G) \to \ell^2(G)^n, y \mapsto (x_1, \ldots, x_n)$ with $x_j = \delta_{i,j} \cdot y$ be the inclusion of the i-th $\ell^2(G)$ and $pr_i: \ell^2(G)^n \to \ell^2(G), (x_1, \ldots, x_n) \mapsto x_i$ the corresponding projection. Then 
+	Let $H$ be a Hilbert $\mathcal{N}(G)$-module with corresponding embedding \\ $\iota: H \to \ell^2(G)^n$ and let $pr_{\iota(H)}: \ell^2(G)^n \to H$ be the corresponding $G$-equivariant projection. Let $\iota_i: \ell^2(G) \to \ell^2(G)^n, y \mapsto (x_1, \ldots, x_n)$ with $x_j = \delta_{i,j} \cdot y$ be the inclusion of the i-th $\ell^2(G)$ and $pr_i: \ell^2(G)^n \to \ell^2(G), (x_1, \ldots, x_n) \mapsto x_i$ the corresponding projection. Then 
 	\begin{align*}
 		tr_{\mathcal{N}(G)}: \mathcal{B}(H)^G \to \C, A \mapsto \sum_{i = 1}^{n} tr_{\mathcal{N}(G)}(pr_i \circ \iota \circ A \circ pr_{\iota(H)} \circ \iota_i)
 	\end{align*}
@@ -188,7 +194,7 @@ One can now define the $\ell^2$-Betti numbers of CW-complexes in a very similar 
 		\item \emph{finite type} if for every $n \in \N$ it has only finitely many $G$-equivariant $n$-cells.
 	\end{itemize}
 \end{Definition}
-\
+
 \begin{Remark}
 	One can show that the chain complex of a $G$-CW complex $X$ is a chain complex $C_*(X)$ of left $\Z G$-modules, i.e. each $C_n(X)$ is a left $\Z G$-module and the differentials are homomorphisms of these modules.
 \end{Remark}
@@ -268,12 +274,20 @@ The statement of \ref{MCW} will be implicitly used in many points of this work. 
 \end{Lemma}
 \todo{Vllt. noch beweisen oder Quelle}
 \section{Turing dynamical systems}
-%Hier definiere ich TDS
-Let us first give a definition of a Turing machine. For convenience we will only allow 1 and 0 as symbols on our tape.
+To fix notation we will first give a definition of a Turing machine. For convenience we will only allow 1 and 0 as symbols on our tape.
 \begin{Definition}
-	A Turing machine is a 5-tuple $T=(S,\delta, A, R, I)$ where S is a finite set of states and $\delta: S \setminus(A \cup R) \times \2 \to S \times \2 \times \{-1, 0, 1\}$ is called the transition function. $A \subset S$ is called the set of accepting states, $R \subset S$ is called the set of rejecting states and $I \in S$ is called the initial state.
+	A \emph{Turing machine} is a 5-tuple $T=(S,\delta, A, R, I)$ where S is a finite set of states and 
+	\begin{align*}
+		\delta: \2 \times S \setminus(A \cup R) \to \2 \times \{-1, 0, 1\} \times S
+	\end{align*}
+	is called the transition function. $A \subset S$ is called the set of accepting states, $R \subset S$ is called the set of rejecting states and $I \in S$ is called the initial state.
+	A Turing machine is \emph{read-only} if $\delta$ fixes the $\2$-coordinate, i.e.
+	\begin{align*}
+		\delta (x, \sigma) = (x, \beta, \tilde{\sigma})
+	\end{align*}
+	for each $x \in \2$ and $\sigma \in S \setminus(A \cup R)$.
 \end{Definition}
-In addition each Turing machine uses a "tape", i.e. a set $\Z / 2\Z ^{\Z}$ with a "head" on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$ which is called an input. We start with the initial state and use the transition function $\delta$ to get $\delta(I, Y_0)$. The first coordinate corresponds to the new element $Y_0$, the second to the new state and the third corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$, e.g. if $\delta(I, Y_0)_3 = 1$ we shift the whole tape one to the left, therefore our new $Y_0$ is our old $Y_1$. We repeat this step until we get a state in $A \cup R$. We say, that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$ after finitely many steps. We say that the Turing machine holds for $Y$ if it accepts or rejects it.
+In addition each Turing machine uses a "tape", i.e. a set $\Z / 2\Z ^{\Z}$ with a "head" on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$ which is called an input. We start with the initial state and use the transition function $\delta$ to get $\delta(Y_0, I)$. The first coordinate corresponds to the new element $Y_0$, the third to the new state and the second corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$, e.g. if $\delta(I, Y_0)_3 = 1$ we shift the whole tape one to the left, therefore our new $Y_0$ is our old $Y_1$. We repeat this step until we get a state in $A \cup R$. We say that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$ after finitely many steps. We say that the Turing machine holds for $Y$ if it accepts or rejects it.
 
 For the purpose of calculating $\ell^2$-Betti numbers of groups we need to extend this definition. Let $(X, \mu)$ be a probability measure space divided into finitely many disjoint measurable subsets $X_i$. Let $\Gamma$ be a countable discrete group and $\rho$ be a right measure preserving action of $\Gamma$ on X.
 We now choose 3 disjoint subsets $A$, $R$, $I$, where each of them is a union of certain $X_i$. They will be called the accepting set, the rejecting set and the initial set. In addition we choose a $\gamma_i \in \Gamma$ for each $X_i \subset X$ such that for each $i$ with $X_i \subset A$ or $X_i \subset R$ it holds that $\gamma_i = e$ where $e$ is the neutral element in $\Gamma$. 
@@ -283,69 +297,82 @@ Let $Ind: X \to \N$ be the map which assigns to each $x \in X$ the corresponding
 	 \begin{align*}
 	 T_X:X \to X, x \mapsto \rho(\gamma_{Ind(x)})(x)
 	 \end{align*}
-	 is called the Turing map.
-	 The group $\Gamma$ and the space $X$ (with all the choices of subsets and corresponding $\gamma_i$ made in the last paragraph) together with the Turing map will be called a Turing dynamical system and will be denoted by $(T_X)$
+	 is called the \emph{Turing map}.
+	 The group $\Gamma$ and the space $X$ (with all the choices of subsets and corresponding $\gamma_i$ made in the last paragraph) together with the Turing map will be called a \emph{Turing dynamical system} and will be denoted by $(T_X)$
 \end{Definition}
-Let $x \in X$. If there is a $k \in \N$ such that $T_X^k(x) = T_X^{k + 1}(x)$ there also holds $T_X^h(x) = T_X^{h + 1}(x) \ \forall h \in \N$ with $h \geq k$. We then define $T_X^\infty (x) = T_X^k(x)$. Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system $(T_X)$ accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. In addition we say that $(T_X)$ holds for $y$ if it accepts or rejects it.
+Let $x \in X$ be an element of $X$. If there is a $k \in \N$ such that $T_X^k(x) = T_X^{k + 1}(x)$ there also holds $T_X^h(x) = T_X^{h + 1}(x)$ for all $h \in \N$ with $h \geq k$. We then define $T_X^\infty (x) = T_X^k(x)$. Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system $(T_X)$ accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. In addition we say that $(T_X)$ holds for $y$ if it accepts or rejects it.
 
-We can see that a Turing machine can be emulated with a Turing dynamical system. But first lets fix notation
+For every Turing machine $T$ we can construct a Turing dynamical system $(T_X)$ which does the same as the Turing machine, i.e. we have a bijection $\Psi: \2^\Z \to I$ such that $T$ accepts (rejects) an input $Y \in \2^\Z$ if and only if $(T_X)$ accepts (rejects) $\Psi(Y)$. This allows us to first define a Turing machine and the get a Turing dynamical system out of it. We will use this fact may times in chapter \ref{chlamplighter}. The following example shows how the corresponding Turing dynamical system is constructed. But first let us fix notation.
 \begin{Remark}
-	Let $M \subset N^\Z$  be defined through $M = \{(n_i)_{i \in \Z} \in N^\Z | n_{-k} = m_{-k}, \cdots, n_l = m_l \} \ k,l \in \N$, i.e. a set where $k+l$ coordinates including the $0$-coordinate are fixed. We then simply write $[m_{-k} \cdots \underline{m_0} \cdots m_l]$ for $M$ and $[m_{-k} \cdots \underline{m_0} \cdots m_l][\sigma]$ for $M \times \{\sigma\}$.
+	Let $M \subset N^\Z$  be defined through 
+	\begin{align*}
+		M = \{(n_i)_{i \in \Z} \in N^\Z | n_{-k} = m_{-k}, \cdots, n_l = m_l \} \ k,l \in \N,
+	\end{align*}
+	i.e. a set where $k+l$ coordinates including the $0$-coordinate are fixed. We then simply write $[m_{-k} \cdots \underline{m_0} \cdots m_l]$ for $M$ and $[m_{-k} \cdots \underline{m_0} \cdots m_l][\sigma]$ for $M \times \{\sigma\}$.
 \end{Remark}
 \begin{Example}\label{TMtoTDS}
 	Let  $T=(S,\delta, \tilde{A}, \tilde{R}, \tilde{I})$ be a Turing machine. We define $X = \2^\Z \times S$ and $\Gamma =   \2 \times \Z \times Bij(S)$.
 	The action of $\Gamma$ on $X$ is defined by the following rules:
 	\begin{itemize}
-		\item The generator $\overline{1}$ of the group $\Z / 2\Z$ acts on the $\Z / 2\Z^\Z$ part of $X$ by adding $\overline{1}$ to the element with index $0$.
+		\item The generator $\1$ of the group $\Z / 2\Z$ acts on the $\Z / 2\Z^\Z$ part of $X$ by adding $\1$ to the element with index $0$.
 		\item The generator $1$ of the group $\Z$ acts also on the $\Z / 2\Z^\Z$ part by shifting every element 1 to the left, i.e. decreasing the index of every element by 1.
 		\item $Bij(S)$ acts on $S$ in the natural way.
 	\end{itemize}
 	We will now use the transition function to construct the Turing map. We choose the following devision of $X$:
 	\begin{align*}
-	X = \bigcup_{x \in \2, \sigma \in S} [\underline{x}][\sigma]
+	X = \bigcup_{x \in \2, \sigma \in S} [\underline{x}][\sigma].
 	\end{align*}
-	For an arbitrary $X_i = [\underline{x}][\sigma]$ we can use the transition function of the Turing machine and get $\delta(\sigma, x) = (\tilde{\sigma}, \alpha, \beta)$.\todo{sigma und x reihenfolge} Let $\tau \in Bij(S)$ be some map which sends $\sigma$ to $\tilde{\sigma}$ and let $y \in \2$ be $y=x-\alpha$. We can then see $y$ as a map from $\2$ to itself which sends $x$ to $\alpha$. Our element $\gamma_i$ corresponding to $X_i$ is then given by 
+	For an arbitrary $X_i = [\underline{x}][\sigma]$ we can use the transition function of the Turing machine. Let
 	\begin{align*}
-	\gamma_i = \begin{cases}
-	(id, \overline{0}, 0) & \text{if } X_i \subset A \cup R \\
-	(y, \beta, \tau) & \text{else}
-	\end{cases}
+		(\alpha, \beta,\tilde{\sigma}) = \delta(x, \sigma)
+	\end{align*} 
+	denote  the image of $(x, \sigma)$. \\
+	Now let $\tau \in Bij(S)$ be some map which sends $\sigma$ to $\tilde{\sigma}$ and let $y \in \2$ be $y=x-\alpha$. We can then see $y$ as a map from $\2$ to itself which sends $x$ to $\alpha$. Our element $\gamma_i$ corresponding to $X_i$ is then given by 
+	\begin{align*}
+		\gamma_i = \begin{cases}
+			(\0, 0, id) & if \ X_i \subset A \cup R \\
+			(y, \beta, \tau) & otherwise
+		\end{cases}.
 	\end{align*} 
 	We only need to define $A$, $R$ and $I$. $A$ is given by
 	\begin{align*}
 	A = \bigcup_{x \in \2, \sigma \in \tilde{A}}[\underline{x}][\sigma]
 	\end{align*}
-	which is of course a union of some $X_i$. $R$ and $I$ can be defined analogous. The resulting Turing dynamical system emulates the Turing machine in the following way: 
-	If we have an input $Y \in \2$ of the Turing machine we can transform it to an element $Y \times \tilde{I} \in X$. The Turing dynamical system accepts (rejects) $Y \times \tilde{I}$ exactly when the Turing machine accepts (rejects) $Y$.
+	which is of course a union of some $X_i$. $R$ and $I$ can be defined analogous. 
+	
+	The resulting Turing dynamical system $(T_X)$ accepts (rejects) an element in the initial set $Y \times \tilde{I} \subset I$ exactly when the Turing machine $T$ accepts (rejects) the input $Y \in \2^\Z$.
 \end{Example} 
+Our ultimate goal is to use Turing dynamical systems to get $\ell^2$-Betti numbers arising from a group. For this purpose some additional definitions and restrictions are needed.
 \begin{Definition}
-	The first fundamental set $\mathcal{F}_1(T_X)$ is the subset of $I$ consisting of those points $x$ with $T_X^\infty(x) \in A$ and there is no point $y$ with $T_X(y)=x$. The second fundamental set is the subset of $A$ defined as $\mathcal{F}_2(T_X)=T_X^\infty(\mathcal{F}_1(T_X))$. The first (second) fundamental value $\Omega_1(T_X) ( \Omega_2(T_X))$ is the measure of the corresponding fundamental set.
+	The \emph{first fundamental set} $\mathcal{F}_1(T_X)$ is the subset of $I$ consisting of those points $x$ with $T_X^\infty(x) \in A$ and there is no point $y$ with $T_X(y)=x$. The \emph{second fundamental set} is the subset of $A$ defined as $\mathcal{F}_2(T_X)=T_X^\infty(\mathcal{F}_1(T_X))$. The \emph{first (second) fundamental value} $\Omega_1(T_X) \ ( \Omega_2(T_X))$ is the measure of the corresponding fundamental set.
 \end{Definition}
 
 \begin{Definition}
 	We say that a Turing dynamical system $(T_X)$
 	\begin{itemize}
-		\item stops at any configuration if $T_X^\infty (x) \in A \cup R$ for almost all $x \in X$
-		\item has disjoint accepting chains if $T_X^\infty (x) \neq T_X^\infty (y)$ for almost all $x, y \in \mathcal{F}_1(T_X)$ with $x \neq y$
-		\item does not restart if the set $T_X(X) \cap I$ has measure $0$
+		\item \emph{stops at any configuration} if $T_X^\infty (x) \in A \cup R$ for almost all $x \in X$,
+		\item \emph{has disjoint accepting chains} if $T_X^\infty (x) \neq T_X^\infty (y)$ for almost all $x, y \in \mathcal{F}_1(T_X)$ with $x \neq y$,
+		\item \emph{does not restart} if the set $T_X(X) \cap I$ has measure $0$.
 	\end{itemize}
 \end{Definition}
  
- 
-\begin{Definition}
-	Let $(T_X)$ be a Turing dynamical system where $X = \Pi_{j \in J} \2$ is an infinite product of $\2$ and each $X_i$  has only finitely many fixed elements, i.e. is of the form $X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \ finite\}$. If in addition the action of $\Gamma$ is by continuous group automorphisms and $(T_X)$ stops at any configuration, has disjoint accepting chains and does not restart it is called a computing Turing dynamical system.
-\end{Definition}
-\todo{Warum cont group autos?}
-\todo{maß}
 
+\begin{Definition}
+	Let $(T_X)$ be a Turing dynamical system where $X = \Pi_{j \in J} \2$ is an infinite product of $\2$ equipped with the normalized Haar measure and each $X_i$  has only finitely many fixed elements, i.e. is of the form $X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = \0 \ \forall k \in I_1, x_h = \1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \ \text{finite}\}$. If in addition the action of $\Gamma$ is by continuous group automorphisms and $(T_X)$ stops at any configuration, has disjoint accepting chains and does not restart it is called a \emph{computing} Turing dynamical system.
+\end{Definition}
+\begin{Remark}
+	For more information about Haar measure see e.g. \todo{Quelle fuer Haar measure}. For us it is only relevant that there always exists a unique normalized left Haar measure on $G$ if $G$ is a locally compact Hausdorff topological group. In addition the Haar measure is left translation invariant.
+\end{Remark}
+ 
 Before we give an example of a computing Turing dynamical system we fix the notation of the shifting operation, because we will need it later on.
 \begin{Definition} \label{shift}
 	An element $z \in \Z$ acts on $\2^{\Z} = \prod_{i \in \Z} \2$ by decreasing every index by $z$. We call this action the shift action and denote it by $\zeta$. $\Z$ acts on $\bigoplus_{i \in \Z} \2$ in the same way which we will also call $\zeta$.
 \end{Definition}
+Of course the Turing dynamical system constructed in \ref{TMtoTDS} is not computing in most cases. But for many read-only Turing machines a computing Turing dynamical system can be constructed in a similar way. In fact we will only use read-only Turing machines.
 \begin{Example} \label{roTMtoTDS}
-	Let $T$ be a read-only Turing machine. Let $(T_X)$ be the corresponding Turing dynamical system as constructed in \ref{TMtoTDS}. We assume that $T$ is in such a way that $(T_X)$ has disjoint accepting chains and stops at any configuration (which is not always the case). We will construct a computable Turing dynamical system from $T$.  We can easily assure that $(T_X)$ does not restart by adding a new state $I'$ to $T$ with $\delta(I', x) = \delta(I, x) \ \forall x \in \{0,1\}$ and setting $I'$ as the initial state of $T$. Because we do not change the symbols of the tape it suffices to use $\Gamma = \Z \times Bij(S)$ where $\Z$ operates on $X = \2^\Z \times S$ via shifting and $Bij(S)$ acts on $S$ in the natural way. Because a Turing machine has only finitely many states there exists a number $n \in \N$ such that $|S| < 2^n$. We identify every state with a different element $z \in \2^n$ with $z \neq 0$.
+	Let $T$ be a read-only Turing machine. Let $(T_X)$ be the corresponding Turing dynamical system as constructed in \ref{TMtoTDS}. We assume that $T$ is in such a way that $(T_X)$ has disjoint accepting chains and stops at any configuration (which is not always the case). We will construct a computable Turing dynamical system from $T$.  We can easily assure that $(T_X)$ does not restart by adding a new state $I'$ to $T$ with $\delta(x, I') = \delta(x, I)$ for all $x \in \{ \0, \1 \}$ and setting $I'$ as the initial state of $T$. Because we do not change the symbols of the tape it suffices to use $\Gamma = \Z \times Bij(S)$ where $\Z$ operates on the $\2^\Z$ part via shifting and $Bij(S)$ acts on $S$ in the natural way. Because a Turing machine has only finitely many states there exists an integer $n \in \N$ such that $|S| < 2^n$. We identify every state with a different element $z \in \2^n$ with $z \neq 0$.
 	
-	 We can then assume that $X = \2^\Z \times \2^n$ by filling $\2^n$ with "dummy states" which will never be used. Because $Aut(\2^n)$ acts transitively on all of $\2^n / \{0\}$ we can assume that $\Gamma = \Z \times Aut(S)$. Because in the sets $X_i$ in \ref{TMtoTDS} there are only $n+1$ fixed components they are of the desired form and therefore the resulting Turing dynamical system is computing.
+	 We can then assume that $X = \2^\Z \times \2^n$ by filling $\2^n$ with "dummy states" which will never be used. Because $Aut(\2^n)$ acts transitively on all of $\2^n / \{0\}$ we can assume that $\Gamma = \Z \times Aut(S)$. Because in this case the sets $X_i$ as constructed in \ref{TMtoTDS} have only $n+1$ fixed components they are of the desired form and therefore the resulting Turing dynamical system is computing.
 \end{Example}
 
 
@@ -354,7 +381,10 @@ In this chapter we want to prove the following central theorem which connects $\
 \begin{Theorem} \label{HS}
 	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
 \end{Theorem}
-We will give the definition of Pontryagin duals and the semidirect product later in this chapter. The rest of this chapter is used to prove this theorem and give the needed definitions.
+We will give the definition of Pontryagin duals and the semidirect product later in this chapter. The rest of this chapter is used to prove this theorem and give the needed definitions.\todo{Graphik und erklarung wie ich vorgehe}
+
+
+
 \subsection{Groupoids}
 We begin by giving some algebraic definitions, namely the construct of groupoids which extends the definition of groups\todo{so sicher bin ich mir dabei jetzt net}. Therefore we require some basic knowledge about categories. \todo{Quelle zu Kategorientheorie}
 \begin{Definition}
@@ -438,10 +468,7 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 	Let $\G(\rho)$ be an action groupoid of $\rho: \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}: X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
 \end{Remark}
 
-\begin{Remark}
-	If $G$ is a locally compact Hausdorff topological group then there exists a unique normalized left Haar measure on $G$ which is in particular left translation invariant. Let $(T_X)$ be a computing Turing dynamical system. Then the Haar measure is defined on $X = \Pi_{j \in J} \2$. From now on every computing Turing dynamical system will always be equipped with the corresponding normalized Haar measure.
-\end{Remark}
-\todo{Quelle fuer Haar measure}
+
 \begin{Lemma}
 	Let $(T_X)$ be a computing Turing dynamical system with $X = \Pi_{j \in J} \2$ and equipped with the normalized Haar measure $\mu$. For a set $M = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \}$ it holds that
 	\begin{align*}
@@ -452,7 +479,7 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 	\end{align*}
 \end{Lemma}
 \begin{proof}
-	Let $x \in X$ be an element with $\overline{0}$ on every coordinate $i \notin I_1 \cup I_2$. Then $xM$ is disjoint with $M$ and because of the left translation invariance of the measure it holds that $\mu (M) = \mu (xM)$. Because for every $i \in I_1 \cup I_2$ we can set the corresponding coordinate either to $\overline{1}$ or to $\overline{0}$ we get $2^{|I_1| \cdot |I_2|}$ of these sets if $I_1$ and $I_2$ are finite and an infinite amount of sets if one of them is infinite. The disjoint union of all of these sets is the whole set $X$ so the sum of these measures equals 1 and the claim follows.
+	Let $x \in X$ be an element with $\0$ on every coordinate $i \notin I_1 \cup I_2$. Then $xM$ is disjoint with $M$ and because of the left translation invariance of the measure it holds that $\mu (M) = \mu (xM)$. Because for every $i \in I_1 \cup I_2$ we can set the corresponding coordinate either to $\1$ or to $\0$ we get $2^{|I_1| \cdot |I_2|}$ of these sets if $I_1$ and $I_2$ are finite and an infinite amount of sets if one of them is infinite. The disjoint union of all of these sets is the whole set $X$ so the sum of these measures equals 1 and the claim follows.
 \end{proof}
 \begin{Remark}
 	If $(T_X)$ is a Turing dynamical system with group action $\rho$, then we get a discrete measured groupoid through the action groupoid $\G(\rho)$.
@@ -737,7 +764,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 	lies in $P \otimes 1(\Q (\hat{X} \rtimes_{\hat{\rho}} \Gamma))$ because $P \otimes 1$ preserves the multiplication. Because of the definition of $P \otimes 1$ all $\tilde{\bar{\gamma}}$ lie also in the above image.
 \end{proof}
 
-\section{The lamplighter group}
+\section{The lamplighter group} \label{chlamplighter}
 \subsection{Rational $\ell^2$-Betti numbers}
 \begin{Definition}
 	The lamplighter group $L$ is defined as
@@ -779,16 +806,16 @@ Lets start by constructing the used Turing dynamical system.
 	The transition function is defined through 
 	\begin{align*}
 		\delta(s_I, x) = (s_1, x, 1) \ \forall x \in \2 \\
-		\delta(s_i, \overline{0}) = \begin{cases}
-			(s_{i+1}, \overline{0}, 1) & if \ i \neq k \\
-			(s_R, \overline{0}, 0) & if \ i = k
+		\delta(s_i, \0) = \begin{cases}
+			(s_{i+1}, \0, 1) & if \ i \neq k \\
+			(s_R, \0, 0) & if \ i = k
 		\end{cases} \\
-		\delta(s_i, \overline{1}) = \begin{cases}
-			(s_A, \overline{1}, 0) & if \ a_i = 1 \\
-			(s_R, \overline{1}, 0) & if \ a_i = 0
+		\delta(s_i, \1) = \begin{cases}
+			(s_A, \1, 0) & if \ a_i = 1 \\
+			(s_R, \1, 0) & if \ a_i = 0
 		\end{cases}
 	\end{align*}
-	for all $i \in \{1 \ldots k\}$.	We now see that the Turing machine holds after at most $k+2$ steps independent of the current configuration. Therefore the resulting Turing dynamical system $(T_X)$ stops at any configuration. It is also clear that it does not restart. To ensure that $(T_X)$ has disjoint accepting chains we reduce the initial set $I$ of $(T_X)$ from $[\underline{x}][s_I]$ to $[\underline{\1}][s_I]$ (with $x \in \2$). Because $T$ holds at the first $\overline{1}$ it reads on the right side of its starting point we see that each configuration in the accepting or rejecting set of $(T_X)$ must be contained in
+	for all $i \in \{1 \ldots k\}$.	We now see that the Turing machine holds after at most $k+2$ steps independent of the current configuration. Therefore the resulting Turing dynamical system $(T_X)$ stops at any configuration. It is also clear that it does not restart. To ensure that $(T_X)$ has disjoint accepting chains we reduce the initial set $I$ of $(T_X)$ from $[\underline{x}][s_I]$ to $[\underline{\1}][s_I]$ (with $x \in \2$). Because $T$ holds at the first $\1$ it reads on the right side of its starting point we see that each configuration in the accepting or rejecting set of $(T_X)$ must be contained in
 	\begin{align*}
 		[\1 \ \0^n \ \underline{\1}][s] \ \text{with} \ s \in \{s_A, s_R\}, \ n \in \N \ \text{or} \ [\1 \ \0^{k-1} \ \underline{\0}][s_R].
 	\end{align*} 
@@ -826,13 +853,13 @@ Lets start by constructing the used Turing dynamical system.
 \begin{proof}
 	W.l.o.g. $m \neq 1$. Then with \ref{frac} follows that $\frac{1}{m} = 0.a_1a_2 \ldots a_k b_1 b_2 \ldots b_h$ where $a_1a_2 \ldots a_k$ is nonrepeating and $b_1 b_2 \ldots b_h$ is repeating. We then construct the same Turing machine as in \ref{1TM} but add $h$ many states called $r_1, r_2 \ldots r_h$. In addition we replace $\delta(s_k, \0) = (s_R, \0, 0)$ with $\delta(s_k, \0) = (r_1, \0, 1)$ and set
 	\begin{align*}
-		\delta(r_i, \overline{0}) = \begin{cases}
-			(r_{i+1}, \overline{0}, 1) & if \ i \neq h \\
-			(r_1, \overline{0}, 1) & if \ i = h
+		\delta(r_i, \0) = \begin{cases}
+			(r_{i+1}, \0, 1) & if \ i \neq h \\
+			(r_1, \0, 1) & if \ i = h
 		\end{cases} \\
-		\delta(r_i, \overline{1}) = \begin{cases}
-			(s_A, \overline{1}, 0) & if \ b_i = 1 \\
-			(s_R, \overline{1}, 0) & if \ b_i = 0
+		\delta(r_i, \1) = \begin{cases}
+			(s_A, \1, 0) & if \ b_i = 1 \\
+			(s_R, \1, 0) & if \ b_i = 0
 		\end{cases}
 	\end{align*}
 	which takes care of the repeating part of $\frac{1}{m}$. The rest of the transition function $\delta$ stays the same as in \ref{1TM}. We can see that this Turing machines does not hold for every input, because if we have only zeros on the right side of our staring point we never arrive at $s_A$ or $s_R$. But because the set $[\underline{x} \ \0 \ \0 \ldots][\sigma]$ (with $x \in \2$ and $\sigma$ an arbitrary state) has measure zero the resulting Turing dynamical system still stops at any configuration. The rest follows exactly like in the proof of \ref{1TM} because the infinite sum of measures converges.

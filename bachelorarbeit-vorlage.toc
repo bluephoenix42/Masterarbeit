@@ -4,12 +4,12 @@
 \contentsline {subsection}{\numberline {2.2}$\ell ^2$-Betti numbers of $G$-CW-complexes}{4}
 \contentsline {subsection}{\numberline {2.3}$\ell ^2$-Betti numbers arising from a group}{5}
 \contentsline {section}{\numberline {3}Turing dynamical systems}{7}
-\contentsline {section}{\numberline {4}Computing $\ell ^2$-Betti numbers}{9}
-\contentsline {subsection}{\numberline {4.1}Groupoids}{10}
-\contentsline {subsection}{\numberline {4.2}Groupoid ring}{11}
-\contentsline {subsection}{\numberline {4.3}Groupoids of Turing dynamical systems}{11}
-\contentsline {subsection}{\numberline {4.4}Traces of Turing dynamical systems}{14}
-\contentsline {subsection}{\numberline {4.5}Pontryagin duality}{15}
-\contentsline {section}{\numberline {5}The lamplighter group}{19}
-\contentsline {subsection}{\numberline {5.1}Rational $\ell ^2$-Betti numbers}{19}
-\contentsline {subsection}{\numberline {5.2}Irrational $\ell ^2$-Betti numbers}{22}
+\contentsline {section}{\numberline {4}Computing $\ell ^2$-Betti numbers}{10}
+\contentsline {subsection}{\numberline {4.1}Groupoids}{11}
+\contentsline {subsection}{\numberline {4.2}Groupoid ring}{12}
+\contentsline {subsection}{\numberline {4.3}Groupoids of Turing dynamical systems}{13}
+\contentsline {subsection}{\numberline {4.4}Traces of Turing dynamical systems}{15}
+\contentsline {subsection}{\numberline {4.5}Pontryagin duality}{16}
+\contentsline {section}{\numberline {5}The lamplighter group}{20}
+\contentsline {subsection}{\numberline {5.1}Rational $\ell ^2$-Betti numbers}{20}
+\contentsline {subsection}{\numberline {5.2}Irrational $\ell ^2$-Betti numbers}{23}
