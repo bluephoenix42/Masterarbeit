@@ -25,6 +25,8 @@
 \usepackage{latexsym}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[disable]{todonotes}
+\usepackage{float}
+
 
 \usepackage{tikz}
 %\usetikzlibrary{automata,positioning}
@@ -166,15 +168,15 @@ We will denote the bounded operators of a Hilbert space $H_1$ with $\mathcal{B}(
 	is called the \emph{von Neumann trace} on $H$.
 \end{Definition}
 One can show that the trace is independent of the chosen embedding and therefore well-defined.
-\begin{Definition}
+\begin{Definition}\label{vNd}
 	Let $H$ be a Hilbert $\mathcal{N}(G)$-module. We define the \emph{von Neumann dimension} of $H$ as
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(H) = tr_{\mathcal{N}(G)}(id_H).
+		\dim_{\mathcal{N}(G)}(H) = tr_{\mathcal{N}(G)}(id_H).
 	\end{align*}
 \end{Definition}
-\begin{Remark}
+\begin{Remark}\label{vNd_for_subsets}
 	Let $H \subset \ell^2(G)$ be a $G$-equivariant subset and $pr_H: \ell^2(G) \to H$ a $G$-equivariant projection. Then\begin{align*}
-	dim_{\mathcal{N}(G)}(H) = tr_{\mathcal{N}(G)}(pr_H) = \langle pr_H (1 \cdot e_G), 1 \cdot e_G \rangle.
+	\dim_{\mathcal{N}(G)}(H) = tr_{\mathcal{N}(G)}(pr_H) = \langle pr_H (1 \cdot e_G), 1 \cdot e_G \rangle.
 	\end{align*}
 \end{Remark}
 \todo{ueberall g-equivariant ueberpruefen}
@@ -219,7 +221,7 @@ One can now define the $\ell^2$-Betti numbers of CW-complexes in a very similar 
 	\end{align*}
 	is called the \emph{$n$-th $\ell^2$-homology} and 
 	\begin{align*}
-		b_n^{(2)}(X)=dim_{\mathcal{N}(G)}H_n^{(2)}(X)
+		b_n^{(2)}(X)=\dim_{\mathcal{N}(G)}H_n^{(2)}(X)
 	\end{align*}
 	the \emph{$n$-th $\ell^2$-Betti number}.
 \end{Definition}
@@ -246,7 +248,7 @@ We will now show that it is sufficient for our purpose to calculate the von Neum
 	Let $x \in \R$ and $G$ be a discrete, countable, finitely generated group. The following are equivalent:
 	\begin{enumerate}
 		\item There exists a cocompact free finite type $G$-CW-complex $X$ and an integer $n \in \N$ such that $b_n^{(2)}(X)=x$.
-		\item There exists a matrix $A \in \Q G^{n \times n}$ for an integer $n \in \N$ such that \newline $dim_{\mathcal{N}(G)}(\ker (A))=x$.
+		\item There exists a matrix $A \in \Q G^{n \times n}$ for an integer $n \in \N$ such that \newline $\dim_{\mathcal{N}(G)}(\ker (A))=x$.
 	\end{enumerate}
 \end{Theorem}
 \begin{proof}
@@ -365,11 +367,31 @@ Our ultimate goal is to use Turing dynamical systems to get $\ell^2$-Betti numbe
  
 
 \begin{Definition}
-	Let $(T_X)$ be a Turing dynamical system where $X = \Pi_{j \in J} \2$ is an infinite product of $\2$ equipped with the normalized Haar measure and each $X_i$  has only finitely many fixed elements, i.e. is of the form $X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = \0 \ \forall k \in I_1, x_h = \1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \ \text{finite}\}$. If in addition the action of $\Gamma$ is by continuous group automorphisms and $(T_X)$ stops at any configuration, has disjoint accepting chains and does not restart it is called a \emph{computing} Turing dynamical system.
+	Let $(T_X)$ be a Turing dynamical system where $X = \Pi_{j \in J} \2$ is an infinite product of $\2$ equipped with the normalized Haar measure and each $X_i$  has only finitely many fixed elements, i.e. is of the form 
+	\begin{align*}
+		X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = \0 \ \forall k \in I_1, x_h = \1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \ \text{finite}\}.
+	\end{align*}
+	If in addition the action of $\Gamma$ is by continuous group automorphisms and $(T_X)$ stops at any configuration, has disjoint accepting chains and does not restart it is called a \emph{computing} Turing dynamical system.
 \end{Definition}
 \begin{Remark}
 	For more information about Haar measure see e.g. \todo{Quelle fuer Haar measure}. For us it is only relevant that there always exists a unique normalized left Haar measure on $G$ if $G$ is a locally compact Hausdorff topological group. In addition the Haar measure is left translation invariant.
 \end{Remark}
+\begin{Lemma}
+	Let $(T_X)$ be a computing Turing dynamical system with $X = \Pi_{j \in J} \2$ and equipped with the normalized Haar measure $\mu$. For a set 
+	\begin{align*}
+		M = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \}
+	\end{align*}
+	it holds that
+	\begin{align*}
+	\mu (M) = \begin{cases}
+	\frac{1}{2^{|I_1| \cdot |I_2|}} & if \ I_1 \ and \ I_2 \ are \ finite \\
+	0 & if \ I_1 \ or \ I_2 \ is \ infinite
+	\end{cases}.
+	\end{align*}
+\end{Lemma}
+\begin{proof}
+	Let $x \in X$ be an element with $\0$ on every coordinate $i \notin I_1 \cup I_2$ and $\1$ on at least $1$ coordinate $i \in I_1 \cup I_2$. Then $xM$ is disjoint with $M$ and because of the left translation invariance of the measure it holds that $\mu (M) = \mu (xM)$. Because for every $i \in I_1 \cup I_2$ we can set the corresponding coordinate either to $\1$ or to $\0$ we get $2^{|I_1| \cdot |I_2|}$ of these sets if $I_1$ and $I_2$ are finite and an infinite amount of sets if one of them is infinite. The disjoint union of all of these sets is the whole set $X$ so the sum of these measures equals 1 and the claim follows.
+\end{proof}
  
 Before we give an example of a computing Turing dynamical system we fix the notation of the shifting operation, because we will need it later on.
 \begin{Definition} \label{shift}
@@ -382,15 +404,16 @@ Of course the Turing dynamical system constructed in \ref{TMtoTDS} is not comput
 	 We can then assume that $X = \2^\Z \times \2^n$ by filling $\2^n$ with "dummy states" which will never be used. Because $Aut(\2^n)$ acts transitively on all of $\2^n / \{0\}$ we can assume that $\Gamma = \Z \times Aut(S)$. Because in this case the sets $X_i$ as constructed in \ref{TMtoTDS} have only $n+1$ fixed components they are of the desired form and therefore the resulting Turing dynamical system is computing.
 \end{Example}
 
-
 \section{Computing $\ell^2$-Betti numbers}
 In this chapter we want to prove the following central theorem which connects $\ell^2$-Betti numbers to the concept of Turing dynamical systems.
 \begin{Theorem} \label{HS}
 	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
 \end{Theorem}
-We will give the definition of Pontryagin duals and the semidirect product later in this chapter. The rest of this chapter is used to prove this theorem and give the needed definitions.\todo{Graphik und erklarung wie ich vorgehe}
+We will give the definition of Pontryagin duals and the semidirect product later in this chapter. The rest of this chapter is used to prove this theorem and give the needed definitions.
 
-\begin{figure}
+Figure \ref{Masterplan} shows our procedure to proof this Theorem. The main effort will be the proof of Theorem \ref{groserSatz}.
+
+\begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[shorten >=1pt,on grid,auto]
 		\node[draw, rectangle, minimum width = \widthrect] (0) {(read-only) Turing machine ($T$)};
@@ -400,8 +423,8 @@ We will give the definition of Pontryagin duals and the semidirect product later
 		\node[draw, rectangle, minimum width = \widthrect] (4) [below = \heightrect of 3] {$G$-CW-complex};
 		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (5) [right =\abstrect of 1] {$x :=\mu(I) - \Omega_1(T)$ can be computed};
 		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (6) [right =\abstrect of 2] {there exists an element $S$ in the groupoid ring with $\dim_{\mathcal{N}(G)}(\ker S) = x$};
-		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (7) [right =\abstrect of 3] {there exists an element $S'$ in the group ring with $\dim_{\mathcal{N}(G)}(\ker S) = x$};
-		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (8) [right =\abstrect of 4] {$x$ arises from a group (namely from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$};
+		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (7) [right =\abstrect of 3] {there exists an element $S'$ in the group ring with $\dim_{\mathcal{N}(G)}(\ker S') = x$};
+		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (8) [right =\abstrect of 4] {$x$ arises from a group (namely from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$)};
 		\path[dashed, ->]
 			(1) edge [text width = 5 cm]
 				node {taking the action groupoid as defined in \ref{action_groupoid}} 
@@ -413,23 +436,12 @@ We will give the definition of Pontryagin duals and the semidirect product later
 				node{constructing a $G$-CW-complex as done in the proof of \ref{MCW}}
 				(4)
 		;
-		\path[dashed]
-			(2) edge [text width = 5 cm]
-				node {$S$ belongs to the groupoid ring $\C \G (\rho)$ as defined in \ref{groupoid_ring}} 
-				(6)
-			(3) edge [text width = 5 cm]
-				node {$S'$ is an element of $\hat{X} \rtimes_{\hat{\rho}} \Gamma$}
-				(7)
-			(4) edge [text width = 5 cm]
-				node {there exists a $G$-CW-complex with $\ell^2$-Betti number $x$}
-				(8)
-		;
 		\path[->]
 			(0) edge [text width = 5 cm]
 				node {Constructing the corresponding Turing dynamical system as done in \ref{roTMtoTDS}}
 				(1)
 			(1) edge [text width = 5 cm]
-				node {used to compute}
+				node {}
 				(5)
 			(5) edge [text width = 5 cm]
 				node {using the fact proven in \ref{groserSatz}}
@@ -440,68 +452,69 @@ We will give the definition of Pontryagin duals and the semidirect product later
 			(7) edge [text width = 5 cm]
 				node {using the fact proven in \ref{MCW}}
 				(8)
-			
-				
-				
 		;
 	\end{tikzpicture}
-	\caption{Stage 4 - checking configurations are consecutive in a $T$-applying sense}
+	\caption{Procedure to prove \ref{mainTh}}
 	\label{Masterplan}
 \end{figure}
 
 \subsection{Groupoids}
-We begin by giving some algebraic definitions, namely the construct of groupoids which extends the definition of groups\todo{so sicher bin ich mir dabei jetzt net}. Therefore we require some basic knowledge about categories. \todo{Quelle zu Kategorientheorie}
+We begin by giving some algebraic definitions, namely the construct of groupoids which extends the definition of groups. Therefore we require some basic knowledge about categories. \todo{Quelle zu Kategorientheorie}
 \begin{Definition}
-	A groupoid is a small category whose morphisms are all invertible.
+	A \emph{groupoid} is a small category whose morphisms are all invertible.
 \end{Definition}
 \begin{Example} \label{group}
 	Let $G$ be a group. We want to see how we can express $G$ as a groupoid. Let $\mathcal{G}_0 = \{\bullet\}$ be the set with only one element  and $\mathcal{G}$ be the category with objects $G_0$ and morphisms $G$ from $\bullet$ to $\bullet$.The composition of morphisms in $\mathcal{G}$ is the same as the multiplication in $G$. Then $\mathcal{G}$ is a small category and every morphism is invertible because every group element has an inverse. Therefore $\mathcal{G}$ is a groupoid.
 \end{Example}
 We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathcal{G}_0$ and we can identify it with a subset of the set of morphisms of $\mathcal{G}$ by the embedding $\textbf{1}: \mathcal{G}_0 \to mor(\mathcal{G}), x \mapsto [id: x \to x]$ which sends every object to the corresponding identity morphism. Therefore we will only only look at $mor(\mathcal{G})$ and also call it $\mathcal{G}$. 
 
+We will now give some definitions of basic properties of groupoids which we will use later in this chapter.
+
 \begin{Definition}
-	For every groupoid $\mathcal{G}$ we define the maps $s: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto X$ and $r: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto Y$ which will be called source and range map.
+	For every groupoid $\mathcal{G}$ we define the maps $s: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto X$ and $r: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto Y$ which will be called \emph{source} and \emph{range} map.
 \end{Definition}
 \begin{Definition}
-	A relation groupoid is a groupoid with with $|mor(X, Y)| \leq 1 \ \forall X,Y \in \G_0$.
+	A \emph{relation groupoid} is a groupoid with with $|mor(X, Y)| \leq 1 \ \forall X,Y \in \G_0$.
 \end{Definition}
 
 \begin{Definition}
-	if $X \in \G_0$ we denote by $\G X \subset \G_0$ the set of all those objects $Y \in \G_0$ with $mor(X, Y) \neq \emptyset0$ and call it the orbit of $X$.
+	if $X \in \G_0$ we denote by $\G X \subset \G_0$ the set of all those objects $Y \in \G_0$ with $mor(X, Y) \neq \emptyset$ and call it the \emph{orbit} of $X$.
 \end{Definition}
-\todo{das mit den Pfeilen ist doof}
+
+Our main use of groupoids will be to construct a groupoid out of a Turing dynamical system (see Figure \ref{Masterplan}). Therefore we need a measure on our groupoid. 
 \begin{Definition}
-	A discrete measurable groupoid is a groupoid where $\mathcal{G}$ is also a measurable space, $s, r$ and the maps gained through inverting or composition are all measurable and the fibers of $s$ and $r$ are countable.
+	A \emph{discrete measurable groupoid} is a groupoid where $\mathcal{G}$ is also a measurable space, $s, r$ and the maps gained through inverting or composition are all measurable and the fibers of $s$ and $r$ are countable.
 	If in addition we have a measure $\mu$ such that 
 	\begin{align*}
-		\int_{\mathcal{G}_0} |r^{-1}(x) \cap U| d\mu(x) = \int_{\mathcal{G}_0} |s^{-1}(x) \cap U| d\mu(x) \\ \forall U \subset \mathcal{G}
+		\int_{\mathcal{G}_0} |r^{-1}(x) \cap U| d\mu(x) = \int_{\mathcal{G}_0} |s^{-1}(x) \cap U| d\mu(x) \ \ \forall U \subset \mathcal{G}
 	\end{align*}
-	holds we call $\mathcal{G}$ discrete measured
+	holds, we call $\mathcal{G}$ discrete measured
 \end{Definition}
 \todo{Warum braucht man das eigentlich nochmal, was bedeutet das genau und stimmt das eigentlich? inverting map}
+From now on every groupoid will be discretely measured.
 \begin{Definition}
-	We say that a groupoid $\G$ has finite orbits if $\G X$ is finite for almost all $X \in \G_0$.
+	We say that a groupoid $\G$ has \emph{finite orbits} if $\G X$ is finite for almost all $X \in \G_0$.
 \end{Definition}
 \begin{Definition}
-	Let $\G$ be a relation groupoid with finite orbits. A measurable subset $D \subset \G_0$ such that $|D \cap \G X| = 1$ for every $X \in \G$ with $\G X$ finite is called a fundamental domain.
+	Let $\G$ be a relation groupoid with finite orbits. A measurable subset $D \subset \G_0$ such that $|D \cap \G X| = 1$ for every $X \in \G$ with $\G X$ finite is called a \emph{fundamental domain}.
 \end{Definition}
 \begin{Remark}
 	One can show that every relation groupoid with finite orbits has a fundamental domain.
 \end{Remark}
-\todo{Beispiel oder Erklärung und wie das bei TDS ist}
 
 \subsection{Groupoid ring}
 A fundamental concept used for the calculation of $\ell^2$-Betti numbers of groups was the group ring. We will transfer this to the notion of groupoids.
 
 \begin{Definition}
-	Let $U$ be a subset of $\G_0$. A measurable edge is a map $\Phi:U \to \G$ such that $s \circ \Phi = id$ and $r \circ \Phi$ is injective.
+	Let $U$ be a subset of $\G_0$. A \emph{measurable edge} is a map $\Phi:U \to \G$ such that $s \circ \Phi = id$ and $r \circ \Phi$ is injective.
 \end{Definition}
 \todo{Warum heißt das eigentlich messbar?}
 From the definition we see, that defining a measurable edge means taking a subset of $\G_0$ and associating a morphism to every object such that the morphism starts in this object and no two such morphisms end in the same object. We want to define the inverse of a measurable edge in such a way, that it is also a measurable edge. Therefore it does not suffice to take the inverse of the map $\Phi$. Instead we invert every morphism in the image of $\Phi$.
 \begin{Definition}
-	Let $\Phi: U \to \G$ be a measurable edge. The inverse of $\Phi$ will be called $\Phi^{-1}$ and is defined as $\Phi^{-1}:r(Im(\Phi)) \to \G$ such that $\Phi^{-1}$ is a measurable edge and $\Phi^{-1} \circ r \circ \Phi (x) = \Phi (x)^{-1} \ \forall x \in r(Im(\Phi))$ where $\Phi (x)^{-1}$ is the inverse of the morphism $\Phi (x)$.
+	Let $\Phi: U \to \G$ be a measurable edge. The \emph{inverse} of $\Phi$ will be called $\Phi^{-1}$ and is defined as $\Phi^{-1}:r(Im(\Phi)) \to \G$ such that $\Phi^{-1}$ is a measurable edge and $\Phi^{-1} \circ r \circ \Phi (x) = \Phi (x)^{-1} \ \forall x \in r(Im(\Phi))$ where $\Phi (x)^{-1}$ is the inverse of the morphism $\Phi (x)$.
 \end{Definition}
-We now come to the definition of the groupoid ring. We want it to be ring of operators of $L^2(\G)$ \todo{Das sollte ich vorher mal irgendwann definiert haben}, such that it is in a way generated by measurable edges. For a measurable edge $\Phi$ we define a operator $\tilde \Phi$ through
+
+We now come to the definition of the groupoid ring. We want it to be a ring of operators of	$L^2(\G)$ \todo{Quelle fuer l2}, such that it is in a way generated by measurable edges. For a measurable edge $\Phi$ we define a operator $\tilde \Phi$ through
 \begin{align*}
 	\tilde \Phi: L^2(\G) \to L^2(\G), F \mapsto \left[ \tilde \Phi (F): \G \to \C, \gamma \mapsto \begin{cases}
 	F(\gamma \cdot_{\G} \Phi^{-1}(r(\gamma)) & \text{if } r(\gamma) \in Dom(\Phi^{-1}) \\
@@ -514,37 +527,36 @@ In addition for a map $f \in L^\infty (\G_0)$ we also define a operator $\tilde 
 	\tilde f: L^2(\G) \to L^2(\G), F \mapsto [\tilde f(F): \G \to \C, \gamma \mapsto F(\gamma) \cdot f(r(\gamma))].
 \end{align*}
 \begin{Definition}\label{groupoid_ring}
-	For a groupoid $\G$ the groupoid ring $\C\G$ is the ring of bounded operators on $L^2(\G)$ generated by all measurable edges and all elements of $L^\infty(\G)$.
+	For a groupoid $\G$ the \emph{groupoid ring} $\C\G$ is the ring of bounded operators on $L^2(\G)$ generated by all measurable edges and all elements of $L^\infty(\G)$.
 \end{Definition}
 We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} \tilde \Phi_i \cdot_{\C \G} \tilde f_i$ where $\Phi$ is a measurable edge, $f \in L^\infty(\G_0)$ and $I$ is a finite set. One can show that each element of $\C \G$ can be (although non-uniquely) represented in such a way. \todo{Evtl. könnte ich dazu noch ein bisschen was schreiben}
 \begin{Example}
-	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ is isomorphic to the g $\C G$. Because we have only one element in $\G_0$ the only measurable edges we have are the maps from $\bullet$ to a specific group element of $G$. The elements of $L^\infty(\G_0)$ are just maps from $\bullet$ to a specific element in $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. Now let $\Phi_1: \bullet \mapsto g_1$ and $\Phi_2: \bullet \mapsto g_2$ be measurable edges. $\ldots$
+	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ is isomorphic to the group ring $\C G$. Because we have only one element in $\G_0$ the only measurable edges we have are the maps from $\bullet$ to a specific group element of $G$. The elements of $L^\infty(\G_0)$ are just maps from $\bullet$ to a specific element in $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. 
+	
+	On our measurable edges we define the isomorphism by mapping $\tilde{\Phi}$ of a measurable edge $\Phi: \bullet \mapsto g$ to $g$. This map is of course bijective. To see that it is a homeomorphism let $\Phi_1: \bullet \mapsto g_1$ and $\Phi_2: \bullet \mapsto g_2$ be measurable edges. It follows that
+	\begin{align*}
+		  &~ \tilde{\Phi}_1 \cdot_{\C \G} \tilde{\Phi}_2(F)(\gamma) \\
+		= &~ \tilde{\Phi}_2 \circ \tilde{\Phi}_1(F)(\gamma) \\
+		= &~ F((\gamma \cdot_{\G} \Phi_2^{-1}(\bullet)) \cdot_{\G} \Phi_1^{-1}(\bullet)) \\
+		= &~ F(\gamma \cdot_G g_2^{-1} \cdot_G g_1^{-1}) \\
+		= &~ F(\gamma \cdot_G (g_1 \cdot_G g_2)^{-1})
+	\end{align*}
+	which shows that the isomorphism maps $	\tilde{\Phi}_1 \cdot_{\C \G} \tilde{\Phi}_2$ to $g_1 \cdot_G g_2$.
 \end{Example}
-\todo{Das muss ich noch zuende machen}
 
 
 \subsection{Groupoids of Turing dynamical systems}
+We can now define the action groupoid which will allow us to create a groupoid out of a Turing dynamical system.
 \begin{Definition} \label{action_groupoid}
 	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho: \Gamma \to Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined through $(x, \gamma_1) \cdot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
 \end{Definition}
 
-\begin{Remark}
+\begin{Remark} \label{mE_action_groupoid}
 	Let $\G(\rho)$ be an action groupoid of $\rho: \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}: X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
 \end{Remark}
 
 
-\begin{Lemma}
-	Let $(T_X)$ be a computing Turing dynamical system with $X = \Pi_{j \in J} \2$ and equipped with the normalized Haar measure $\mu$. For a set $M = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \}$ it holds that
-	\begin{align*}
-		\mu (M) = \begin{cases}
-		\frac{1}{2^{|I_1| \cdot |I_2|}} & if \ I_1 \ and \ I_2 \ are \ finite \\
-		0 & if \ I_1 \ or \ I_2 \ is \ infinite
-		\end{cases}.
-	\end{align*}
-\end{Lemma}
-\begin{proof}
-	Let $x \in X$ be an element with $\0$ on every coordinate $i \notin I_1 \cup I_2$. Then $xM$ is disjoint with $M$ and because of the left translation invariance of the measure it holds that $\mu (M) = \mu (xM)$. Because for every $i \in I_1 \cup I_2$ we can set the corresponding coordinate either to $\1$ or to $\0$ we get $2^{|I_1| \cdot |I_2|}$ of these sets if $I_1$ and $I_2$ are finite and an infinite amount of sets if one of them is infinite. The disjoint union of all of these sets is the whole set $X$ so the sum of these measures equals 1 and the claim follows.
-\end{proof}
+
 \begin{Remark}
 	If $(T_X)$ is a Turing dynamical system with group action $\rho$, then we get a discrete measured groupoid through the action groupoid $\G(\rho)$.
 \end{Remark}
@@ -556,34 +568,40 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 	$\G (T_X)$ is a relation groupoid with finite orbits for every computing Turing dynamical system $(T_X)$. In addition $A \cup R$ is a fundamental domain of $\G (T_X)$.
 \end{Lemma}
 \begin{proof}
-	First let us have a look at $\G (T_X)$. We can generate it by setting $\G_0 = X$. We then add all morphisms of the form $(x, \gamma_{Ind(x)})$. We call this subset $\G'$. Of course $\G'$ is not a category in most cases. To ensure that $\G (T_X)$ is a groupoid we add a morphism from $x$ to $y$ for all $x, y \in \G_0$ where there already exist a path of morphisms from $x$ to $y$. In addition we add an identity morphism to every $ x\in \G_0$ which does not already have one and an inverse morphism to every morphism which does not already have one. 
+	First let us have a look at $\G (T_X)$. We can generate it by setting $\G_0 = X$. We then add all morphisms of the form $(x, \gamma_{Ind(x)})$. We call the subset we have created so far $\G'$. Of course $\G'$ is not a category in most cases. To ensure that $\G (T_X)$ is a groupoid we add a morphism from $x$ to $y$ for all $x, y \in \G_0$ where there already exist a path of morphisms from $x$ to $y$ in $\G'$. In addition we add an identity morphism to every $ x\in \G_0$ which does not already have one and an inverse morphism to every morphism which does not already have one. 
 	
-	We can then see that we get one morphism from $x$ to $y$ in $\G (T_X)$ for every path of morphisms from $x$ to $y$ in $\G'$.But $x$ can have at maximum one outgoing morphism, therefore $\G (T_X)$ is a relation groupoid.
+	We can then see that we get one morphism from $x$ to $y$ in $\G (T_X)$ for every path of morphisms from $x$ to $y$ in $\G'$. But $x$ can have at maximum one outgoing morphism in $\G'$, therefore $\G (T_X)$ is a relation groupoid.
 
-	Because $(T_X)$ stops at any configuration the orbit of almost any point $x \in \G (T_X)$ contains exactly one point in $A \cup R$ because there has to be a path of morphisms from $x$ to a single point in $A \cup R$ in $\G'$ which ends in this point. Therefore $A \cup R$ is a fundamental domain.
+	Because $(T_X)$ stops at any configuration and has disjoint accepting chains the orbit of almost any point $x \in \G (T_X)$ contains exactly one point in $A \cup R$ because there has to be a path of morphisms from $x$ to a single point in $A \cup R$ in $\G'$ which ends in this point. Therefore $A \cup R$ is a fundamental domain.
 	
-	To prove the statement about the orbits we restrict the groupoid $\G (T_X)$ to a groupoid $\G (T_X)^\#$ in such a way that $T_X$ is injective and that for every point $x \in \G (T_X)^\#$ $\G x$ contains a point in $A \cup R$. Because $(T_X)$ stops at any configuration and has disjoint accepting chains $\G (T_X)^\#$ still has measure $1$. We can see that the map $T_X$ applied to $\G (T_X)^\#$ is measure-preserving.
+	To prove the statement about the orbits we restrict the groupoid $\G (T_X)$ to a groupoid $\G (T_X)^\#$ in such a way that $T_X$ is injective and that for every point $x \in \G (T_X)^\#$, $G (T_X)^\# x$ contains a point in $A \cup R$. Because $(T_X)$ stops at any configuration and has disjoint accepting chains $\G (T_X)^\#$ still has measure $1$. We can see that the map $T_X$ applied to $\G (T_X)^\#$ is measure-preserving.\todo{will man das noch zeigen?}
 	
 	We define the set $Y_i \subset \G (T_X)_0^\#$ such that from every point $y \in Y_i$ there is a path of length $i$ to a point in $A \cup R$. These sets are disjoint and measurable and $\sum_{i \in \N} \mu(Y_i) = 1$. Therefore $\mu(Y_i)$ has to be a zero sequence.
 	
 	Now look at the set $Y \subset A \cup R$ such that for every $y \in Y$ the orbit $\G y$ is infinite. We see that it equals $\bigcap_{i \in \N} T_X^i(Y_i)$ and therefore has measure $0$. Of course $\bigcup_{i \in \N }T_X^{-i}(Y)$ contains all infinite orbits and has measure $0$ because it is a countable union of sets of measure $0$.
 \end{proof}
+We are now able to construct a groupoid out of a Turing dynamical system. In addition we can construct the corresponding groupoid ring out of this groupoid. But we still need a definition of a von Neumann dimension (and therefore some kind of trace) on elements of the groupoid ring (compare Figure \ref{Masterplan}).
 \begin{Definition}
-	Let $\G$ be a groupoid. The trace of an element $T \in \C \G$ in the groupoid ring is defined through
+	Let $\G$ be a groupoid. The \emph{trace} of an element $T \in \C \G$ in the groupoid ring is defined through
 	\begin{align*}
 		tr(T) = \langle T \chi_0, \chi_0 \rangle_{L^2 \G}
 	\end{align*}
 	where $\chi_0$ is the characteristic function of the objects $\G_0$ of $\G$.
 \end{Definition}
-\begin{Remark}
-	Let $X \subset \ell^2(G)$ be an arbitrary subspace and $pr_X$ a projection onto $X$. Then $dim_{\mathcal{N}(G)}(X) = tr_{\mathcal{N}(G)}(pr_X)$.
-\end{Remark}
-\begin{Definition}
-	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $pr_X: L^2 \G \to X$ be projection onto $X$. The von Neumann dimension of $X$ is defined through
+\begin{Definition} \label{vNd_of_groupoids}
+	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $pr_X: L^2 \G \to X$ be projection onto $X$. The \emph{von Neumann dimension} of $X$ is defined through
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(X) = tr_(pr_X).
+		\dim_{\mathcal{N}(G)}(X) = tr_(pr_X).
 	\end{align*}
 \end{Definition}
+This definition of a von Neumann dimension is very similar the one in $\ell^2 G$ given in \ref{vNd} when you consider the fact stated in \ref{vNd_for_subsets}.
+
+
+
+\subsection{Construction of the element $S$}
+For an arbitrary computing Turing dynamical system $(T_X)$ we will now construct an element $S \in \C \G (\rho)$ such that $\dim_{\mathcal{N}(G)}(\ker S) = \mu(I) - \Omega_1(T_X)$. Because $S$ is a map from $L^2C \G (\rho)$ to $L^2C \G (\rho)$ it has a kernel which is a subset of $L^2C \G (\rho)$ and therefore has a well-defined von Neumann dimension in the sense of \ref{vNd_of_groupoids}.
+
+Remember that for an element $\gamma \in \Gamma$ we can construct a measurable edge $\bar{\gamma}$ of the action groupoid (see \ref{mE_action_groupoid}) and that for a measurable edge $\Phi$ (or a map $f \in L^\infty (\G_0)$) the corresponding element in the groupoid ring is denoted by $\tilde{\Phi}$ (or $\tilde{f}$).
 \begin{Lemma} \label{trgroupoid}
 	Let $\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho: \Gamma \to Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of an action groupoid. Then
 	\begin{align*}
@@ -596,54 +614,59 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 	
 	Let $e \in \Gamma$ be the neutral element then it holds that
 	\begin{align*}
-		tr(\tilde{\bar{e}} \tilde{f}) = tr(id_{L^2 \G} \tilde{f}) = \langle \tilde{f} (\chi_0), \chi_0 \rangle_{L^2 \G} = \langle f, \chi_0 \rangle_{L^2 \G} = int_{\G(\rho)_0} f(x) \cdot \chi_0(x) d\mu(x) = int_{\G(\rho)_0} f(x) d\mu(x)
+		 &~ tr(\tilde{\bar{e}} \tilde{f}) \\
+		=&~ tr(id_{L^2 \G} \tilde{f}) \\
+		=&~ \langle \tilde{f} (\chi_0), \chi_0 \rangle_{L^2 \G} \\
+		=&~ \langle f, \chi_0 \rangle_{L^2 \G_0} \\
+		=&~ \int_{\G(\rho)_0} f(x) \cdot \chi_0(x) d\mu(x) \\
+		=&~ \int_{\G(\rho)_0} f(x) d\mu(x)
 	\end{align*}
 	which concludes the proof.
 \end{proof}
-\subsection{Traces of Turing dynamical systems}
+
 \begin{Theorem} \label{groserSatz}
-	Let $T_X$ be a computing Turing dynamical system with action $\rho$, division $\cup_i X_i$ with associated $\gamma_i$ and $\chi_i : \G \to \C$ be the characteristic function of $X_i$. Then for the element
+	Let $(T_X)$ be a computing Turing dynamical system with action $\rho$, division $\bigcup_i X_i$ with associated $\gamma_i$ and let $\chi_i : \G \to \C$ be the characteristic function of $X_i$. Then for the element
 	\begin{align*}
 		S = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \tilde{\chi_X} - \tilde{\chi_I} - \tilde{\chi_A} - \tilde{\chi_R})^*(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \tilde{\chi_X} - \tilde{\chi_I} - \tilde{\chi_A} - \tilde{\chi_R}) + \tilde{\chi_A}
 	\end{align*}
 	of the groupoid ring $\C \G(T_X)$ it holds that
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(\ker \ S) = \mu(I) - \Omega_1(T_X).
+		\dim_{\mathcal{N}(G)}(\ker S) = \mu(I) - \Omega_1(T_X).
 	\end{align*}
 \end{Theorem}
 Before we can proof this Theorem we have to do some preparations. 
 \begin{Definition}
-	Let $\G$ be a relation groupoid, $x \in \G_0$ and $T = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $T_x: \ell^2\G x \to \ell^2\G x$ which sends a basis element $1 \cdot y \in \ell^2\G x$ to $\sum_{i \in I'} r(\Phi_i(y)) f_i(y)$ where $I' \subset I$ is the set of indices $i$ where $y$ is in the domain of $\Phi_i$. 
+	Let $\G$ be a relation groupoid, $x \in \G_0$ and $T = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $T_x: \ell^2\G x \to \ell^2\G x$ which sends a basis element $1 \cdot y \in \ell^2\G x$ to $\sum_{i \in I'} f_i(y) r(\Phi_i(y)) $ where $I' \subset I$ is the set of indices $i$ where $y$ is in the domain of $\Phi_i$. 
 \end{Definition}
 \begin{Remark}
 	If $\G$ is a relation groupoid with finite orbits then for almost all $x \in \G$ $\ell^2\G x$ is finite dimensional because $\G x$ is finite. Therefore $T_x$ has a finite dimensional kernel.
 \end{Remark}
-We will state the following fact without proof. For a complete proof see \cite{GRAB}.
+We will state the following fact without proof. For a complete proof see \cite{GRAB}.\todo{genaue Stelle}
 \begin{Lemma}
 	Let $\G$ be a relation groupoid with finite orbits and $D$ a fundamental domain of $\G$. Then for every $T \in \C \G$ it holds that
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(\ker \ T) = \int_D dim (\ker \ T_x) \ d \mu (x).
+		\dim_{\mathcal{N}(G)}(\ker T) = \int_D \dim (\ker T_x) \ d \mu (x).
 	\end{align*} 
 \end{Lemma}
-In addition with \ref{TX_rel_groupoid} we get that $dim_{\mathcal{N}(G)}(\ker \ S) = \int_{A \cup R} dim (\ker \ S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X$ is injective on all of $X$, $T_X^\infty(x) \in A \cup R$ for all $x$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} dim (\ker \ S_x) \ d \mu (x)$. 
+In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X$ is injective on all of $X$, $T_X^\infty(x) \in A \cup R$ for all $x$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$ (This is a similar argument as used in the proof of \ref{TX_rel_groupoid}).
 \begin{Lemma}
 	\begin{align*}
-	\ker \ S_x = \ker((\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x) \cap \ker \ \tilde{\chi_A}_x
+	\ker S_x = \ker((\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x) \cap \ker \tilde{\chi_A}_x
 	\end{align*}
 \end{Lemma}
 \begin{proof}
-	First we can see, that for all Operators $A$ on a Hilbert space $H$ it holds that $\ker \ A = \ker \ A*A$. To show this let $x \in \ker \ A*A$. It follows that
+	First we can see, that for all Operators $A$ on a Hilbert space $H$ it holds that $\ker A = \ker A^*A$. To show this let $x \in \ker A^*A$. It follows that
 	\begin{align*}
-		0 = \langle A*Ax, x \rangle = \langle Ax, Ax \rangle
+		0 = \langle A^*Ax, x \rangle = \langle Ax, Ax \rangle
 	\end{align*}
-	and therefore $x \in \ker \ A$. The other inclusion is trivial. 
+	and therefore $x \in \ker A$. The other inclusion is trivial. 
 	
-	From the definition it is clear that $(S_1)_x + (S_2)_x = (S_1 + S_2)_x$ for every $S_1, S_2 \in \G$. In for an element$\sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$ of the  groupoid ring it follows that both $\tilde f_i$ and $\tilde {f_i}_x$ are self-adjoint. In addition $(\widetilde {\Phi_i}^*)_x = \widetilde {\Phi_i^{-1}}_x = (\widetilde {\Phi_i}_x)^*$ \todo{Genauer?} and therefore changing an operator $T$ to $T_x$ is $*$-preserving. Of course both summands of $S$ are positive operators and the claim follows.
-\end{proof}
+	From the definition it is clear that $(S_1)_x + (S_2)_x = (S_1 + S_2)_x$ for every $S_1, S_2 \in \G$. In addition for an element $\sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$ of the  groupoid ring it follows that both $\tilde f_i$ and $\tilde {f_i}_x$ are self-adjoint. In addition $(\widetilde {\Phi_i}^*)_x = \widetilde {\Phi_i^{-1}}_x = (\widetilde {\Phi_i}_x)^*$ \todo{Genauer?} and therefore changing an operator $T$ to $T_x$ is $*$-preserving. Of course both summands of $S$ are positive operators and the claim follows.
+\end{proof}\todo{tilde}
 \begin{Lemma}
 	It holds that
 	\begin{align*}
-		dim (\ker \ S_x) = \begin{cases}
+		\dim (\ker S_x) = \begin{cases}
 		1 & if \ x \in T_X^\infty(I) \cap R\\
 		0 & otherwise 
 		\end{cases}
@@ -651,7 +674,7 @@ In addition with \ref{TX_rel_groupoid} we get that $dim_{\mathcal{N}(G)}(\ker \ 
 	for every $x \in A \cup R$.
 \end{Lemma}
 \begin{proof}
-	First we see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and the identity on the rest of $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be the one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A$. It then holds that $\bigcup_{i = 1}^{k} \{x_i\} = \G (T_X)x$. If we consider the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
+	First we see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and constant $1$ on the rest of $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be the one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A$. It then holds that $\bigcup_{i = 1}^{k} \{x_i\} = \G (T_X)x$. If we consider the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
 	\begin{align*}
 		P(x_i) = \begin{cases}
 		x_{i + 1} & if \ i = 1 \\
@@ -663,12 +686,12 @@ In addition with \ref{TX_rel_groupoid} we get that $dim_{\mathcal{N}(G)}(\ker \ 
 	\begin{align*}
 		P(\sum_{i = 1}^{k} (-1)^{i + 1} x_i) = (\sum_{i = 2}^{k} (-1)^{i} x_{i} + x_k) + \sum_{i = 2}^{k - 1} (-1)^{i + 1} x_{i} = 0.
 	\end{align*}
-	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in \ker \ P$ is a basis vector of $ \ker \ P$ and therefore $dim(\ker \ P) = 1$. In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $\ker \ P = \ker \ S_x$. If $x \in A$ then $x_k \notin \ker \ \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in \ker \ \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin \ker \ \tilde{\chi_A}_x$ and thus $\ker \ S_x = \{0\}$.
+	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in \ker P$ is a basis vector of $ \ker P$ and therefore $\dim(\ker P) = 1$. In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $\ker P = \ker S_x$. If $x \in A$ then $x_k \notin \ker \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in \ker \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin \ker \tilde{\chi_A}_x$ and thus $\ker S_x = \{0\}$.
 \end{proof}
 \begin{proof}[Proof of Theorem \ref{groserSatz}]
 	We now get
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(\ker \ S) = \int_{A \cup R} dim (\ker \ S_x) \ d \mu (x) = \int_{T_X^\infty(I) \cap R} 1 \ \mu (x) = \\ \int_{T_X^\infty(I) / A} 1 \ \mu (x) = \int_{T_X^\infty(I)} 1 \ \mu (x) - \int_{\Omega_1(T_X)} 1 \ \mu (x) = \mu(I) - \Omega_1(T_X)
+		\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x) = \int_{T_X^\infty(I) \cap R} 1 \ \mu (x) = \\ \int_{T_X^\infty(I) / A} 1 \ \mu (x) = \int_{T_X^\infty(I)} 1 \ \mu (x) - \int_{\Omega_1(T_X)} 1 \ \mu (x) = \mu(I) - \Omega_1(T_X)
 	\end{align*}
 	which concludes the proof. \todo{Vllt. muss ich hier noch was zu den masen sagen und warum sie unter Tx erhalten bleiben.}
 \end{proof}
@@ -784,7 +807,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 \end{proof}
 \todo{braucht man *?, Elemente aus C an GR multiplizieren , mehr erklaeren?}
 \begin{Theorem}
-	Let $T \in \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ be self-adjoint. Then $dim_{\mathcal{N}(G)}(\ker \ T) = dim_{\mathcal{N}(G)}(\ker \ P \otimes 1(T))$.
+	Let $T \in \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ be self-adjoint. Then $\dim_{\mathcal{N}(G)}(\ker T) = \dim_{\mathcal{N}(G)}(\ker P \otimes 1(T))$.
 \end{Theorem} \label{pontr}
 \begin{proof}
 	First suppose $X$ and $\Gamma$ are finite. Therefore $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is finite dimensional and $T$ is just a linear map. With the spectral theorem it follows that all eigenvalues of $T$ are real and there exist a basis of eigenvectors. Let $\lambda_1, \lambda_2, \ldots, \lambda_n$ denote the different non-zero eigenvalues of $T$. Then
@@ -797,7 +820,7 @@ For more information about semidirect products see e.g. \cite{ALG}.
 	\end{align*}.
 	Because $L^2 \G (\rho)$ is also finite dimensional and $P \otimes 1(T)$ is still self-adjoint we can again use the spectral theorem. In addition the eigenvalues stay the same and therefore $P \otimes 1 (S)$ is a projection onto $\ker P \otimes 1 (T)$. Because $\ker T \subset \ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma) $ it follows that
 	\begin{align*}
-		dim_{\mathcal{N}(G)}(\ker \ T) = tr_{\mathcal{N}(G)}(S) = tr(P \otimes 1 (S)) = dim_{\mathcal{N}(G)}(\ker P \otimes 1 (T)).
+		\dim_{\mathcal{N}(G)}(\ker T) = tr_{\mathcal{N}(G)}(S) = tr(P \otimes 1 (S)) = \dim_{\mathcal{N}(G)}(\ker P \otimes 1 (T)).
 	\end{align*}
 	If $X$ or $\Gamma$ are infinite then $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is infinite dimensional. Let $l_1 \subset l_2 \subset \ldots$ be a series of finite dimensional $\C$-vector spaces converging to $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$. For each $l_i$ we can restrict $T$ to $l_i$ and the above argument holds. Because $T|_{l_i}$ converges to $T$ the claim follows also for the infinite dimensional case.
 \end{proof}\todo{klappt das mit dem Konvergieren?}
