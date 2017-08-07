@@ -369,8 +369,9 @@ Our ultimate goal is to use Turing dynamical systems to get $\ell^2$-Betti numbe
 \begin{Definition}
 	Let $(T_X)$ be a Turing dynamical system where $X = \Pi_{j \in J} \2$ is an infinite product of $\2$ equipped with the normalized Haar measure and each $X_i$  has only finitely many fixed elements, i.e. is of the form 
 	\begin{align*}
-		X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = \0 \ \forall k \in I_1, x_h = \1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \ \text{finite}\}.
+		X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = \0 \ \forall k \in I_1, x_h = \1 \ \forall h \in I_2\}.
 	\end{align*}
+	where $\ I_1, I_2 \subset J$ are finite subsets.
 	If in addition the action of $\Gamma$ is by continuous group automorphisms and $(T_X)$ stops at any configuration, has disjoint accepting chains and does not restart it is called a \emph{computing} Turing dynamical system.
 \end{Definition}
 \begin{Remark}
@@ -379,9 +380,9 @@ Our ultimate goal is to use Turing dynamical systems to get $\ell^2$-Betti numbe
 \begin{Lemma}
 	Let $(T_X)$ be a computing Turing dynamical system with $X = \Pi_{j \in J} \2$ and equipped with the normalized Haar measure $\mu$. For a set 
 	\begin{align*}
-		M = \{(x_j)_{j \in J} \in X \ | \ x_k = 0 \ \forall k \in I_1, x_h = 1 \ \forall h \in I_2\, \ I_1, I_2 \subset J \}
+		M = \{(x_j)_{j \in J} \in X \ | \ x_k = \0 \ \forall k \in I_1, x_h = \1 \ \forall h \in I_2 \}
 	\end{align*}
-	it holds that
+	with $I_1, I_2 \subset J$ it holds that
 	\begin{align*}
 	\mu (M) = \begin{cases}
 	\frac{1}{2^{|I_1| \cdot |I_2|}} & if \ I_1 \ and \ I_2 \ are \ finite \\
