@@ -643,13 +643,13 @@ Before we can proof this Theorem we have to do some preparations.
 	If $\G$ is a relation groupoid with finite orbits then for almost all $x \in \G$ $\ell^2\G x$ is finite dimensional because $\G x$ is finite. Therefore $T_x$ has a finite dimensional kernel.
 \end{Remark}
 We will state the following fact without proof. For a complete proof see \cite{GRAB}.\todo{genaue Stelle}
-\begin{Lemma}
+\begin{Lemma} \label{T_to_Tx}
 	Let $\G$ be a relation groupoid with finite orbits and $D$ a fundamental domain of $\G$. Then for every $T \in \C \G$ it holds that
 	\begin{align*}
 		\dim_{\mathcal{N}(G)}(\ker T) = \int_D \dim (\ker T_x) \ d \mu (x).
 	\end{align*} 
 \end{Lemma}
-In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X^\infty(x) \in A \cup R$ for all $x$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$ (This is a similar argument as used in the proof of \ref{TX_rel_groupoid}).
+In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X(X) = \emptyset$, $T_X^\infty(x) \in A \cup R$ for all $x$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$ (This is a similar argument as used in the proof of \ref{TX_rel_groupoid}).
 \begin{Lemma}
 	\begin{align*}
 	\ker S_x = \ker((\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x) \cap \ker \tilde{\chi_A}_x
@@ -664,7 +664,7 @@ In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S
 	
 	From the definition it is clear that $(S_1)_x + (S_2)_x = (S_1 + S_2)_x$ for every $S_1, S_2 \in \G$. In addition for an element $\sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$ of the  groupoid ring it follows that both $\tilde f_i$ and $\tilde {f_i}_x$ are self-adjoint. In addition $(\widetilde {\Phi_i}^*)_x = \widetilde {\Phi_i^{-1}}_x = (\widetilde {\Phi_i}_x)^*$ \todo{Genauer?} and therefore changing an operator $T$ to $T_x$ is $*$-preserving. Of course both summands of $S$ are positive operators and the claim follows.
 \end{proof}\todo{tilde}
-\begin{Lemma}
+\begin{Lemma} \label{kerSx_berechnen}
 	It holds that
 	\begin{align*}
 		\dim (\ker S_x) = \begin{cases}
@@ -677,7 +677,7 @@ In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S
 \begin{proof}
 	First note that because the Turing map $T_X$ maps only finitely many element onto one element the set $I \cap \G (T_X)x$ is indeed finite if $x \in T_X^\infty(I) \cap R$ holds.
 	 
-	We can now see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and constant $1$ on the rest of $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be  one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A$. It then holds that $\bigcup_{i = 1}^{k} \{x_i\} = \G (T_X)x$. If we consider the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
+	We can now see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and constant $1$ on the rest of $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be  one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A \cup R$. If we consider the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
 	\begin{align*}
 		P(x_i) = \begin{cases}
 		x_{i + 1} & if \ i = 1 \\
@@ -689,15 +689,29 @@ In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S
 	\begin{align*}
 		P(\sum_{i = 1}^{k} (-1)^{i + 1} x_i) = (\sum_{i = 2}^{k} (-1)^{i} x_{i} + x_k) + \sum_{i = 2}^{k - 1} (-1)^{i + 1} x_{i} = 0.
 	\end{align*}
-	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in \ker P$ is a basis vector of $ \ker P$ and therefore $\dim(\ker P) = 1$. In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $\ker P = \ker S_x$. If $x \in A$ then $x_k \notin \ker \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in \ker \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin \ker \tilde{\chi_A}_x$ and thus $\ker S_x = \{0\}$.
+	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in \ker P$ is a basis vector of $ \ker P$. For each different point $x_1 \in  I \cap \G (T_X)x$ we get a new vector $\sum_{i = 1}^{k} (-1)^{i + 1} x_i$ in $\ker P$ which is linear independent to all other vectors of this kind. Therefore $\dim \ker P \ge |I \cap \G (T_X)x| $.
+	
+	 For the other direction let $x_1 \in \G (T_X)x \setminus I$. Then $P$ maps $x_1$ to $x_1 + x_2$ with $x_2 = T_X(x_1)$. To negate the vector $x_2$  we have to build a chain of vectors $x_2 \ldots x_k$ like we did above. To negate the vector $x_1$ we need another vector $x_0$ with $T_X(x_0) = x_1$. But if $x_0 \notin I$ then the vector $-x_0 + x_1$ is mapped to $-x_0 + x_2$. Therefore we have to add another vector $x_{-1}$ with $T_X(x_{-1}) = x_0$. We have to add (subtract) vectors like this until we add (subtract) a vector $x_{-j}$ with $j \in \N$ such that there is no vector $x_{-(j+1)}$ with $T_X(x_{-(j+1)}) = x_{-j}$. If this vector $x_{-j}$ lies in $I$ then the constructed vector lies in the kernel but is a linear combination of the above basis vectors. In fact there is one of the above vectors such that it equals this vector (or $-1$ times this vector). If $x_{-j} \notin I$ then $x_{-j}$ cannot be negated and therefore the constructed chain does not lie in the kernel of $P$
+	
+	
+	In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $\ker P = \ker S_x$. If $x \in A$ then $x_k \notin \ker \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in \ker \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin \ker \tilde{\chi_A}_x$ and thus $\ker S_x = \{0\}$.
 \end{proof}
-\todo{nicht injektiv umbauen}
 \begin{proof}[Proof of Theorem \ref{groserSatz}]
-	We now get
+	Let $U = \{\lambda \in \G (\rho)| s(\lambda) \in I, r(\lambda) \in T_X^\infty(I)\}$. We then get
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x) = \int_{T_X^\infty(I) \cap R} 1 \ \mu (x) = \\ \int_{T_X^\infty(I) / A} 1 \ \mu (x) = \int_{T_X^\infty(I)} 1 \ \mu (x) - \int_{\Omega_1(T_X)} 1 \ \mu (x) = \mu(I) - \Omega_1(T_X)
+		 &~ \dim_{\mathcal{N}(G)}(\ker S) \\
+		\overset{\ref{T_to_Tx}}{=}&~ \int_{A \cup R} \dim (\ker S_x) \ d \mu (x) \\
+		\overset{\ref{kerSx_berechnen}}{=}&~ \int_{T_X^\infty(I) \cap R} |I \cap \G (T_X)x| \ \mu (x) \\
+		=&~ \int_{T_X^\infty(I) / A} |I \cap \G (T_X)x| \ \mu (x) \\
+		=&~ \int_{T_X^\infty(I)} |I \cap \G (T_X)x| \ \mu (x) - \int_{\mathcal{F}_2(T_X)} |I \cap \G (T_X)x| \ \mu (x) \\
+		=&~ \int_{T_X^\infty(I)} |I \cap \G (T_X)x| \ \mu (x) - \int_{\mathcal{F}_1(T_X)} 1 \ \mu (x) \ \text{(disjoint accepting chains)}\\
+		=&~ \int_{T_X^\infty(I)} |r^{-1}(x) \cap U| \ \mu (x) - \Omega_1(T_X) \\
+		=&~ \int_{\G (\rho)_0} |r^{-1}(x) \cap U| \ \mu (x) - \Omega_1(T_X) \\
+		=&~ \int_{\G (\rho)_0} |s^{-1}(x) \cap U| \ \mu (x) - \Omega_1(T_X) \ \text{discrete measurable groupoid} \\
+		=&~ \int_{I} 1 \ \mu (x) - \int_{\mathcal{F}_1(T_X)} 1 \ \mu (x) \\
+		=&~ \mu(I) - \Omega_1(T_X)
 	\end{align*}
-	which concludes the proof. \todo{Vllt. muss ich hier noch was zu den masen sagen und warum sie unter Tx erhalten bleiben.}
+	which concludes the proof.
 \end{proof}
 \subsection{Pontryagin duality}
 We will now create a link between the groupoid ring and the group ring. For this we need the Pontryagin duals. For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho: \Gamma \to Aut(X)$.
