@@ -575,11 +575,11 @@ We can now define the action groupoid which will allow us to create a groupoid o
 
 	Because $(T_X)$ stops at any configuration and has disjoint accepting chains the orbit of almost any point $x \in \G (T_X)$ contains exactly one point in $A \cup R$ because there has to be a path of morphisms from $x$ to a single point in $A \cup R$ in $\G'$ which ends in this point. Therefore $A \cup R$ is a fundamental domain.
 	
-	To prove the statement about the orbits we restrict the groupoid $\G (T_X)$ to a groupoid $\G (T_X)^\#$ in such a way that $T_X$ is injective and that for every point $x \in \G (T_X)^\#$, $G (T_X)^\# x$ contains a point in $A \cup R$. Because $(T_X)$ stops at any configuration and has disjoint accepting chains $\G (T_X)^\#$ still has measure $1$. We can see that the map $T_X$ applied to $\G (T_X)^\#$ is measure-preserving.\todo{will man das noch zeigen?}
+	To prove the statement about the orbits we restrict the groupoid $\G (T_X)$ to a groupoid $\G (T_X)^\#$ in such a way that for every point $x \in \G (T_X)^\#$, $G (T_X)^\# x$ contains a point in $A \cup R$. Because $(T_X)$ stops at any configuration $\G (T_X)^\#$ still has measure $1$.
 	
 	We define the set $Y_i \subset \G (T_X)_0^\#$ such that from every point $y \in Y_i$ there is a path of length $i$ to a point in $A \cup R$. These sets are disjoint and measurable and $\sum_{i \in \N} \mu(Y_i) = 1$. Therefore $\mu(Y_i)$ has to be a zero sequence.
 	
-	Now look at the set $Y \subset A \cup R$ such that for every $y \in Y$ the orbit $\G y$ is infinite. We see that it equals $\bigcap_{i \in \N} T_X^i(Y_i)$ and therefore has measure $0$. Of course $\bigcup_{i \in \N }T_X^{-i}(Y)$ contains all infinite orbits and has measure $0$ because it is a countable union of sets of measure $0$.
+	Now look at the set $Y \subset A \cup R$ such that for every $y \in Y$ the orbit $\G y$ is infinite. We see that it equals $\bigcap_{i \in \N} T_X^i(Y_i)$ and therefore has measure $0$. Of course $\bigcup_{i \in \N }T_X^{-i}(Y)$ contains all infinite orbits and  is a countable union of the sets $T_X^{-i}(Y)$. A Turing dynamical system has only finitely many sets $X_i$ and therefore each point has only finitely many pre-images. This shows that each of the sets $T_X^{-i}(Y)$ has measure $0$ and therefore $\bigcup_{i \in \N }T_X^{-i}(Y)$ has measure $0$.
 \end{proof}
 We are now able to construct a groupoid out of a Turing dynamical system. In addition we can construct the corresponding groupoid ring out of this groupoid. But we still need a definition of a von Neumann dimension (and therefore some kind of trace) on elements of the groupoid ring (compare Figure \ref{Masterplan}).
 \begin{Definition}
@@ -649,7 +649,7 @@ We will state the following fact without proof. For a complete proof see \cite{G
 		\dim_{\mathcal{N}(G)}(\ker T) = \int_D \dim (\ker T_x) \ d \mu (x).
 	\end{align*} 
 \end{Lemma}
-In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X$ is injective on all of $X$, $T_X^\infty(x) \in A \cup R$ for all $x$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$ (This is a similar argument as used in the proof of \ref{TX_rel_groupoid}).
+In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X^\infty(x) \in A \cup R$ for all $x$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$ (This is a similar argument as used in the proof of \ref{TX_rel_groupoid}).
 \begin{Lemma}
 	\begin{align*}
 	\ker S_x = \ker((\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x) \cap \ker \tilde{\chi_A}_x
@@ -668,14 +668,16 @@ In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S
 	It holds that
 	\begin{align*}
 		\dim (\ker S_x) = \begin{cases}
-		1 & if \ x \in T_X^\infty(I) \cap R\\
+		|I \cap \G (T_X)x| & if \ x \in T_X^\infty(I) \cap R\\
 		0 & otherwise 
 		\end{cases}
 	\end{align*}
 	for every $x \in A \cup R$.
 \end{Lemma}
 \begin{proof}
-	First we see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and constant $1$ on the rest of $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be the one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A$. It then holds that $\bigcup_{i = 1}^{k} \{x_i\} = \G (T_X)x$. If we consider the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
+	First note that because the Turing map $T_X$ maps only finitely many element onto one element the set $I \cap \G (T_X)x$ is indeed finite if $x \in T_X^\infty(I) \cap R$ holds.
+	 
+	We can now see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and constant $1$ on the rest of $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be  one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A$. It then holds that $\bigcup_{i = 1}^{k} \{x_i\} = \G (T_X)x$. If we consider the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
 	\begin{align*}
 		P(x_i) = \begin{cases}
 		x_{i + 1} & if \ i = 1 \\
@@ -689,6 +691,7 @@ In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S
 	\end{align*}
 	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in \ker P$ is a basis vector of $ \ker P$ and therefore $\dim(\ker P) = 1$. In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $\ker P = \ker S_x$. If $x \in A$ then $x_k \notin \ker \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in \ker \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin \ker \tilde{\chi_A}_x$ and thus $\ker S_x = \{0\}$.
 \end{proof}
+\todo{nicht injektiv umbauen}
 \begin{proof}[Proof of Theorem \ref{groserSatz}]
 	We now get
 	\begin{align*}
