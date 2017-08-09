@@ -312,7 +312,7 @@ Let $Ind: X \to \N$ be the map which assigns to each $x \in X$ the corresponding
 Let $x \in X$ be an element of $X$. If there is a $k \in \N$ such that $T_X^k(x) = T_X^{k + 1}(x)$ there also holds $T_X^h(x) = T_X^{h + 1}(x)$ for all $h \in \N$ with $h \geq k$. We then define $T_X^\infty (x) = T_X^k(x)$. Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system $(T_X)$ accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. In addition we say that $(T_X)$ holds for $y$ if it accepts or rejects it.
 
 For every Turing machine $T$ we can construct a Turing dynamical system $(T_X)$ which does the same as the Turing machine, i.e. we have a bijection $\Psi: \2^\Z \to I$ such that $T$ accepts (rejects) an input $Y \in \2^\Z$ if and only if $(T_X)$ accepts (rejects) $\Psi(Y)$. This allows us to first define a Turing machine and the get a Turing dynamical system out of it. We will use this fact may times in chapter \ref{chlamplighter}. The following example shows how the corresponding Turing dynamical system is constructed. But first let us fix notation.
-\begin{Remark}
+\begin{Remark} \label{notation_TM}
 	Let $M \subset N^\Z$  be defined through 
 	\begin{align*}
 		M = \{(n_i)_{i \in \Z} \in N^\Z | n_{-k} = m_{-k}, \cdots, n_l = m_l \} \ k,l \in \N,
@@ -455,7 +455,7 @@ Figure \ref{Masterplan} shows our procedure to proof this Theorem. The main effo
 				(8)
 		;
 	\end{tikzpicture}
-	\caption{Procedure to prove \ref{mainTh}}
+	\caption{Procedure to prove \ref{HS}}
 	\label{Masterplan}
 \end{figure}
 
@@ -475,11 +475,11 @@ We will now give some definitions of basic properties of groupoids which we will
 	For every groupoid $\mathcal{G}$ we define the maps $s: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto X$ and $r: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto Y$ which will be called \emph{source} and \emph{range} map.
 \end{Definition}
 \begin{Definition}
-	A \emph{relation groupoid} is a groupoid with with $|mor(X, Y)| \leq 1 \ \forall X,Y \in \G_0$.
+	A \emph{relation groupoid} is a groupoid with $|mor(X, Y)| \leq 1 \ \forall X,Y \in \G_0$.
 \end{Definition}
 
 \begin{Definition}
-	if $X \in \G_0$ we denote by $\G X \subset \G_0$ the set of all those objects $Y \in \G_0$ with $mor(X, Y) \neq \emptyset$ and call it the \emph{orbit} of $X$.
+	If $X \in \G_0$ we denote by $\G X \subset \G_0$ the set of all those objects $Y \in \G_0$ with $mor(X, Y) \neq \emptyset$ and call it the \emph{orbit} of $X$.
 \end{Definition}
 
 Our main use of groupoids will be to construct a groupoid out of a Turing dynamical system (see Figure \ref{Masterplan}). Therefore we need a measure on our groupoid. 
@@ -489,7 +489,7 @@ Our main use of groupoids will be to construct a groupoid out of a Turing dynami
 	\begin{align*}
 		\int_{\mathcal{G}_0} |r^{-1}(x) \cap U| d\mu(x) = \int_{\mathcal{G}_0} |s^{-1}(x) \cap U| d\mu(x) \ \ \forall U \subset \mathcal{G}
 	\end{align*}
-	holds, we call $\mathcal{G}$ discrete measured
+	holds, we call $\mathcal{G}$ discrete measured.
 \end{Definition}
 \todo{Warum braucht man das eigentlich nochmal, was bedeutet das genau und stimmt das eigentlich? inverting map}
 From now on every groupoid will be discretely measured.
@@ -510,12 +510,12 @@ A fundamental concept used for the calculation of $\ell^2$-Betti numbers of grou
 	Let $U$ be a subset of $\G_0$. A \emph{measurable edge} is a map $\Phi:U \to \G$ such that $s \circ \Phi = id$ and $r \circ \Phi$ is injective.
 \end{Definition}
 \todo{Warum heißt das eigentlich messbar?}
-From the definition we see, that defining a measurable edge means taking a subset of $\G_0$ and associating a morphism to every object such that the morphism starts in this object and no two such morphisms end in the same object. We want to define the inverse of a measurable edge in such a way, that it is also a measurable edge. Therefore it does not suffice to take the inverse of the map $\Phi$. Instead we invert every morphism in the image of $\Phi$.
+From the definition we see, that defining a measurable edge means taking a subset of $\G_0$ and associating a morphism to every object such that the morphism starts in this object and no two such morphisms end in the same object. We want to define the inverse of a measurable edge in such a way, that it is also a measurable edge. Therefore it does not suffice to take the inverse of the map $\Phi$. Instead we invert each morphism in the image of $\Phi$.
 \begin{Definition}
 	Let $\Phi: U \to \G$ be a measurable edge. The \emph{inverse} of $\Phi$ will be called $\Phi^{-1}$ and is defined as $\Phi^{-1}:r(Im(\Phi)) \to \G$ such that $\Phi^{-1}$ is a measurable edge and $\Phi^{-1} \circ r \circ \Phi (x) = \Phi (x)^{-1} \ \forall x \in r(Im(\Phi))$ where $\Phi (x)^{-1}$ is the inverse of the morphism $\Phi (x)$.
 \end{Definition}
 
-We now come to the definition of the groupoid ring. We want it to be a ring of operators of	$L^2(\G)$ \todo{Quelle fuer l2}, such that it is in a way generated by measurable edges. For a measurable edge $\Phi$ we define a operator $\tilde \Phi$ through
+We now come to the definition of the groupoid ring. We want it to be a ring of operators of	$L^2(\G)$, \todo{Quelle fuer l2} such that it is in a way generated by measurable edges. For a measurable edge $\Phi$ we define an operator $\tilde \Phi$ through
 \begin{align*}
 	\tilde \Phi: L^2(\G) \to L^2(\G), F \mapsto \left[ \tilde \Phi (F): \G \to \C, \gamma \mapsto \begin{cases}
 	F(\gamma \cdot_{\G} \Phi^{-1}(r(\gamma)) & \text{if } r(\gamma) \in Dom(\Phi^{-1}) \\
@@ -523,7 +523,7 @@ We now come to the definition of the groupoid ring. We want it to be a ring of o
 	\end{cases} \right] .
 \end{align*}
 \todo{da sollte man ein Bild zu malen}
-In addition for a map $f \in L^\infty (\G_0)$ we also define a operator $\tilde f$ on $L^2(\G)$ through
+In addition for a map $f \in L^\infty (\G_0)$ we also define an operator $\tilde f$ on $L^2(\G)$ through
 \begin{align*}
 	\tilde f: L^2(\G) \to L^2(\G), F \mapsto [\tilde f(F): \G \to \C, \gamma \mapsto F(\gamma) \cdot f(r(\gamma))].
 \end{align*}
@@ -752,7 +752,7 @@ We can now define a map from the group ring to the groupoid ring.
 	\end{align*}
 	 with $c_i \in \C$ is
 	\begin{enumerate}
-		\item a ringhomomorphism
+		\item a ring-homomorphism
 		\item trace-preserving
 		\item preserves $*$
 		%\item injective
@@ -873,7 +873,7 @@ We can now define a map from the group ring to the groupoid ring.
 	If $X$ or $\Gamma$ are infinite then $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is infinite dimensional. Let $l_1 \subset l_2 \subset \ldots$ be a series of finite dimensional $\C$-vector spaces converging to $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$. For each $l_i$ we can restrict $T$ to $l_i$ and the above argument holds. Because $T|_{l_i}$ converges to $T$ the claim follows also for the infinite dimensional case.
 \end{proof}\todo{klappt das mit dem Konvergieren?}
 
-We now have everything we need to show \ref{mainTh}.
+We now have everything we need to show \ref{HS}.
 \begin{Theorem}\label{image_of_P}
 	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
 \end{Theorem}
@@ -929,17 +929,17 @@ We now have everything we need to show \ref{mainTh}.
 	\end{align*}
 	where $\zeta$ is the shift operation defined in \ref{shift}.
 \end{Definition}
-Lets first look at the Turing dynamical system corresponding to a read-only Turing machine as constructed in \ref{roTMtoTDS}. If we can assure that the resulting Turing dynamical system has disjoint accepting chains and stops at any configuration we can assure that it is computing. By using \ref{HS} we see that $\mu (I) - \Omega_1(T_X)$ is a $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$. We then get
+Lets first look at the Turing dynamical system corresponding to a read-only Turing machine as constructed in \ref{roTMtoTDS}. If we can ensure that the resulting Turing dynamical system has disjoint accepting chains and stops at any configuration we can ensure that it is computing. By using \ref{HS} we see that $\mu (I) - \Omega_1(T_X)$ is an $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$. We then get
 \begin{align*}
-	\hat{X} \rtimes_{\hat{\rho}} \Gamma = (\widehat{(\prod_{i \in \Z} \2) \times \2^n}) \rtimes_{\hat{\rho}} (\Z \times Aut(\2^n)) \\
-	= (\bigoplus_{i \in \Z} \2 \times \2^n) \rtimes_{\rho} (\Z \times Aut(\2^n)).
+	\hat{X} \rtimes_{\hat{\rho}} \Gamma =&~ (\widehat{(\prod_{i \in \Z} \2) \times \2^n}) \rtimes_{\hat{\rho}} (\Z \times Aut(\2^n)) \\
+	=&~ (\bigoplus_{i \in \Z} \2 \times \2^n) \rtimes_{\rho} (\Z \times Aut(\2^n)).
 \end{align*}
 Because $\Z$ acts only on the first part and $Aut(\2^n)$ only on the second part of $X$ and $\Z$ acts by shift we get
 \begin{align*}
-	\hat{X} \rtimes_{\hat{\rho}} \Gamma = ((\bigoplus_{i \in \Z} \2) \rtimes_{\zeta} \Z) \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)) \\
-	= L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)).
+	\hat{X} \rtimes_{\hat{\rho}} \Gamma =&~ ((\bigoplus_{i \in \Z} \2) \rtimes_{\zeta} \Z) \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)) \\
+	=&~ L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)).
 \end{align*}
-Therefore we see that read-only Turing machines offer a way to compute the $\ell^2$-betti number of $L \times H$ for some discrete finite group $H$. We will use this fact to prove the following theorem.
+Therefore we see that read-only Turing machines offer a way to compute the $\ell^2$-Betti number of $L \times H$ for some discrete finite group $H$. We will use this fact to prove the following theorem.
 
 \begin{Theorem} \label{mainTh}
 	Every positive rational number arises from the lamplighter group.
@@ -961,12 +961,12 @@ Lets start by constructing the used Turing dynamical system.
 	\end{itemize}
 	The transition function is defined through 
 	\begin{align*}
-		\delta(s_I, x) = (s_1, x, 1) \ \forall x \in \2 \\
-		\delta(s_i, \0) = \begin{cases}
+		\delta(s_I, x) =&~ (s_1, x, 1) \ \forall x \in \2 \\
+		\delta(s_i, \0) =&~ \begin{cases}
 			(s_{i+1}, \0, 1) & if \ i \neq k \\
 			(s_R, \0, 0) & if \ i = k
 		\end{cases} \\
-		\delta(s_i, \1) = \begin{cases}
+		\delta(s_i, \1) =&~ \begin{cases}
 			(s_A, \1, 0) & if \ a_i = 1 \\
 			(s_R, \1, 0) & if \ a_i = 0
 		\end{cases}
@@ -977,9 +977,10 @@ Lets start by constructing the used Turing dynamical system.
 	\end{align*} 
 	Each of these elements can be traced back to a single element in
 	\begin{align*}
-	[\underline{\1} \ \0^{n} \ \1][s_I] \ \text{or} \ [\underline{\1}  \ \0^{k}][s_I].
+	[\underline{\1} \ \0^{n} \ \1][s_I] \ \text{or} \ [\underline{\1}  \ \0^{k}][s_I]
 	\end{align*} 
-	where each entry which is not fixed stays the same. 
+	where each entry which is not fixed stays the same. Note that we showed an even stronger statement, namely that $T_X^\infty (x) \neq T_X^\infty (y)$ for all $x, y \in I$ with $x \neq y$, not just for those in $\mathcal{F}_1(T_X)$. This allows us to later exchange $s_A$ with $s_R$ and still be computing.
+	
 	It remains to show that $\frac{\Omega_1(T_X)}{\mu(I)} = \frac{1}{m}$. Let $K \subset \N$ be such that $a_i = 1 \Leftrightarrow i \in K$. It then holds that
 	\begin{align*}
 		\mathcal{F}_1(T_X) = \bigcup_{i \in K}[\underline{\1} \ \0^{i-1} \1][s_I].
@@ -998,60 +999,87 @@ Lets start by constructing the used Turing dynamical system.
 	\end{align*}
 	which is exactly $\frac{1}{m}$.
 \end{proof}
-
+We will state the following basic fact without proof.
 \begin{Lemma} \label{frac}
 	For every $m \in \N$ with $m \neq 1$ the binary expansion of $\frac{1}{m}$ is of the form $0. a \overline{b}$ where $a$ is a nonrepeating and $b$ a repeating part. The length of $a$ and the length of $b$ are both finite.
 \end{Lemma}
-\todo{Kann man vllt. noch beweisen...}
 \begin{Lemma} \label{2TM}
 	For every $m \in \N$ there exists a computing Turing dynamical system $T_X$ with $\frac{\Omega_1(T_X)}{\mu(I)} = \frac{1}{m}$.
 \end{Lemma}
 \begin{proof}
-	W.l.o.g. $m \neq 1$. Then with \ref{frac} follows that $\frac{1}{m} = 0.a_1a_2 \ldots a_k b_1 b_2 \ldots b_h$ where $a_1a_2 \ldots a_k$ is nonrepeating and $b_1 b_2 \ldots b_h$ is repeating. We then construct the same Turing machine as in \ref{1TM} but add $h$ many states called $r_1, r_2 \ldots r_h$. In addition we replace $\delta(s_k, \0) = (s_R, \0, 0)$ with $\delta(s_k, \0) = (r_1, \0, 1)$ and set
+	Without loss of generality $m \neq 1$. Then with \ref{frac} follows that $\frac{1}{m} = 0.a_1a_2 \ldots a_k b_1 b_2 \ldots b_h$ where $a_1a_2 \ldots a_k$ is nonrepeating and $b_1 b_2 \ldots b_h$ is repeating. We then construct the same Turing machine as in \ref{1TM} but add $h$ many states called $r_1, r_2 \ldots r_h$. In addition we replace $\delta(s_k, \0) = (s_R, \0, 0)$ with $\delta(s_k, \0) = (r_1, \0, 1)$ and set
 	\begin{align*}
-		\delta(r_i, \0) = \begin{cases}
+		\delta(r_i, \0) =&~ \begin{cases}
 			(r_{i+1}, \0, 1) & if \ i \neq h \\
 			(r_1, \0, 1) & if \ i = h
 		\end{cases} \\
-		\delta(r_i, \1) = \begin{cases}
+		\delta(r_i, \1) =&~ \begin{cases}
 			(s_A, \1, 0) & if \ b_i = 1 \\
 			(s_R, \1, 0) & if \ b_i = 0
 		\end{cases}
 	\end{align*}
-	which takes care of the repeating part of $\frac{1}{m}$. The rest of the transition function $\delta$ stays the same as in \ref{1TM}. We can see that this Turing machines does not hold for every input, because if we have only zeros on the right side of our staring point we never arrive at $s_A$ or $s_R$. But because the set $[\underline{x} \ \0 \ \0 \ldots][\sigma]$ (with $x \in \2$ and $\sigma$ an arbitrary state) has measure zero the resulting Turing dynamical system still stops at any configuration. The rest follows exactly like in the proof of \ref{1TM} because the infinite sum of measures converges.
+	which takes care of the repeating part of $\frac{1}{m}$. The rest of the transition function $\delta$ stays the same as in \ref{1TM}. We can see that this Turing machines does not hold for every input, because when we have only zeros on the right side of our staring point we never arrive at $s_A$ or $s_R$. But because the set $[\underline{x} \ \0 \ \0 \ldots][\sigma]$ (with $x \in \2$ and $\sigma$ an arbitrary state) has measure zero the resulting Turing dynamical system still stops at any configuration. The rest follows exactly like in the proof of \ref{1TM} because the infinite sum of measures converges.
 \end{proof}
 
-We can now start to proof \ref{mainTh}. Because of \ref{add} it suffices to show that for every $m \in \N$ $\frac{1}{m}$ arises from $L$. Let $m \in \N$  and $(T_X)$ be the Turing dynamical system constructed in the proof of \ref{2TM}. First we see that
+We can now start to proof \ref{mainTh}. Because of of the additivity of numbers arising from a group proven in \ref{add} it suffices to show that for every $m \in \N$, $\frac{1}{m}$ arises from $L$. Let $m \in \N$  and $(T_X)$ be the Turing dynamical system constructed in the proof of \ref{2TM}. First we see that
 \begin{align*}
-	\mu (I) - \Omega_1(X) = \mu (I) (1 - \frac{\Omega_1(T_X)}{\mu(I)}) = \mu (I) (1 - \frac{1}{m})
+	 &~ \mu (I) - \Omega_1(X) \\
+	=&~ \mu (I) (1 - \frac{\Omega_1(T_X)}{\mu(I)}) \\
+	=&~ \mu (I) (1 - \frac{1}{m})
 \end{align*}
-is a $\ell^2$-Betti number of $L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n))$ for some $n \in \N$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now change $(T_X)$ by adding "dummy states" until $(T_X)$ has $2^{k'}$ many states. Doing so does not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. We now construct a Turing dynamical system $(T_{X'})$ in the same way as in \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, i.e.
+is a $\ell^2$-Betti number of 
+\begin{align*}
+	L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n))
+\end{align*}
+for some $n \in \N$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now change $(T_X)$ by adding "dummy states" until $(T_X)$ has $2^{k'}$ many states. Doing so does not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. We now construct the corresponding Turing dynamical system $(T_{X'})$ in the same way as in example \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, i.e.
 \begin{align*}
 	\phi : \2^{k'} \to \2^{k'}, \sum_{i =1}^{k'}z_i \cdot e_i \mapsto \sum_{i =2}^{k'}z_{i - 1} \cdot e_i + z_{k'} \cdot e_1
 \end{align*}
-where $e_i$ denotes the standard basis of $\2^{k'}$ and each $z_i \in \2$. Then $Rot$ acts transitively on the standard basis of $\2^{k'}$ and has exactly $k' = 2^{h}$ elements. Then $\frac{1}{2^{k' + 1}} (1 - \frac{1}{m})$ is a $\ell^2$-Betti number of $L \times (\2^{k'} \rtimes_{\rho|_{Rot}} Rot)$. With \ref{mult} follows that 
+where $e_i$ denotes the standard basis of $\2^{k'}$ and each $z_i \in \2$. Then $Rot$ acts transitively on the standard basis of $\2^{k'}$ and has exactly $k' = 2^{h}$ elements. Then $\frac{1}{2^{k' + 1}} (1 - \frac{1}{m})$ is a $\ell^2$-Betti number of $L \times (\2^{k'} \rtimes_{\rho|_{Rot}} Rot)$. With the multiplicativity proven in \ref{mult} it follows that 
 \begin{align*}
-	|(\2^{k'} \rtimes_{\rho|_{Rot}} Rot)| \cdot \frac{1}{2^{k' + 1}} (1 - \frac{1}{m}) = 2^{k'} \cdot 2^h \cdot \frac{1}{2^{k' + 1}} (1 - \frac{1}{m}) = 2^{h -1} (1 - \frac{1}{m})
+	 &~ |(\2^{k'} \rtimes_{\rho|_{Rot}} Rot)| \cdot \frac{1}{2^{k' + 1}} (1 - \frac{1}{m}) \\
+	=&~ 2^{k'} \cdot 2^h \cdot \frac{1}{2^{k' + 1}} (1 - \frac{1}{m}) \\
+	=&~ 2^{h -1} (1 - \frac{1}{m})
 \end{align*}
-is a $\ell^2$-Betti number of $L$. By changing $I$ to
+is a $\ell^2$-Betti number arising from $L$. By changing $I$ to
 \begin{align*}
 	[\1^{h-1} \underline{\1}][s_I]
 \end{align*}
-we get that $(1 - \frac{1}{m})$ is a $\ell^2$-Betti number of $L$. At last by interchanging $s_A$ and $s_R$ we get that $\frac{1}{m}$ is a $\ell^2$-Betti number of $L$ which concludes the proof.
+we get that $(1 - \frac{1}{m})$ is a $\ell^2$-Betti number arising from $L$. At last by interchanging $s_A$ and $s_R$ we get that $\frac{1}{m}$ is a $\ell^2$-Betti number of $L$ which concludes the proof.
 
 \subsection{Irrational $\ell^2$-Betti numbers}
+We showed in the last section that every rational number arises from the lamplighter group. We will show now that in addition there are also irrational numbers which arise from the lamplighter group. To be more precise, we show that a specific irrational number arises from $L^3$.
 \begin{Remark}
-	The definition of a Turing machine can easily be expanded to a Turing machine with multiple tapes, i.e. a Turing machine which acts on $(\2^\Z)^k$ for $k \in \N$ instead of just $\2^\Z$. In this case we get a transition function $\delta: S \setminus(A \cup R) \times \2^k \to S \times \2^k \times \{-1, 0, 1\}^k$.\todo{Vllt. noch genauer}
+	The definition of a Turing machine can easily be expanded to a Turing machine with multiple tapes, i.e. a Turing machine which acts on $(\2^k)^\Z$ for $k \in \N$ instead of just $\2^\Z$. In this case we get a transition function 
+	\begin{align*}
+		\delta: S \setminus(A \cup R) \times \2^k \to S \times \2^k \times \{-1, 0, 1\}^k.
+	\end{align*}
 \end{Remark}
 \begin{Remark}
-	Let $T$ be a Turing machine on $3$ tapes. For a subset $M \subset X$ of the corresponding Turing dynamical system $(T_X)$ with $M = \{((a_i)_{i \in \Z}, (b_i)_{i \in \Z}, (c_i)_{i \in \Z}) \in (\2^\Z)^3 | a_{-\alpha} = l_{-\alpha}, \cdots, a_\beta = l_\beta, b_{-\gamma} = m_{-\gamma}, \cdots, b_\delta = m_\delta, c_{-\epsilon} = n_{-\epsilon}, \cdots, c_\zeta = n_\zeta \} \ \alpha, \beta, \gamma, \delta, \epsilon\ \zeta \in \N$ we simply write
+	Let $T$ be a Turing machine on $3$ tapes. For a subset $M \times S \subset X$ of the corresponding Turing dynamical system $(T_X)$ with 
+	\begin{align*}
+		M = \{((a_i)_{i \in \Z}, (b_i)_{i \in \Z}, (c_i)_{i \in \Z}) \in (\2^\Z)^3 | a_{-\alpha} = l_{-\alpha}, \cdots, a_\beta = l_\beta,\\
+		 b_{-\gamma} = m_{-\gamma}, \cdots, b_\delta = m_\delta, c_{-\epsilon} = n_{-\epsilon}, \cdots, c_\zeta = n_\zeta \}
+	\end{align*}
+	with $\alpha, \beta, \gamma, \delta, \epsilon\ \zeta \in \N$ we simply write
 	\begin{align*}
 		\begin{bmatrix}
-			l_{-\alpha} \cdots l_\beta \\
-			m_{-\gamma} \cdots m_\delta \\
-			n_{-\epsilon} \cdots n_\zeta
+			l_{-\alpha} \cdots \underline{l_0} \cdots l_\beta \\
+			m_{-\gamma} \cdots \underline{m_0} \cdots m_\delta \\
+			n_{-\epsilon} \cdots \underline{n_0} \cdots n_\zeta
 		\end{bmatrix}.
 	\end{align*}
+	This is comparable to the notation introduced in \ref{notation_TM} for Turing dynamical systems with one tape.
+	
+	In a similar way we write 
+	\begin{align*}
+		\begin{bmatrix}
+			l_{-\alpha} \cdots \underline{l_0} \cdots l_\beta \\
+			m_{-\gamma} \cdots \underline{m_0} \cdots m_\delta \\
+			n_{-\epsilon} \cdots \underline{n_0} \cdots n_\zeta
+		\end{bmatrix}[\sigma]
+	\end{align*}
+	for the subset $M \times \{\sigma \} \subset X$.
 \end{Remark}
 \begin{Theorem}
 	The number
@@ -1069,33 +1097,35 @@ we get that $(1 - \frac{1}{m})$ is a $\ell^2$-Betti number of $L$. At last by in
 	\end{itemize}
 	The transition function is defined through
 	\begin{align*}
-		\delta(s_I, (x_1, x_2, x_3)) = \begin{cases}
+		\delta(s_I, (x_1, x_2, x_3)) =&~ \begin{cases}
 			(s_1, (x_1, x_2, x_3), (1, 1, 0)) & if \ x_1 = x_2 = x_3 = \1 \\
 			(s_R, (x_1, x_2, x_3), (0, 0, 0)) & otherwise
 		\end{cases} \\
-		\delta(s_1, (x_1, x_2, x_3)) = \begin{cases}
+		\delta(s_1, (x_1, x_2, x_3)) =&~ \begin{cases}
 		(s_1, (x_1, x_2, x_3), (1, 1, 0)) & if \ x_1 = x_2 = \0 \ and \ x_3 = \1 \\
 		(s_2, (x_1, x_2, x_3), (-1, -1, 1)) & if \ x_1 = x_2 = x_3 = \1 \\
 		(s_R, (x_1, x_2, x_3), (0, 0, 0)) & otherwise
 		\end{cases} \\
-		\delta(s_2, (x_1, x_2, x_3)) = \begin{cases}
+		\delta(s_2, (x_1, x_2, x_3)) =&~ \begin{cases}
 		(s_2, (x_1, x_2, x_3), (-1, 0, 0)) & if \ x_1 = x_2 = x_3 = \0  \\
 		(s_3, (x_1, x_2, x_3), (1, 0, 0)) & if \ x_1 = \0 \ and \ x_2 = x_3 = \1 \\
 		(s_A, (x_1, x_2, x_3), (0, 0, 0)) & if \ x_1 = \0 \ and \ x_2 = x_3 = \1  \\ 
 		(s_R, (x_1, x_2, x_3), (0, 0, 0)) & otherwise
 		\end{cases} \\
-		\delta(s_1, (x_1, x_2, x_3)) = \begin{cases}
+		\delta(s_1, (x_1, x_2, x_3)) =&~ \begin{cases}
 		(s_3, (x_1, x_2, x_3), (1, 0, 1)) & if \ x_1 = x_2 = x_3 = \0 \\
 		(s_2, (x_1, x_2, x_3), (-1, -1, 1)) & if \ x_1 = \1 \ and \ x_2 = x_3 = \1 \\
 		(s_R, (x_1, x_2, x_3), (0, 0, 0)) & otherwise
 		\end{cases}.
 	\end{align*}
-	Of course we will again look at the corresponding Turing dynamical system $(T_X)$ where we will set $I = \begin{bmatrix}
-	\1 \\
-	\1 \\
-	\1 
-	\end{bmatrix}[s_I]$.
-	
+	Of course we will again look at the corresponding Turing dynamical system $(T_X)$ where we will set 
+	\begin{align*}
+		I = \begin{bmatrix}
+		\1 \\
+		\1 \\
+		\1 
+		\end{bmatrix}[s_I].
+	\end{align*}
 	Now let us look at $T$ and figure out which input is accepted by $T$. Because of our definition of $I$ we can suppose that each of our tapes has a $\1$ at the zero-position at the beginning. So it is clear that we are at the state $s_1$ after one step with a secure $\1$ at the third tape. If we have $\0$ on our first two tapes we remain at $s_1$ and if we have $\1$ on our first two tapes we get to $s_2$. Therefore to get to $s_2$ our input has to be of the form 
 	\begin{align*}
 		\begin{bmatrix}
@@ -1110,41 +1140,46 @@ we get that $(1 - \frac{1}{m})$ is a $\ell^2$-Betti number of $L$. At last by in
 	\1 \0^j \underline{\1}  \\
 	\1 \0^j \underline{\1}  \\
 	\underline{\1} 
-	\end{bmatrix}[s_2]
-	\end{align*}.
-\end{proof}
+	\end{bmatrix}[s_2].
+	\end{align*}
+
 When we are at state $s_2$ we shift our first tape back until we reach our first $\1$. We then go to $s_3$ and shift our first and third tape forward until we reach our second $\1$ on the first time, i.e. we do $j$-many shifts. We then shift our second tape one to the right and repeat this whole process because we are again at state $s_2$. We do this until we get a $\1$ on our third tape. If we then are at $s_2$ with a $\1$ at our second tape we accept. In each other case we reject. The only case where we have a $\1$ on our second tape is if we repeated the above process $j$ times. Therefore in order to accept we need to have $j \cdot (j + 1) = j^2 + j$ \todo{2j?} many $\0$ on the third tape. Therefore it holds that
 \begin{align*}
 	\mathcal{F}_1(T_X) = \bigcup_{j \in \N}\begin{bmatrix}
 	 	\underline{\1} \0^j \1 \\
 	 	\underline{\1} \0^j \1 \\
 	 	\underline{\1} \0^{j^2 + j} \1
-	\end{bmatrix}[s_I]
-\end{align*}. 
+	\end{bmatrix}[s_I].
+\end{align*}
 Because our Turing dynamical system  has $8$ states this set has measure 
 \begin{align*}
-	\Omega_1(T_X) = \mu(\mathcal{F}_1(T_X)) = \frac{1}{8} \sum_{j = 1}^{\infty} \frac{1}{2^{j^2 + 3j + 6}}
-\end{align*}.
+	\Omega_1(T_X) = \mu(\mathcal{F}_1(T_X)) = \frac{1}{8} \sum_{j = 1}^{\infty} \frac{1}{2^{j^2 + 3j + 6}}.
+\end{align*}
 In addition it holds that $\mu (I) = \frac{1}{64}$ and therefore 
 \begin{align*}
 	\mu (I) - \Omega_1(T_X) = \frac{1}{64} - \frac{1}{8} \sum_{j = 1}^{\infty} \frac{1}{2^{j^2 + 3j + 6}}.
 \end{align*}
 
-It remains to show that $(T_X)$ is computable. First let us look at the set $\{x \in X | T_X^\infty \notin A \cup R\}$. We will show that this set is contained in
+It remains to show that $(T_X)$ is computable. First let us look at the set 
+\begin{align*}
+	\{x \in X | T_X^\infty \notin A \cup R\}.
+\end{align*}
+We will show that this set is contained in
 \begin{align*}
 	\begin{bmatrix}
 		\underline{x} \0^\infty \\
 		\underline{y} \0^\infty \\
 		\underline{z}
-	\end{bmatrix} [\sigma] \ \cup \
+	\end{bmatrix} \  \cup \
 	\begin{bmatrix}
 		\underline{x} \\
 		\underline{y} \\
 		\underline{z} \0^\infty
-	\end{bmatrix} [\sigma]
-\end{align*} for $x, y, z \in \2$ and $\sigma \in \{s_I, s_A, s_R, s_1, s_2, s_3\}$.
+	\end{bmatrix}
+\end{align*} for $x, y, z \in \2$.
 To see this let us look at $T$. There are only two ways to get into an infinite loop. We can remain indefinitely at $s_1$ if we do not find any $\1$ on the right side of one of the first two tapes. The second possibility is that we remain forever in $s_2$ and $s_3$. Bat as we can see from the transition function this is only possible if we do not find any $\1$ on the  right side of the third tapes. So we see the above containment and because each of these two sets has measure zero $(T_X)$ stops at any configuration. 
-Because there is no way to get back to $s_I$ $(T_X)$ does not restart. IN addition each element $x$ of the set $A$ is contained in some set
+
+Because there is no way to get back to $s_I$ $(T_X)$ does not restart. In addition each element $x$ of the set $A$ is contained in some set
 \begin{align*}
 	\begin{bmatrix}
 		\1 \0^{j - 1} \underline{\0} \1 \\
@@ -1161,6 +1196,8 @@ which can be traced back to a single element of
 	\end{bmatrix}[s_I]
 \end{align*}
 where each entry which is not fixed stay the same. Therefore $(T_X)$ has disjoint accepting chains and the claim follows.
+\end{proof}
+
   % Literaturverzeichnis (beginnt auf einer ungeraden Seite)
   \newpage
 
