@@ -126,7 +126,7 @@ In this whole chapter $G$ is always a discrete countable group with multiplicati
 \subsection{Von Neumann Dimension} \label{fiss}
 At first let us begin with some basic definitions.
 \begin{Definition} \label{GR}
-	The \emph{group ring} $RG$ over a Ring $R$ is the free module over $G$ with the additional multiplication
+	The \emph{group ring} $RG$ over a ring $R$ is the free module over $G$ with the additional multiplication
 	\begin{align*}
 		\sum_{h \in H} \alpha_h \cdot h \cdot_{RG} \sum_{k \in K} \beta_k \cdot k = \sum_{h \in H} \sum_{k \in K} \alpha_h \beta_k \cdot h \cdot_G k
 	\end{align*}
@@ -144,13 +144,13 @@ If $R$ is a field then $RG$ is an algebra and in particular a vector space with 
 \end{Remark}
 We now want to define a dimension for spaces embedded in $\ell^2(G)$. In most cases the normal vector space dimension of these spaces will be infinite and therefore not useful. We will instead use the von Neumann dimension which requires some preliminary work.
 \begin{Definition}
-	The \emph{group von Neumann} algebra $\mathcal{N}(G)$ is defined as the algebra of $G$-equivariant bounded operators from $\ell^2(G)$ to $\ell^2(G)$ where $G$ acts on $\ell^2(G)$ by left multiplication.
+	The \emph{group von Neumann algebra} $\mathcal{N}(G)$ is defined as the algebra of $G$-equivariant bounded operators from $\ell^2(G)$ to $\ell^2(G)$ where $G$ acts on $\ell^2(G)$ by left multiplication.
 \end{Definition}
 We will denote the bounded operators of a Hilbert space $H_1$ with $\mathcal{B}(H_1)$. If $G$ acts on a Hilbert Space $H_2$ we will call the subspace of $G$-equivariant elements of $H_2$ by $H_2^G$. Therefore we can also define the group von Neumann algebra through $\mathcal{N}(G) := \mathcal{B}(\ell^2(G))^G$.
 \begin{Definition}
 	Let $e_G \in G$ be the unit element of $G$. Then
 	\begin{align*}
-		tr_{\mathcal{N}(G)}: \mathcal{N}(G) \to \C, A  \mapsto \langle A(1 \cdot e_G), 1 \cdot e_G \rangle
+		tr_{\mathcal{N}(G)}\colon \mathcal{N}(G) \to \C, A  \mapsto \langle A(1 \cdot e_G), 1 \cdot e_G \rangle
 	\end{align*}
 	is called the \emph{von Neumann trace} on $\mathcal{N}(G)$.
 \end{Definition}
@@ -161,9 +161,9 @@ We will denote the bounded operators of a Hilbert space $H_1$ with $\mathcal{B}(
 	A \emph{Hilbert $\mathcal{N}(G)$-module} is a Hilbert space $H$ with a linear isometric $G$-action such that there exists an isometric linear $G$-embedding from $H$ to $\ell^2(G)^n$ for some $n \in \N$.
 \end{Definition}
 \begin{Definition}
-	Let $H$ be a Hilbert $\mathcal{N}(G)$-module with corresponding embedding \\ $\iota: H \to \ell^2(G)^n$ and let $pr_{\iota(H)}: \ell^2(G)^n \to H$ be the corresponding $G$-equivariant projection. Let $\iota_i: \ell^2(G) \to \ell^2(G)^n, y \mapsto (x_1, \ldots, x_n)$ with $x_j = \delta_{i,j} \cdot y$ be the inclusion of the i-th $\ell^2(G)$ and $pr_i: \ell^2(G)^n \to \ell^2(G), (x_1, \ldots, x_n) \mapsto x_i$ the corresponding projection. Then 
+	Let $H$ be a Hilbert $\mathcal{N}(G)$-module with corresponding embedding \\ $\iota\colon H \to \ell^2(G)^n$ and let $pr_{\iota(H)}\colon \ell^2(G)^n \to H$ be the corresponding $G$-equivariant projection. Let $\iota_i\colon \ell^2(G) \to \ell^2(G)^n, y \mapsto (x_1, \ldots, x_n)$ with $x_j = \delta_{i,j} \cdot y$ be the inclusion of the i-th $\ell^2(G)$ and $pr_i\colon \ell^2(G)^n \to \ell^2(G), (x_1, \ldots, x_n) \mapsto x_i$ the corresponding projection. Then 
 	\begin{align*}
-		tr_{\mathcal{N}(G)}: \mathcal{B}(H)^G \to \C, A \mapsto \sum_{i = 1}^{n} tr_{\mathcal{N}(G)}(pr_i \circ \iota \circ A \circ pr_{\iota(H)} \circ \iota_i)
+		tr_{\mathcal{N}(G)}\colon \mathcal{B}(H)^G \to \C, A \mapsto \sum_{i = 1}^{n} tr_{\mathcal{N}(G)}(pr_i \circ \iota \circ A \circ pr_{\iota(H)} \circ \iota_i)
 	\end{align*}
 	is called the \emph{von Neumann trace} on $H$.
 \end{Definition}
@@ -175,7 +175,7 @@ One can show that the trace is independent of the chosen embedding and therefore
 	\end{align*}
 \end{Definition}
 \begin{Remark}\label{vNd_for_subsets}
-	Let $H \subset \ell^2(G)$ be a $G$-equivariant subset and $pr_H: \ell^2(G) \to H$ a $G$-equivariant projection. Then\begin{align*}
+	Let $H \subset \ell^2(G)$ be a $G$-equivariant subset and $pr_H\colon\ell^2(G) \to H$ a $G$-equivariant projection. Then\begin{align*}
 	\dim_{\mathcal{N}(G)}(H) = tr_{\mathcal{N}(G)}(pr_H) = \langle pr_H (1 \cdot e_G), 1 \cdot e_G \rangle.
 	\end{align*}
 \end{Remark}
@@ -184,7 +184,7 @@ One can show that the trace is independent of the chosen embedding and therefore
 \subsection{$\ell^2$-Betti numbers of $G$-CW-complexes}
 One can now define the $\ell^2$-Betti numbers of CW-complexes in a very similar way as for cellular homology. But first we have to define a group action on CW-complexes.
 \begin{Definition}
-	Let $X$ be a CW-complex and $\rho: G \to Homeo(X)$ an action of $G$ on $X$ by homeomorphism such that for every open cell $E \subset X$ and every $g \in G$ it holds that $\rho(g)(E)$ is again an open cell and $\rho(g)|_{E} = id_E$ if $\rho(g)(E) \cap E \neq \emptyset$. Then $\rho$ is called a \emph{cellular action}.
+	Let $X$ be a CW-complex and $\rho\colon G \to Homeo(X)$ an action of $G$ on $X$ by homeomorphism such that for every open cell $E \subset X$ and every $g \in G$ it holds that $\rho(g)(E)$ is again an open cell and $\rho(g)|_{E} = id_E$ if $\rho(g)(E) \cap E \neq \emptyset$. Then $\rho$ is called a \emph{cellular action}.
 \end{Definition}
 
 \begin{Definition}
@@ -235,7 +235,7 @@ We will now show that it is sufficient for our purpose to calculate the von Neum
 	A matrix $A \in \C G^{n \times m}$ can be seen as a map from $\ell^2(G)^n \to \ell^2(G)^m$ via $x \mapsto x^{\top} \cdot A$. We will refer to this map also by $A$. Be aware that if $G$ is not abelian this is not the same map as $A^\top x$.
 \end{Remark}
 \begin{Lemma}
-	For a matrix $A \in \C G^{n \times m}$ $\ker(A)$ is a Hilbert $\mathcal{N}(G)$-module and therefore has a well-defined von Neumann-dimension.
+	For a matrix $A \in \C G^{n \times m}$ the kernel $\ker(A)$ is a Hilbert $\mathcal{N}(G)$-module and therefore has a well-defined von Neumann-dimension.
 \end{Lemma}
 \begin{proof}
 	Of course $\ker(A)$ is a subspace of $\ell^2 (G)^n$. We can use $id|_{\ker(A)}$ as embedding. It remains to show that $\ker(A)$ is closed under the natural $G$-action on $\ell^2 (G)^n$. So let $x \in \ker(A)$ be an element in the kernel and $g \in G$ be an element of the group. It now holds that
@@ -287,7 +287,7 @@ To fix notation we will first give a definition of a Turing machine. For conveni
 \begin{Definition}
 	A \emph{Turing machine} is a 5-tuple $T=(S,\delta, A, R, I)$ where S is a finite set of states and 
 	\begin{align*}
-		\delta: \2 \times S \setminus(A \cup R) \to \2 \times \{-1, 0, 1\} \times S
+		\delta\colon\2 \times S \setminus(A \cup R) \to \2 \times \{-1, 0, 1\} \times S
 	\end{align*}
 	is called the transition function. $A \subset S$ is called the set of accepting states, $R \subset S$ is called the set of rejecting states and $I \in S$ is called the initial state.
 	A Turing machine is \emph{read-only} if $\delta$ fixes the $\2$-coordinate, i.e.
@@ -300,18 +300,18 @@ In addition each Turing machine uses a "tape", i.e. a set $\Z / 2\Z ^{\Z}$ with 
 
 For the purpose of calculating $\ell^2$-Betti numbers of groups we need to extend this definition. Let $(X, \mu)$ be a probability measure space divided into finitely many disjoint measurable subsets $X_i$. Let $\Gamma$ be a countable discrete group and $\rho$ be a right measure preserving action of $\Gamma$ on X.
 We now choose 3 disjoint subsets $A$, $R$, $I$, where each of them is a union of certain $X_i$. They will be called the accepting set, the rejecting set and the initial set. In addition we choose a $\gamma_i \in \Gamma$ for each $X_i \subset X$ such that for each $i$ with $X_i \subset A$ or $X_i \subset R$ it holds that $\gamma_i = e$ where $e$ is the neutral element in $\Gamma$. 
-Let $Ind: X \to \N$ be the map which assigns to each $x \in X$ the corresponding index of the $X_i$ it is contained in.
+Let $Ind\colon X \to \N$ be the map which assigns to each $x \in X$ the corresponding index of the $X_i$ it is contained in.
 \begin{Definition}
 	 The map 
 	 \begin{align*}
-	 T_X:X \to X, x \mapsto \rho(\gamma_{Ind(x)})(x)
+	 T_X\colon X \to X, x \mapsto \rho(\gamma_{Ind(x)})(x)
 	 \end{align*}
 	 is called the \emph{Turing map}.
 	 The group $\Gamma$ and the space $X$ (with all the choices of subsets and corresponding $\gamma_i$ made in the last paragraph) together with the Turing map will be called a \emph{Turing dynamical system} and will be denoted by $(T_X)$
 \end{Definition}
 Let $x \in X$ be an element of $X$. If there is a $k \in \N$ such that $T_X^k(x) = T_X^{k + 1}(x)$ there also holds $T_X^h(x) = T_X^{h + 1}(x)$ for all $h \in \N$ with $h \geq k$. We then define $T_X^\infty (x) = T_X^k(x)$. Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system $(T_X)$ accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. In addition we say that $(T_X)$ holds for $y$ if it accepts or rejects it.
 
-For every Turing machine $T$ we can construct a Turing dynamical system $(T_X)$ which does the same as the Turing machine, i.e. we have a bijection $\Psi: \2^\Z \to I$ such that $T$ accepts (rejects) an input $Y \in \2^\Z$ if and only if $(T_X)$ accepts (rejects) $\Psi(Y)$. This allows us to first define a Turing machine and the get a Turing dynamical system out of it. We will use this fact may times in chapter \ref{chlamplighter}. The following example shows how the corresponding Turing dynamical system is constructed. But first let us fix notation.
+For every Turing machine $T$ we can construct a Turing dynamical system $(T_X)$ which does the same as the Turing machine, i.e. we have a bijection $\Psi\colon\2^\Z \to I$ such that $T$ accepts (rejects) an input $Y \in \2^\Z$ if and only if $(T_X)$ accepts (rejects) $\Psi(Y)$. This allows us to first define a Turing machine and the get a Turing dynamical system out of it. We will use this fact may times in chapter \ref{chlamplighter}. The following example shows how the corresponding Turing dynamical system is constructed. But first let us fix notation.
 \begin{Remark} \label{notation_TM}
 	Let $M \subset N^\Z$  be defined through 
 	\begin{align*}
@@ -467,12 +467,12 @@ We begin by giving some algebraic definitions, namely the construct of groupoids
 \begin{Example} \label{group}
 	Let $G$ be a group. We want to see how we can express $G$ as a groupoid. Let $\mathcal{G}_0 = \{\bullet\}$ be the set with only one element  and $\mathcal{G}$ be the category with objects $G_0$ and morphisms $G$ from $\bullet$ to $\bullet$.The composition of morphisms in $\mathcal{G}$ is the same as the multiplication in $G$. Then $\mathcal{G}$ is a small category and every morphism is invertible because every group element has an inverse. Therefore $\mathcal{G}$ is a groupoid.
 \end{Example}
-We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathcal{G}_0$ and we can identify it with a subset of the set of morphisms of $\mathcal{G}$ by the embedding $\textbf{1}: \mathcal{G}_0 \to mor(\mathcal{G}), x \mapsto [id: x \to x]$ which sends every object to the corresponding identity morphism. Therefore we will only only look at $mor(\mathcal{G})$ and also call it $\mathcal{G}$. 
+We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathcal{G}_0$ and we can identify it with a subset of the set of morphisms of $\mathcal{G}$ by the embedding $\textbf{1} \colon \mathcal{G}_0 \to mor(\mathcal{G}), x \mapsto [id\colon x \to x]$ which sends every object to the corresponding identity morphism. Therefore we will only only look at $mor(\mathcal{G})$ and also call it $\mathcal{G}$. 
 
 We will now give some definitions of basic properties of groupoids which we will use later in this chapter.
 
 \begin{Definition}
-	For every groupoid $\mathcal{G}$ we define the maps $s: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto X$ and $r: \mathcal{G} \to \mathcal{G}_0, [f:X \to Y] \mapsto Y$ which will be called \emph{source} and \emph{range} map.
+	For every groupoid $\mathcal{G}$ we define the maps $s\colon \mathcal{G} \to \mathcal{G}_0, [f\colon X \to Y] \mapsto X$ and $r\colon\mathcal{G} \to \mathcal{G}_0, [f\colon X \to Y] \mapsto Y$ which will be called \emph{source} and \emph{range} map.
 \end{Definition}
 \begin{Definition}
 	A \emph{relation groupoid} is a groupoid with $|mor(X, Y)| \leq 1 \ \forall X,Y \in \G_0$.
@@ -507,17 +507,17 @@ From now on every groupoid will be discretely measured.
 A fundamental concept used for the calculation of $\ell^2$-Betti numbers of groups was the group ring. We will transfer this to the notion of groupoids.
 
 \begin{Definition}
-	Let $U$ be a subset of $\G_0$. A \emph{measurable edge} is a map $\Phi:U \to \G$ such that $s \circ \Phi = id$ and $r \circ \Phi$ is injective.
+	Let $U$ be a subset of $\G_0$. A \emph{measurable edge} is a map $\Phi\colon U \to \G$ such that $s \circ \Phi = id$ and $r \circ \Phi$ is injective.
 \end{Definition}
 \todo{Warum heißt das eigentlich messbar?}
 From the definition we see, that defining a measurable edge means taking a subset of $\G_0$ and associating a morphism to every object such that the morphism starts in this object and no two such morphisms end in the same object. We want to define the inverse of a measurable edge in such a way, that it is also a measurable edge. Therefore it does not suffice to take the inverse of the map $\Phi$. Instead we invert each morphism in the image of $\Phi$.
 \begin{Definition}
-	Let $\Phi: U \to \G$ be a measurable edge. The \emph{inverse} of $\Phi$ will be called $\Phi^{-1}$ and is defined as $\Phi^{-1}:r(Im(\Phi)) \to \G$ such that $\Phi^{-1}$ is a measurable edge and $\Phi^{-1} \circ r \circ \Phi (x) = \Phi (x)^{-1} \ \forall x \in r(Im(\Phi))$ where $\Phi (x)^{-1}$ is the inverse of the morphism $\Phi (x)$.
+	Let $\Phi\colon U \to \G$ be a measurable edge. The \emph{inverse} of $\Phi$ will be called $\Phi^{-1}$ and is defined as $\Phi^{-1}\colon r(Im(\Phi)) \to \G$ such that $\Phi^{-1}$ is a measurable edge and $\Phi^{-1} \circ r \circ \Phi (x) = \Phi (x)^{-1} \ \forall x \in r(Im(\Phi))$ where $\Phi (x)^{-1}$ is the inverse of the morphism $\Phi (x)$.
 \end{Definition}
 
 We now come to the definition of the groupoid ring. We want it to be a ring of operators of	$L^2(\G)$, \todo{Quelle fuer l2} such that it is in a way generated by measurable edges. For a measurable edge $\Phi$ we define an operator $\tilde \Phi$ through
 \begin{align*}
-	\tilde \Phi: L^2(\G) \to L^2(\G), F \mapsto \left[ \tilde \Phi (F): \G \to \C, \gamma \mapsto \begin{cases}
+	\tilde \Phi\colon L^2(\G) \to L^2(\G), F \mapsto \left[ \tilde \Phi (F)\colon\G \to \C, \gamma \mapsto \begin{cases}
 	F(\gamma \cdot_{\G} \Phi^{-1}(r(\gamma)) & \text{if } r(\gamma) \in Dom(\Phi^{-1}) \\
 	0 & \text{otherwise}
 	\end{cases} \right] .
@@ -525,7 +525,7 @@ We now come to the definition of the groupoid ring. We want it to be a ring of o
 \todo{da sollte man ein Bild zu malen}
 In addition for a map $f \in L^\infty (\G_0)$ we also define an operator $\tilde f$ on $L^2(\G)$ through
 \begin{align*}
-	\tilde f: L^2(\G) \to L^2(\G), F \mapsto [\tilde f(F): \G \to \C, \gamma \mapsto F(\gamma) \cdot f(r(\gamma))].
+	\tilde f\colon L^2(\G) \to L^2(\G), F \mapsto [\tilde f(F)\colon\G \to \C, \gamma \mapsto F(\gamma) \cdot f(r(\gamma))].
 \end{align*}
 \begin{Definition}\label{groupoid_ring}
 	For a groupoid $\G$ the \emph{groupoid ring} $\C\G$ is the ring of bounded operators on $L^2(\G)$ generated by all measurable edges and all elements of $L^\infty(\G)$.
@@ -534,7 +534,7 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 \begin{Example} \label{groupoid_ring_of_groups}
 	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ is isomorphic to the group ring $\C G$. Because we have only one element in $\G_0$ the only measurable edges we have are the maps from $\bullet$ to a specific group element of $G$. The elements of $L^\infty(\G_0)$ are just maps from $\bullet$ to a specific element in $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. 
 	
-	On our measurable edges we define the isomorphism by mapping $\tilde{\Phi}$ of a measurable edge $\Phi: \bullet \mapsto g$ to $g$. This map is of course bijective. To see that it is a homeomorphism let $\Phi_1: \bullet \mapsto g_1$ and $\Phi_2: \bullet \mapsto g_2$ be measurable edges. It follows that
+	On our measurable edges we define the isomorphism by mapping $\tilde{\Phi}$ of a measurable edge $\Phi\colon\bullet \mapsto g$ to $g$. This map is of course bijective. To see that it is a homeomorphism let $\Phi_1\colon\bullet \mapsto g_1$ and $\Phi_2\colon\bullet \mapsto g_2$ be measurable edges. It follows that
 	\begin{align*}
 		  &~ \tilde{\Phi}_1 \cdot_{\C \G} \tilde{\Phi}_2(F)(\gamma) \\
 		= &~ \tilde{\Phi}_2 \circ \tilde{\Phi}_1(F)(\gamma) \\
@@ -549,11 +549,11 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 \subsection{Groupoids of Turing dynamical systems}
 We can now define the action groupoid which will allow us to create a groupoid out of a Turing dynamical system.
 \begin{Definition} \label{action_groupoid}
-	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho: \Gamma \to Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined through $(x, \gamma_1) \cdot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
+	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho\colon\Gamma \to Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined through $(x, \gamma_1) \cdot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
 \end{Definition}
 
 \begin{Remark} \label{mE_action_groupoid}
-	Let $\G(\rho)$ be an action groupoid of $\rho: \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}: X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
+	Let $\G(\rho)$ be an action groupoid of $\rho \colon \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}\colon X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
 \end{Remark}
 
 
@@ -590,7 +590,7 @@ We are now able to construct a groupoid out of a Turing dynamical system. In add
 	where $\chi_0$ is the characteristic function of the objects $\G_0$ of $\G$.
 \end{Definition}
 \begin{Definition} \label{vNd_of_groupoids}
-	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $pr_X: L^2 \G \to X$ be projection onto $X$. The \emph{von Neumann dimension} of $X$ is defined through
+	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $pr_X\colon L^2 \G \to X$ be projection onto $X$. The \emph{von Neumann dimension} of $X$ is defined through
 	\begin{align*}
 		\dim_{\mathcal{N}(G)}(X) = tr_(pr_X).
 	\end{align*}
@@ -600,7 +600,7 @@ This definition of a von Neumann dimension is very similar the one in $\ell^2 G$
 Remember that for an element $\gamma \in \Gamma$ we can construct a measurable edge $\bar{\gamma}$ of the action groupoid (see \ref{mE_action_groupoid}) and that for a measurable edge $\Phi$ (or a map $f \in L^\infty (\G_0)$) the corresponding element in the groupoid ring is denoted by $\tilde{\Phi}$ (or $\tilde{f}$).
 
 \begin{Lemma} \label{trgroupoid}
-	Let $\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho: \Gamma \to Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of an action groupoid. Then
+	Let $\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho\colon\Gamma \to Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of an action groupoid. Then
 	\begin{align*}
 	tr(\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i}) = \sum_{e \in E} \int_{\G(\rho)_0} f_e(x) d\mu(x)
 	\end{align*}
@@ -627,7 +627,7 @@ For an arbitrary computing Turing dynamical system $(T_X)$ we will now construct
 
 
 \begin{Theorem} \label{groserSatz}
-	Let $(T_X)$ be a computing Turing dynamical system with action $\rho$, division $\bigcup_i X_i$ with associated $\gamma_i$ and let $\chi_i : \G \to \C$ be the characteristic function of $X_i$. Then for the element
+	Let $(T_X)$ be a computing Turing dynamical system with action $\rho$, division $\bigcup_i X_i$ with associated $\gamma_i$ and let $\chi_i \colon\G \to \C$ be the characteristic function of $X_i$. Then for the element
 	\begin{align*}
 		S = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \tilde{\chi_X} - \tilde{\chi_I} - \tilde{\chi_A} - \tilde{\chi_R})^*(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \tilde{\chi_X} - \tilde{\chi_I} - \tilde{\chi_A} - \tilde{\chi_R}) + \tilde{\chi_A}
 	\end{align*}
@@ -638,7 +638,7 @@ For an arbitrary computing Turing dynamical system $(T_X)$ we will now construct
 \end{Theorem}
 Before we can proof this Theorem we have to do some preparations. 
 \begin{Definition}
-	Let $\G$ be a relation groupoid, $x \in \G_0$ and $T = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $T_x: \ell^2\G x \to \ell^2\G x$ which sends a basis element $1 \cdot y \in \ell^2\G x$ to $\sum_{i \in I'} f_i(y) r(\Phi_i(y)) $ where $I' \subset I$ is the set of indices $i$ where $y$ is in the domain of $\Phi_i$. 
+	Let $\G$ be a relation groupoid, $x \in \G_0$ and $T = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $T_x\colon\ell^2\G x \to \ell^2\G x$ which sends a basis element $1 \cdot y \in \ell^2\G x$ to $\sum_{i \in I'} f_i(y) r(\Phi_i(y)) $ where $I' \subset I$ is the set of indices $i$ where $y$ is in the domain of $\Phi_i$. 
 \end{Definition}
 \begin{Remark}
 	If $\G$ is a relation groupoid with finite orbits then for almost all $x \in \G$ $\ell^2\G x$ is finite dimensional because $\G x$ is finite. Therefore $T_x$ has a finite dimensional kernel.
@@ -715,13 +715,13 @@ In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S
 	which concludes the proof.
 \end{proof}
 \subsection{Pontryagin duality}
-We will now create a link between the groupoid ring and the group ring. For this we need the Pontryagin duals. For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho: \Gamma \to Aut(X)$.
+We will now create a link between the groupoid ring and the group ring. For this we need the Pontryagin duals. For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho\colon\Gamma \to Aut(X)$.
 \begin{Definition}
-	A \emph{character} of $X$ is a homomorphism $\hat{x}: X \to S$, where $S$ is the multiplicative group of complex numbers of absolute value 1. The group of all characters of $X$ is called the \emph{character group} or \emph{Pontryagin dual group} of $X$ and is denoted by $\hat{X}$.
+	A \emph{character} of $X$ is a homomorphism $\hat{x}\colon X \to S$, where $S$ is the multiplicative group of complex numbers of absolute value 1. The group of all characters of $X$ is called the \emph{character group} or \emph{Pontryagin dual group} of $X$ and is denoted by $\hat{X}$.
 \end{Definition}
 \todo{Beweis, dass das duale eine Gruppe ist?}
 \begin{Definition}
-	The \emph{Pontryagin dual} $\hat{\rho}:\Gamma \to Aut(\hat{X})$ of the action $\rho$ is an action on $\hat{X}$ and defined as
+	The \emph{Pontryagin dual} $\hat{\rho}\colon\Gamma \to Aut(\hat{X})$ of the action $\rho$ is an action on $\hat{X}$ and defined as
 	\begin{align*}
 		\hat{\rho}(\gamma)(f)(x) = f(\rho(\gamma^{-1})(x))
 	\end{align*}
@@ -732,7 +732,7 @@ We will now create a link between the groupoid ring and the group ring. For this
 	An element of the Pontryagin dual $\hat{x} \in \hat{X}$ can also be seen as an element of $L^{\infty}(X)$. We call this element $P(\hat{x})$.
 \end{Remark}
 \begin{Definition}
-	Let $N, H$ be groups and $\Theta : H \to Aut(N)$ a homomorphism. The \emph{semidirect product} $N \rtimes_\Theta H$ of $H$ and $N$ is defined on the Set $N \times H$ with multiplication 
+	Let $N, H$ be groups and $\Theta \colon H \to Aut(N)$ a homomorphism. The \emph{semidirect product} $N \rtimes_\Theta H$ of $H$ and $N$ is defined on the Set $N \times H$ with multiplication 
 	\begin{align*}
 		(n_1, h_1) \cdot_{N \rtimes_\Theta H} (n_2, h_2) = (n_1 \cdot_N \Theta(h_1)(n_2), h_1 \cdot_H h_2).
 	\end{align*}
@@ -744,7 +744,7 @@ We can now define a map from the group ring to the groupoid ring.
 \begin{Theorem}\label{map_pantryagin}
 	The map 
 	\begin{align*}
-		P \otimes 1: \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma) \to \C\G(\rho), 
+		P \otimes 1\colon\C(\hat{X} \rtimes_{\hat{\rho}} \Gamma) \to \C\G(\rho), 
 		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma}
 		 c_{(\hat{x}, \gamma)} \cdot (\hat{x}, \gamma) \mapsto 
 		 \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} 
@@ -884,7 +884,7 @@ We now have everything we need to show \ref{HS}.
 		
 	Let $g_i \in \hat{X}$ be a map with
 	\begin{align*}
-		g_i: X \to \C, (x_j)_{j \in J} \mapsto \begin{cases}
+		g_i\colon X \to \C, (x_j)_{j \in J} \mapsto \begin{cases}
 			1 & if \ x_j = \0 \\
 			0 & if \ x_j = \1
 		\end{cases}.
@@ -1033,7 +1033,7 @@ is a $\ell^2$-Betti number of
 \end{align*}
 for some $n \in \N$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now change $(T_X)$ by adding "dummy states" until $(T_X)$ has $2^{k'}$ many states. Doing so does not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. We now construct the corresponding Turing dynamical system $(T_{X'})$ in the same way as in example \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, i.e.
 \begin{align*}
-	\phi : \2^{k'} \to \2^{k'}, \sum_{i =1}^{k'}z_i \cdot e_i \mapsto \sum_{i =2}^{k'}z_{i - 1} \cdot e_i + z_{k'} \cdot e_1
+	\phi \colon\2^{k'} \to \2^{k'}, \sum_{i =1}^{k'}z_i \cdot e_i \mapsto \sum_{i =2}^{k'}z_{i - 1} \cdot e_i + z_{k'} \cdot e_1
 \end{align*}
 where $e_i$ denotes the standard basis of $\2^{k'}$ and each $z_i \in \2$. Then $Rot$ acts transitively on the standard basis of $\2^{k'}$ and has exactly $k' = 2^{h}$ elements. Then $\frac{1}{2^{k' + 1}} (1 - \frac{1}{m})$ is a $\ell^2$-Betti number of $L \times (\2^{k'} \rtimes_{\rho|_{Rot}} Rot)$. With the multiplicativity proven in \ref{mult} it follows that 
 \begin{align*}
@@ -1052,7 +1052,7 @@ We showed in the last section that every rational number arises from the lamplig
 \begin{Remark}
 	The definition of a Turing machine can easily be expanded to a Turing machine with multiple tapes, i.e. a Turing machine which acts on $(\2^k)^\Z$ for $k \in \N$ instead of just $\2^\Z$. In this case we get a transition function 
 	\begin{align*}
-		\delta: S \setminus(A \cup R) \times \2^k \to S \times \2^k \times \{-1, 0, 1\}^k.
+		\delta\colon S \setminus(A \cup R) \times \2^k \to S \times \2^k \times \{-1, 0, 1\}^k.
 	\end{align*}
 \end{Remark}
 \begin{Remark}
