@@ -68,6 +68,10 @@
 \newcommand{\heightrect}{4}
 \newcommand{\abstrect}{10}
 
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Bij}{\operatorname{Bij}}
+\newcommand{\tr}{\operatorname{tr}}
+
 
 \renewcommand{\labelenumi}{\roman{enumi})}
 
@@ -150,7 +154,7 @@ We will denote the bounded operators of a Hilbert space $H_1$ with $\mathcal{B}(
 \begin{Definition}
 	Let $e_G \in G$ be the unit element of $G$. Then
 	\begin{align*}
-		tr_{\mathcal{N}(G)}\colon \mathcal{N}(G) \to \C, A  \mapsto \langle A(1 \cdot e_G), 1 \cdot e_G \rangle
+		\tr_{\mathcal{N}(G)}\colon \mathcal{N}(G) \to \C, A  \mapsto \langle A(1 \cdot e_G), 1 \cdot e_G \rangle
 	\end{align*}
 	is called the \emph{von Neumann trace} on $\mathcal{N}(G)$.
 \end{Definition}
@@ -163,7 +167,7 @@ We will denote the bounded operators of a Hilbert space $H_1$ with $\mathcal{B}(
 \begin{Definition}
 	Let $H$ be a Hilbert $\mathcal{N}(G)$-module with a corresponding embedding \\ $\iota\colon H \to \ell^2(G)^n$ and let $pr_{\iota(H)}\colon \ell^2(G)^n \to H$ be a corresponding $G$-equivariant projection. Let $\iota_i\colon \ell^2(G) \to \ell^2(G)^n, y \mapsto (x_1, \ldots, x_n)$ with $x_j = \delta_{i,j} \cdot y$ be the inclusion of the i-th $\ell^2(G)$ and $pr_i\colon \ell^2(G)^n \to \ell^2(G), (x_1, \ldots, x_n) \mapsto x_i$ the corresponding projection. Then 
 	\begin{align*}
-		tr_{\mathcal{N}(G)}\colon \mathcal{B}(H)^G \to \C, A \mapsto \sum_{i = 1}^{n} tr_{\mathcal{N}(G)}(pr_i \circ \iota \circ A \circ pr_{\iota(H)} \circ \iota_i)
+		\tr_{\mathcal{N}(G)}\colon \mathcal{B}(H)^G \to \C, A \mapsto \sum_{i = 1}^{n} \tr_{\mathcal{N}(G)}(pr_i \circ \iota \circ A \circ pr_{\iota(H)} \circ \iota_i)
 	\end{align*}
 	is also called the \emph{von Neumann trace} on $H$.
 \end{Definition}
@@ -171,12 +175,12 @@ One can show that the trace is independent of the chosen embedding and therefore
 \begin{Definition}\label{vNd}
 	Let $H$ be a Hilbert $\mathcal{N}(G)$-module. We define the \emph{von Neumann dimension} of $H$ as
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(H) = tr_{\mathcal{N}(G)}(id_H).
+		\dim_{\mathcal{N}(G)}(H) = \tr_{\mathcal{N}(G)}(id_H).
 	\end{align*}
 \end{Definition}
 \begin{Remark}\label{vNd_for_subsets}
 	Let $H \subset \ell^2(G)$ be a subset which is closed under $G$ and $pr_H\colon\ell^2(G) \to H$ a $G$-equivariant projection. Then\begin{align*}
-	\dim_{\mathcal{N}(G)}(H) = tr_{\mathcal{N}(G)}(pr_H) = \langle pr_H (1 \cdot e_G), 1 \cdot e_G \rangle.
+	\dim_{\mathcal{N}(G)}(H) = \tr_{\mathcal{N}(G)}(pr_H) = \langle pr_H (1 \cdot e_G), 1 \cdot e_G \rangle.
 	\end{align*}
 \end{Remark}
 \todo{ueberall g-equivariant ueberpruefen}
@@ -320,12 +324,12 @@ For every Turing machine $T$ we can construct a Turing dynamical system $(T_X)$ 
 	i.e. a set where $k+l$ coordinates including the $0$-coordinate are fixed. We then simply write $[m_{-k} \cdots \underline{m_0} \cdots m_l]$ for $M$ and $[m_{-k} \cdots \underline{m_0} \cdots m_l][\sigma]$ for $M \times \{\sigma\}$.
 \end{Remark}
 \begin{Example}\label{TMtoTDS}
-	Let  $T=(S,\delta, \tilde{A}, \tilde{R}, \tilde{I})$ be a Turing machine. We define $X = \2^\Z \times S$ and $\Gamma =   \2 \times \Z \times Bij(S)$.
+	Let  $T=(S,\delta, \tilde{A}, \tilde{R}, \tilde{I})$ be a Turing machine. We define $X = \2^\Z \times S$ and $\Gamma =   \2 \times \Z \times \Bij(S)$.
 	The action of $\Gamma$ on $X$ is defined by the following rules:
 	\begin{itemize}
 		\item The generator $\1$ of the group $\Z / 2\Z$ acts on the $\Z / 2\Z^\Z$ part of $X$ by adding $\1$ to the element with index $0$.
 		\item The generator $1$ of the group $\Z$ acts also on the $\Z / 2\Z^\Z$ part by shifting every element 1 to the left, i.e. decreasing the index of every element by 1.
-		\item $Bij(S)$ acts on $S$ in the natural way.
+		\item $\Bij(S)$ acts on $S$ in the natural way.
 	\end{itemize}
 	We will now use the transition function to construct the Turing map. We choose the following devision of $X$:
 	\begin{align*}
@@ -336,7 +340,7 @@ For every Turing machine $T$ we can construct a Turing dynamical system $(T_X)$ 
 		(\alpha, \beta,\tilde{\sigma}) = \delta(x, \sigma)
 	\end{align*} 
 	denote  the image of $(x, \sigma)$. \\
-	Now let $\tau \in Bij(S)$ be some map which sends $\sigma$ to $\tilde{\sigma}$ and let $y \in \2$ be $y=x-\alpha$. We can then see $y$ as a map from $\2$ to itself which sends $x$ to $\alpha$. Our element $\gamma_i$ corresponding to $X_i$ is then given by 
+	Now let $\tau \in \Bij(S)$ be some map which sends $\sigma$ to $\tilde{\sigma}$ and let $y \in \2$ be $y=x-\alpha$. We can then see $y$ as a map from $\2$ to itself which sends $x$ to $\alpha$. Our element $\gamma_i$ corresponding to $X_i$ is then given by 
 	\begin{align*}
 		\gamma_i = \begin{cases}
 			(\0, 0, id) & if \ X_i \subset A \cup R \\
@@ -400,9 +404,9 @@ Before we give an example of a computing Turing dynamical system we fix the nota
 \end{Definition}
 Of course the Turing dynamical system constructed in \ref{TMtoTDS} is not computing in most cases. But for many read-only Turing machines a computing Turing dynamical system can be constructed in a similar way. In fact we will only use read-only Turing machines.
 \begin{Example} \label{roTMtoTDS}
-	Let $T$ be a read-only Turing machine. Let $(T_X)$ be the corresponding Turing dynamical system as constructed in \ref{TMtoTDS}. We assume that $T$ is in such a way that $(T_X)$ has disjoint accepting chains and stops at any configuration (which is not always the case). We will construct a computable Turing dynamical system from $T$.  We can easily assure that $(T_X)$ does not restart by adding a new state $I'$ to $T$ with $\delta(x, I') = \delta(x, I)$ for all $x \in \{ \0, \1 \}$ and setting $I'$ as the initial state of $T$. Because we do not change the symbols of the tape it suffices to use $\Gamma = \Z \times Bij(S)$ where $\Z$ operates on the $\2^\Z$ part via shifting and $Bij(S)$ acts on $S$ in the natural way. Because a Turing machine has only finitely many states there exists an integer $n \in \N$ such that $|S| < 2^n$. We identify every state with a different element $z \in \2^n$ with $z \neq 0$.
+	Let $T$ be a read-only Turing machine. Let $(T_X)$ be the corresponding Turing dynamical system as constructed in \ref{TMtoTDS}. We assume that $T$ is in such a way that $(T_X)$ has disjoint accepting chains and stops at any configuration (which is not always the case). We will construct a computable Turing dynamical system from $T$.  We can easily assure that $(T_X)$ does not restart by adding a new state $I'$ to $T$ with $\delta(x, I') = \delta(x, I)$ for all $x \in \{ \0, \1 \}$ and setting $I'$ as the initial state of $T$. Because we do not change the symbols of the tape it suffices to use $\Gamma = \Z \times \Bij(S)$ where $\Z$ operates on the $\2^\Z$ part via shifting and $\Bij(S)$ acts on $S$ in the natural way. Because a Turing machine has only finitely many states there exists an integer $n \in \N$ such that $|S| < 2^n$. We identify every state with a different element $z \in \2^n$ with $z \neq 0$.
 	
-	 We can then assume that $X = \2^\Z \times \2^n$ by filling $\2^n$ with "dummy states" which will never be used. Because $Aut(\2^n)$ acts transitively on all of $\2^n / \{0\}$ we can assume that $\Gamma = \Z \times Aut(S)$. Because in this case the sets $X_i$ as constructed in \ref{TMtoTDS} have only $n+1$ fixed components they are of the desired form and therefore the resulting Turing dynamical system is computing.
+	 We can then assume that $X = \2^\Z \times \2^n$ by filling $\2^n$ with "dummy states" which will never be used. Because $\Aut(\2^n)$ acts transitively on all of $\2^n / \{0\}$ we can assume that $\Gamma = \Z \times \Aut(S)$. Because in this case the sets $X_i$ as constructed in \ref{TMtoTDS} have only $n+1$ fixed components they are of the desired form and therefore the resulting Turing dynamical system is computing.
 \end{Example}
 
 \section{Computing $\ell^2$-Betti numbers}
@@ -512,7 +516,11 @@ A fundamental concept used for the calculation of $\ell^2$-Betti numbers of grou
 \todo{Warum heißt das eigentlich messbar?}
 From the definition we see, that defining a measurable edge means taking a subset of $\G_0$ and associating a morphism to every object such that the morphism starts in this object and no two such morphisms end in the same object. We want to define the inverse of a measurable edge in such a way, that it is also a measurable edge. Therefore it does not suffice to take the inverse of the map $\Phi$. Instead we invert each morphism in the image of $\Phi$.
 \begin{Definition}
-	Let $\Phi\colon U \to \G$ be a measurable edge. The \emph{inverse} of $\Phi$ will be called $\Phi^{-1}$ and is defined as $\Phi^{-1}\colon r(Im(\Phi)) \to \G$ such that $\Phi^{-1}$ is a measurable edge and $\Phi^{-1} \circ r \circ \Phi (x) = \Phi (x)^{-1} \ \forall x \in r(Im(\Phi))$ where $\Phi (x)^{-1}$ is the inverse of the morphism $\Phi (x)$.
+	Let $\Phi\colon U \to \G$ be a measurable edge. The \emph{inverse} of $\Phi$ will be called $\Phi^{-1}$ and is defined as $\Phi^{-1}\colon r(Im(\Phi)) \to \G$ such that $\Phi^{-1}$ is a measurable edge and
+	\begin{align*}
+		\Phi^{-1} \circ r \circ \Phi (x) = \Phi (x)^{-1} \ \forall x \in r(Im(\Phi))
+	\end{align*}
+	where $\Phi (x)^{-1}$ is the inverse of the morphism $\Phi (x)$.
 \end{Definition}
 
 We now come to the definition of the groupoid ring. We want it to be a ring of operators of	$L^2(\G)$, \todo{Quelle fuer l2} such that it is in a way generated by measurable edges. For a measurable edge $\Phi$ we define an operator $\tilde \Phi$ through
@@ -542,18 +550,18 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 		= &~ F(\gamma \cdot_G g_2^{-1} \cdot_G g_1^{-1}) \\
 		= &~ F(\gamma \cdot_G (g_1 \cdot_G g_2)^{-1})
 	\end{align*}
-	which shows that the isomorphism maps $	\tilde{\Phi}_1 \cdot_{\C \G} \tilde{\Phi}_2$ to $g_1 \cdot_G g_2$.
+	which shows that the map maps $	\tilde{\Phi}_1 \cdot_{\C \G} \tilde{\Phi}_2$ to $g_1 \cdot_G g_2$ and therefore is indeed a homeomorphism.
 \end{Example}
 
 
 \subsection{Groupoids of Turing dynamical systems}
 We can now define the action groupoid which will allow us to create a groupoid out of a Turing dynamical system.
 \begin{Definition} \label{action_groupoid}
-	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho\colon\Gamma \to Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined through $(x, \gamma_1) \cdot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
+	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho\colon\Gamma \to \Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined through $(x, \gamma_1) \cdot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
 \end{Definition}
 
 \begin{Remark} \label{mE_action_groupoid}
-	Let $\G(\rho)$ be an action groupoid of $\rho \colon \Gamma \to Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}\colon X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
+	Let $\G(\rho)$ be an action groupoid of $\rho \colon \Gamma \to \Bij(X)$. For each element $\gamma \in \Gamma$ we get a measurable edge $\bar{\gamma}\colon X \to x \times \Gamma$ which maps $x \in X$ to $(x, \gamma)$.
 \end{Remark}
 
 
@@ -585,14 +593,14 @@ We are now able to construct a groupoid out of a Turing dynamical system. In add
 \begin{Definition}
 	Let $\G$ be a groupoid. The \emph{trace} of an element $T \in \C \G$ in the groupoid ring is defined through
 	\begin{align*}
-		tr(T) = \langle T \chi_0, \chi_0 \rangle_{L^2 \G}
+		\tr(T) = \langle T \chi_0, \chi_0 \rangle_{L^2 \G}
 	\end{align*}
 	where $\chi_0$ is the characteristic function of the objects $\G_0$ of $\G$.
 \end{Definition}
 \begin{Definition} \label{vNd_of_groupoids}
 	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $pr_X\colon L^2 \G \to X$ be projection onto $X$. The \emph{von Neumann dimension} of $X$ is defined through
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(X) = tr_(pr_X).
+		\dim_{\mathcal{N}(G)}(X) = \tr_(pr_X).
 	\end{align*}
 \end{Definition}
 This definition of a von Neumann dimension is very similar the one in $\ell^2 G$ given in \ref{vNd} when you consider the fact stated in \ref{vNd_for_subsets}.
@@ -600,9 +608,9 @@ This definition of a von Neumann dimension is very similar the one in $\ell^2 G$
 Remember that for an element $\gamma \in \Gamma$ we can construct a measurable edge $\bar{\gamma}$ of the action groupoid (see \ref{mE_action_groupoid}) and that for a measurable edge $\Phi$ (or a map $f \in L^\infty (\G_0)$) the corresponding element in the groupoid ring is denoted by $\tilde{\Phi}$ (or $\tilde{f}$).
 
 \begin{Lemma} \label{trgroupoid}
-	Let $\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho\colon\Gamma \to Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of an action groupoid. Then
+	Let $\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho\colon\Gamma \to \Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of an action groupoid. Then
 	\begin{align*}
-	tr(\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i}) = \sum_{e \in E} \int_{\G(\rho)_0} f_e(x) d\mu(x)
+	\tr(\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i}) = \sum_{e \in E} \int_{\G(\rho)_0} f_e(x) d\mu(x)
 	\end{align*}
 	where $E$ is the set of indices such that $\gamma_e$ is the neutral element of $\Gamma$ for each $e \in E$. If no such index exists the trace is zero.
 \end{Lemma}
@@ -611,8 +619,8 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 	
 	Let $e \in \Gamma$ be the neutral element then it holds that
 	\begin{align*}
-	&~ tr(\tilde{\bar{e}} \tilde{f}) \\
-	=&~ tr(id_{L^2 \G} \tilde{f}) \\
+	&~ \tr(\tilde{\bar{e}} \tilde{f}) \\
+	=&~ \tr(id_{L^2 \G} \tilde{f}) \\
 	=&~ \langle \tilde{f} (\chi_0), \chi_0 \rangle_{L^2 \G} \\
 	=&~ \langle f, \chi_0 \rangle_{L^2 \G_0} \\
 	=&~ \int_{\G(\rho)_0} f(x) \cdot \chi_0(x) d\mu(x) \\
@@ -650,7 +658,7 @@ We will state the following fact without proof. For a complete proof see \cite{G
 		\dim_{\mathcal{N}(G)}(\ker T) = \int_D \dim (\ker T_x) \ d \mu (x).
 	\end{align*} 
 \end{Lemma}
-In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X(X) = \emptyset$, $T_X^\infty(x) \in A \cup R$ for all $x$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$ (This is a similar argument as used in the proof of \ref{TX_rel_groupoid}).
+In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X(X) \cap I= \emptyset$, $T_X^\infty(x) \in A \cup R$ for all $x \in X$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$ (This is a similar argument as used in the proof of \ref{TX_rel_groupoid}).
 \begin{Lemma}
 	\begin{align*}
 	\ker S_x = \ker((\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x) \cap \ker \tilde{\chi_A}_x
@@ -715,13 +723,13 @@ In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S
 	which concludes the proof.
 \end{proof}
 \subsection{Pontryagin duality}
-We will now create a link between the groupoid ring and the group ring. For this we need the Pontryagin duals. For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho\colon\Gamma \to Aut(X)$.
+We will now create a link between the groupoid ring and the group ring. For this we need the Pontryagin duals. For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho\colon\Gamma \to \Aut(X)$.
 \begin{Definition}
 	A \emph{character} of $X$ is a homomorphism $\hat{x}\colon X \to S$, where $S$ is the multiplicative group of complex numbers of absolute value 1. The group of all characters of $X$ is called the \emph{character group} or \emph{Pontryagin dual group} of $X$ and is denoted by $\hat{X}$.
 \end{Definition}
 \todo{Beweis, dass das duale eine Gruppe ist?}
 \begin{Definition}
-	The \emph{Pontryagin dual} $\hat{\rho}\colon\Gamma \to Aut(\hat{X})$ of the action $\rho$ is an action on $\hat{X}$ and defined as
+	The \emph{Pontryagin dual} $\hat{\rho}\colon\Gamma \to \Aut(\hat{X})$ of the action $\rho$ is an action on $\hat{X}$ and defined as
 	\begin{align*}
 		\hat{\rho}(\gamma)(f)(x) = f(\rho(\gamma^{-1})(x))
 	\end{align*}
@@ -732,7 +740,7 @@ We will now create a link between the groupoid ring and the group ring. For this
 	An element of the Pontryagin dual $\hat{x} \in \hat{X}$ can also be seen as an element of $L^{\infty}(X)$. We call this element $P(\hat{x})$.
 \end{Remark}
 \begin{Definition}
-	Let $N, H$ be groups and $\Theta \colon H \to Aut(N)$ a homomorphism. The \emph{semidirect product} $N \rtimes_\Theta H$ of $H$ and $N$ is defined on the Set $N \times H$ with multiplication 
+	Let $N, H$ be groups and $\Theta \colon H \to \Aut(N)$ a homomorphism. The \emph{semidirect product} $N \rtimes_\Theta H$ of $H$ and $N$ is defined on the Set $N \times H$ with multiplication 
 	\begin{align*}
 		(n_1, h_1) \cdot_{N \rtimes_\Theta H} (n_2, h_2) = (n_1 \cdot_N \Theta(h_1)(n_2), h_1 \cdot_H h_2).
 	\end{align*}
@@ -800,7 +808,7 @@ We can now define a map from the group ring to the groupoid ring.
 	\end{align*}
 	be an element in the group ring. It then holds that
 	\begin{align*}
-		 &~ tr_{\mathcal{N}(G)}(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i)) \\
+		 &~ \tr_{\mathcal{N}(G)}(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i)) \\
 		=&~ \langle (\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i))(1 \cdot e_{\hat{X} \rtimes_{\hat{\rho}} \Gamma}), 1 \cdot e_{\hat{X} \rtimes_{\hat{\rho}} \Gamma} \rangle \\
 		=&~ c_{(\hat{e_X}, e_\Gamma)}.
 	\end{align*}
@@ -810,7 +818,7 @@ We can now define a map from the group ring to the groupoid ring.
 	\end{align*}
 	we can use \ref{trgroupoid} to get
 	\begin{align*}
-		tr(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}}) = \sum_{(\hat{x}, e) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} \int_{\mathcal{G(\rho)}_0} c_{(\hat{x}, e)} P(\hat{x})(y) d\mu(y)
+		\tr(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}}) = \sum_{(\hat{x}, e) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} \int_{\mathcal{G(\rho)}_0} c_{(\hat{x}, e)} P(\hat{x})(y) d\mu(y)
 	\end{align*}
 	where $e$ is the neutral element of $\Gamma$. Because $d \mu(\G_0) = 1$ it remains to show that $\int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y) = 0$ if $\hat{x}$ is not the neutral element.
 	
@@ -868,7 +876,7 @@ We can now define a map from the group ring to the groupoid ring.
 	\end{align*}
 	Because $L^2 \G (\rho)$ is also finite dimensional and $P \otimes 1(T)$ is still self-adjoint we can again use the spectral theorem. In addition the eigenvalues stay the same and therefore $P \otimes 1 (S)$ is a projection onto $\ker P \otimes 1 (T)$. Because $\ker T \subset \ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma) $ it follows that
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(\ker T) = tr_{\mathcal{N}(G)}(S) = tr(P \otimes 1 (S)) = \dim_{\mathcal{N}(G)}(\ker P \otimes 1 (T)).
+		\dim_{\mathcal{N}(G)}(\ker T) = \tr_{\mathcal{N}(G)}(S) = \tr(P \otimes 1 (S)) = \dim_{\mathcal{N}(G)}(\ker P \otimes 1 (T)).
 	\end{align*}
 	If $X$ or $\Gamma$ are infinite then $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is infinite dimensional. Let $l_1 \subset l_2 \subset \ldots$ be a series of finite dimensional $\C$-vector spaces converging to $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$. For each $l_i$ we can restrict $T$ to $l_i$ and the above argument holds. Because $T|_{l_i}$ converges to $T$ the claim follows also for the infinite dimensional case.
 \end{proof}\todo{klappt das mit dem Konvergieren?}
@@ -931,13 +939,13 @@ We now have everything we need to show \ref{HS}.
 \end{Definition}
 Lets first look at the Turing dynamical system corresponding to a read-only Turing machine as constructed in \ref{roTMtoTDS}. If we can ensure that the resulting Turing dynamical system has disjoint accepting chains and stops at any configuration we can ensure that it is computing. By using \ref{HS} we see that $\mu (I) - \Omega_1(T_X)$ is an $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$. We then get
 \begin{align*}
-	\hat{X} \rtimes_{\hat{\rho}} \Gamma =&~ (\widehat{(\prod_{i \in \Z} \2) \times \2^n}) \rtimes_{\hat{\rho}} (\Z \times Aut(\2^n)) \\
-	=&~ (\bigoplus_{i \in \Z} \2 \times \2^n) \rtimes_{\rho} (\Z \times Aut(\2^n)).
+	\hat{X} \rtimes_{\hat{\rho}} \Gamma =&~ (\widehat{(\prod_{i \in \Z} \2) \times \2^n}) \rtimes_{\hat{\rho}} (\Z \times \Aut(\2^n)) \\
+	=&~ (\bigoplus_{i \in \Z} \2 \times \2^n) \rtimes_{\rho} (\Z \times \Aut(\2^n)).
 \end{align*}
-Because $\Z$ acts only on the first part and $Aut(\2^n)$ only on the second part of $X$ and $\Z$ acts by shift we get
+Because $\Z$ acts only on the first part and $\Aut(\2^n)$ only on the second part of $X$ and $\Z$ acts by shift we get
 \begin{align*}
-	\hat{X} \rtimes_{\hat{\rho}} \Gamma =&~ ((\bigoplus_{i \in \Z} \2) \rtimes_{\zeta} \Z) \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)) \\
-	=&~ L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n)).
+	\hat{X} \rtimes_{\hat{\rho}} \Gamma =&~ ((\bigoplus_{i \in \Z} \2) \rtimes_{\zeta} \Z) \times (\2^n \rtimes_{\rho|_{\Aut(\2^n)}} \Aut(\2^n)) \\
+	=&~ L \times (\2^n \rtimes_{\rho|_{\Aut(\2^n)}} \Aut(\2^n)).
 \end{align*}
 Therefore we see that read-only Turing machines offer a way to compute the $\ell^2$-Betti number of $L \times H$ for some discrete finite group $H$. We will use this fact to prove the following theorem.
 
@@ -1134,9 +1142,9 @@ We can now start to proof \ref{mainTh}. Because of of the additivity of numbers 
 \end{align*}
 is a $\ell^2$-Betti number of 
 \begin{align*}
-	L \times (\2^n \rtimes_{\rho|_{Aut(\2^n)}} Aut(\2^n))
+	L \times (\2^n \rtimes_{\rho|_{\Aut(\2^n)}} \Aut(\2^n))
 \end{align*}
-for some $n \in \N$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now change $(T_X)$ by adding "dummy states" until $(T_X)$ has $2^{k'}$ many states. Doing so does not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. We now construct the corresponding Turing dynamical system $(T_{X'})$ in the same way as in example \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, i.e.
+for some $n \in \N$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now change $(T_X)$ by adding "dummy states" until $(T_X)$ has $2^{k'}$ many states. Doing so does not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. We now construct the corresponding Turing dynamical system $(T_{X'})$ in the same way as in example \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $\Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, i.e.
 \begin{align*}
 	\phi \colon\2^{k'} \to \2^{k'}, \sum_{i =1}^{k'}z_i \cdot e_i \mapsto \sum_{i =2}^{k'}z_{i - 1} \cdot e_i + z_{k'} \cdot e_1
 \end{align*}
