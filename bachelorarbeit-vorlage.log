@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.3)  10 AUG 2017 22:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.3)  14 AUG 2017 00:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1024,27 +1024,27 @@ LaTeX Warning: No positions in optional float specifier.
 [28] [29] [30]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1236.
+               Default added (so using `tbp') on input line 1235.
 
 [31] [32] [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1372--1373
+Underfull \hbox (badness 10000) in paragraph at lines 1445--1446
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1374--1376
+Underfull \hbox (badness 10000) in paragraph at lines 1447--1449
 
  []
 
 [35] (./bachelorarbeit-vorlage.aux) ) 
 Here is how much of TeX's memory you used:
- 16324 strings out of 492990
- 322495 string characters out of 6138689
- 456888 words of memory out of 5000000
- 19538 multiletter control sequences out of 15000+600000
+ 16340 strings out of 492990
+ 322847 string characters out of 6138689
+ 459886 words of memory out of 5000000
+ 19554 multiletter control sequences out of 15000+600000
  27224 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,17n,68p,8833b,927s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,17n,68p,8833b,1013s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-
 super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cme
 x10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></
@@ -1066,7 +1066,7 @@ re/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfs
 x1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on bachelorarbeit-vorlage.pdf (35 pages, 1115184 bytes).
+Output written on bachelorarbeit-vorlage.pdf (35 pages, 1115895 bytes).
 PDF statistics:
  218 PDF objects out of 1000 (max. 8388607)
  154 compressed objects within 2 object streams

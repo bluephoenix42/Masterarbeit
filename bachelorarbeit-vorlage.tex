@@ -28,6 +28,7 @@
 \usepackage{float}
 
 
+
 \usepackage{tikz}
 \usetikzlibrary{automata,positioning}
 
@@ -74,7 +75,6 @@
 
 
 \renewcommand{\labelenumi}{\roman{enumi})}
-
 
 
 \begin{document}
@@ -269,7 +269,7 @@ We will now show that it is sufficient for our purpose to calculate the von Neum
 	We now glue in $n$ many $G$-equivariant $3$-cells in such a way that $A$ corresponds to $d_3^{(2)}$:
 	Let $A_{ij} = \sum_{g \in G} z_{(g, i, j)} g \in \Z G$ denote the entry in the i-th row and the j-th column of $A$. We fix one $0$-cell and call it $e$ and we call the corresponding $2$-cells $e_1 \ldots e_n$. We glue in $G \times D^3$ where each element $h \times D^3$ is glued $z_{(g, 1, j)}$ many times to $h g \cdot e_j$ for each $g \in G$ and $j \in \{1, \ldots, n\}$. We then see that $d_3^{(2)}$ maps the vector $(\sum_{g \in G} \lambda_g g, 0 , \ldots , 0) \in (\ell^2 G)^n$ to $(\sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, 1)} g h, \ldots , \sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, n)}) \in (\ell^2 G)^n$. We then repeat this for every row of $A$ and get that $d_3^{(2)} = A$. The resulting $G$-CW-complex $X$ is still free, finite type and because $X/G$ is finite $X$ is cocompact.
 \end{proof}
-\todo{\ker(delta) = homology zeigen? Graphik und etwas genauer?}
+\todo{ker(delta) = homology zeigen? Graphik und etwas genauer?}
 \begin{Remark}
 	One can show that \ref{MCW} also holds if $G$ is not finitely generated.
 \end{Remark}
@@ -1171,7 +1171,7 @@ We showed in the last section that every rational number arises from the lamplig
 \begin{Remark}
 	Let $T$ be a Turing machine on $3$ tapes. For a subset $M \times S \subset X$ of the corresponding Turing dynamical system $(T_X)$ with 
 	\begin{align*}
-		M = \{((a_i)_{i \in \Z}, (b_i)_{i \in \Z}, (c_i)_{i \in \Z}) \in (\2^\Z)^3 | a_{-\alpha} = l_{-\alpha}, \cdots, a_\beta = l_\beta,\\
+		M = \{(a_i, b_i, c_i)_{i \in \Z} \in (\2^3)^\Z | a_{-\alpha} = l_{-\alpha}, \cdots, a_\beta = l_\beta,\\
 		 b_{-\gamma} = m_{-\gamma}, \cdots, b_\delta = m_\delta, c_{-\epsilon} = n_{-\epsilon}, \cdots, c_\zeta = n_\zeta \}
 	\end{align*}
 	with $\alpha, \beta, \gamma, \delta, \epsilon\ \zeta \in \N$ we simply write
@@ -1221,34 +1221,44 @@ We showed in the last section that every rational number arises from the lamplig
 		\end{cases} \\
 		\delta(s_2, (x_1, x_2, x_3)) =&~ \begin{cases}
 			(s_2, (x_1, x_2, x_3), (-1, 0, 0)) & if \ x_1 = x_2 = x_3 = \0  \\
-			(s_3, (x_1, x_2, x_3), (1, 0, 0)) & if \ x_1 = \0 \ and \ x_2 = x_3 = \1 \\
+			(s_3, (x_1, x_2, x_3), (1, 0, 0)) & if \ x_1 = \1 \ and \ x_2 = x_3 = \0 \\
 			(s_A, (x_1, x_2, x_3), (0, 0, 0)) & if \ x_1 = \0 \ and \ x_2 = x_3 = \1  \\ 
 			(s_R, (x_1, x_2, x_3), (0, 0, 0)) & otherwise
 		\end{cases} \\
-		\delta(s_1, (x_1, x_2, x_3)) =&~ \begin{cases}
+		\delta(s_3, (x_1, x_2, x_3)) =&~ \begin{cases}
 			(s_3, (x_1, x_2, x_3), (1, 0, 1)) & if \ x_1 = x_2 = x_3 = \0 \\
-			(s_2, (x_1, x_2, x_3), (-1, -1, 1)) & if \ x_1 = \1 \ and \ x_2 = x_3 = \1 \\
+			(s_2, (x_1, x_2, x_3), (-1, -1, 1)) & if \ x_1 = \1 \ and \ x_2 = x_3 = \0 \\
 			(s_R, (x_1, x_2, x_3), (0, 0, 0)) & otherwise
 		\end{cases}.
 	\end{align*}
-	
-	left.
+	Figure \ref{Graphik_dritte_TM} shows the transition function in the same way as in Figure \ref{Graphik_erste_TM}. In Figure \ref{Graphik_dritte_TM} the rejecting state is omitted. Instead we go to the rejecting state when we encounter a tape configuration not explicitly noted. \todo{Beispiel}
 	\begin{figure}[]
 		\centering
 		\begin{tikzpicture}[shorten >=1pt,on grid,auto]
 		\node[state] (0) {$s_I$};
-		\node[state] (1) [right = 3 of 0] {$s_1$};
-		\node[state] (2) [right = 3 of 1] {$s_2$};
-		\node[state] (3) [right = 3 of 2] {$s_3$};
-		\node[state] (4) [above = 3 of 2] {$s_A$};
-		\node[state] (5) [below = 3 of 3] {$s_R$};
+		\node[state] (1) [right = 4 of 0] {$s_1$};
+		\node[state] (2) [right = 4 of 1] {$s_2$};
+		\node[state] (3) [right = 6 of 2] {$s_3$};
+		\node[state] (4) [above = 4 of 2] {$s_A$};
+
 		
 		\path[->]
 		(0) edge []
 			node {$(\begin{bmatrix}
+				\1 \\
+				\1 \\
+				\1
+				\end{bmatrix}, \begin{bmatrix}
 				1 \\
 				1 \\
-				1
+				0
+				\end{bmatrix})$} 
+			(1)
+		(1) edge [loop below]
+			node {$(\begin{bmatrix}
+				\0 \\
+				\0 \\
+				\1
 				\end{bmatrix}, \begin{bmatrix}
 				1 \\
 				1 \\
@@ -1256,11 +1266,74 @@ We showed in the last section that every rational number arises from the lamplig
 				\end{bmatrix})$} 
 			(1)
 		(1) edge []
-			node {$(\0, 1)$} 
+			node {$(\begin{bmatrix}
+				\1 \\
+				\1 \\
+				\1
+				\end{bmatrix}, \begin{bmatrix}
+				-1 \\
+				-1 \\
+				1
+				\end{bmatrix})$} 
 			(2)
+		(2) edge [loop below]
+			node {$(\begin{bmatrix}
+				\0 \\
+				\0 \\
+				\0
+				\end{bmatrix}, \begin{bmatrix}
+				-1 \\
+				0 \\
+				0
+				\end{bmatrix})$} 
+			(2)
+		(2) edge [bend left, above right]
+			node {$(\begin{bmatrix}
+				\1 \\
+				\0 \\
+				\0
+				\end{bmatrix}, \begin{bmatrix}
+				1 \\
+				0 \\
+				0
+				\end{bmatrix})$} 
+			(3)
+		(3) edge [loop below]
+			node {$(\begin{bmatrix}
+				\0 \\
+				\0 \\
+				\0
+				\end{bmatrix}, \begin{bmatrix}
+				1 \\
+				0 \\
+				1
+				\end{bmatrix})$} 
+			(3)
+		(3) edge [bend left]
+			node {$(\begin{bmatrix}
+				\1 \\
+				\0 \\
+				\0
+				\end{bmatrix}, \begin{bmatrix}
+				-1 \\
+				-1 \\
+				1
+				\end{bmatrix})$} 
+			(2)
+		(2) edge [right, near end]
+			node {$(\begin{bmatrix}
+				\0 \\
+				\1 \\
+				\1
+				\end{bmatrix}, \begin{bmatrix}
+				0 \\
+				0 \\
+				0
+				\end{bmatrix})$} 
+			(4)
 		;
 		\end{tikzpicture}
-		\caption{Example of the first Turing machine for the number $0.1001$}
+		\caption{Transition function of the third Turing machine}
 		\label{Graphik_dritte_TM}
 	\end{figure}
 	
