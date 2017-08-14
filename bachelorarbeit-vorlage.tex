@@ -75,6 +75,7 @@
 \newcommand{\pr}{\operatorname{pr}}
 \newcommand{\Homeo}{\operatorname{Homeo}}
 \newcommand{\id}{\operatorname{id}}
+\newcommand{\Ind}{\operatorname{Ind}}
 
 
 \renewcommand{\labelenumi}{\roman{enumi})}
@@ -266,13 +267,13 @@ We will now show that it is sufficient for our purpose to calculate the von Neum
 	\end{enumerate}
 \end{Theorem}
 \begin{proof}
-	$"i) \Rightarrow ii)"$ Let $X$ be a cocompact free finite type $G$-CW-complex and $n \in \N$ such that $b_n^{(2)}(X)=x$. We define 
+	$``i) \Rightarrow ii)''$ Let $X$ be a cocompact free finite type $G$-CW-complex and $n \in \N$ such that $b_n^{(2)}(X)=x$. We define 
 	\begin{align*}
 		\Delta_n^{(2)} = d_n^{(2)*} d_n^{(2)} + d_{n+1}^{(2)} d_{n+1}^{(2)*},
 	\end{align*}
 	which is a map from $C_n^{(2)}(X)$ to $C_n^{(2)}(X)$. The differential can be written as a matrix $A' \in \Z G$ and therefore $\Delta_n^{(2)}$ also lies in $\Z G$. It remains to show that $\ker(\Delta_n^{(2)}) = H_n^{(2)}$ holds. \todo{ZG^n times n}
 	
-	$"ii) \Rightarrow i)"$ Let $n \in \N$ and $A\in \Q G^{n \times n}$. Because $k \cdot A$ has the same kernel as $A$ for every $k \in \Z$ we can assume that $A \in \Z G^{n \times n}$. The corresponding map will be also called $A$. We will construct a $G$-CW-complex $X$ with $d_3^{(2)} = A$ and $d_4^{(2)}$ trivial. Therefore $H_3^{(2)}(X) = \ker(A)$ and $i)$ follows.
+	$``ii) \Rightarrow i)''$ Let $n \in \N$ and $A\in \Q G^{n \times n}$. Because $k \cdot A$ has the same kernel as $A$ for every $k \in \Z$ we can assume that $A \in \Z G^{n \times n}$. The corresponding map will be also called $A$. We will construct a $G$-CW-complex $X$ with $d_3^{(2)} = A$ and $d_4^{(2)}$ trivial. Therefore $H_3^{(2)}(X) = \ker(A)$ and $i)$ follows.
 	
 	First we can see that a graph can always be seen as a CW-complex with the edges as 1-cells and the vertices as 0-cells. Let $g_1 \ldots g_m$ be generators of $G$ and let $Y$ be the corresponding Cayley graph of $G$ which has a natural cellular free $G$-action and is therefore a free, finite type $G$-CW-complex. In addition it has exactly one $G$-equivariant $0$-cell and $m$ $G$-equivariant $1$-cells and no other cells. We then glue $n$ many $2$-cells on each $0$-cell, i.e. we attach them via the attaching map which sends all of $S^1$ to a single point. 
 	
@@ -318,22 +319,23 @@ To fix notation we will first give a definition of a Turing machine. For conveni
 	\end{align*}
 	for each $x \in \2$ and $\sigma \in S \setminus(A \cup R)$.
 \end{Definition}
-In addition each Turing machine uses a "tape", i.e. a set $\Z / 2\Z ^{\Z}$ with a "head" on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$ which is called an input. We start with the initial state and use the transition function $\delta$ to get $\delta(Y_0, I)$. The first coordinate corresponds to the new element $Y_0$, the third to the new state and the second corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$, e.g. if $\delta(I, Y_0)_3 = 1$ we shift the whole tape one to the left, therefore our new $Y_0$ is our old $Y_1$. We repeat this step until we get a state in $A \cup R$. We say that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$ after finitely many steps. We say that the Turing machine holds for $Y$ if it accepts or rejects it.
+In addition each Turing machine uses a ``tape'', i.e. a set $\Z / 2\Z ^{\Z}$ with a ``head'' on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$ which is called an input. We start with the initial state and use the transition function $\delta$ to get $\delta(Y_0, I)$. The first coordinate corresponds to the new element $Y_0$, the third to the new state and the second corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$, e.g. if $\delta(I, Y_0)_3 = 1$ we shift the whole tape one to the left, therefore our new $Y_0$ is our old $Y_1$. We repeat this step until we get a state in $A \cup R$. We say that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$ after finitely many steps. We say that the Turing machine holds for $Y$ if it accepts or rejects it.
 
+\todo{Unterschied klar machen, lieber Liste, Ind klar machen, I klar machen?}
 For the purpose of calculating $\ell^2$-Betti numbers of groups we need to extend this definition. Let $(X, \mu)$ be a probability measure space divided into finitely many disjoint measurable subsets $X_i$. Let $\Gamma$ be a countable discrete group and $\rho$ be a right measure preserving action of $\Gamma$ on X.
 We now choose 3 disjoint subsets $A$, $R$, $I$, where each of them is a union of certain $X_i$. They will be called the accepting set, the rejecting set and the initial set. In addition we choose a $\gamma_i \in \Gamma$ for each $X_i \subset X$ such that for each $i$ with $X_i \subset A$ or $X_i \subset R$ it holds that $\gamma_i = e$ where $e$ is the neutral element in $\Gamma$. 
-Let $Ind\colon X \to \N$ be the map which assigns to each $x \in X$ the corresponding index of the $X_i$ it is contained in.
+Let $\Ind\colon X \to \N$ be the map which assigns to each $x \in X$ the corresponding index of the $X_i$ it is contained in.
 \begin{Definition}
 	 The map 
 	 \begin{align*}
-	 T_X\colon X \to X, x \mapsto \rho(\gamma_{Ind(x)})(x)
+	 T_X\colon X \to X, x \mapsto \rho(\gamma_{\Ind(x)})(x)
 	 \end{align*}
 	 is called the \emph{Turing map}.
 	 The group $\Gamma$ and the space $X$ (with all the choices of subsets and corresponding $\gamma_i$ made in the last paragraph) together with the Turing map will be called a \emph{Turing dynamical system} and will be denoted by $(T_X)$
 \end{Definition}
-Let $x \in X$ be an element of $X$. If there is a $k \in \N$ such that $T_X^k(x) = T_X^{k + 1}(x)$ there also holds $T_X^h(x) = T_X^{h + 1}(x)$ for all $h \in \N$ with $h \geq k$. We then define $T_X^\infty (x) = T_X^k(x)$. Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system $(T_X)$ accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. In addition we say that $(T_X)$ holds for $y$ if it accepts or rejects it.
+Let $x \in X$. If there is a $k \in \N$ such that $T_X^k(x) = T_X^{k + 1}(x)$, then it also holds that $T_X^h(x) = T_X^{h + 1}(x)$ for all $h \in \N$ with $h \geq k$. We then define $T_X^\infty (x) := T_X^k(x)$. Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system $(T_X)$ accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. In addition we say that $(T_X)$ holds for $y$ if it accepts or rejects it.
 
-For every Turing machine $T$ we can construct a Turing dynamical system $(T_X)$ which does the same as the Turing machine, i.e. we have a bijection $\Psi\colon\2^\Z \to I$ such that $T$ accepts (rejects) an input $Y \in \2^\Z$ if and only if $(T_X)$ accepts (rejects) $\Psi(Y)$. This allows us to first define a Turing machine and the get a Turing dynamical system out of it. We will use this fact may times in chapter \ref{chlamplighter}. The following example shows how the corresponding Turing dynamical system is constructed. But first let us fix notation.
+For every Turing machine there is a Turing dynamical system which does the same as the Turing machine. More precisely for every Turing machine $T$ we can construct a Turing dynamical system $(T_X)$ and a bijection $\Psi\colon\2^\Z \to I$ such that $T$ accepts (rejects) an input $Y \in \2^\Z$ if and only if $(T_X)$ accepts (rejects) $\Psi(Y)$. We will use this fact may times in chapter \ref{chlamplighter}. The following example shows how the corresponding Turing dynamical system is constructed. But first let us fix notation.
 \begin{Remark} \label{notation_TM}
 	Let $M \subset N^\Z$  be defined by 
 	\begin{align*}
@@ -424,7 +426,7 @@ Of course the Turing dynamical system constructed in \ref{TMtoTDS} is not comput
 \begin{Example} \label{roTMtoTDS}
 	Let $T$ be a read-only Turing machine. Let $(T_X)$ be the corresponding Turing dynamical system as constructed in \ref{TMtoTDS}. We assume that $T$ is in such a way that $(T_X)$ has disjoint accepting chains and stops at any configuration (which is not always the case). We will construct a computable Turing dynamical system from $T$.  We can easily assure that $(T_X)$ does not restart by adding a new state $I'$ to $T$ with $\delta(x, I') = \delta(x, I)$ for all $x \in \{ \0, \1 \}$ and setting $I'$ as the initial state of $T$. Because we do not change the symbols of the tape it suffices to use $\Gamma = \Z \times \Bij(S)$ where $\Z$ operates on the $\2^\Z$ part via shifting and $\Bij(S)$ acts on $S$ in the natural way. Because a Turing machine has only finitely many states there exists an integer $n \in \N$ such that $|S| < 2^n$. We identify every state with a different element $z \in \2^n$ with $z \neq 0$.
 	
-	 We can then assume that $X = \2^\Z \times \2^n$ by filling $\2^n$ with "dummy states" which will never be used. Because $\Aut(\2^n)$ acts transitively on all of $\2^n / \{0\}$ we can assume that $\Gamma = \Z \times \Aut(S)$. Because in this case the sets $X_i$ as constructed in \ref{TMtoTDS} have only $n+1$ fixed components they are of the desired form and therefore the resulting Turing dynamical system is computing.
+	 We can then assume that $X = \2^\Z \times \2^n$ by filling $\2^n$ with ``dummy states'' which will never be used. Because $\Aut(\2^n)$ acts transitively on all of $\2^n / \{0\}$ we can assume that $\Gamma = \Z \times \Aut(S)$. Because in this case the sets $X_i$ as constructed in \ref{TMtoTDS} have only $n+1$ fixed components they are of the desired form and therefore the resulting Turing dynamical system is computing.
 \end{Example}
 
 \section{Computing $\ell^2$-Betti numbers}
@@ -589,13 +591,13 @@ We can now define the action groupoid which will allow us to create a groupoid o
 \end{Remark}
 \todo{warum discrete measured?}
 \begin{Definition}
-	Let $(T_X)$ be a Turing dynamical system with group action $\rho$. Then $\G (T_X) \subset \G(\rho)$ is the smallest groupoid with $\G (T_X)_0 = \G(\rho)_0$ and which contains all morphisms of the form $(x, \gamma_i)$ where $i = Ind(x)$ is the index of the corresponding $X_i$ that $x$ is contained in.
+	Let $(T_X)$ be a Turing dynamical system with group action $\rho$. Then $\G (T_X) \subset \G(\rho)$ is the smallest groupoid with $\G (T_X)_0 = \G(\rho)_0$ and which contains all morphisms of the form $(x, \gamma_i)$ where $i = \Ind(x)$ is the index of the corresponding $X_i$ that $x$ is contained in.
 \end{Definition}
 \begin{Lemma} \label{TX_rel_groupoid}
 	$\G (T_X)$ is a relation groupoid with finite orbits for every computing Turing dynamical system $(T_X)$. In addition $A \cup R$ is a fundamental domain of $\G (T_X)$.
 \end{Lemma}
 \begin{proof}
-	First let us have a look at $\G (T_X)$. We can generate it by setting $\G_0 = X$. We then add all morphisms of the form $(x, \gamma_{Ind(x)})$. We call the subset we have created so far $\G'$. Of course $\G'$ is not a category in most cases. To ensure that $\G (T_X)$ is a groupoid we add a morphism from $x$ to $y$ for all $x, y \in \G_0$ where there already exist a path of morphisms from $x$ to $y$ in $\G'$. In addition we add an identity morphism to every $ x\in \G_0$ which does not already have one and an inverse morphism to every morphism which does not already have one. 
+	First let us have a look at $\G (T_X)$. We can generate it by setting $\G_0 = X$. We then add all morphisms of the form $(x, \gamma_{\Ind(x)})$. We call the subset we have created so far $\G'$. Of course $\G'$ is not a category in most cases. To ensure that $\G (T_X)$ is a groupoid we add a morphism from $x$ to $y$ for all $x, y \in \G_0$ where there already exist a path of morphisms from $x$ to $y$ in $\G'$. In addition we add an identity morphism to every $ x\in \G_0$ which does not already have one and an inverse morphism to every morphism which does not already have one. 
 	
 	We can then see that we get one morphism from $x$ to $y$ in $\G (T_X)$ for every path of morphisms from $x$ to $y$ in $\G'$. But $x$ can have at maximum one outgoing morphism in $\G'$, therefore $\G (T_X)$ is a relation groupoid.
 
@@ -1162,7 +1164,7 @@ is a $\ell^2$-Betti number of
 \begin{align*}
 	L \times (\2^n \rtimes_{\rho|_{\Aut(\2^n)}} \Aut(\2^n))
 \end{align*}
-for some $n \in \N$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now change $(T_X)$ by adding "dummy states" until $(T_X)$ has $2^{k'}$ many states. Doing so does not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. We now construct the corresponding Turing dynamical system $(T_{X'})$ in the same way as in example \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $\Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, i.e.
+for some $n \in \N$. Let $k$ denote the number of states of the Turing machine $T$ constructed in \ref{2TM} and $k' \in \N$ be such that $k < k'$ and $k' = 2^{h}$ for some $h \in \N$. We now change $(T_X)$ by adding ``dummy states'' until $(T_X)$ has $2^{k'}$ many states. Doing so does not change the value of $\frac{\Omega_1(T_X)}{\mu(I)}$. We now construct the corresponding Turing dynamical system $(T_{X'})$ in the same way as in example \ref{roTMtoTDS} but we set $X' = \2^\Z \times \2^{k'}$ and identify every state of $T$ with an element of the standard basis of $\2^{k'}$. In addition we set $\Gamma = \Z \times Rot$ where $Rot$ is the subgroup of $\Aut(\2^{k'})$ generated by the automorphism which rotates every element one to the right, i.e.
 \begin{align*}
 	\phi \colon\2^{k'} \to \2^{k'}, \sum_{i =1}^{k'}z_i \cdot e_i \mapsto \sum_{i =2}^{k'}z_{i - 1} \cdot e_i + z_{k'} \cdot e_1
 \end{align*}
