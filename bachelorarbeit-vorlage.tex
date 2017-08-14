@@ -77,7 +77,7 @@
 \newcommand{\Homeo}{\operatorname{Homeo}}
 \newcommand{\id}{\operatorname{id}}
 \newcommand{\Ind}{\operatorname{Ind}}
-
+\newcommand{\Mor}{\operatorname{Mor}}
 
 \renewcommand{\labelenumi}{\roman{enumi})}
 
@@ -131,13 +131,13 @@
 \section{$\ell^2$-Betti numbers}
 At first we will give a short introduction into the theory of $\ell^2$-Betti numbers. For a wider approach see \cite{LUECK}. We will assume some basic knowledge about cellular homology and the associated Betti numbers. For more information on this topic see e.g. \cite{HATCH}. As an alternative a reader not familiar with these topics may just accept the results of \ref{MCW} and study the definitions given in section \ref{fiss}.
 
-In this whole chapter $G$ is always a discrete countable group with multiplication $\cdot_G$.
+In this whole chapter $G$ is always a discrete countable group with multiplication $\odot_G$.
 \subsection{Von Neumann Dimension} \label{fiss}
 At first let us begin with some basic definitions.
 \begin{Definition} \label{GR}
 	The \emph{group ring} $RG$ over a ring $R$ is the free module over $G$ with the additional multiplication
 	\begin{align*}
-		\sum_{h \in H} \alpha_h h \cdot_{RG} \sum_{k \in K} \beta_k k = \sum_{h \in H} \sum_{k \in K} \alpha_h \beta_k h \cdot_G k
+		\sum_{h \in H} \alpha_h h \odot_{RG} \sum_{k \in K} \beta_k k = \sum_{h \in H} \sum_{k \in K} \alpha_h \beta_k h \odot_G k
 	\end{align*}
 	with $\alpha_h, \beta_k \in R$ and $H, K \in G$ finite subsets.
 \end{Definition}
@@ -444,20 +444,20 @@ Of course the Turing dynamical system constructed in \ref{TMtoTDS} is not comput
 \section{Computing $\ell^2$-Betti numbers}
 In this chapter we want to prove the following central theorem which connects $\ell^2$-Betti numbers to the concept of Turing dynamical systems.
 \begin{Theorem} \label{HS}
-	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
+	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is an $\ell^2$-Betti number arising from the group $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
 \end{Theorem}
 We will give the definition of Pontryagin duals and the semidirect product later in this chapter. The rest of this chapter is used to prove this theorem and give the needed definitions.
 
-Figure \ref{Masterplan} shows our procedure to proof this Theorem. The main effort will be the proof of Theorem \ref{groserSatz}.
+Figure \ref{Masterplan} shows our procedure to prove this Theorem. The main effort will be the proof of Theorem \ref{groserSatz}.
 
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[shorten >=1pt,on grid,auto]
-		\node[draw, rectangle, minimum width = \widthrect] (0) {(read-only) Turing machine ($T$)};
-		\node[draw, rectangle, minimum width = \widthrect] (1) [below = \heightrect of 0] {Turing dynamical system ($(T_X)$};
+		\node[draw, rectangle, minimum width = \widthrect] (0) {Turing machine ($T$)};
+		\node[draw, rectangle, minimum width = \widthrect] (1) [below = \heightrect of 0] {Turing dynamical system ($(T_X)$)};
 		\node[draw, rectangle, minimum width = \widthrect] (2) [below = \heightrect of 1] {Groupoid ($\G(\rho)$)};
 		\node[draw, rectangle, minimum width = \widthrect] (3) [below = \heightrect of 2] {Group ring ($\hat{X} \rtimes_{\hat{\rho}} \Gamma$)};
-		\node[draw, rectangle, minimum width = \widthrect] (4) [below = \heightrect of 3] {$G$-CW-complex};
+		\node[draw, rectangle, minimum width = \widthrect] (4) [below = \heightrect of 3] {$(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$-CW-complex};
 		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (5) [right =\abstrect of 1] {$x :=\mu(I) - \Omega_1(T)$ can be computed};
 		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (6) [right =\abstrect of 2] {there exists an element $S$ in the groupoid ring with $\dim_{\mathcal{N}(G)}(\ker S) = x$};
 		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (7) [right =\abstrect of 3] {there exists an element $S'$ in the group ring with $\dim_{\mathcal{N}(G)}(\ker S') = x$};
@@ -491,7 +491,7 @@ Figure \ref{Masterplan} shows our procedure to proof this Theorem. The main effo
 				(8)
 		;
 	\end{tikzpicture}
-	\caption{Procedure to prove \ref{HS}}
+	\caption{Procedure to get an $\ell^2$-Betti number out of a Turing machine.}
 	\label{Masterplan}
 \end{figure}
 
@@ -501,21 +501,39 @@ We begin by giving some algebraic definitions, namely the construct of groupoids
 	A \emph{groupoid} is a small category whose morphisms are all invertible.
 \end{Definition}
 \begin{Example} \label{group}
-	Let $G$ be a group. We want to see how we can express $G$ as a groupoid. Let $\mathcal{G}_0 = \{\bullet\}$ be the set with only one element  and $\mathcal{G}$ be the category with objects $G_0$ and morphisms $G$ from $\bullet$ to $\bullet$.The composition of morphisms in $\mathcal{G}$ is the same as the multiplication in $G$. Then $\mathcal{G}$ is a small category and every morphism is invertible because every group element has an inverse. Therefore $\mathcal{G}$ is a groupoid.
+	Let $G$ be a group. We want to see how we can express $G$ as a groupoid. Let $\mathcal{G}_0 = \{\bullet\}$ be the set with only one element  and $\mathcal{G}$ be the category with objects $\G_0$ and morphisms $\Mor(\bullet, \bullet) = G$. The composition of morphisms in $\mathcal{G}$ is the same as the multiplication in $G$. Then $\mathcal{G}$ is a small category and every morphism is invertible because every group element has an inverse. Therefore $\mathcal{G}$ is a groupoid.
 \end{Example}
-We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathcal{G}_0$ and we can identify it with a subset of the set of morphisms of $\mathcal{G}$ by the embedding $\textbf{1} \colon \mathcal{G}_0 \to mor(\mathcal{G}), x \mapsto [\id\colon x \to x]$ which sends every object to the corresponding identity morphism. Therefore we will only only look at $mor(\mathcal{G})$ and also call it $\mathcal{G}$. 
+We will always denote the set of objects of a groupoid $\mathcal{G}$ by $\mathcal{G}_0$ and we can identify it with a subset of the set of morphisms of $\mathcal{G}$ by the embedding 
+\begin{align*}
+	\mathcal{G}_0 \to \Mor(\mathcal{G}), X \mapsto [\id\colon X \to X]
+\end{align*}
+which sends every object to the corresponding identity morphism. Therefore we will only only look at $\Mor(\mathcal{G})$ and also call it $\mathcal{G}$. 
 
 We will now give some definitions of basic properties of groupoids which we will use later in this chapter.
 
 \begin{Definition}
-	For every groupoid $\mathcal{G}$ we define the maps $s\colon \mathcal{G} \to \mathcal{G}_0, [f\colon X \to Y] \mapsto X$ and $r\colon\mathcal{G} \to \mathcal{G}_0, [f\colon X \to Y] \mapsto Y$ which will be called \emph{source} and \emph{range} map.
+	For every groupoid $\mathcal{G}$ we define the maps
+	\begin{align*}
+		s\colon \mathcal{G} \to \mathcal{G}_0, [f\colon X \to Y] \mapsto X
+	\end{align*}
+	and
+	\begin{align*}
+		r\colon\mathcal{G} \to \mathcal{G}_0, [f\colon X \to Y] \mapsto Y
+	\end{align*}
+	which will be called \emph{source} and \emph{range} map.
 \end{Definition}
 \begin{Definition}
-	A \emph{relation groupoid} is a groupoid with $|mor(X, Y)| \leq 1 \ \forall X,Y \in \G_0$.
+	A \emph{relation groupoid} is a groupoid with 
+	\begin{align*}
+		|\Mor(X, Y)| \leq 1 \ \forall X,Y \in \G_0.
+	\end{align*}
 \end{Definition}
+\begin{Remark}
+	There is a one-to-one correspondence between relation groupoids and equivalence relations.
+\end{Remark}
 
 \begin{Definition}
-	If $X \in \G_0$ we denote by $\G X \subset \G_0$ the set of all those objects $Y \in \G_0$ with $mor(X, Y) \neq \emptyset$ and call it the \emph{orbit} of $X$.
+	If $X \in \G_0$ we denote by $\G X \subset \G_0$ the set of all those objects $Y \in \G_0$ with $\Mor(X, Y) \neq \emptyset$ and call it the \emph{orbit} of $X$.
 \end{Definition}
 
 Our main use of groupoids will be to construct a groupoid out of a Turing dynamical system (see Figure \ref{Masterplan}). Therefore we need a measure on our groupoid. 
@@ -558,7 +576,7 @@ From the definition we see, that defining a measurable edge means taking a subse
 We now come to the definition of the groupoid ring. We want it to be a ring of operators of	$L^2(\G)$, \todo{Quelle fuer l2} such that it is in a way generated by measurable edges. For a measurable edge $\Phi$ we define an operator $\tilde \Phi$ by
 \begin{align*}
 	\tilde \Phi\colon L^2(\G) \to L^2(\G), F \mapsto \left[ \tilde \Phi (F)\colon\G \to \C, \gamma \mapsto \begin{cases}
-	F(\gamma \cdot_{\G} \Phi^{-1}(r(\gamma)) & \text{if } r(\gamma) \in Dom(\Phi^{-1}) \\
+	F(\gamma \odot_{\G} \Phi^{-1}(r(\gamma)) & \text{if } r(\gamma) \in Dom(\Phi^{-1}) \\
 	0 & \text{otherwise}
 	\end{cases} \right] .
 \end{align*}
@@ -570,26 +588,26 @@ In addition for a map $f \in L^\infty (\G_0)$ we also define an operator $\tilde
 \begin{Definition}\label{groupoid_ring}
 	For a groupoid $\G$ the \emph{groupoid ring} $\C\G$ is the ring of bounded operators on $L^2(\G)$ generated by all measurable edges and all elements of $L^\infty(\G)$.
 \end{Definition}
-We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} \tilde \Phi_i \cdot_{\C \G} \tilde f_i$ where $\Phi$ is a measurable edge, $f \in L^\infty(\G_0)$ and $I$ is a finite set. One can show that each element of $\C \G$ can be (although non-uniquely) represented in such a way. \todo{Evtl. könnte ich dazu noch ein bisschen was schreiben}
+We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} \tilde \Phi_i \odot_{\C \G} \tilde f_i$ where $\Phi$ is a measurable edge, $f \in L^\infty(\G_0)$ and $I$ is a finite set. One can show that each element of $\C \G$ can be (although non-uniquely) represented in such a way. \todo{Evtl. könnte ich dazu noch ein bisschen was schreiben}
 \begin{Example} \label{groupoid_ring_of_groups}
 	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ is isomorphic to the group ring $\C G$. Because we have only one element in $\G_0$ the only measurable edges we have are the maps from $\bullet$ to a specific group element of $G$. The elements of $L^\infty(\G_0)$ are just maps from $\bullet$ to a specific element in $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. 
 	
 	On our measurable edges we define the isomorphism by mapping $\tilde{\Phi}$ of a measurable edge $\Phi\colon\bullet \mapsto g$ to $g$. This map is of course bijective. To see that it is a homeomorphism let $\Phi_1\colon\bullet \mapsto g_1$ and $\Phi_2\colon\bullet \mapsto g_2$ be measurable edges. It follows that
 	\begin{align*}
-		  &~ \tilde{\Phi}_1 \cdot_{\C \G} \tilde{\Phi}_2(F)(\gamma) \\
+		  &~ \tilde{\Phi}_1 \odot_{\C \G} \tilde{\Phi}_2(F)(\gamma) \\
 		= &~ \tilde{\Phi}_2 \circ \tilde{\Phi}_1(F)(\gamma) \\
-		= &~ F((\gamma \cdot_{\G} \Phi_2^{-1}(\bullet)) \cdot_{\G} \Phi_1^{-1}(\bullet)) \\
-		= &~ F(\gamma \cdot_G g_2^{-1} \cdot_G g_1^{-1}) \\
-		= &~ F(\gamma \cdot_G (g_1 \cdot_G g_2)^{-1})
+		= &~ F((\gamma \odot_{\G} \Phi_2^{-1}(\bullet)) \odot_{\G} \Phi_1^{-1}(\bullet)) \\
+		= &~ F(\gamma \odot_G g_2^{-1} \odot_G g_1^{-1}) \\
+		= &~ F(\gamma \odot_G (g_1 \odot_G g_2)^{-1})
 	\end{align*}
-	which shows that the map maps $	\tilde{\Phi}_1 \cdot_{\C \G} \tilde{\Phi}_2$ to $g_1 \cdot_G g_2$ and therefore is indeed a homeomorphism.
+	which shows that the map maps $	\tilde{\Phi}_1 \odot_{\C \G} \tilde{\Phi}_2$ to $g_1 \odot_G g_2$ and therefore is indeed a homeomorphism.
 \end{Example}
 
 
 \subsection{Groupoids of Turing dynamical systems}
 We can now define the action groupoid which will allow us to create a groupoid out of a Turing dynamical system.
 \begin{Definition} \label{action_groupoid}
-	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho\colon\Gamma \to \Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined by $(x, \gamma_1) \cdot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
+	Let $\Gamma$ be a discrete, countable group, $X$ a probability measure space and $\rho\colon\Gamma \to \Bij(X)$ a right measure preserving action. The action groupoid $\G(\rho)$ is the groupoid with objects $X$ and morphisms $X \times \Gamma$ such that $s(x,\gamma) = x$ and $r(x, \gamma) = \rho(\gamma) (x)$. The composition of morphisms is defined by $(x, \gamma_1) \odot_{\G(\rho)} (\rho(\gamma_1) (x), \gamma_2) = (x, \gamma_1 \cdot \gamma_2)$ and the inverse of $(x, \gamma)$ is $(\rho(\gamma) (x), \gamma^{-1})$.
 \end{Definition}
 
 \begin{Remark} \label{mE_action_groupoid}
@@ -774,7 +792,7 @@ We will now create a link between the groupoid ring and the group ring. For this
 \begin{Definition}
 	Let $N, H$ be groups and $\Theta \colon H \to \Aut(N)$ a homomorphism. The \emph{semidirect product} $N \rtimes_\Theta H$ of $H$ and $N$ is defined on the Set $N \times H$ with multiplication 
 	\begin{align*}
-		(n_1, h_1) \cdot_{N \rtimes_\Theta H} (n_2, h_2) = (n_1 \cdot_N \Theta(h_1)(n_2), h_1 \cdot_H h_2).
+		(n_1, h_1) \odot_{N \rtimes_\Theta H} (n_2, h_2) = (n_1 \odot_N \Theta(h_1)(n_2), h_1 \odot_H h_2).
 	\end{align*}
 \end{Definition}
 
@@ -788,7 +806,7 @@ We can now define a map from the group ring to the groupoid ring.
 		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma}
 		 c_{(\hat{x}, \gamma)} \cdot (\hat{x}, \gamma) \mapsto 
 		 \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} 
-		 c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}} 
+		 c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma}} 
 	\end{align*}
 	 with $c_i \in \C$ is
 	\begin{enumerate}
@@ -801,36 +819,36 @@ We can now define a map from the group ring to the groupoid ring.
 \begin{proof}
 	$i)$ Because of the definition it is clear that $P \otimes 1$ preserves the addition. So let $c_i \in \C$, $\hat{x_i} \in \hat{X}$ and $\gamma_i \in \Gamma$ with $i \in \{1,2\}$. It follows that
 	\begin{align*}
-		 &~ P \otimes 1(c_1 \cdot (\hat{x_1}, \gamma_1) \cdot_{C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)} c_2 \cdot (\hat{x_2}, \gamma_2))  \\
-		=&~ P \otimes 1(c_1 \cdot  c_2 \cdot (\hat{x_1}, \gamma_1) \cdot_{\hat{X} \rtimes_{\hat{\rho}} \Gamma} (\hat{x_2}, \gamma_2)) \\
-		=&~ P \otimes 1(c_1 \cdot  c_2 \cdot (\hat{x_1} \cdot_{\hat{X}} \hat{\rho}(\gamma_1)(\hat{x_2}), \gamma_1 \cdot_{\Gamma} \gamma_2)) \\
-		=&~ c_1 \cdot  c_2 \cdot \widetilde{P(\hat{x_1} \cdot_{\hat{X}} \hat{\rho}(\gamma_1)(\hat{x_2}))} \cdot_{\C\G(\rho)} \widetilde{\overline{\gamma_1 \cdot_{\Gamma} \gamma_2}}.
+		 &~ P \otimes 1(c_1 \cdot (\hat{x_1}, \gamma_1) \odot_{C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)} c_2 \cdot (\hat{x_2}, \gamma_2))  \\
+		=&~ P \otimes 1(c_1 \cdot  c_2 \cdot (\hat{x_1}, \gamma_1) \odot_{\hat{X} \rtimes_{\hat{\rho}} \Gamma} (\hat{x_2}, \gamma_2)) \\
+		=&~ P \otimes 1(c_1 \cdot  c_2 \cdot (\hat{x_1} \odot_{\hat{X}} \hat{\rho}(\gamma_1)(\hat{x_2}), \gamma_1 \odot_{\Gamma} \gamma_2)) \\
+		=&~ c_1 \cdot  c_2 \cdot \widetilde{P(\hat{x_1} \odot_{\hat{X}} \hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\overline{\gamma_1 \odot_{\Gamma} \gamma_2}}.
 	\end{align*}
 	From the definition of the groupoid ring it follows directly that the last term equals 
 	\begin{align*}
-		c_1 \cdot  c_2 \cdot \widetilde{P(\hat{x_1})} \cdot_{\C\G(\rho)} \widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma_2}}.
+		c_1 \cdot  c_2 \cdot \widetilde{P(\hat{x_1})} \odot_{\C\G(\rho)} \widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_2}}.
 	\end{align*}
 	where the equality concerning the $\gamma_1, \gamma_2$-part can be shown in a similar way as in example \ref{groupoid_ring_of_groups}.
 	
 	Because elements of $\C$ commute with all elements in the groupoid ring it remains to show that 
 	\begin{align*}
-		\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}} = \widetilde{\bar{\gamma_1}} \cdot_{\C\G(\rho)} \tilde{\hat{x_2}} 
+		\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}} = \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \tilde{\hat{x_2}} 
 	\end{align*}
 	in the groupoid ring.
 	Let $F \in L^2 \G(\rho)$ and $\alpha \in \G$. Then the left side equals
 	\begin{align*}
-		 &~ (\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}})(F)(\alpha) \\
+		 &~ (\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}})(F)(\alpha) \\
 		=&~ \widetilde{\bar{\gamma_1}}(\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))}(F)(\alpha)) \\
 		=&~ \widetilde{\bar{\gamma_1}}(P(\hat{\rho}(\gamma_1)(\hat{x_2}))(r(\alpha)) \cdot (F)(\alpha)) \\
 		=&~ P(\hat{\rho}(\gamma_1)(\hat{x_2}))(r(\alpha)) \cdot \widetilde{\bar{\gamma_1}}(F)(\alpha) \\
-		=&~ \hat{x_2}(\rho (\gamma_1^{-1})( r(\alpha))) \cdot F(\alpha \cdot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha)))  
+		=&~ \hat{x_2}(\rho (\gamma_1^{-1})( r(\alpha))) \cdot F(\alpha \odot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha)))  
 	\end{align*}
 	and the right side equals
 	\begin{align*}
-		 &~ \widetilde{\bar{\gamma_1}} \cdot_{\C\G(\rho)} \tilde{\hat{x_2}}(F)(\alpha) \\
+		 &~ \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \tilde{\hat{x_2}}(F)(\alpha) \\
 		=&~ \widetilde{\bar{\gamma_1}}(\hat{x_2}(r(\alpha)) \cdot F(\alpha)) \\
-		=&~ \hat{x_2}(r(\alpha \cdot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha))) \cdot F(\alpha \cdot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha))) \\
-		=&~ \hat{x_2}(r(\bar{\gamma_1}^{-1}(r(\alpha))) \cdot F(\alpha \cdot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha)))
+		=&~ \hat{x_2}(r(\alpha \odot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha))) \cdot F(\alpha \odot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha))) \\
+		=&~ \hat{x_2}(r(\bar{\gamma_1}^{-1}(r(\alpha))) \cdot F(\alpha \odot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha)))
 	\end{align*}
 	which is the same.
 	
@@ -846,18 +864,18 @@ We can now define a map from the group ring to the groupoid ring.
 	\end{align*}
 	For 
 	\begin{align*}
-		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}} = P \otimes 1 (\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i))
+		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma}} = P \otimes 1 (\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i))
 	\end{align*}
 	we can use \ref{trgroupoid} to get
 	\begin{align*}
-		\tr(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \cdot_{\C\G(\rho)} \widetilde{\bar{\gamma}}) = \sum_{(\hat{x}, e) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} \int_{\mathcal{G(\rho)}_0} c_{(\hat{x}, e)} P(\hat{x})(y) d\mu(y)
+		\tr(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma}}) = \sum_{(\hat{x}, e) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} \int_{\mathcal{G(\rho)}_0} c_{(\hat{x}, e)} P(\hat{x})(y) d\mu(y)
 	\end{align*}
 	where $e$ is the neutral element of $\Gamma$. Because $d \mu(\G_0) = 1$ it remains to show that $\int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y) = 0$ if $\hat{x}$ is not the neutral element.
 	
 	First note that if $\hat{x}$ is not the neutral element then $P(\hat{x})$ is not constant $1$ and therefore there exists $z \in \G(\rho)_0$ with $P(\hat{x})(z) \neq 1$. We use the invariance of the Haar measure to get
 	\begin{align*}
 		 &~ \int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y) \\
-		=&~ \int_{\G(\rho)_0} P(\hat{x})(z \cdot_{X} y) d\mu(z \cdot_{X} y) \\
+		=&~ \int_{\G(\rho)_0} P(\hat{x})(z \odot_{X} y) d\mu(z \odot_{X} y) \\
 		=&~ \int_{\G(\rho)_0} P(\hat{x})(z) P(\hat{x})(y) d\mu(y) \\
 		=&~ P(\hat{x})(z) \int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y)
 	\end{align*}
@@ -885,8 +903,8 @@ We can now define a map from the group ring to the groupoid ring.
 	Now let $\tilde{\bar{\gamma}} \tilde{f} \in \C \G(\rho)$ be an element of the groupoid ring of an arbitrary action groupoid. Then for $\phi_1, \phi_2 \in L^2 \G$ it follows that
 	\begin{align*}
 		 &~ \langle \tilde{\bar{\gamma}} \tilde{f} (\phi_1), \phi_2 \rangle_{L^2 \G} \\
-		=&~ \int_{\bigcup r^{-1}(Dom(\bar{\gamma}^{-1}))} f(r(x)) \cdot \phi_1(x \cdot_{\G (\rho)} \bar{\gamma}^{-1}(r(x))) \cdot \phi_2 (x) d \mu (x) \\
-		=&~ \int_{\bigcup r^{-1}(Dom(\bar{\gamma}))} f(r(x \cdot_{\G (\rho)} \bar{\gamma}(r(x)))) \phi_1(x ) \cdot \phi_2 (x \cdot_{\G (\rho)} \bar{\gamma}(r(x))) d \mu (x) \\
+		=&~ \int_{\bigcup r^{-1}(Dom(\bar{\gamma}^{-1}))} f(r(x)) \cdot \phi_1(x \odot_{\G (\rho)} \bar{\gamma}^{-1}(r(x))) \cdot \phi_2 (x) d \mu (x) \\
+		=&~ \int_{\bigcup r^{-1}(Dom(\bar{\gamma}))} f(r(x \odot_{\G (\rho)} \bar{\gamma}(r(x)))) \phi_1(x ) \cdot \phi_2 (x \odot_{\G (\rho)} \bar{\gamma}(r(x))) d \mu (x) \\
 		=&~ \langle \phi_1 ,\tilde{\bar{\gamma^{-1}}} \tilde{f'} (\phi_2) \rangle_{L^2 \G}.
 	\end{align*} \todo{genauer substitution erklaeren?}
 	If $f$ is of the form $\widetilde{P(\hat{x})}$ for some $\hat{x} \in \hat{X}$ then $f' = \widetilde{P(\hat{\rho}(\gamma_i)(\hat{x_i}^{-1}))}$ \todo{kann man auch noch zeigen} which concludes the proof.
