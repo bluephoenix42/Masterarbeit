@@ -536,17 +536,18 @@ We will now give some definitions of basic properties of groupoids which we will
 	If $X \in \G_0$ we denote by $\G X \subset \G_0$ the set of all those objects $Y \in \G_0$ with $\Mor(X, Y) \neq \emptyset$ and call it the \emph{orbit} of $X$.
 \end{Definition}
 
-Our main use of groupoids will be to construct a groupoid out of a Turing dynamical system (see Figure \ref{Masterplan}). Therefore we need a measure on our groupoid. 
+Our main use of groupoids will be to construct a groupoid out of a Turing dynamical system (see Figure \ref{Masterplan}). Therefore we consider groupoids which are also measurable spaces: 
 \begin{Definition}
 	A \emph{discrete measurable groupoid} is a groupoid where $\mathcal{G}$ is also a measurable space, $s, r$ and the maps gained by inverting or composition are all measurable and the fibers of $s$ and $r$ are countable.
-	If in addition we have a measure $\mu$ such that 
+	
+	If in addition we have a measure $\mu$ such that for every $U \subset \mathcal{G}$
 	\begin{align*}
-		\int_{\mathcal{G}_0} |r^{-1}(x) \cap U| d\mu(x) = \int_{\mathcal{G}_0} |s^{-1}(x) \cap U| d\mu(x) \ \ \forall U \subset \mathcal{G}
+		\int_{\mathcal{G}_0} |r^{-1}(x) \cap U| ~d\mu(x) = \int_{\mathcal{G}_0} |s^{-1}(x) \cap U| ~d\mu(x) 
 	\end{align*}
-	holds, we call $\mathcal{G}$ discrete measured.
+	holds, we call $\mathcal{G}$ \emph{discrete measured}.
 \end{Definition}
-\todo{Warum braucht man das eigentlich nochmal, was bedeutet das genau und stimmt das eigentlich? inverting map}
-From now on every groupoid will be discretely measured.
+\todo{Warum braucht man das eigentlich nochmal, was bedeutet das genau und stimmt das eigentlich? inverting map, mu auf G}
+From now on every groupoid will be discrete measured.
 \begin{Definition}
 	We say that a groupoid $\G$ has \emph{finite orbits} if $\G X$ is finite for almost all $X \in \G_0$.
 \end{Definition}
@@ -554,8 +555,12 @@ From now on every groupoid will be discretely measured.
 	Let $\G$ be a relation groupoid with finite orbits. A measurable subset $D \subset \G_0$ such that $|D \cap \G X| = 1$ for every $X \in \G$ with $\G X$ finite is called a \emph{fundamental domain}.
 \end{Definition}
 \begin{Remark}
+	Up to null-sets a fundamental domain $D$ is an inclusion-minimal subset of $\G_0$ such that $\G D = \G_0$.
+\end{Remark}
+\begin{Remark}
 	One can show that every relation groupoid with finite orbits has a fundamental domain.
 \end{Remark}
+
 
 \subsection{Groupoid ring}
 A fundamental concept used for the calculation of $\ell^2$-Betti numbers of groups was the group ring. We will transfer this to the notion of groupoids.
