@@ -153,7 +153,7 @@ If $R$ is a field then $RG$ is an algebra and in particular a vector space with 
 \end{Remark}
 We now want to define a dimension for spaces embedded in $\ell^2(G)$. In most cases the normal vector space dimension of these spaces will be infinite and therefore not useful. We will instead use the von Neumann dimension which requires some preliminary work.
 \begin{Definition}
-	The \emph{group von Neumann algebra} $\mathcal{N}(G)$ is defined as the algebra of $G$-equivariant bounded operators from $\ell^2(G)$ to $\ell^2(G)$ where $G$ acts on $\ell^2(G)$ by left multiplication.
+	The \emph{group von Neumann algebra} $\mathcal{N}(G)$ is defined as the algebra of (left-)$G$-equivariant bounded operators from $\ell^2(G)$ to $\ell^2(G)$ where $G$ acts on $\ell^2(G)$ by left multiplication.
 \end{Definition}
 We will denote the bounded operators of a Hilbert space $H_1$ by $\mathcal{B}(H_1)$. If $G$ acts on a Hilbert Space $H_2$ the subspace of $G$-equivariant elements of $H_2$ will be called $H_2^G$. Therefore we can also define the group von Neumann algebra by $\mathcal{N}(G) := \mathcal{B}(\ell^2(G))^G$.
 \begin{Definition}
@@ -164,7 +164,7 @@ We will denote the bounded operators of a Hilbert space $H_1$ by $\mathcal{B}(H_
 	is called the \emph{von Neumann trace} on $\mathcal{N}(G)$.
 \end{Definition}
 \begin{Remark}
-	Right multiplication with an element of the group ring $\C G$ is a $G$-equivariant operator on $\ell^2(G)$ and therefore has a well defined von Neumann trace.
+	Right multiplication with an element of the group ring $\C G$ is a $G$-equivariant operator on $\ell^2(G)$ and therefore has a well defined von Neumann trace. Note that left multiplication with an element of $\C G$ is not $G$-equivariant if $G$ is not abelian.
 \end{Remark}
 \begin{Definition}
 	A \emph{Hilbert $\mathcal{N}(G)$-module} is a Hilbert space $H$ with a linear isometric $G$-action such that there exists an isometric linear $G$-embedding from $H$ to $\ell^2(G)^n$ for some $n \in \N$.
@@ -182,8 +182,14 @@ We will denote the bounded operators of a Hilbert space $H_1$ by $\mathcal{B}(H_
 		\tr_{\mathcal{N}(G)}\colon \mathcal{B}(H)^G \to \C, A \mapsto \sum_{i = 1}^{n} \tr_{\mathcal{N}(G)}(\pr_i \circ \iota \circ A \circ \pr_{\iota(H)} \circ \iota_i)
 	\end{align*}
 	is also called the \emph{von Neumann trace} on $H$.
-\end{Definition}\todo{erklaeren}
+\end{Definition}
 One can show that the trace is independent of the chosen embedding and therefore well-defined.
+\begin{Remark}
+	A different way to understand the definition of the von Neumann trace on Hilbert $\mathcal{N}(G)$-modules is the following:
+	A Hilbert $\mathcal{N}(G)$-module $H$ can always be seen as a $G$-equivariant subspace of some $\ell^2(G)^n$. A map $A \in \mathcal{B}(H)^G$ can then be expanded to a map on $\ell^2(G)^n$ by first projecting onto $H$ and then using $A$. In addition a map on $\ell^2(G)^n$ can be seen as a matrix of maps on $\ell^2(G)$.
+	
+	Taking the von Neumann trace of $A$ then simply means expanding $A$ to a map on $\ell^2(G)^n$ and then adding up the von Neumann trace of the diagonal entries of the matrix of this map.
+\end{Remark}
 \begin{Definition}\label{vNd}
 	Let $H$ be a Hilbert $\mathcal{N}(G)$-module. We define the \emph{von Neumann dimension} of $H$ as
 	\begin{align*}
@@ -195,7 +201,6 @@ One can show that the trace is independent of the chosen embedding and therefore
 	\dim_{\mathcal{N}(G)}(H) = \tr_{\mathcal{N}(G)}(\pr_H) = \langle \pr_H (e_G), e_G \rangle.
 	\end{align*}
 \end{Remark}
-\todo{ueberall g-equivariant ueberpruefen}
 
 \subsection{$\ell^2$-Betti numbers of $G$-CW-complexes}
 One can now define the $\ell^2$-Betti numbers of CW-complexes in a very similar way as for cellular homology. But first we have to define a group action on CW-complexes.
@@ -248,8 +253,8 @@ One can now define the $\ell^2$-Betti numbers of CW-complexes in a very similar 
 \subsection{$\ell^2$-Betti numbers arising from a group}
 We will now show that it is sufficient for our purpose to calculate the von Neumann trace of the kernel of elements of the group ring without mentioning CW-complexes.
 \begin{Remark}\label{MAB}
-	A matrix $A \in \C G^{n \times m}$ can be seen as a map from $\ell^2(G)^n \to \ell^2(G)^m$ via $x \mapsto x^{\top} \cdot A$. We will refer to this map also by $A$. Be aware that if $G$ is not abelian this is not the same map as $A^\top x$.
-\end{Remark}\todo{G-equivariant erwaehnen}
+	A matrix $A \in \C G^{n \times m}$ can be seen as an operator from $\ell^2(G)^n \to \ell^2(G)^m$ via $x \mapsto x^{\top} \cdot A$. We will refer to this map also by $A$. This operator is $G$-equivariant. Be aware that if $G$ is not abelian this is not the same operator as $A^\top x$, which in this case is not $G$-equivariant.
+\end{Remark}
 \begin{Lemma}
 	For a matrix $A \in \C G^{n \times m}$ the kernel $\ker(A)$ is a Hilbert $\mathcal{N}(G)$-module and therefore has a well-defined von Neumann-dimension.
 \end{Lemma}
@@ -268,17 +273,58 @@ We will now show that it is sufficient for our purpose to calculate the von Neum
 	\end{enumerate}
 \end{Theorem}
 \begin{proof}
-	$``i) \Rightarrow ii)''$ Let $X$ be a cocompact free finite type $G$-CW-complex and $n \in \N$ such that $b_n^{(2)}(X)=x$. We define 
+	$``i) \Rightarrow ii)''$ Let $X$ be a cocompact free finite type $G$-CW-complex and $l \in \N$ such that $b_l^{(2)}(X)=x$. We define 
 	\begin{align*}
-		\Delta_n^{(2)} = d_n^{(2)*} d_n^{(2)} + d_{n+1}^{(2)} d_{n+1}^{(2)*},
+		\Delta_l^{(2)} = d_l^{(2)*} d_l^{(2)} + d_{l+1}^{(2)} d_{l+1}^{(2)*},
 	\end{align*}
-	which is a map from $C_n^{(2)}(X)$ to $C_n^{(2)}(X)$. The differential can be written as a matrix $A' \in \Z G$ and therefore $\Delta_n^{(2)}$ also lies in $\Z G$. It remains to show that $\ker(\Delta_n^{(2)}) = H_n^{(2)}$ holds. \todo{ZG^n times n}
+	which is a map from $C_l^{(2)}(X)$ to $C_l^{(2)}(X)$. The differential can be written as a matrix $A' \in \Z G^{n \times n}$ for some $n \in \N$ and therefore $\Delta_n^{(2)}$ also lies in $\Z G^{n \times n}$. In addition one can show that $\ker(\Delta_n^{(2)}) = H_n^{(2)}$ holds.
 	
 	$``ii) \Rightarrow i)''$ Let $n \in \N$ and $A\in \Q G^{n \times n}$. Because $k \cdot A$ has the same kernel as $A$ for every $k \in \Z$ we can assume that $A \in \Z G^{n \times n}$. The corresponding map will be also called $A$. We will construct a $G$-CW-complex $X$ with $d_3^{(2)} = A$ and $d_4^{(2)}$ trivial. Therefore $H_3^{(2)}(X) = \ker(A)$ and $i)$ follows.
 	
-	First we can see that a graph can always be seen as a CW-complex with the edges as 1-cells and the vertices as 0-cells. Let $g_1 \ldots g_m$ be generators of $G$ and let $Y$ be the corresponding Cayley graph of $G$ which has a natural cellular free $G$-action and is therefore a free, finite type $G$-CW-complex. In addition it has exactly one $G$-equivariant $0$-cell and $m$ $G$-equivariant $1$-cells and no other cells. We then glue $n$ many $2$-cells on each $0$-cell, i.e. we attach them via the attaching map which sends all of $S^1$ to a single point. 
+	First we can see that a graph can always be seen as a CW-complex with the edges as 1-cells and the vertices as 0-cells. Let $g_1 \ldots g_m$ be generators of $G$ and let $Y$ be the corresponding Cayley graph of $G$ which has a natural cellular free $G$-action and is therefore a free, finite type $G$-CW-complex. In addition it has exactly one $G$-equivariant $0$-cell and $m$ $G$-equivariant $1$-cells and no other cells. We then glue $n$ many $2$-cells on each $0$-cell, i.e. we attach them via the attaching map which sends all of $S^1$ to a single point. For an example of this $G$-CW-complex with $G = \Z$ and $n = 2$ see Figure \ref{GCW_Grafik}.
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+		%	\shade[ball color = gray!40, opacity = 0.4] (0,0) circle (2cm);
+		\draw (0,0) circle (1cm);
+		\draw (-1,0) arc (180:360:1 and 0.3);
+		\draw[dashed] (1,0) arc (0:180:1 and 0.3);
+		\fill[fill=black] (0,-1) circle (2pt);
+		
+		\draw (0,-2) circle (1cm);
+		\draw (-1,-2) arc (180:360:1 and 0.3);
+		\draw[dashed] (1,-2) arc (0:180:1 and 0.3);
+		
+		\draw (3,0) circle (1cm);
+		\draw (2,0) arc (180:360:1 and 0.3);
+		\draw[dashed] (4,0) arc (0:180:1 and 0.3);
+		\fill[fill=black] (3,-1) circle (2pt);
+		
+		\draw (3,-2) circle (1cm);
+		\draw (2,-2) arc (180:360:1 and 0.3);
+		\draw[dashed] (4,-2) arc (0:180:1 and 0.3);
+		
+		\draw (-3,0) circle (1cm);
+		\draw (-4,0) arc (180:360:1 and 0.3);
+		\draw[dashed] (-2,0) arc (0:180:1 and 0.3);
+		\fill[fill=black] (-3,-1) circle (2pt);
+		
+		\draw (-3,-2) circle (1cm);
+		\draw (-4,-2) arc (180:360:1 and 0.3);
+		\draw[dashed] (-2,-2) arc (0:180:1 and 0.3);
+		
+		\draw[-] (0, -1) -- (-3, -1);
+		\draw[-] (0, -1) -- (3, -1);
+		
+		\draw[dashed] (3, -1) -- (5, -1);
+		\draw[dashed] (-3, -1) -- (-5, -1);
+		
+		\end{tikzpicture}
+		\caption{An example of the $G$-CW-complex before gluing in the $3$-cells for $G = \Z$ and $n=2$.}
+		\label{GCW_Grafik}
+	\end{figure}
 	
-	We now glue in $n$ many $G$-equivariant $3$-cells in such a way that $A$ corresponds to $d_3^{(2)}$:
+	We now glue in $n$ many $G$-equivariant $3$-cells in such a way that $A$ corresponds to $d_3^{(2)}$. We describe the procedure for the first row. The procedure for the other rows is done analogously.
 	Let $A_{ij} = \sum_{g \in G} z_{(g, i, j)} g \in \Z G$ denote the entry in the i-th row and the j-th column of $A$. We fix one $0$-cell and call it $e$ and we call the corresponding $2$-cells $e_1 \ldots e_n$. We glue in $G \times D^3$ where each element $h \times D^3$ is glued $z_{(g, 1, j)}$ many times to $h g \cdot e_j$ for each $g \in G$ and $j \in \{1, \ldots, n\}$. We then see that $d_3^{(2)}$ maps the vector 
 	\begin{align*}
 		(\sum_{g \in G} \lambda_g g, 0 , \ldots , 0) \in (\ell^2 G)^n
@@ -287,9 +333,62 @@ We will now show that it is sufficient for our purpose to calculate the von Neum
 	\begin{align*}
 		(\sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, 1)} g h, \ldots , \sum_{g \in G} \sum_{h \in H} \lambda_g z_{(h, 1, n)}) \in (\ell^2 G)^.
 	\end{align*}
+	Figure \ref{GCW_Grafik2} shows how one $3$-cell $e \times D^3$ is glued on the above $G$-CW-complex for the first row of $A= \begin{pmatrix}
+		1 \cdot 0 + 1 \cdot 2 & 1 \cdot 1 \\
+		0 & 0
+		\end{pmatrix}$. The $3$-cell is glued once into each of the gray $2$-cells.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}
+			\shade[ball color = gray!40, opacity = 0.4] (-3,0) circle (1cm);
+			\shade[ball color = gray!40, opacity = 0.4] (3,0) circle (1cm);
+			\shade[ball color = gray!40, opacity = 0.4] (0,-2) circle (1cm);
+			\draw (0,0) circle (1cm);
+			\draw (-1,0) arc (180:360:1 and 0.3);
+			\draw[dashed] (1,0) arc (0:180:1 and 0.3);
+			\fill[fill=black] (0,-1) circle (2pt);
+			
+			\draw (0,-2) circle (1cm);
+			\draw (-1,-2) arc (180:360:1 and 0.3);
+			\draw[dashed] (1,-2) arc (0:180:1 and 0.3);
+			
+			\draw (3,0) circle (1cm);
+			\draw (2,0) arc (180:360:1 and 0.3);
+			\draw[dashed] (4,0) arc (0:180:1 and 0.3);
+			\fill[fill=black] (3,-1) circle (2pt);
+			
+			\draw (3,-2) circle (1cm);
+			\draw (2,-2) arc (180:360:1 and 0.3);
+			\draw[dashed] (4,-2) arc (0:180:1 and 0.3);
+			
+			\draw (-3,0) circle (1cm);
+			\draw (-4,0) arc (180:360:1 and 0.3);
+			\draw[dashed] (-2,0) arc (0:180:1 and 0.3);
+			\fill[fill=black] (-3,-1) circle (2pt);
+			
+			\draw (-3,-2) circle (1cm);
+			\draw (-4,-2) arc (180:360:1 and 0.3);
+			\draw[dashed] (-2,-2) arc (0:180:1 and 0.3);
+			
+			\draw[-] (0, -1) -- (-3, -1);
+			\draw[-] (0, -1) -- (3, -1);
+			
+			\draw[dashed] (3, -1) -- (5, -1);
+			\draw[dashed] (-3, -1) -- (-5, -1);
+			
+			\end{tikzpicture}
+			\caption{The above example after gluing in one $3$-cell.}
+			\label{GCW_Grafik2}
+		\end{figure}
+		
+		
 	We then repeat this for every row of $A$ and get that $d_3^{(2)} = A$. The resulting $G$-CW-complex $X$ is still free, finite type and because $X/G$ is finite $X$ is cocompact.
 \end{proof}
-\todo{ker(delta) = homology zeigen? Graphik und etwas genauer? oben hinschreiben, dass man nur die erste zeile macht}
+
+
+
+
+\todo{ker(delta) = homology zeigen?}
 \begin{Remark}
 	One can show that \ref{MCW} also holds if $G$ is not finitely generated.
 \end{Remark}
@@ -322,10 +421,21 @@ To fix notation we will first give a definition of a Turing machine. For conveni
 \end{Definition}
 In addition each Turing machine uses a ``tape'', i.e. a set $\Z / 2\Z ^{\Z}$ with a ``head'' on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$ which is called an input. We start with the initial state and use the transition function $\delta$ to get $\delta(Y_0, I)$. The first coordinate corresponds to the new element $Y_0$, the third to the new state and the second corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$, e.g. if $\delta(I, Y_0)_3 = 1$ we shift the whole tape one to the left, therefore our new $Y_0$ is our old $Y_1$. We repeat this step until we get a state in $A \cup R$. We say that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$ after finitely many steps. We say that the Turing machine holds for $Y$ if it accepts or rejects it.
 
-\todo{Unterschied klar machen, lieber Liste, Ind klar machen, I klar machen?}
-For the purpose of calculating $\ell^2$-Betti numbers of groups we need to extend this definition. Let $(X, \mu)$ be a probability measure space divided into finitely many disjoint measurable subsets $X_i$. Let $\Gamma$ be a countable discrete group and $\rho$ be a right measure preserving action of $\Gamma$ on X.
-We now choose 3 disjoint subsets $A$, $R$, $I$, where each of them is a union of certain $X_i$. They will be called the accepting set, the rejecting set and the initial set. In addition we choose a $\gamma_i \in \Gamma$ for each $X_i \subset X$ such that for each $i$ with $X_i \subset A$ or $X_i \subset R$ it holds that $\gamma_i = e$ where $e$ is the neutral element in $\Gamma$. 
-Let $\Ind\colon X \to \N$ be the map which assigns to each $x \in X$ the corresponding index of the $X_i$ it is contained in.
+For the purpose of calculating $\ell^2$-Betti numbers of groups we need to extend this definition. 
+Let
+\begin{itemize}
+	\item $(X, \mu)$ be a probability measure space,
+	\item $\bigcup_{i} X_i$ be a division of $X$ into finitely many disjoint measurable subsets,
+	\item $\Gamma$ be a countable discrete group,
+	\item $\rho$ be a right measure preserving action of $\Gamma$ on X,
+	\item $A$, $R$ and $I$ be three disjoint subsets where each of them is a union of certain $X_i$. They will be called the accepting set, the rejecting set and the initial set.
+	\item $\gamma_i \in \Gamma$ for each $X_i \subset X$ such that for each $i$ with $X_i \subset A$ or $X_i \subset R$ it holds that $\gamma_i = e$ where $e$ is the neutral element in $\Gamma$.
+\end{itemize}
+Let $\Ind\colon X \to \N$ be the index map, i.e the map for which
+\begin{align*}
+	\Ind(x) = i ~\Leftrightarrow~ x \in X_i
+\end{align*}
+holds.
 \begin{Definition}
 	 The map 
 	 \begin{align*}
@@ -399,9 +509,15 @@ Our ultimate goal is to use Turing dynamical systems to get $\ell^2$-Betti numbe
 		X_i = \{(x_j)_{j \in J} \in X \ | \ x_k = \0 \ \forall k \in I_0, x_h = \1 \ \forall h \in I_1\}.
 	\end{align*}
 	where $I_0, I_1 \subset J$ are finite subsets.
-	If in addition the action of $\Gamma$ is by continuous group automorphisms and $(T_X)$ stops on any configuration, has disjoint accepting chains and does not restart it is called a \emph{computing} Turing dynamical system.
+	If in addition
+	\begin{itemize}
+		\item the action of $\Gamma$ is by continuous group automorphisms
+		\item $(T_X)$ stops on any configuration
+		\item $(T_X)$ has disjoint accepting chains
+		\item $(T_X)$ does not restart
+	\end{itemize}
+	$(T_X)$ is called a \emph{computing} Turing dynamical system.
 \end{Definition}
-\todo{auflistung}
 \begin{Remark}
 	For more information on Haar measure see e.g. \todo{Quelle fuer Haar measure}. For us it is only relevant that there always exists a unique normalized (left) Haar measure on $G$ if $G$ is a locally compact Hausdorff topological group.
 	
@@ -428,7 +544,7 @@ Before we give an example of a computing Turing dynamical system we fix the nota
 \begin{Definition} \label{shift}
 	An element $z \in \Z$ acts on $\2^{\Z} = \prod_{i \in \Z} \2$ by decreasing every index by $z$. We call this action the \emph{shift action} and denote it by $\zeta$. $\Z$ acts on $\bigoplus_{i \in \Z} \2$ in the same way and this operation will also be called $\zeta$.
 \end{Definition}
-Of course the Turing dynamical system constructed in \ref{TMtoTDS} is not computing in most cases. But for many read-only Turing machines a computing Turing dynamical system can be constructed in a similar way. In fact we will only use read-only Turing machines. \todo{geht auch fuer nicht readonly, warum geht das nicht mit der obigen def}
+Of course the Turing dynamical system constructed in \ref{TMtoTDS} is not computing in most cases. But for many read-only Turing machines a computing Turing dynamical system can be constructed in a similar way.\footnote{A computable Turing dynamical system can also be constructed for non read-only Turing machines in a different way as in \ref{TMtoTDS}. The main problem here is that adding $\1$ to the element of $\2^\Z$ with index $0$ is not a group-homomorphism.} In fact we will only use read-only Turing machines.
 \begin{Example} \label{roTMtoTDS}
 	Let $T$ be a read-only Turing machine, such that the corresponding Turing dynamical system $(T_X)$ as constructed in \ref{TMtoTDS} has disjoint accepting chains and stops on any configuration.\footnote{This is not the case for all read-only Turing machines.}
 	
@@ -436,9 +552,11 @@ Of course the Turing dynamical system constructed in \ref{TMtoTDS} is not comput
 	
 	Because we do not change the symbols of the tape it suffices to use $\Gamma = \Z \times \Bij(S)$ where $\Z$ operates on the $\2^\Z$ part via shifting and $\Bij(S)$ acts on $S$ in the natural way. Because a Turing machine has only finitely many states there exists an integer $n \in \N$ such that $|S| < 2^n$. We identify every state with a different element $z \in \2^n$ with $z \neq 0$.
 	
-	We can then assume that $X = \2^\Z \times \2^n$. We regard every element of $\2^n$, which does not correspond to an actual state, as a ``dummy state'' which will never be used. Because $\Aut(\2^n)$ acts transitively on all of $\2^n \setminus \{0\}$ we can choose our bijections on $S$ to be group automorphisms. Then $\gamma_i \in \Z \times \Aut(S)$ and therefore we may set $\Gamma := \Z \times \Aut(S)$. Because in this case the sets $X_i$ as constructed in \ref{TMtoTDS} have only $n+1$ \todo{genauer} fixed components they are of the desired form.
+	We can then assume that $X = \2^\Z \times \2^n$. We regard every element of $\2^n$, which does not correspond to an actual state, as a ``dummy state'' which will never be used. Because $\Aut(\2^n)$ acts transitively on all of $\2^n \setminus \{0\}$ we can choose our bijections on $S$ to be group automorphisms. Then $\gamma_i \in \Z \times \Aut(S)$ and therefore we may set $\Gamma := \Z \times \Aut(S)$. It acts on $X$ by continuous group automorphisms.
+	
+	In this case the sets $X_i = [\underline{x}][\sigma]$ as constructed in \ref{TMtoTDS} have only $n+1$ fixed components, one component to fix $x$ and $n$ components to fix $\sigma$. Therefore these sets are of the desired form.
 	 
-	Therefore the resulting Turing dynamical system is computing. \todo{stetig dazu sagen}
+	It follows that the resulting Turing dynamical system is computing.
 \end{Example}
 
 \section{Computing $\ell^2$-Betti numbers}
