@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {4}Computing $\ell ^2$-Betti numbers}{12}
 \contentsline {subsection}{\numberline {4.1}Groupoids}{14}
 \contentsline {subsection}{\numberline {4.2}Groupoid ring}{15}
-\contentsline {subsection}{\numberline {4.3}Groupoids of Turing dynamical systems}{16}
+\contentsline {subsection}{\numberline {4.3}Groupoids of Turing dynamical systems}{17}
 \contentsline {subsection}{\numberline {4.4}Construction of the element $S$}{19}
 \contentsline {subsection}{\numberline {4.5}Pontryagin duality}{21}
 \contentsline {section}{\numberline {5}The lamplighter group}{26}
