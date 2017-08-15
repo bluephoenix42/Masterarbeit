@@ -774,44 +774,48 @@ We can now define the action groupoid which will allow us to create a groupoid f
 	\begin{align*}
 		Y := \{y \in A \cup R ~|~ \G y ~ \text{is infinite}\}. 
 	\end{align*}
-	A Turing dynamical system has only finitely many sets $X_i$ and therefore each point has only finitely many pre-images. This shows that $Y$ equals $\bigcap_{i \in \N} T_X^i(Y_i)$ and therefore has measure $0$. Of course $\bigcup_{i \in \N }T_X^{-i}(Y)$ contains all infinite orbits and is a countable union of the sets $T_X^{-i}(Y)$. Because each point has only finitely many pre-images, each of the sets $T_X^{-i}(Y)$ has measure $0$ and therefore $\bigcup_{i \in \N }T_X^{-i}(Y)$ has measure $0$.
+	A Turing dynamical system has only finitely many sets $X_i$ and therefore each point has only finitely many pre-images. Because $T_X^i(Y_i) \subset T_X^{i-1}(Y_{i-1})$ it holds that $Y$ equals $\bigcap_{i \in \N} T_X^i(Y_i)$ and therefore has measure $0$. It now holds that 
+	\begin{align*}
+		\G (T_X)_0^\# =\bigcup_{i \in \N_0 }T_X^{-i}(Y) ~\cup~ \bigcup_{i \in \N_0 }T_x^{-i}((A\cup R) \setminus Y)
+	\end{align*}
+	where $\bigcup_{i \in \N_0 }T_X^{-i}(Y)$ contains all infinite orbits and $\bigcup_{i \in \N_0 }T_x^{-i}((A\cup R) \setminus Y$ contains all finite orbits. Because each point has only finitely many pre-images, each of the sets $T_X^{-i}(Y)$ has measure $0$ and therefore the countable union $\bigcup_{i \in \N }T_X^{-i}(Y)$ has measure $0$. Thus the orbit of almost any point is finite. 
 \end{proof} \todo{T measurable}
-We are now able to construct a groupoid out of a Turing dynamical system. In addition we can construct the corresponding groupoid ring out of this groupoid. But we still need a definition of a von Neumann dimension (and therefore some kind of trace) on elements of the groupoid ring (compare Figure \ref{Masterplan}).
+We are now able to construct a groupoid from a Turing dynamical system. In addition we can construct the corresponding groupoid ring from this groupoid. But we still need a definition of a von Neumann dimension (and therefore some kind of trace) on elements of the groupoid ring (compare Figure \ref{Masterplan}).
 \begin{Definition}
 	Let $\G$ be a groupoid. The \emph{trace} of an element $T \in \C \G$ in the groupoid ring is defined by
 	\begin{align*}
 		\tr(T) = \langle T \chi_0, \chi_0 \rangle_{L^2 \G}
 	\end{align*}
-	where $\chi_0$ is the characteristic function of the objects $\G_0$ of $\G$.
+	where $\chi_0$ is the characteristic function of the objects $\G_0 \subset \G$.
 \end{Definition}
 \begin{Definition} \label{vNd_of_groupoids}
-	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $\pr_X\colon L^2 \G \to X$ be projection onto $X$. The \emph{von Neumann dimension} of $X$ is defined by
+	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $\pr_X\colon L^2 \G \to X$ be a projection onto $X$. The \emph{von Neumann dimension} of $X$ is defined by
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(X) = \tr_(\pr_X).
+		\dim_{\mathcal{N}(G)}(X) = \tr(\pr_X).
 	\end{align*}
 \end{Definition}
-This definition of a von Neumann dimension is very similar the one in $\ell^2 G$ given in \ref{vNd} when you consider the fact stated in \ref{vNd_for_subsets}.
+This definition of a von Neumann dimension is very similar the one on $\ell^2 G$ given in \ref{vNd} when you consider the fact stated in \ref{vNd_for_subsets}. Again this definition is independent of the chosen projection. \todo{unabhaengigkeit}
 
-Remember that for an element $\gamma \in \Gamma$ we can construct a measurable edge $\bar{\gamma}$ of the action groupoid (see \ref{mE_action_groupoid}) and that for a measurable edge $\Phi$ (or a map $f \in L^\infty (\G_0)$) the corresponding element in the groupoid ring is denoted by $\tilde{\Phi}$ (or $\tilde{f}$).
+Remember that for an element $\gamma \in \Gamma$ we can construct a measurable edge $\bar{\gamma}$ of the action groupoid (see \ref{mE_action_groupoid}) and that for a measurable edge $\Phi$ (or a map $f \in L^\infty (\G_0)$) the corresponding element in the groupoid ring is denoted by $\tilde{\Phi}$ (or $\tilde{f}$) (see \ref{groupoid_ring}).
 
 \begin{Lemma} \label{trgroupoid}
-	Let $\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho\colon\Gamma \to \Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of an action groupoid. Then
+	Let $\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho\colon\Gamma \to \Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of the action groupoid. Then
 	\begin{align*}
-	\tr(\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i}) = \sum_{e \in E} \int_{\G(\rho)_0} f_e(x) d\mu(x)
+	\tr(\sum_{i \in I} \tilde{\bar{\gamma_i}} \tilde{f_i}) = \sum_{e \in E} \int_{\G(\rho)_0} f_e(x) ~ d\mu(x)
 	\end{align*}
-	where $E$ is the set of indices such that $\gamma_e$ is the neutral element of $\Gamma$ for each $e \in E$. If no such index exists the trace is zero.
+	where $E$ is the set of indices $e$ such that $\gamma_e$ is the neutral element of $\Gamma$. If no such index exists the trace is zero.
 \end{Lemma}
 \begin{proof} 
-	If $\gamma \in \Gamma$ is not the neutral element then the corresponding measurable edge $\bar{\gamma}$ sends every element of $\C\G(\rho)_0$, i.e. every identity morphism to a different morphism not contained in $\C\G(\rho)_0$. Therefore the trace is $0$ for each such element.
+	If $\gamma \in \Gamma$ is not the neutral element then the corresponding measurable edge $\bar{\gamma}$ sends every element of $\C\G(\rho)_0$ (i.e. every identity morphism) to a different morphism not contained in $\C\G(\rho)_0$. Therefore the trace is $0$ for each such element (note that $\tr$ is a homomorphism).
 	
-	Let $e \in \Gamma$ be the neutral element then it holds that
+	Let $e \in \Gamma$ be the neutral element. Then it holds that
 	\begin{align*}
 	&~ \tr(\tilde{\bar{e}} \tilde{f}) \\
 	=&~ \tr(\id_{L^2 \G} \tilde{f}) \\
-	=&~ \langle \tilde{f} (\chi_0), \chi_0 \rangle_{L^2 \G} \\
-	=&~ \langle f, \chi_0 \rangle_{L^2 \G_0} \\
-	=&~ \int_{\G(\rho)_0} f(x) \cdot \chi_0(x) d\mu(x) \\
-	=&~ \int_{\G(\rho)_0} f(x) d\mu(x)
+	=&~ \langle \tilde{f} (\chi_0), \chi_0 \rangle_{L^2 \G(\rho)} \\
+	=&~ \langle f, \chi_0 \rangle_{L^2 \G(\rho)_0} \\
+	=&~ \int_{\G(\rho)_0} f(x) \cdot \chi_0(x) ~ d\mu(x) \\
+	=&~ \int_{\G(\rho)_0} f(x) ~ d\mu(x)
 	\end{align*}
 	which concludes the proof.
 \end{proof}
