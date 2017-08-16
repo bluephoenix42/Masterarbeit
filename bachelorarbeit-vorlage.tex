@@ -1018,12 +1018,14 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 		 &~ (\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}})~(F)~(\alpha) \\
 		=&~ \widetilde{\bar{\gamma_1}}(~\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))}(F)~)~(\alpha) \\
 		=&~ \widetilde{\bar{\gamma_1}}(~ \beta \mapsto F(\beta) \cdot P(\hat{\rho}(\gamma_1)(\hat{x_2}))(r(\beta))~) ~(\alpha) \\
-		=&~ F(\alpha \odot_{\G (\rho)} \bar \gamma_1^{-1}(r(\alpha))) \cdot P(\hat{\rho}(\gamma_1)(\hat{x_2}))(r(\alpha \odot_{\G (\rho)} \bar \gamma_1^{-1}(r(\alpha))) \\
-		=&~ \hat{x_2}(\rho (\gamma_1^{-1})( r(\alpha))) \cdot F(\alpha \odot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha)))  
+		=&~ F(\alpha \odot_{\G (\rho)} \bar \gamma_1^{-1}(r(\alpha))) ~\cdot~ P(\hat{\rho}(\gamma_1)(\hat{x_2}))~(r(\alpha \odot_{\G (\rho)} \bar \gamma_1^{-1}(r(\alpha)))) \\
+		=&~F(\alpha \odot_{\G (\rho)} \bar \gamma_1^{-1}(r(\alpha))) ~\cdot~ P(\hat{\rho}(\gamma_1)(\hat{x_2}))~(r(\bar \gamma_1^{-1}(r(\alpha)))) \\
+		=&~ F(\alpha \odot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha))) ~\cdot~ \hat{x_2}(\rho (\gamma_1^{-1})( r(\bar \gamma_1^{-1}(r(\alpha)))))
 	\end{align*}
 	and
 	\begin{align*}
-		 &~ \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \tilde{\hat{x_2}}(F)(\alpha) \\
+		 &~ \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \widetilde{P(\hat{x_2})} ~(F) ~(\alpha) \\
+		=&~ \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \tilde{\hat{x_2}}~(F)~(\alpha) \\
 		=&~ \widetilde{\bar{\gamma_1}}(\hat{x_2}(r(\alpha)) \cdot F(\alpha)) \\
 		=&~ \hat{x_2}(r(\alpha \odot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha))) \cdot F(\alpha \odot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha))) \\
 		=&~ \hat{x_2}(r(\bar{\gamma_1}^{-1}(r(\alpha))) \cdot F(\alpha \odot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha)))
