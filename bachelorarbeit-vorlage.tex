@@ -397,14 +397,14 @@ We will now show that it is sufficient for our purpose to calculate the von Neum
 \begin{Definition}
 	We say that a number $x \in \R$ \emph{arises} from a discrete countable group $G$ if it fulfills one (and therefore both) of the conditions of \ref{MCW}.
 \end{Definition}
-The statement of \ref{MCW} will be implicitly used in many points of this work. In fact we will never construct a $G$-Cw-complex and instead construct an element of a group ring $\Q (G)$ of $G$ which kernel has the desired von Neumann dimension.
+The statement of \ref{MCW} will be implicitly used in many points of this work. In fact we will never construct a $G$-CW-complex and instead construct an element of a group ring $\Q (G)$ of $G$ which kernel has the desired von Neumann dimension.
 
 
 \begin{Lemma}\label{add}
 	If $x \in \R$ and $z \in \R$ both arise from a discrete, countable group $G$, then so does $x + z$.
 \end{Lemma}
 \begin{Lemma}\label{mult}
-	Let $G$ is a discrete countable group and $H$ a discrete finite group. If $x \in \R$ arises from $G \times H$ then $x \cdot |H|$ arises from $G$.
+	Let $G$ be a discrete countable group and $H$ a discrete finite group. If $x \in \R$ arises from $G \times H$ then $x \cdot |H|$ arises from $G$.
 \end{Lemma}
 \todo{Vllt. noch beweisen oder Quelle}
 \section{Turing dynamical systems}
@@ -421,7 +421,7 @@ To fix notation we will first give a definition of a Turing machine. For conveni
 	\end{align*}
 	for each $x \in \2$ and $\sigma \in S \setminus(A \cup R)$.
 \end{Definition}
-In addition each Turing machine uses a ``tape'', i.e. a set $\Z / 2\Z ^{\Z}$ with a ``head'' on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$ which is called an input. We start with the initial state and use the transition function $\delta$ to get $\delta(Y_0, I)$. The first coordinate corresponds to the new element $Y_0$, the third to the new state and the second corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$, e.g. if $\delta(I, Y_0)_3 = 1$ we shift the whole tape one to the left, therefore our new $Y_0$ is our old $Y_1$. We repeat this step until we get a state in $A \cup R$. We say that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$ after finitely many steps. We say that the Turing machine holds for $Y$ if it accepts or rejects it.
+In addition each Turing machine uses a ``tape'', i.e. a set $\Z / 2\Z ^{\Z}$ with a ``head'' on the element corresponding to the index 0. A Turing machine can operate on an element of $Y \in \Z / 2\Z ^{\Z}$ which is called an input. We start with the initial state and use the transition function $\delta$ to get $\delta(Y_0, I)$. The first coordinate corresponds to the new element $Y_0$, the third to the new state and the second corresponds to shifting the tape to the left or the right and therefore getting a new $Y_0$, e.g. if $\delta(Y_0, I)_3 = 1$ we shift the whole tape one to the left, therefore our new $Y_0$ is our old $Y_1$. We repeat this step until we get a state in $A \cup R$. We say that the Turing machine accepts $Y$ if we get a state in $A$ after finitely many steps and it rejects $Y$ if we get a state in $R$ after finitely many steps. We say that the Turing machine holds for $Y$ if it accepts or rejects it.
 
 For the purpose of calculating $\ell^2$-Betti numbers of groups we need to extend this definition. 
 Let
@@ -444,11 +444,11 @@ holds.
 	 T_X\colon X \to X, x \mapsto \rho(\gamma_{\Ind(x)})(x)
 	 \end{align*}
 	 is called the \emph{Turing map}.
-	 The group $\Gamma$ and the space $X$ (with all the choices of subsets and corresponding $\gamma_i$ made in the last paragraph) together with the Turing map will be called a \emph{Turing dynamical system} and will be denoted by $(T_X)$
+	 The group $\Gamma$ and the space $X$ (with all the choices of subsets and corresponding $\gamma_i$ made in the last paragraph) together with the Turing map will be called a \emph{Turing dynamical system} and will be denoted by $(T_X)$.
 \end{Definition}
 Let $x \in X$. If there is a $k \in \N$ such that $T_X^k(x) = T_X^{k + 1}(x)$, then it also holds that $T_X^h(x) = T_X^{h + 1}(x)$ for all $h \in \N$ with $h \geq k$. We then define $T_X^\infty (x) := T_X^k(x)$. Mostly we don't look at the map $T_X$ but the map $T_X^\infty$. We say that the Turing dynamical system $(T_X)$ accepts an input $y \in I$ if $T_X^\infty(y) \in A$ and it rejects it if $T_X^\infty(y) \in R$. In addition we say that $(T_X)$ holds for $y$ if it accepts or rejects it.
 
-For every Turing machine there is a Turing dynamical system which does the same as the Turing machine. More precisely for every Turing machine $T$ we can construct a Turing dynamical system $(T_X)$ and a bijection $\Psi\colon\2^\Z \to I$ such that $T$ accepts (rejects) an input $Y \in \2^\Z$ if and only if $(T_X)$ accepts (rejects) $\Psi(Y)$. We will use this fact may times in chapter \ref{chlamplighter}. The following example shows how the corresponding Turing dynamical system is constructed. But first let us fix notation.
+For every Turing machine there is a Turing dynamical system which does the same as the Turing machine. More precisely for every Turing machine $T$ we can construct a Turing dynamical system $(T_X)$ and a bijection $\Psi\colon\2^\Z \to I$ such that $T$ accepts (rejects) an input $Y \in \2^\Z$ if and only if $(T_X)$ accepts (rejects) $\Psi(Y)$. We will use this fact many times in chapter \ref{chlamplighter}. The following example shows how the corresponding Turing dynamical system is constructed. But first let us fix notation.
 \begin{Notation} \label{notation_TM}
 	For a set $N$, let $k,l \in \N$ and $ (m_{-k}, \cdots,  m_l) \in N^{k+l+1}$. 
 	
@@ -595,7 +595,7 @@ Figure \ref{Masterplan} shows our procedure to prove this Theorem. The main effo
 		;
 		\path[->]
 			(0) edge [text width = 5 cm]
-				node {Constructing the corresponding Turing dynamical system as done in \ref{roTMtoTDS}}
+				node {constructing the corresponding Turing dynamical system as done in \ref{roTMtoTDS}}
 				(1)
 			(1) edge [text width = 5 cm]
 				node {}
@@ -714,21 +714,24 @@ We now come to the definition of the groupoid ring. We want it to be a ring of o
 	For a groupoid $\G$ the \emph{groupoid ring} $\C\G$ is the ring of bounded operators on $L^2(\G)$ generated by all $\tilde{\Phi}$ with $\Phi$ measurable edge and all $\tilde{f}$ with $f \in L^\infty(\G_0)$.
 \end{Definition}
 We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} \tilde \Phi_i \odot_{\C \G} \tilde f_i$ where $I$ is a finite set, $\Phi_i$ is a measurable edge and $f_i \in L^\infty(\G_0)$. One can show that each element of $\C \G$ can be represented in such a way. Be aware that this representation is non-unique because there might be several pairs of operators such that their respective compositions are equal. In addition for $f \in L^\infty(\G)$ it holds that $\widetilde{\frac{1}{2}f} + \widetilde{\frac{1}{2}f} = \tilde{f}$. \todo{Evtl. könnte ich dazu noch ein bisschen was schreiben}
-\begin{Example} \label{groupoid_ring_of_groups} \todo{anders herum}
+\begin{Example} \label{groupoid_ring_of_groups}
 	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ as a ring is isomorphic to the group ring $\C G$. Because there is only one element in $\G_0$ the only measurable edges are the maps from $\{\bullet\}$ to $G$ (as a set). The elements of $L^\infty(\G_0)$ are just maps from $\{\bullet \}$ to $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. 
 	
 	We now need to show that the composition on $\{\tilde{\Phi}~|~ \Phi~\text{measurable edge}\}$ agrees with the composition on $G$.
-	On our measurable edges we define the isomorphism: For a measurable edge $\Phi\colon\bullet \mapsto g$ we map $\tilde{\Phi}$ to $g$. This map is of course bijective. To see that it is a homomorphism let $\Phi_1\colon\bullet \mapsto g_1$ and $\Phi_2\colon\bullet \mapsto g_2$ be measurable edges. It follows that
+	On our measurable edges we define the isomorphism: For a measurable edge $\Phi\colon\bullet \mapsto g$ we map $\tilde{\Phi}$ to $g^{-1}$. This map is of course bijective. To see that it is a homomorphism let $\Phi_1\colon\bullet \mapsto g_1$ and $\Phi_2\colon\bullet \mapsto g_2$ be measurable edges. It follows that
 	\begin{align*}
 		  &~ (\tilde{\Phi}_1 \odot_{\C \G} \tilde{\Phi}_2)(F)(\gamma) \\
-		= &~ (\tilde{\Phi}_2 \circ \tilde{\Phi}_1)(F)(\gamma) \\
-		= &~ \tilde \Phi_2 (\alpha \mapsto F(\alpha \odot_{\G}\Phi_1^{-1}(\bullet)))(\gamma) \\
-		= &~ F((\gamma \odot_{\G} \Phi_2^{-1}(\bullet)) \odot_{\G} \Phi_1^{-1}(\bullet)) \\
-		= &~ F(\gamma \odot_G g_2^{-1} \odot_G g_1^{-1}) \\
-		= &~ F(\gamma \odot_G (g_1 \odot_G g_2)^{-1}) \\
+		= &~ (\tilde{\Phi}_1 \circ \tilde{\Phi}_2)(F)(\gamma) \\
+		= &~ \tilde \Phi_1 (\alpha \mapsto F(\alpha \odot_{\G}\Phi_2^{-1}(\bullet)))(\gamma) \\
+		= &~ F((\gamma \odot_{\G} \Phi_1^{-1}(\bullet)) \odot_{\G} \Phi_2^{-1}(\bullet)) \\
+		= &~ F(\gamma \odot_G g_1^{-1} \odot_G g_2^{-1}) \\
+		= &~ F(\gamma \odot_G (g_2 \odot_G g_1)^{-1}) \\
 		= &~ \tilde{\Psi} (F)(\gamma)
 	\end{align*}
-	where $\Psi$ is the measurable edge $\bullet \mapsto g_1 \odot_G g_2$.
+	where $\Psi$ is the measurable edge $\bullet \mapsto g_2 \odot_G g_1$ and is therefore mapped to 
+	\begin{align*}
+		(g_2 \odot_G g_1)^{-1} = g_1^{-1} \odot_G g_2^{-1}.
+	\end{align*}
 \end{Example}
 
 
@@ -760,7 +763,7 @@ We can now define the action groupoid which will allow us to create a groupoid f
 	$\G (T_X)$ is a relation groupoid with finite orbits for every computing Turing dynamical system $(T_X)$. In addition $A \cup R$ is a fundamental domain of $\G (T_X)$.
 \end{Lemma}
 \begin{proof}
-	First let us have a look at $\G (T_X)$. Its objects are $\G_0 = X$. We then add all morphisms of the form $(x, \gamma_{\Ind(x)})$. We call the subset we have created so far $\G'$. Of course $\G'$ will usually not be a category. Now we take the smallest groupoid which contains $\G'$: We add a morphism from $x$ to $y$ for all $x, y \in \G_0$ where there already exist a path of morphisms from $x$ to $y$ in $\G'$. In addition we add an identity morphism to every $ x\in \G_0$ which does not already have one and an inverse morphism to every morphism which does not already have one. 
+	First let us have a look at $\G (T_X)$. Its objects are $\G_0 = X$. We then add all morphisms of the form $(x, \gamma_{\Ind(x)})$. We call the subset we have created so far $\G'$. Of course $\G'$ will usually not be a category. Now we take the smallest groupoid which contains $\G'$: We add a morphism from $x$ to $y$ for all $x, y \in \G_0$ where there already exists a path of morphisms from $x$ to $y$ in $\G'$. In addition we add an identity morphism to every $ x\in \G_0$ which does not already have one and an inverse morphism to every morphism which does not already have one. 
 	
 	We can then see that we get one morphism from $x$ to $y$ in $\G (T_X)$ for every path of morphisms from $x$ to $y$ in $\G'$. But $x$ has exactly one outgoing morphism in $\G'$, therefore $\G (T_X)$ is a relation groupoid.
 
@@ -794,12 +797,12 @@ We are now able to construct a groupoid from a Turing dynamical system. In addit
 		\dim_{\mathcal{N}(G)}(X) = \tr(\pr_X).
 	\end{align*}
 \end{Definition}
-This definition of a von Neumann dimension is very similar the one on $\ell^2 G$ given in \ref{vNd} when you consider the fact stated in \ref{vNd_for_subsets}. Again this definition is independent of the chosen projection. \todo{unabhaengigkeit}
+This definition of a von Neumann dimension is very similar to the one on $\ell^2 G$ given in \ref{vNd} when you consider the fact stated in \ref{vNd_for_subsets}. Again this definition is independent of the chosen projection. \todo{unabhaengigkeit}
 
 Remember that for an element $\gamma \in \Gamma$ we can construct a measurable edge $\bar{\gamma}$ of the action groupoid (see \ref{mE_action_groupoid}) and that for a measurable edge $\Phi$ (or a map $f \in L^\infty (\G_0)$) the corresponding element in the groupoid ring is denoted by $\tilde{\Phi}$ (or $\tilde{f}$) (see \ref{groupoid_ring}).
 
 \begin{Lemma} \label{trgroupoid}
-	Let $\sum_{i \in i} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho\colon\Gamma \to \Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of the action groupoid. Then
+	Let $\sum_{i \in I} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho\colon\Gamma \to \Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of the action groupoid. Then
 	\begin{align*}
 	\tr(\sum_{i \in I} \tilde{\bar{\gamma_i}} \tilde{f_i}) = \sum_{e \in E} \int_{\G(\rho)_0} f_e(x) ~ d\mu(x)
 	\end{align*}
@@ -919,7 +922,7 @@ Because restricting $(T_X)$ to a subset with measure $1$ does not change the val
 	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in \ker P$ is a non-zero vector in $ \ker P$. For each different point $x_1 \in  I \cap \G (T_X)x$ we get a new vector $\sum_{i = 1}^{k} (-1)^{i + 1} x_i$ in $\ker P$ and all of these vectors are linear independent. Therefore $\dim \ker P \ge |I \cap \G (T_X)x| $.
 	
 	\todo{anfangen mit nem element im kernel}
-	For the other direction let $x_1 \in \G (T_X)x \setminus I$. Then $P$ maps $x_1$ to $x_1 + x_2$ (or to $x_1$ if $x_1=x$) with $x_2 = T_X(x_1)$. To negate the vector $x_2$  we have to build a chain of vectors $x_2 \ldots x_k$ like we did above. To negate the vector $x_1$ we need another vector $x_0$ with $T_X(x_0) = x_1$. But if $x_0 \notin I$ then the vector $-x_0 + x_1$ is mapped to $-x_0 + x_2$. Therefore we have to add another vector $x_{-1}$ with $T_X(x_{-1}) = x_0$. We have to add (subtract) vectors like this until we add (subtract) a vector $x_{-j}$ with $j \in \N$ such that there is no vector $x_{-(j+1)}$ with $T_X(x_{-(j+1)}) = x_{-j}$. If this vector $x_{-j}$ lies in $I$ then the constructed vector lies in the kernel but is a linear combination of the above basis vectors. In fact there is one of the above vectors such that it equals this vector (or $-1$ times this vector). If $x_{-j} \notin I$ then $x_{-j}$ cannot be negated and therefore the constructed chain does not lie in the kernel of $P$
+	For the other direction let $x_1 \in \G (T_X)x \setminus I$. Then $P$ maps $x_1$ to $x_1 + x_2$ (or to $x_1$ if $x_1=x$) with $x_2 = T_X(x_1)$. To negate the vector $x_2$  we have to build a chain of vectors $x_2 \ldots x_k$ like we did above. To negate the vector $x_1$ we need another vector $x_0$ with $T_X(x_0) = x_1$. But if $x_0 \notin I$ then the vector $-x_0 + x_1$ is mapped to $-x_0 + x_2$. Therefore we have to add another vector $x_{-1}$ with $T_X(x_{-1}) = x_0$. We have to add (subtract) vectors like this until we add (subtract) a vector $x_{-j}$ with $j \in \N$ such that there is no vector $x_{-(j+1)}$ with $T_X(x_{-(j+1)}) = x_{-j}$. If this vector $x_{-j}$ lies in $I$ then the constructed vector lies in the kernel but is a linear combination of the above basis vectors. In fact there is one of the above vectors such that it equals this vector (or $-1$ times this vector). If $x_{-j} \notin I$ then $x_{-j}$ cannot be negated and therefore the constructed chain does not lie in the kernel of $P$.
 	
 	
 	In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $\ker P = \ker S_x$. If $x \in A$ then for each basis vector $\sum_{i = 1}^{k} (-1)^{i + 1} x_i$ of $\ker P$  it holds that $x = x_k \notin \ker \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in \ker \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin \ker \tilde{\chi_A}_x$ and thus $\ker S_x = \{0\}$.
@@ -971,7 +974,7 @@ For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is
 	There is a natural embedding $P \colon \hat{X} \hookrightarrow L^{\infty}(X)$.
 \end{Notation}
 \begin{Definition}
-	Let $N, H$ be groups and $\Theta \colon H \to \Aut(N)$ a homomorphism. The \emph{semidirect product} $N \rtimes_\Theta H$ of $H$ and $N$ is defined on the Set $N \times H$ with multiplication 
+	Let $N, H$ be groups and $\Theta \colon H \to \Aut(N)$ a homomorphism. The \emph{semidirect product} $N \rtimes_\Theta H$ of $H$ and $N$ is defined on the set $N \times H$ with multiplication 
 	\begin{align*}
 		(n_1, h_1) \odot_{N \rtimes_\Theta H} (n_2, h_2) = (n_1 \odot_N \Theta(h_1)(n_2), h_1 \odot_H h_2).
 	\end{align*}
