@@ -43,12 +43,12 @@
 % 1.1, 1.2 etc durchnummeriert, ebenso die Gleichungen mit (1.1), (1.2) ..
 \theoremstyle{plain}
 \newtheorem{Theorem}{Theorem}[section]
-\newtheorem{Lemma}[Theorem]{Lemma}	
-\newtheorem{Remark}[Theorem]{Remark} 
+\newtheorem{Lemma}[Theorem]{Lemma}
+\newtheorem{Remark}[Theorem]{Remark}
 
 \theoremstyle{definition}
 \newtheorem{Definition}[Theorem]{Definition}
-\newtheorem{Notation}[Theorem]{Notation}  
+\newtheorem{Notation}[Theorem]{Notation}
 \newtheorem{Example}[Theorem]{Example}
 	   
                   
@@ -883,7 +883,7 @@ Because restricting $(T_X)$ to a subset with measure $1$ does not change the val
 \begin{proof}
 	First note that because the Turing map $T_X$ maps only finitely many elements onto one element, the set $I \cap \G (T_X)x$ is indeed finite for $x \in T_X^\infty(I) \cap R$.
 	 
-	Let $\Phi$ be the measurable edge which sends every object to its identity morphism. It for a subset $m \subset X$ it holds that
+	Let $\Phi$ be the measurable edge which sends every object to its identity morphism. For a subset $M \subset X$ it holds that
 	\begin{align*}
 		 &~ \tilde{\chi_M}_x \\
 		=&~ (\tilde{\Phi}\chi_{M})_x \\
@@ -892,48 +892,71 @@ Because restricting $(T_X)$ to a subset with measure $1$ does not change the val
 		=& \left[y \mapsto \begin{cases}
 			y &~ \text{if} ~ y \in M \\
 			0 &~ \text{otherwise}
-		\end{cases}\right]
+		\end{cases}\right].
 	\end{align*}
-	We can now see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and the identity on its complement in $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be  one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A \cup R$. If we consider the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
+	This means that $\tilde{\chi_M}_x$ is a projection onto $\ell^2M \subset \ell^2 X$.
+	
+	We can now see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and the identity on its complement in $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be  one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k = x \in A \cup R$. In addition $x_1$ is the only one of these points in $I$. If we regard the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that 
+	\begin{align*}
+		(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =\begin{cases}
+		x_{i+1} &~ \text{if} ~ i < k \\
+		x_i &~ \text{if} ~ i = k
+		\end{cases}.
+	\end{align*}
+	Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
 	\begin{align*}
 		P(x_i) = \begin{cases}
-		x_{i + 1} & if \ i = 1 \\
-		x_{i - 1} + x_{i + 1} & if \ i \neq 1, k \\
-		x_{i} & if \ i = k
+		x_{i + 1} &~ \text{if} ~ i = 1 \\
+		x_{i} + x_{i + 1} &~ \text{if} ~ i \neq 1, k \\
+		x_{i} &~ \text{if} ~ i = k
 		\end{cases}
 	\end{align*}
 	and therefore 
 	\begin{align*}
-		P(\sum_{i = 1}^{k} (-1)^{i + 1} x_i) = (\sum_{i = 2}^{k} (-1)^{i} x_{i} + x_k) + \sum_{i = 2}^{k - 1} (-1)^{i + 1} x_{i} = 0.
+		P(\sum_{i = 1}^{k} (-1)^{i + 1} x_i) =\sum_{i = 2}^{k} (-1)^{i+1} x_{i} + \sum_{i = 1}^{k-1} (-1)^{i+1} x_{i+1} = 0.
 	\end{align*}
-	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in \ker P$ is a basis vector of $ \ker P$. For each different point $x_1 \in  I \cap \G (T_X)x$ we get a new vector $\sum_{i = 1}^{k} (-1)^{i + 1} x_i$ in $\ker P$ which is linear independent to all other vectors of this kind. Therefore $\dim \ker P \ge |I \cap \G (T_X)x| $.
 	
-	 For the other direction let $x_1 \in \G (T_X)x \setminus I$. Then $P$ maps $x_1$ to $x_1 + x_2$ with $x_2 = T_X(x_1)$. To negate the vector $x_2$  we have to build a chain of vectors $x_2 \ldots x_k$ like we did above. To negate the vector $x_1$ we need another vector $x_0$ with $T_X(x_0) = x_1$. But if $x_0 \notin I$ then the vector $-x_0 + x_1$ is mapped to $-x_0 + x_2$. Therefore we have to add another vector $x_{-1}$ with $T_X(x_{-1}) = x_0$. We have to add (subtract) vectors like this until we add (subtract) a vector $x_{-j}$ with $j \in \N$ such that there is no vector $x_{-(j+1)}$ with $T_X(x_{-(j+1)}) = x_{-j}$. If this vector $x_{-j}$ lies in $I$ then the constructed vector lies in the kernel but is a linear combination of the above basis vectors. In fact there is one of the above vectors such that it equals this vector (or $-1$ times this vector). If $x_{-j} \notin I$ then $x_{-j}$ cannot be negated and therefore the constructed chain does not lie in the kernel of $P$
+	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in \ker P$ is a non-zero vector in $ \ker P$. For each different point $x_1 \in  I \cap \G (T_X)x$ we get a new vector $\sum_{i = 1}^{k} (-1)^{i + 1} x_i$ in $\ker P$ and all of these vectors are linear independent. Therefore $\dim \ker P \ge |I \cap \G (T_X)x| $.
+	
+	\todo{anfangen mit nem element im kernel}
+	For the other direction let $x_1 \in \G (T_X)x \setminus I$. Then $P$ maps $x_1$ to $x_1 + x_2$ (or to $x_1$ if $x_1=x$) with $x_2 = T_X(x_1)$. To negate the vector $x_2$  we have to build a chain of vectors $x_2 \ldots x_k$ like we did above. To negate the vector $x_1$ we need another vector $x_0$ with $T_X(x_0) = x_1$. But if $x_0 \notin I$ then the vector $-x_0 + x_1$ is mapped to $-x_0 + x_2$. Therefore we have to add another vector $x_{-1}$ with $T_X(x_{-1}) = x_0$. We have to add (subtract) vectors like this until we add (subtract) a vector $x_{-j}$ with $j \in \N$ such that there is no vector $x_{-(j+1)}$ with $T_X(x_{-(j+1)}) = x_{-j}$. If this vector $x_{-j}$ lies in $I$ then the constructed vector lies in the kernel but is a linear combination of the above basis vectors. In fact there is one of the above vectors such that it equals this vector (or $-1$ times this vector). If $x_{-j} \notin I$ then $x_{-j}$ cannot be negated and therefore the constructed chain does not lie in the kernel of $P$
 	
 	
-	In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $\ker P = \ker S_x$. If $x \in A$ then $x_k \notin \ker \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in \ker \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin \ker \tilde{\chi_A}_x$ and thus $\ker S_x = \{0\}$.
+	In addition it holds that $\tilde{\chi_A}_x$ is the zero map if $x \in R$ and thus $\ker P = \ker S_x$. If $x \in A$ then for each basis vector $\sum_{i = 1}^{k} (-1)^{i + 1} x_i$ of $\ker P$  it holds that $x = x_k \notin \ker \tilde{\chi_A}_x$ and $x_1 \ldots x_{k - 1} \in \ker \tilde{\chi_A}_x$. Therefore $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \notin \ker \tilde{\chi_A}_x$ and thus $\ker S_x = \{0\}$.
 \end{proof}
-\begin{proof}[Proof of Theorem \ref{groserSatz}]
-	Let $U = \{\lambda \in \G (\rho)| s(\lambda) \in I, r(\lambda) \in T_X^\infty(I)\}$. We then get
+We can now proof Theorem \ref{groserSatz}. For convenience we restate the Theorem.
+\begin{Theorem} \todo{numbering}
+	Let $(T_X)$ be a computing Turing dynamical system with action $\rho$, division $\bigcup_i X_i$ with associated $\gamma_i$ and let $\chi_i \colon\G(T_X) \to \C$ be the characteristic function of $X_i$. Then for the element
+	\begin{align*}
+	S = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \tilde{\chi_X} - \tilde{\chi_I} - \tilde{\chi_A} - \tilde{\chi_R})^*(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \tilde{\chi_X} - \tilde{\chi_I} - \tilde{\chi_A} - \tilde{\chi_R}) + \tilde{\chi_A}
+	\end{align*}
+	of the groupoid ring $\C \G(T_X)$ it holds that
+	\begin{align*}
+	\dim_{\mathcal{N}(G)}(\ker S) = \mu(I) - \Omega_1(T_X).
+	\end{align*}
+\end{Theorem}
+\begin{proof}
+	Let $U = \{\lambda \in \G (T_X)~|~ s(\lambda) \in I,~ r(\lambda) \in T_X^\infty(I)\}$. We then get
 	\begin{align*}
 		 &~ \dim_{\mathcal{N}(G)}(\ker S) \\
 		\overset{\ref{T_to_Tx}}{=}&~ \int_{A \cup R} \dim (\ker S_x) \ d \mu (x) \\
 		\overset{\ref{kerSx_berechnen}}{=}&~ \int_{T_X^\infty(I) \cap R} |I \cap \G (T_X)x| \ \mu (x) \\
-		=&~ \int_{T_X^\infty(I) / A} |I \cap \G (T_X)x| \ \mu (x) \\
+		=&~ \int_{T_X^\infty(I) \setminus A} |I \cap \G (T_X)x| \ \mu (x) \\
 		=&~ \int_{T_X^\infty(I)} |I \cap \G (T_X)x| \ \mu (x) - \int_{\mathcal{F}_2(T_X)} |I \cap \G (T_X)x| \ \mu (x) \\
-		=&~ \int_{T_X^\infty(I)} |I \cap \G (T_X)x| \ \mu (x) - \int_{\mathcal{F}_1(T_X)} 1 \ \mu (x) \ \text{(disjoint accepting chains)}\\
-		=&~ \int_{T_X^\infty(I)} |r^{-1}(x) \cap U| \ \mu (x) - \Omega_1(T_X) \\
-		=&~ \int_{\G (\rho)_0} |r^{-1}(x) \cap U| \ \mu (x) - \Omega_1(T_X) \\
-		=&~ \int_{\G (\rho)_0} |s^{-1}(x) \cap U| \ \mu (x) - \Omega_1(T_X) \ \text{discrete measurable groupoid} \\
-		=&~ \int_{I} 1 \ \mu (x) - \int_{\mathcal{F}_1(T_X)} 1 \ \mu (x) \\
+		=&~ \int_{T_X^\infty(I)} |r^{-1}(x) \cap U| \ \mu (x)  - \int_{\mathcal{F}_1(T_X)} 1 \ \mu (x) ~ \text{(relation groupoid, disjoint accepting chains)}\\
+		=&~ \int_{\G (T_X)_0} |r^{-1}(x) \cap U| \ \mu (x) - \Omega_1(T_X) \\
+		=&~ \int_{\G (T_X)_0} |s^{-1}(x) \cap U| \ \mu (x) - \Omega_1(T_X) ~ \text{(discrete measured groupoid (\ref{discr_meas}))} \\
+		=&~ \int_{I} 1 \ \mu (x) - \Omega_1(T_X) \\
 		=&~ \mu(I) - \Omega_1(T_X)
 	\end{align*}
 	which concludes the proof.
 \end{proof}
 \subsection{Pontryagin duality}
-We will now create a link between the groupoid ring and the group ring. For this we need the Pontryagin duals. For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho\colon\Gamma \to \Aut(X)$.
+We will now create a link between the groupoid ring and the group ring. For this we need the Pontryagin duals.
+
+For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho\colon\Gamma \to \Aut(X)$.
 \begin{Definition}
-	A \emph{character} of $X$ is a homomorphism $\hat{x}\colon X \to S$, where $S$ is the multiplicative group of complex numbers of absolute value 1. The group of all characters of $X$ is called the \emph{character group} or \emph{Pontryagin dual group} of $X$ and is denoted by $\hat{X}$.
+	A \emph{character} of $X$ is a continuous homomorphism $\hat{x}\colon X \to S$, where $S$ is the multiplicative group of complex numbers of absolute value 1. The group of all characters of $X$ is called the \emph{character group} or \emph{Pontryagin dual group} of $X$ and is denoted by $\hat{X}$.
 \end{Definition}
 \todo{Beweis, dass das duale eine Gruppe ist?}
 \begin{Definition}
@@ -944,9 +967,9 @@ We will now create a link between the groupoid ring and the group ring. For this
 	for $f \in \hat{X}$ and $x \in X$.
 \end{Definition}
 \todo{Um das ganze Auto-Zeug muss man sich mal noch Gedanken machen.}
-\begin{Remark}
-	An element of the Pontryagin dual $\hat{x} \in \hat{X}$ can also be seen as an element of $L^{\infty}(X)$. We call this element $P(\hat{x})$.
-\end{Remark}
+\begin{Notation}
+	There is a natural embedding $P \colon \hat{X} \hookrightarrow L^{\infty}(X)$.
+\end{Notation}
 \begin{Definition}
 	Let $N, H$ be groups and $\Theta \colon H \to \Aut(N)$ a homomorphism. The \emph{semidirect product} $N \rtimes_\Theta H$ of $H$ and $N$ is defined on the Set $N \times H$ with multiplication 
 	\begin{align*}
@@ -957,7 +980,9 @@ We will now create a link between the groupoid ring and the group ring. For this
 For more information about semidirect products see e.g. \cite{ALG}.\todo{genauere Stelle}
 
 We can now define a map from the group ring to the groupoid ring. 
-\begin{Theorem}\label{map_pantryagin}
+
+Remember that for an element $\gamma \in \Gamma$ we can construct a measurable edge $\bar{\gamma}$ of the action groupoid (see \ref{mE_action_groupoid}) and that for a measurable edge $\Phi$ (or a map $f \in L^\infty (\G_0)$) the corresponding element in the groupoid ring is denoted by $\tilde{\Phi}$ (or $\tilde{f}$) (see \ref{groupoid_ring}).
+\begin{Theorem}\label{map_pantryagin} \todo{anderer Name fuer P tens 1}
 	The map 
 	\begin{align*}
 		P \otimes 1\colon\C(\hat{X} \rtimes_{\hat{\rho}} \Gamma) \to \C\G(\rho), 
@@ -966,42 +991,37 @@ We can now define a map from the group ring to the groupoid ring.
 		 \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} 
 		 c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma}} 
 	\end{align*}
-	 with $c_i \in \C$ is
+	 with $c_{(\hat{x}, \gamma)} \in \C$ is
 	\begin{enumerate}
-		\item a ring-homomorphism
-		\item trace-preserving
-		\item preserves $*$
+		\item a ring-homomorphism,
+		\item trace-preserving,
+		\item $*$-preserving.
 		%\item injective
 	\end{enumerate}
-\end{Theorem}
+\end{Theorem} \todo{keine Absaetze nach align}
 \begin{proof}
-	$i)$ Because of the definition it is clear that $P \otimes 1$ preserves the addition. So let $c_i \in \C$, $\hat{x_i} \in \hat{X}$ and $\gamma_i \in \Gamma$ with $i \in \{1,2\}$. It follows that
+	$i)$ Because of the definition it is clear that $P \otimes 1$ preserves the addition. So let $c_i \in \C$, $\hat{x_i} \in \hat{X}$ and $\gamma_i \in \Gamma$ for $i \in \{1,2\}$. Then we have
 	\begin{align*}
 		 &~ P \otimes 1(c_1 \cdot (\hat{x_1}, \gamma_1) \odot_{C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)} c_2 \cdot (\hat{x_2}, \gamma_2))  \\
 		=&~ P \otimes 1(c_1 \cdot  c_2 \cdot (\hat{x_1}, \gamma_1) \odot_{\hat{X} \rtimes_{\hat{\rho}} \Gamma} (\hat{x_2}, \gamma_2)) \\
 		=&~ P \otimes 1(c_1 \cdot  c_2 \cdot (\hat{x_1} \odot_{\hat{X}} \hat{\rho}(\gamma_1)(\hat{x_2}), \gamma_1 \odot_{\Gamma} \gamma_2)) \\
-		=&~ c_1 \cdot  c_2 \cdot \widetilde{P(\hat{x_1} \odot_{\hat{X}} \hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\overline{\gamma_1 \odot_{\Gamma} \gamma_2}}.
+		=&~ c_1 \cdot  c_2 \cdot \widetilde{P(\hat{x_1} \odot_{\hat{X}} \hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\overline{\gamma_1 \odot_{\Gamma} \gamma_2}} \\
+		=&~ c_1 \cdot  c_2 \cdot \widetilde{P(\hat{x_1})} \odot_{\C\G(\rho)} \widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_2}}. \footnotemark
 	\end{align*}
-	From the definition of the groupoid ring it follows directly that the last term equals 
-	\begin{align*}
-		c_1 \cdot  c_2 \cdot \widetilde{P(\hat{x_1})} \odot_{\C\G(\rho)} \widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_2}}.
-	\end{align*}
-	where the equality concerning the $\gamma_1, \gamma_2$-part can be shown in a similar way as in example \ref{groupoid_ring_of_groups}.
-	
+	\footnotetext{The equality concerning the $\gamma_1, \gamma_2$-part can be shown in a similar way as in example \ref{groupoid_ring_of_groups}.}
 	Because elements of $\C$ commute with all elements in the groupoid ring it remains to show that 
 	\begin{align*}
-		\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}} = \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \tilde{\hat{x_2}} 
+		\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}} = \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \widetilde{P(\hat{x_2})}.
 	\end{align*}
-	in the groupoid ring.
-	Let $F \in L^2 \G(\rho)$ and $\alpha \in \G$. Then the left side equals
+	Let $F \in L^2 \G(\rho)$ and $\alpha \in \G$. Then
 	\begin{align*}
-		 &~ (\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}})(F)(\alpha) \\
-		=&~ \widetilde{\bar{\gamma_1}}(\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))}(F)(\alpha)) \\
-		=&~ \widetilde{\bar{\gamma_1}}(P(\hat{\rho}(\gamma_1)(\hat{x_2}))(r(\alpha)) \cdot (F)(\alpha)) \\
-		=&~ P(\hat{\rho}(\gamma_1)(\hat{x_2}))(r(\alpha)) \cdot \widetilde{\bar{\gamma_1}}(F)(\alpha) \\
+		 &~ (\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma_1}})~(F)~(\alpha) \\
+		=&~ \widetilde{\bar{\gamma_1}}(~\widetilde{P(\hat{\rho}(\gamma_1)(\hat{x_2}))}(F)~)~(\alpha) \\
+		=&~ \widetilde{\beta \mapsto \bar{\gamma_1}}(~ F(\beta) ~\cdot~ P(\hat{\rho}(\gamma_1)(\hat{x_2}))(r(\beta))~) ~(\alpha) \\
+		=&~ P(\hat{\rho}(\gamma_1)(\hat{x_2}))(r(\alpha)) ~\cdot~ \widetilde{\bar{\gamma_1}}(F)(\alpha) \\
 		=&~ \hat{x_2}(\rho (\gamma_1^{-1})( r(\alpha))) \cdot F(\alpha \odot_{\G (\rho)} \bar{\gamma_1}^{-1}(r(\alpha)))  
 	\end{align*}
-	and the right side equals
+	and
 	\begin{align*}
 		 &~ \widetilde{\bar{\gamma_1}} \odot_{\C\G(\rho)} \tilde{\hat{x_2}}(F)(\alpha) \\
 		=&~ \widetilde{\bar{\gamma_1}}(\hat{x_2}(r(\alpha)) \cdot F(\alpha)) \\
