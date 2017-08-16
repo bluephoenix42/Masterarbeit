@@ -822,11 +822,11 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 
 
 \subsection{Construction of the element $S$}
-For an arbitrary computing Turing dynamical system $(T_X)$ we will now construct an element $S \in \C \G (\rho)$ such that $\dim_{\mathcal{N}(G)}(\ker S) = \mu(I) - \Omega_1(T_X)$. Because $S$ is a map from $L^2C \G (\rho)$ to $L^2C \G (\rho)$ it has a kernel which is a subset of $L^2C \G (\rho)$ and therefore has a well-defined von Neumann dimension in the sense of \ref{vNd_of_groupoids}.
+For an arbitrary computing Turing dynamical system $(T_X)$ we will now construct an element $S \in \C \G (\rho)$ such that $\dim_{\mathcal{N}(G)}(\ker S) = \mu(I) - \Omega_1(T_X)$. Because $S$ is a map from $L^2 \G (\rho)$ to $L^2 \G (\rho)$ it has a kernel which is a subset of $L^2 \G (\rho)$ and therefore has a well-defined von Neumann dimension in the sense of \ref{vNd_of_groupoids}.
 
 
 \begin{Theorem} \label{groserSatz}
-	Let $(T_X)$ be a computing Turing dynamical system with action $\rho$, division $\bigcup_i X_i$ with associated $\gamma_i$ and let $\chi_i \colon\G \to \C$ be the characteristic function of $X_i$. Then for the element
+	Let $(T_X)$ be a computing Turing dynamical system with action $\rho$, division $\bigcup_i X_i$ with associated $\gamma_i$ and let $\chi_i \colon\G(T_X) \to \C$ be the characteristic function of $X_i$. Then for the element
 	\begin{align*}
 		S = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \tilde{\chi_X} - \tilde{\chi_I} - \tilde{\chi_A} - \tilde{\chi_R})^*(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i} \ + \tilde{\chi_X} - \tilde{\chi_I} - \tilde{\chi_A} - \tilde{\chi_R}) + \tilde{\chi_A}
 	\end{align*}
@@ -835,21 +835,27 @@ For an arbitrary computing Turing dynamical system $(T_X)$ we will now construct
 		\dim_{\mathcal{N}(G)}(\ker S) = \mu(I) - \Omega_1(T_X).
 	\end{align*}
 \end{Theorem}
-Before we can proof this Theorem we have to do some preparations. 
-\begin{Definition}
-	Let $\G$ be a relation groupoid, $x \in \G_0$ and $T = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $T_x\colon\ell^2\G x \to \ell^2\G x$ which sends a basis element $1 \cdot y \in \ell^2\G x$ to $\sum_{i \in I'} f_i(y) r(\Phi_i(y)) $ where $I' \subset I$ is the set of indices $i$ where $y$ is in the domain of $\Phi_i$. 
-\end{Definition}
+Before we can prove this Theorem we have to do some preparations. 
+\begin{Notation}
+	Let $\G$ be a relation groupoid, $x \in \G_0$ and $R = \sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$. We then get an operator $R_x\colon\ell^2\G x \to \ell^2\G x$ which sends a basis element $1 \cdot y \in \ell^2\G x$ to $\sum_{i \in I'} f_i(y) ~ r(\Phi_i(y)) $ where $I' \subset I$ is the set of indices $i$ where $y$ is in the domain of $\Phi_i$. 
+\end{Notation}
 \begin{Remark}
-	If $\G$ is a relation groupoid with finite orbits then for almost all $x \in \G$ $\ell^2\G x$ is finite dimensional because $\G x$ is finite. Therefore $T_x$ has a finite dimensional kernel.
+	If $\G$ is a relation groupoid with finite orbits then for almost all $x \in \G$ $\ell^2\G x$ is finite dimensional because $\G x$ is finite. In particular in this case $R_x$ has a finite dimensional kernel.
 \end{Remark}
-We will state the following fact without proof. For a complete proof see \cite{GRAB}.\todo{genaue Stelle}
+We will state the following fact without proof. For a proof see \cite{GRAB}.\todo{genaue Stelle}
 \begin{Lemma} \label{T_to_Tx}
-	Let $\G$ be a relation groupoid with finite orbits and $D$ a fundamental domain of $\G$. Then for every $T \in \C \G$ it holds that
+	Let $\G$ be a relation groupoid with finite orbits and $D$ a fundamental domain of $\G$. Then for every $R \in \C \G$ it holds that
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(\ker T) = \int_D \dim (\ker T_x) \ d \mu (x).
+		\dim_{\mathcal{N}(G)}(\ker R) = \int_D \dim (\ker R_x) \ d \mu (x).
 	\end{align*} 
 \end{Lemma}
-In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$. So it is sufficient to compute the dimension of the kernel of $S_x$. In addition we can assume that $T_X(X) \cap I= \emptyset$, $T_X^\infty(x) \in A \cup R$ for all $x \in X$ and every orbit is finite, because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$ (This is a similar argument as used in the proof of \ref{TX_rel_groupoid}).
+In addition with \ref{TX_rel_groupoid} we get that for the operator $S$ defined in \ref{groserSatz} it holds that $\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$. So for a proof it is sufficient to compute the dimension of the kernel of $S_x$ for all $x \in A \cup R$. In addition because $T_X$ is computing it holds that
+\begin{itemize}
+	\item $T_X(X) \cap I= \emptyset$, for almost all $x \in X$,
+	\item $T_X^\infty(x) \in A \cup R$ for almost all $x \in X$,
+	\item the orbit $\G (T_X)x$ is finite for almost all $x \in X$.
+\end{itemize}
+Because restricting $(T_X)$ to a subset with measure $1$ does not change the value of $\int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$ we can assume that the above statements hold for every $x \in X$ (This is a similar argument as used in the proof of \ref{TX_rel_groupoid}).
 \begin{Lemma}
 	\begin{align*}
 	\ker S_x = \ker((\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x) \cap \ker \tilde{\chi_A}_x
@@ -862,22 +868,33 @@ In addition with \ref{TX_rel_groupoid} we get that $\dim_{\mathcal{N}(G)}(\ker S
 	\end{align*}
 	and therefore $x \in \ker A$. The other inclusion is trivial. 
 	
-	From the definition it is clear that $(S_1)_x + (S_2)_x = (S_1 + S_2)_x$ for every $S_1, S_2 \in \G$. In addition for an element $\sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$ of the  groupoid ring it follows that both $\tilde f_i$ and $\tilde {f_i}_x$ are self-adjoint. In addition $(\widetilde {\Phi_i}^*)_x = \widetilde {\Phi_i^{-1}}_x = (\widetilde {\Phi_i}_x)^*$ \todo{Genauer?} and therefore changing an operator $T$ to $T_x$ is $*$-preserving. Of course both summands of $S$ are positive operators and the claim follows.
+	From the definition it is clear that $(R_1)_x + (R_2)_x = (R_1 + R_2)_x$ for every $R_1, R_2 \in \C \G$. In addition for an element $\sum_{i \in I} \tilde \Phi_i\tilde f_i \in \C\G$ of the  groupoid ring it follows that both $\tilde f_i$ and $\tilde {f_i}_x$ are self-adjoint. In addition $(\widetilde {\Phi_i}^*)_x = \widetilde {\Phi_i^{-1}}_x = (\widetilde {\Phi_i}_x)^*$ \todo{Genauer?} and therefore $R \mapsto R_x$ is $*$-preserving. Of course both summands of $S$ are positive operators and the claim follows.
 \end{proof}\todo{tilde}
 \begin{Lemma} \label{kerSx_berechnen}
 	It holds that
 	\begin{align*}
 		\dim (\ker S_x) = \begin{cases}
-		|I \cap \G (T_X)x| & if \ x \in T_X^\infty(I) \cap R\\
-		0 & otherwise 
+		|I \cap \G (T_X)x| &~ \text{if} ~ x \in T_X^\infty(I) \cap R\\
+		0 &~ \text{otherwise} 
 		\end{cases}
 	\end{align*}
 	for every $x \in A \cup R$.
 \end{Lemma}
 \begin{proof}
-	First note that because the Turing map $T_X$ maps only finitely many element onto one element the set $I \cap \G (T_X)x$ is indeed finite if $x \in T_X^\infty(I) \cap R$ holds.
+	First note that because the Turing map $T_X$ maps only finitely many elements onto one element, the set $I \cap \G (T_X)x$ is indeed finite for $x \in T_X^\infty(I) \cap R$.
 	 
-	We can now see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and constant $1$ on the rest of $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be  one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A \cup R$. If we consider the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
+	Let $\Phi$ be the measurable edge which sends every object to its identity morphism. It for a subset $m \subset X$ it holds that
+	\begin{align*}
+		 &~ \tilde{\chi_M}_x \\
+		=&~ (\tilde{\Phi}\chi_{M})_x \\
+		=&~ [y \mapsto \chi_{M}(y) ~ r(\Phi(y))] \\
+		=&~ [y \mapsto \chi_{M}(y) ~ y] \\
+		=& \left[y \mapsto \begin{cases}
+			y &~ \text{if} ~ y \in M \\
+			0 &~ \text{otherwise}
+		\end{cases}\right]
+	\end{align*}
+	We can now see that $\tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$ is zero on $\ell^2(A \cup R \cup I) \cap \ell^2 \G (T_X)x$ and the identity on its complement in $\ell^2 \G (T_X)x$. Now let $x_1 \in I \cap \G (T_X)x$ be  one point of $\G (T_X)x$ which is in the initial set. We then get finitely many points $x_1 \ldots x_k \in \G (T_X)x$ such that $T_X(x_i) = x_{i + 1}$ for every $i \in \{1 \ldots k - 1\}$ and $x_k \in A \cup R$. If we consider the points $x_i$ as elements of $\ell^2 \G (T_X)x$ we get that $(\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x(x_i) =x_{i+1}$. Let $P = (\sum_{i} \tilde{\bar{\gamma_i}} \tilde{\chi_i})_x \ + \tilde{\chi_X}_x - \tilde{\chi_I}_x - \tilde{\chi_A}_x - \tilde{\chi_R}_x$. It follows that
 	\begin{align*}
 		P(x_i) = \begin{cases}
 		x_{i + 1} & if \ i = 1 \\
