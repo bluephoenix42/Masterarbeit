@@ -1060,15 +1060,15 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 	\begin{align*}
 		 &~ \int_{\mathcal{G(\rho)}_0} c_{(e_{\hat{X}}, e_\Gamma)} P(e_{\hat{X}})(y) ~d\mu(y) \\
 		=&~ c_{(e_{\hat{X}}, e_\Gamma)} \cdot \int_{\mathcal{G(\rho)}_0}  e_{\hat{X}}(y)~ d\mu(y) \\
-		=&~ c_{(e_{\hat{X}}, e_\Gamma)} \cdot \int_{\mathcal{G(\rho)}_0}  1~
+		=&~ c_{(e_{\hat{X}}, e_\Gamma)} \cdot \int_{\mathcal{G(\rho)}_0}  1~ d\mu(y) \\
 		=&~ c_{(e_{\hat{X}}, e_\Gamma)}
 	\end{align*}
 	and therefore it remains to show that $\int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y) = 0$ if $\hat{x}$ is not the neutral element.
 	
-	First note that if $\hat{x}$ is not the neutral element then $P(\hat{x})$ is not constant $1$ and therefore there exists $z \in \G(\rho)_0$ with $P(\hat{x})(z) \neq 1$. We use the invariance of the Haar measure to get
+	First note that if $\hat{x}$ is not the neutral element then $P(\hat{x})$ is not constant $1$ and therefore there exists $z \in \G(\rho)_0$ with $P(\hat{x})(z) \neq 1$. We use the translation invariance of the Haar measure to get
 	\begin{align*}
 		 &~ \int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y) \\
-		=&~ \int_{\G(\rho)_0} P(\hat{x})(z \odot_{X} y) d\mu(z \odot_{X} y) \\
+		=&~ \int_{\G(\rho)_0} P(\hat{x})(z \odot_{X} y) d\mu(y) \\
 		=&~ \int_{\G(\rho)_0} P(\hat{x})(z) P(\hat{x})(y) d\mu(y) \\
 		=&~ P(\hat{x})(z) \int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y)
 	\end{align*}
@@ -1076,18 +1076,21 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 	
 	$iii)$ Let us first look at an element of the group ring $c g \in \C G$ of an arbitrary group $G$. Then for $c_1 g_1, c_2 g_2 \in \ell^2(G)$ it follows that 
 	\begin{align*}
-		\langle c g c_1 g_1, c_2 g_2 \rangle = \begin{cases}
-		 	c \cdot c_1 \cdot c_2 & if \ g g_1 = g_2 \\
-		 	0 & otherwise
-		\end{cases}  = \begin{cases}
-		c \cdot c_1 \cdot c_2 & if \ g_1 = g^{-1} g_2 \\
-		0 & otherwise
-		\end{cases}
-		= \langle  c_1 g_1, c g^{-1} c_2 g_2 \rangle.
+		 &~ \langle c g \odot_{\ell^2G} c_1 g_1, c_2 g_2 \rangle \\
+		=&~ \langle c c_1 g \odot_{\ell^2G} g_1, c_2 g_2 \rangle \\
+		=&~ \begin{cases}
+		 	c c_1 c_2 &~ \text{if} \ g g_1 = g_2 \\
+		 	0 &~ \text{otherwise}
+		\end{cases} \\
+		=&~ \begin{cases}
+		c c_1 c_2 & ~\text{if} \ g_1 = g^{-1} g_2 \\
+		0 & ~\text{otherwise}
+		\end{cases} \\
+		=&~ \langle  c_1 g_1, c g^{-1} \odot_{\ell^2G} c_2 g_2 \rangle.
 	\end{align*}
-	Because the same follows for sums in $\C G$ or $\ell^2 G$ it follows that the adjoint of an element 
+	Thus the adjoint of $cg$ is $cg^{-1}$. Analogously the adjoint of an arbitrary element
 	\begin{align*}
-		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i)
+		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i) \in \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)
 	\end{align*}
 	is given by 
 	\begin{align*}
