@@ -80,6 +80,7 @@
 \newcommand{\Mor}{\operatorname{Mor}}
 \newcommand{\Ima}{\operatorname{Im}}
 \newcommand{\Dom}{\operatorname{Dom}}
+\newcommand{\Eig}{\operatorname{Eig}}
 
 \renewcommand{\labelenumi}{\roman{enumi})}
 
@@ -1096,39 +1097,44 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 	\begin{align*}
 		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i)^{-1} = \sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{\rho}(\gamma_i)(\hat{x_i}^{-1}), \gamma_i^{-1}).
 	\end{align*}
-	Now let $\tilde{\bar{\gamma}} \tilde{f} \in \C \G(\rho)$ be an element of the groupoid ring of an arbitrary action groupoid. Then for $\phi_1, \phi_2 \in L^2 \G$ it follows that
+	Now let $\tilde{f}  \tilde{\bar{\gamma}} \in \C \G(\rho)$ be an element of the groupoid ring of an arbitrary action groupoid. Then for $\phi_1, \phi_2 \in L^2 \G(\rho)$ it holds that
 	\begin{align*}
-		 &~ \langle \tilde{\bar{\gamma}} \tilde{f} (\phi_1), \phi_2 \rangle_{L^2 \G} \\
-		=&~ \int_{\bigcup r^{-1}(\Dom(\bar{\gamma}^{-1}))} f(r(x)) \cdot \phi_1(x \odot_{\G (\rho)} \bar{\gamma}^{-1}(r(x))) \cdot \phi_2 (x) d \mu (x) \\
+		 &~ \langle ~\tilde{f} \tilde{\bar{\gamma}}  (\phi_1),~ \phi_2 ~\rangle_{L^2 \G(\rho)} \\
+		=&~ \langle ~\tilde{f}(~\beta \mapsto \phi_1(\beta \odot_{\G (\rho)} \bar \gamma ^{-1} (r(\beta)))~) ,~ \phi_2 ~\rangle_{L^2 \G(\rho)} \\
+		=&~ \langle ~\beta \mapsto \phi_1(\beta \odot_{\G (\rho)} \bar \gamma ^{-1} (r(\beta))) \cdot f(r(\beta)) ,~ \phi_2 ~\rangle_{L^2 \G(\rho)} \\
+		=&~ \int_{\G (\rho)} \overline{\phi_1(x \odot_{\G (\rho)} \bar{\gamma}^{-1}(r(x))) \cdot f(r(x))} \cdot \phi_2 (x) ~ d \mu (x) \\
+		=&~ \int_{\bigcup r^{-1}(\Dom(\bar{\gamma}^{-1}))} \phi_1(x \odot_{\G (\rho)} \bar{\gamma}^{-1}(r(x))) \cdot f(r(x)) \cdot \phi_2 (x) ~ d \mu (x) \\
 		=&~ \int_{\bigcup r^{-1}(\Dom(\bar{\gamma}))} f(r(x \odot_{\G (\rho)} \bar{\gamma}(r(x)))) \phi_1(x ) \cdot \phi_2 (x \odot_{\G (\rho)} \bar{\gamma}(r(x))) d \mu (x) \\
 		=&~ \langle \phi_1 ,\tilde{\bar{\gamma^{-1}}} \tilde{f'} (\phi_2) \rangle_{L^2 \G}.
 	\end{align*} \todo{genauer substitution erklaeren?}
 	If $f$ is of the form $\widetilde{P(\hat{x})}$ for some $\hat{x} \in \hat{X}$ then $f' = \widetilde{P(\hat{\rho}(\gamma_i)(\hat{x_i}^{-1}))}$ \todo{kann man auch noch zeigen} which concludes the proof.
 \end{proof}
 \begin{Theorem} \label{pontr_vNd}
-	Let $T \in \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ be self-adjoint. Then it holds that
+	Let $R \in \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ be self-adjoint. Then it holds that
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(\ker T) = \dim_{\mathcal{N}(G)}(\ker P \otimes 1(T)).
+		\dim_{\mathcal{N}(G)}(\ker R) = \dim_{\mathcal{N}(G)}(\ker P \otimes 1(R)).
 	\end{align*}
 \end{Theorem} 
 \begin{proof}
-	First suppose $X$ and $\Gamma$ are finite. Therefore $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is finite dimensional and $T$ is just a linear map. With the spectral theorem it follows that all eigenvalues of $T$ are real and there exist a basis of eigenvectors. Let $\lambda_1, \lambda_2, \ldots, \lambda_n$ denote the different non-zero eigenvalues of $T$. Then
+	First suppose $X$ and $\Gamma$ are finite. Therefore $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is finite dimensional and $R$ is just a linear map. With the spectral theorem it follows that all eigenvalues of $R$ are real and there exists a basis of eigenvectors. Let $\lambda_1, \lambda_2, \ldots, \lambda_n$ denote the distinct non-zero eigenvalues of $R$. Then
 	\begin{align*}
-		S = \frac{(T - \lambda_1 \id) \circ (T - \lambda_2 \id) \circ \ldots \circ (T - \lambda_n \id)}{(-1)^n \cdot \lambda_1 \cdot \lambda_2 \cdot \ldots \cdot \lambda_n}
+		Q := \frac{(R - \lambda_1 \id) \circ (R - \lambda_2 \id) \circ \ldots \circ (R - \lambda_n \id)}{(-1)^n \cdot \lambda_1 \cdot \lambda_2 \cdot \ldots \cdot \lambda_n}
 	\end{align*}
-	is a projection onto $\ker T$ and 
+	is a projection onto $\ker R$ and 
 	\begin{align*}
-		P \otimes 1 (S) = \frac{(P \otimes 1(T) - \lambda_1 \id) \circ (P \otimes 1(T) - \lambda_2 \id) \circ \ldots \circ (P \otimes 1(T) - \lambda_n \id)}{(-1)^n \cdot \lambda_1 \cdot \lambda_2 \cdot \ldots \cdot \lambda_n}.
+		P \otimes 1 (Q) = \frac{(P \otimes 1(R) - \lambda_1 \id) \circ (P \otimes 1(R) - \lambda_2 \id) \circ \ldots \circ (P \otimes 1(R) - \lambda_n \id)}{(-1)^n \cdot \lambda_1 \cdot \lambda_2 \cdot \ldots \cdot \lambda_n}.
 	\end{align*}
-	Because $L^2 \G (\rho)$ is also finite dimensional and $P \otimes 1(T)$ is still self-adjoint we can again use the spectral theorem. In addition the eigenvalues stay the same and therefore $P \otimes 1 (S)$ is a projection onto $\ker P \otimes 1 (T)$. Because $\ker T \subset \ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma) $ it follows that
+	Because $L^2 \G (\rho)$ is also finite dimensional and $P \otimes 1(R)$ is still self-adjoint. In addition the spectrum stays the same (because $R|_{Eig(\lambda_i)} = \lambda_i \id$) and therefore $P \otimes 1 (Q)$ is a projection onto $\ker P \otimes 1 (R)$. Because $\ker R \subset \ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma) $ it follows that
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(\ker T) = \tr_{\mathcal{N}(G)}(S) = \tr(P \otimes 1 (S)) = \dim_{\mathcal{N}(G)}(\ker P \otimes 1 (T)).
+		\dim_{\mathcal{N}(G)}(\ker R) = \tr_{\mathcal{N}(G)}(Q) = \tr(P \otimes 1 (Q)) = \dim_{\mathcal{N}(G)}(\ker P \otimes 1 (R)).
 	\end{align*}
-	If $X$ or $\Gamma$ are infinite then $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is infinite dimensional. Let $l_1 \subset l_2 \subset \ldots$ be a series of finite dimensional $\C$-vector spaces converging to $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$. For each $l_i$ we can restrict $T$ to $l_i$ and the above argument holds. Because $T|_{l_i}$ converges to $T$ the claim follows also for the infinite dimensional case.
+	This proofs the statement if $X$ and $\Gamma$ are finite.
+	
+	If $X$ or $\Gamma$ are infinite then $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ is infinite dimensional. Let $l_1 \subset l_2 \subset \ldots$ be a series of finite dimensional $\C$-vector spaces converging to $\ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$. For each $l_i$ we can restrict $R$ to $l_i$ and the above argument holds. Because $R|_{l_i}$ converges to $R$ the claim follows also for the infinite dimensional case.
 \end{proof}\todo{klappt das mit dem Konvergieren?}
 
-We now have everything we need to show \ref{HS}.
-\begin{Theorem}\label{image_of_P}
+We now have everything we need to show Theorem \ref{HS}.
+\begin{Theorem}\label{image_of_P} \todo{nummer aendern}
 	Let $(T_X)$ be a computing Turing dynamical system. Then $\mu (I) - \Omega_1(T_X)$ is a $\ell^2$-Betti number arising from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$ where $\hat{X}$ and $\hat{\rho}$ are the Pontryagin duals of the corresponding group or map.
 \end{Theorem}
 \begin{proof}

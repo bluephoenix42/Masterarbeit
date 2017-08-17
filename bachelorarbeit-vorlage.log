@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.3)  17 AUG 2017 12:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.3)  17 AUG 2017 13:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -871,18 +871,18 @@ File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
  (./bachelorarbeit-vorlage.aux)
 \openout1 = `bachelorarbeit-vorlage.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -957,28 +957,28 @@ ABD: EveryShipout initializing macros
 <kit-logo.jpg, id=4, 199.7061pt x 91.3011pt>
 File: kit-logo.jpg Graphic file (type jpg)
 <use kit-logo.jpg>
-Package pdftex.def Info: kit-logo.jpg  used on input line 94. on input line 94.
+Package pdftex.def Info: kit-logo.jpg  used on input line 95. on input line 95.
 
 Package pdftex.def Info: Requested size: 89.86691pt x 41.08511pt on input line 
-94.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 102.
+95.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 103.
 
 (/usr/share/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 102.
+LaTeX Font Info:    Try loading font information for U+msa on input line 103.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 102.
+LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./kit-logo.jpg>]
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 121.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 122.
 
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
@@ -988,55 +988,55 @@ File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 \openout4 = `bachelorarbeit-vorlage.toc'.
 
 [2] [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 177.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 178.
 
  (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 177.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
  [4] [5] [6] [7]
 [8] [9] [10] [11] [12]
-Overfull \hbox (74.24031pt too wide) in paragraph at lines 613--614
+Overfull \hbox (74.24031pt too wide) in paragraph at lines 614--615
  [][] 
  []
 
 [13] [14] [15] [16] [17] [18] [19] [20] [21]
-Overfull \hbox (15.47406pt too wide) in paragraph at lines 957--957
+Overfull \hbox (15.47406pt too wide) in paragraph at lines 958--958
 [] 
  []
 
 [22] [23] [24] [25] [26] [27] [28]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1230.
+               Default added (so using `tbp') on input line 1236.
 
 [29] [30]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1328.
+               Default added (so using `tbp') on input line 1334.
 
 [31] [32] [33]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1481.
+               Default added (so using `tbp') on input line 1487.
 
 [34] [35] [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1691--1692
+Underfull \hbox (badness 10000) in paragraph at lines 1697--1698
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1693--1695
+Underfull \hbox (badness 10000) in paragraph at lines 1699--1701
 
  []
 
 [38] (./bachelorarbeit-vorlage.aux) ) 
 Here is how much of TeX's memory you used:
- 16398 strings out of 492990
- 323873 string characters out of 6138689
- 463030 words of memory out of 5000000
- 19607 multiletter control sequences out of 15000+600000
+ 16399 strings out of 492990
+ 323876 string characters out of 6138689
+ 463038 words of memory out of 5000000
+ 19608 multiletter control sequences out of 15000+600000
  29322 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,19n,68p,8833b,1013s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1065,7 +1065,7 @@ m1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr
 st/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/
 public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
 /sfsx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on bachelorarbeit-vorlage.pdf (38 pages, 1192081 bytes).
+Output written on bachelorarbeit-vorlage.pdf (38 pages, 1192754 bytes).
 PDF statistics:
  252 PDF objects out of 1000 (max. 8388607)
  179 compressed objects within 2 object streams
