@@ -715,7 +715,9 @@ We now come to the definition of the groupoid ring. We want it to be a ring of o
 \end{Definition}
 We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} \tilde \Phi_i \odot_{\C \G} \tilde f_i$ where $I$ is a finite set, $\Phi_i$ is a measurable edge and $f_i \in L^\infty(\G_0)$. One can show that each element of $\C \G$ can be represented in such a way. Be aware that this representation is non-unique because there might be several pairs of operators such that their respective compositions are equal. In addition for $f \in L^\infty(\G)$ it holds that $\widetilde{\frac{1}{2}f} + \widetilde{\frac{1}{2}f} = \tilde{f}$. \todo{Evtl. könnte ich dazu noch ein bisschen was schreiben}
 \begin{Example} \label{groupoid_ring_of_groups}
-	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ as a ring is isomorphic to the group ring $\C G$. Because there is only one element in $\G_0$ the only measurable edges are the maps from $\{\bullet\}$ to $G$ (as a set). The elements of $L^\infty(\G_0)$ are just maps from $\{\bullet \}$ to $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. 
+	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ as a ring is isomorphic to the group ring $\C G$. Because there is only one element in $\G_0$ the only measurable edges are the maps from $\{\bullet\}$ to $G$ (as a set). 
+	
+	The elements of $L^\infty(\G_0)$ are just maps from $\{\bullet \}$ to $\C$. Therefore  $L^\infty(\G_0)$ is isomorphic to $\C$. 
 	
 	We now need to show that the composition on $\{\tilde{\Phi}~|~ \Phi~\text{measurable edge}\}$ agrees with the composition on $G$.
 	On our measurable edges we define the isomorphism: For a measurable edge $\Phi\colon\bullet \mapsto g$ we map $\tilde{\Phi}$ to $g^{-1}$. This map is of course bijective. To see that it is a homomorphism let $\Phi_1\colon\bullet \mapsto g_1$ and $\Phi_2\colon\bullet \mapsto g_2$ be measurable edges. It follows that
@@ -724,6 +726,7 @@ We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} 
 		= &~ (\tilde{\Phi}_1 \circ \tilde{\Phi}_2)(F)(\gamma) \\
 		= &~ \tilde \Phi_1 (\alpha \mapsto F(\alpha \odot_{\G}\Phi_2^{-1}(\bullet)))(\gamma) \\
 		= &~ F((\gamma \odot_{\G} \Phi_1^{-1}(\bullet)) \odot_{\G} \Phi_2^{-1}(\bullet)) \\
+		= &~ F(\gamma \odot_\G g_1^{-1} \odot_\G g_2^{-1}) \\
 		= &~ F(\gamma \odot_G g_1^{-1} \odot_G g_2^{-1}) \\
 		= &~ F(\gamma \odot_G (g_2 \odot_G g_1)^{-1}) \\
 		= &~ \tilde{\Psi} (F)(\gamma)
@@ -801,7 +804,7 @@ This definition of a von Neumann dimension is very similar to the one on $\ell^2
 
 Remember that for an element $\gamma \in \Gamma$ we can construct a measurable edge $\bar{\gamma}$ of the action groupoid (see \ref{mE_action_groupoid}) and that for a measurable edge $\Phi$ (or a map $f \in L^\infty (\G_0)$) the corresponding element in the groupoid ring is denoted by $\tilde{\Phi}$ (or $\tilde{f}$) (see \ref{groupoid_ring}).
 
-\begin{Lemma} \label{trgroupoid}
+\begin{Lemma} \label{trgroupoid} \todo{anders herum}
 	Let $\sum_{i \in I} \tilde{\bar{\gamma_i}} \tilde{f_i} \in \C\G(\rho)$ with $\rho\colon\Gamma \to \Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of the action groupoid. Then
 	\begin{align*}
 	\tr(\sum_{i \in I} \tilde{\bar{\gamma_i}} \tilde{f_i}) = \sum_{e \in E} \int_{\G(\rho)_0} f_e(x) ~ d\mu(x)
@@ -996,9 +999,9 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 	\end{align*}
 	 with $c_{(\hat{x}, \gamma)} \in \C$ is
 	\begin{enumerate}
-		\item a ring-homomorphism,
-		\item trace-preserving,
-		\item $*$-preserving.
+		\item a ring-homomorphism \label{i}
+		\item trace-preserving \label{ii}
+		\item $*$-preserving \label{iii}
 		%\item injective
 	\end{enumerate}
 \end{Theorem} \todo{keine Absaetze nach align}
@@ -1044,18 +1047,23 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 	be an element in the group ring. It then holds that
 	\begin{align*}
 		 &~ \tr_{\mathcal{N}(G)}(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i)) \\
-		=&~ \langle (\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i))(1 \cdot e_{\hat{X} \rtimes_{\hat{\rho}} \Gamma}), 1 \cdot e_{\hat{X} \rtimes_{\hat{\rho}} \Gamma} \rangle \\
-		=&~ c_{(\hat{e_X}, e_\Gamma)}.
+		=&~ \langle ~(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i))~(e_{\hat{X} \rtimes_{\hat{\rho}} \Gamma}),~ e_{\hat{X} \rtimes_{\hat{\rho}} \Gamma} \rangle \\
+		=&~ c_{(e_{\hat{X}}, e_\Gamma)}.
 	\end{align*}
-	For 
+	We can use \ref{trgroupoid} to get
 	\begin{align*}
-		\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma}} = P \otimes 1 (\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i))
+		 &~ \tr(~ P \otimes 1 (\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\hat{x_i}, \gamma_i))~) \\
+		=&~ \tr(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma}}) \\
+		=&~ \sum_{\hat{x} \in \hat{X}} \int_{\mathcal{G(\rho)}_0} c_{(\hat{x}, e_\Gamma)} P(\hat{x})(y)~ d\mu(y).
 	\end{align*}
-	we can use \ref{trgroupoid} to get
+	Because $\mu(\G(\rho)_0) = 1$ it follows that
 	\begin{align*}
-		\tr(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma}}) = \sum_{(\hat{x}, e) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} \int_{\mathcal{G(\rho)}_0} c_{(\hat{x}, e)} P(\hat{x})(y) d\mu(y)
+		 &~ \int_{\mathcal{G(\rho)}_0} c_{(e_{\hat{X}}, e_\Gamma)} P(e_{\hat{X}})(y) ~d\mu(y) \\
+		=&~ c_{(e_{\hat{X}}, e_\Gamma)} \cdot \int_{\mathcal{G(\rho)}_0}  e_{\hat{X}}(y)~ d\mu(y) \\
+		=&~ c_{(e_{\hat{X}}, e_\Gamma)} \cdot \int_{\mathcal{G(\rho)}_0}  1~
+		=&~ c_{(e_{\hat{X}}, e_\Gamma)}
 	\end{align*}
-	where $e$ is the neutral element of $\Gamma$. Because $d \mu(\G_0) = 1$ it remains to show that $\int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y) = 0$ if $\hat{x}$ is not the neutral element.
+	and therefore it remains to show that $\int_{\G(\rho)_0} P(\hat{x})(y) d\mu(y) = 0$ if $\hat{x}$ is not the neutral element.
 	
 	First note that if $\hat{x}$ is not the neutral element then $P(\hat{x})$ is not constant $1$ and therefore there exists $z \in \G(\rho)_0$ with $P(\hat{x})(z) \neq 1$. We use the invariance of the Haar measure to get
 	\begin{align*}
