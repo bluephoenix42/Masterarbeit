@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.3)  18 AUG 2017 21:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.3)  18 AUG 2017 22:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,6 +902,9 @@ Package: thm-restate 2014/04/21 v66
 Package: thm-amsthm 2014/04/21 v66
 \thmt@style@headstyle=\toks48
 ))
+(/usr/share/texmf-dist/tex/latex/chngcntr/chngcntr.sty
+Package: chngcntr 2009/09/02 v1.0a change counter resetting
+)
 (/usr/share/texmf-dist/tex/latex/scalerel/scalerel.sty
 Package: scalerel 2016/12/29 v1.8 Routines for constrained scaling and stretchi
 ng of objects, relative to a reference object or in absolute terms
@@ -984,18 +987,18 @@ File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
  (./bachelorarbeit-vorlage.aux)
 \openout1 = `bachelorarbeit-vorlage.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1052,33 +1055,33 @@ ABD: EveryShipout initializing macros
 <kit-logo.jpg, id=4, 199.7061pt x 91.3011pt>
 File: kit-logo.jpg Graphic file (type jpg)
 <use kit-logo.jpg>
-Package pdftex.def Info: kit-logo.jpg  used on input line 103. on input line 10
-3.
+Package pdftex.def Info: kit-logo.jpg  used on input line 117. on input line 11
+7.
 Package pdftex.def Info: Requested size: 89.86691pt x 41.08511pt on input line 
-103.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 111.
+117.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 125.
 
 (/usr/share/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 111.
+LaTeX Font Info:    Try loading font information for U+msa on input line 125.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 111.
+LaTeX Font Info:    Try loading font information for U+msb on input line 125.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+wasy on input line 111.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 125.
 
 (/usr/share/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./kit-logo.jpg>]
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 130.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 144.
 
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
@@ -1088,50 +1091,50 @@ File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 \openout4 = `bachelorarbeit-vorlage.toc'.
 
 [2] [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 186.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 200.
 
  (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 200.
  [4] [5] [6] [7]
-Overfull \hbox (9.72397pt too wide) in paragraph at lines 402--402
+Overfull \hbox (9.72397pt too wide) in paragraph at lines 417--417
 [][][][]\T1/cmr/m/n/12 ker(delta) 
  []
 
 
-Overfull \hbox (9.72397pt too wide) in paragraph at lines 402--402
+Overfull \hbox (9.72397pt too wide) in paragraph at lines 417--417
 [][][][]\T1/cmr/m/n/12 ker(delta) 
  []
 
 
-Overfull \hbox (9.72397pt too wide) in paragraph at lines 402--402
+Overfull \hbox (9.72397pt too wide) in paragraph at lines 417--417
 [][][][]\T1/cmr/m/n/12 ker(delta) 
  []
 
 
-Overfull \hbox (9.72397pt too wide) in paragraph at lines 402--402
+Overfull \hbox (9.72397pt too wide) in paragraph at lines 417--417
 [][][][]\T1/cmr/m/n/12 ker(delta) 
  []
 
 [8] [9]
-Overfull \hbox (4.56827pt too wide) in paragraph at lines 502--502
+Overfull \hbox (4.56827pt too wide) in paragraph at lines 523--523
 [][][][]\T1/cmr/m/n/12 praeziser  
  []
 
 
-Overfull \hbox (4.56827pt too wide) in paragraph at lines 502--502
+Overfull \hbox (4.56827pt too wide) in paragraph at lines 523--523
 [][][][]\T1/cmr/m/n/12 praeziser  
  []
 
 
-Overfull \hbox (4.56827pt too wide) in paragraph at lines 502--502
+Overfull \hbox (4.56827pt too wide) in paragraph at lines 523--523
 [][][][]\T1/cmr/m/n/12 praeziser  
  []
 
 
-Overfull \hbox (4.56827pt too wide) in paragraph at lines 502--502
+Overfull \hbox (4.56827pt too wide) in paragraph at lines 523--523
 [][][][]\T1/cmr/m/n/12 praeziser  
  []
 
@@ -1139,253 +1142,253 @@ Overfull \hbox (4.56827pt too wide) in paragraph at lines 502--502
 LaTeX Warning: Marginpar on page 10 moved.
 
 [10] [11] [12]
-Overfull \hbox (74.24031pt too wide) in paragraph at lines 622--623
+Overfull \hbox (74.24031pt too wide) in paragraph at lines 643--644
  [][] 
  []
 
 [13] [14]
-Overfull \hbox (7.76608pt too wide) in paragraph at lines 678--678
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 eigentlich 
  []
 
 
-Overfull \hbox (5.8082pt too wide) in paragraph at lines 678--678
+Overfull \hbox (5.8082pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 nochmal, 
  []
 
 
-Overfull \hbox (13.31334pt too wide) in paragraph at lines 678--678
+Overfull \hbox (13.31334pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 eigentlich? 
  []
 
 
-Overfull \hbox (7.76608pt too wide) in paragraph at lines 678--678
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 eigentlich 
  []
 
 
-Overfull \hbox (5.8082pt too wide) in paragraph at lines 678--678
+Overfull \hbox (5.8082pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 nochmal, 
  []
 
 
-Overfull \hbox (13.31334pt too wide) in paragraph at lines 678--678
+Overfull \hbox (13.31334pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 eigentlich? 
  []
 
 
-Overfull \hbox (7.76608pt too wide) in paragraph at lines 678--678
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 eigentlich 
  []
 
 
-Overfull \hbox (5.8082pt too wide) in paragraph at lines 678--678
+Overfull \hbox (5.8082pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 nochmal, 
  []
 
 
-Overfull \hbox (13.31334pt too wide) in paragraph at lines 678--678
+Overfull \hbox (13.31334pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 eigentlich? 
  []
 
 
-Overfull \hbox (7.76608pt too wide) in paragraph at lines 678--678
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 eigentlich 
  []
 
 
-Overfull \hbox (5.8082pt too wide) in paragraph at lines 678--678
+Overfull \hbox (5.8082pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 nochmal, 
  []
 
 
-Overfull \hbox (13.31334pt too wide) in paragraph at lines 678--678
+Overfull \hbox (13.31334pt too wide) in paragraph at lines 705--705
 \T1/cmr/m/n/12 eigentlich? 
  []
 
 [15]
-Overfull \hbox (7.76608pt too wide) in paragraph at lines 700--700
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 727--727
 \T1/cmr/m/n/12 eigentlich 
  []
 
 
-Overfull \hbox (7.76608pt too wide) in paragraph at lines 700--700
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 727--727
 \T1/cmr/m/n/12 eigentlich 
  []
 
 
-Overfull \hbox (7.76608pt too wide) in paragraph at lines 700--700
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 727--727
 \T1/cmr/m/n/12 eigentlich 
  []
 
 
-Overfull \hbox (7.76608pt too wide) in paragraph at lines 700--700
+Overfull \hbox (7.76608pt too wide) in paragraph at lines 727--727
 \T1/cmr/m/n/12 eigentlich 
  []
 
 
-Overfull \hbox (22.18478pt too wide) in paragraph at lines 707--707
+Overfull \hbox (22.18478pt too wide) in paragraph at lines 734--734
 [][][][]\T1/cmr/m/n/12 Anschauung  
  []
 
 
-Overfull \hbox (22.18478pt too wide) in paragraph at lines 707--707
+Overfull \hbox (22.18478pt too wide) in paragraph at lines 734--734
 [][][][]\T1/cmr/m/n/12 Anschauung  
  []
 
 
-Overfull \hbox (22.18478pt too wide) in paragraph at lines 707--707
+Overfull \hbox (22.18478pt too wide) in paragraph at lines 734--734
 [][][][]\T1/cmr/m/n/12 Anschauung  
  []
 
 
-Overfull \hbox (22.18478pt too wide) in paragraph at lines 707--707
+Overfull \hbox (22.18478pt too wide) in paragraph at lines 734--734
 [][][][]\T1/cmr/m/n/12 Anschauung  
  []
 
 
-Overfull \hbox (7.17873pt too wide) in paragraph at lines 725--725
+Overfull \hbox (7.17873pt too wide) in paragraph at lines 751--751
 \T1/cmr/m/n/12 schreiben  
  []
 
 
-Overfull \hbox (7.17873pt too wide) in paragraph at lines 725--725
+Overfull \hbox (7.17873pt too wide) in paragraph at lines 751--751
 \T1/cmr/m/n/12 schreiben  
  []
 
 
-Overfull \hbox (7.17873pt too wide) in paragraph at lines 725--725
+Overfull \hbox (7.17873pt too wide) in paragraph at lines 751--751
 \T1/cmr/m/n/12 schreiben  
  []
 
 
-Overfull \hbox (7.17873pt too wide) in paragraph at lines 725--725
+Overfull \hbox (7.17873pt too wide) in paragraph at lines 751--751
 \T1/cmr/m/n/12 schreiben  
  []
 
 [16] [17] [18] [19] [20]
-Overfull \hbox (8.17299pt too wide) in paragraph at lines 892--892
+Overfull \hbox (8.17299pt too wide) in paragraph at lines 918--918
 [][][][]\T1/cmr/m/n/12 Genauer?  
  []
 
 
-Overfull \hbox (8.17299pt too wide) in paragraph at lines 892--892
+Overfull \hbox (8.17299pt too wide) in paragraph at lines 918--918
 [][][][]\T1/cmr/m/n/12 Genauer?  
  []
 
 
-Overfull \hbox (8.17299pt too wide) in paragraph at lines 892--892
+Overfull \hbox (8.17299pt too wide) in paragraph at lines 918--918
 [][][][]\T1/cmr/m/n/12 Genauer?  
  []
 
 
-Overfull \hbox (8.17299pt too wide) in paragraph at lines 892--892
+Overfull \hbox (8.17299pt too wide) in paragraph at lines 918--918
 [][][][]\T1/cmr/m/n/12 Genauer?  
  []
 
 [21]
-Overfull \hbox (5.48196pt too wide) in paragraph at lines 942--942
+Overfull \hbox (5.48196pt too wide) in paragraph at lines 968--968
 [][][][]\T1/cmr/m/n/12 anfangen 
  []
 
 
-Overfull \hbox (5.48196pt too wide) in paragraph at lines 942--942
+Overfull \hbox (5.48196pt too wide) in paragraph at lines 968--968
 [][][][]\T1/cmr/m/n/12 anfangen 
  []
 
 
-Overfull \hbox (5.48196pt too wide) in paragraph at lines 942--942
+Overfull \hbox (5.48196pt too wide) in paragraph at lines 968--968
 [][][][]\T1/cmr/m/n/12 anfangen 
  []
 
 
-Overfull \hbox (5.48196pt too wide) in paragraph at lines 942--942
+Overfull \hbox (5.48196pt too wide) in paragraph at lines 968--968
 [][][][]\T1/cmr/m/n/12 anfangen 
  []
 
 [22]
-Overfull \hbox (15.47406pt too wide) in paragraph at lines 963--963
+Overfull \hbox (17.8352pt too wide) in paragraph at lines 989--989
 [] 
  []
 
 [23]
-Overfull \hbox (4.50307pt too wide) in paragraph at lines 990--990
+Overfull \hbox (4.50307pt too wide) in paragraph at lines 1016--1016
 [][][][]\T1/cmr/m/n/12 genauere 
  []
 
 
-Overfull \hbox (4.50307pt too wide) in paragraph at lines 990--990
+Overfull \hbox (4.50307pt too wide) in paragraph at lines 1016--1016
 [][][][]\T1/cmr/m/n/12 genauere 
  []
 
 
-Overfull \hbox (4.50307pt too wide) in paragraph at lines 990--990
+Overfull \hbox (4.50307pt too wide) in paragraph at lines 1016--1016
 [][][][]\T1/cmr/m/n/12 genauere 
  []
 
 
-Overfull \hbox (4.50307pt too wide) in paragraph at lines 990--990
+Overfull \hbox (4.50307pt too wide) in paragraph at lines 1016--1016
 [][][][]\T1/cmr/m/n/12 genauere 
  []
 
 [24] [25] [26] [27] [28] [29] [30] [31]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1278.
+               Default added (so using `tbp') on input line 1311.
 
 [32] [33]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1395.
+               Default added (so using `tbp') on input line 1428.
 
 [34] [35] [36]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1566.
+               Default added (so using `tbp') on input line 1598.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1671.
+               Default added (so using `tbp') on input line 1703.
 
 [37] [38] [39]
-Overfull \hbox (23.42896pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (23.42896pt too wide) in paragraph at lines 1835--1835
 [][][][]\T1/cmr/m/n/12 wiederholen, 
  []
 
 
-Overfull \hbox (23.42896pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (23.42896pt too wide) in paragraph at lines 1835--1835
 [][][][]\T1/cmr/m/n/12 wiederholen, 
  []
 
 
-Overfull \hbox (23.42896pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (23.42896pt too wide) in paragraph at lines 1835--1835
 [][][][]\T1/cmr/m/n/12 wiederholen, 
  []
 
 
-Overfull \hbox (23.42896pt too wide) in paragraph at lines 1804--1804
+Overfull \hbox (23.42896pt too wide) in paragraph at lines 1835--1835
 [][][][]\T1/cmr/m/n/12 wiederholen, 
  []
 
-[40] [41]
-Underfull \hbox (badness 10000) in paragraph at lines 1877--1878
+[40] [41] [42]
+Underfull \hbox (badness 10000) in paragraph at lines 1907--1908
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1879--1881
+Underfull \hbox (badness 10000) in paragraph at lines 1909--1911
 
  []
 
-[42] (./bachelorarbeit-vorlage.aux) ) 
+[43] (./bachelorarbeit-vorlage.aux) ) 
 Here is how much of TeX's memory you used:
- 18105 strings out of 492990
- 351590 string characters out of 6138689
- 619282 words of memory out of 5000000
- 21246 multiletter control sequences out of 15000+600000
+ 18101 strings out of 492990
+ 351409 string characters out of 6138689
+ 618010 words of memory out of 5000000
+ 21238 multiletter control sequences out of 15000+600000
  31456 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,20n,76p,8833b,1043s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 73i,26n,76p,8833b,1043s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-
 super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cme
 x10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
@@ -1411,10 +1414,10 @@ e/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fo
 nts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/cm-super/sfsx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti
 1200.pfb></usr/share/texmf-dist/fonts/type1/public/wasy2-ps/wasy10.pfb>
-Output written on bachelorarbeit-vorlage.pdf (42 pages, 1210087 bytes).
+Output written on bachelorarbeit-vorlage.pdf (43 pages, 1210122 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
+ 268 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  24 words of extra memory for PDF output out of 10000 (max. 10000000)
 
