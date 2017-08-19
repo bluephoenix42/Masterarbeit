@@ -227,6 +227,13 @@ One can show that the trace is independent of the chosen embedding and therefore
 	\dim_{\mathcal{N}(G)}(H) = \tr_{\mathcal{N}(G)}(\pr_H) = \langle \pr_H (e_G), e_G \rangle.
 	\end{align*}
 \end{Remark}
+\begin{Remark}
+	The von Neumann dimension is additive, i.e. if $H_1$ and $H_2$ are two Hilbert $\mathcal{N}(G)$-modules, then
+	\begin{align*}
+		\dim_{\mathcal{N}(G)}(H_1 \oplus H_2) = \dim_{\mathcal{N}(G)}(H_1) + \dim_{\mathcal{N}(G)}(H_2)
+	\end{align*}
+	holds.
+\end{Remark}
 
 \subsection{$\ell^2$-Betti numbers of $G$-CW-complexes}
 One can now define the $\ell^2$-Betti numbers of CW-complexes in a very similar way as for cellular homology. But first we have to define a group action on CW-complexes.
@@ -425,12 +432,42 @@ The statement of \ref{MCW} will be implicitly used in many points of this work. 
 
 
 \begin{Lemma}\label{add}
-	If $x \in \R$ and $z \in \R$ both arise from a discrete, countable group $G$, then so does $x + z$.
+	If $x \in \R$ and $y \in \R$ both arise from a discrete, countable group $G$, then so does $x + y$.
 \end{Lemma}
+\begin{proof}
+	Let $A \in \Q G^{n \times n}$ and $B \in \Q G^{m \times m}$ for some $n, m \in \N$ such that 
+	\begin{align*}
+		\dim_{\mathcal{N}(G)}(\ker (A))=x
+	\end{align*}
+	and
+	\begin{align*}
+		\dim_{\mathcal{N}(G)}(\ker (B))=y.
+	\end{align*}
+	We then get a new Matrix $C \in \Q G^{(n+m) \times (n+m)}$ through
+	\begin{align*}
+		C = \begin{pmatrix}
+		A & 0 \\
+		0 & B
+		\end{pmatrix}.
+	\end{align*}
+	It then holds that
+	\begin{align*}
+		\ker(C) \cong \ker(A) \oplus \ker (B)
+	\end{align*}
+	and therefore
+	\begin{align*}
+		x + y = \dim_{\mathcal{N}(G)}(\ker (A))+\dim_{\mathcal{N}(G)}(\ker (B)) = \dim_{\mathcal{N}(G)}(\ker (C))
+	\end{align*}
+	is an $\ell^2$-Betti number arising from $G$.
+\end{proof}
 \begin{Lemma}\label{mult}
 	Let $G$ be a discrete countable group and $H$ a discrete finite group. If $x \in \R$ arises from $G \times H$ then $x \cdot |H|$ arises from $G$.
 \end{Lemma}
-\todo{Vllt. noch beweisen oder Quelle}
+For a proof of this lemma, one can use the fact that if $G_1 \subset G_2$ is a subgroup of finite index $[G : H]$, then
+\begin{align*}
+	g_1 = g_2 \cdot [G : H]
+\end{align*}
+is an $\ell^2$-Betti number arising from $G_1$ for every $\ell^2$-Betti number $g_2$ arising from $G_2$.\footnote{For a proof of this fact see e.g. \cite[p.38]{LUECK}.}
 \section{Turing dynamical systems}
 \counterwithin{Definition}{section} 
 \counterwithin{Example}{section} 
@@ -609,7 +646,7 @@ Figure \ref{Masterplan} shows our procedure to prove this Theorem. The main effo
 		\node[draw, rectangle, minimum width = \widthrect] (3) [below = \heightrect of 2] {Group ring ($\hat{X} \rtimes_{\hat{\rho}} \Gamma$)};
 		\node[draw, rectangle, minimum width = \widthrect] (4) [below = \heightrect of 3] {$(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$-CW-complex};
 		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (5) [right =\abstrect of 1] {$x :=\mu(I) - \Omega_1(T)$ can be computed};
-		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (6) [right =\abstrect of 2] {there exists an element $S$ in the groupoid ring with $\dim_{\mathcal{N}(G)}(\ker S) = x$};
+		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (6) [right =\abstrect of 2] {there exists an element $S$ in the groupoid ring with $\dim_{\mathcal{N}(\G(T_X))}(\ker S) = x$};
 		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (7) [right =\abstrect of 3] {there exists an element $S'$ in the group ring with $\dim_{\mathcal{N}(G)}(\ker S') = x$};
 		\node[draw, rectangle, minimum width = \widthrectb, text width = \widthrectb, align = center] (8) [right =\abstrect of 4] {$x$ arises from a group (namely from $\hat{X} \rtimes_{\hat{\rho}} \Gamma$)};
 		\path[dashed, ->]
@@ -790,13 +827,34 @@ We can now define the action groupoid which will allow us to create a groupoid f
 
 
 
-\begin{Remark}
-	If $(T_X)$ is a Turing dynamical system with group action $\rho$, then the action groupoid $\G(\rho)$ is a discrete measured groupoid (as defined in Definition \ref{discr_meas}).
-\end{Remark}
-\todo{warum discrete measured?}
+\begin{Lemma}\label{act_group_discrete_meas}
+	If $(T_X)$ is a computing Turing dynamical system with group action $\rho$, then there is a measure $\mu$ on the action groupoid $\G(\rho)$ such that it is a discrete measured groupoid (as defined in Definition \ref{discr_meas}) and such that it coincides with the measure on $X = \G(\rho)_0$.
+\end{Lemma}
+\begin{proof} 
+	For a set $U \subset \G(\rho)$ we set
+	\begin{align*}
+		\mu' (U) = \int_{\mathcal{G}_0} |s^{-1}(x) \cap U| ~d\mu(x)
+	\end{align*}
+	where $\mu$ is the measure defined on the Turing dynamical system. Then $\G(\rho)$ is of course a discrete measurable groupoid.
+	
+	To show that it is discrete measured let us first take a set $U \subset \G(\rho)$ of the form
+	\begin{align*}
+		U = \{(x, \gamma) \in X \times \Gamma ~|~ \gamma = \gamma'\}
+	\end{align*}
+	for some $\gamma' \in \Gamma$. Then with the translation invariance of the Haar measure it follows that
+	\begin{align*}
+		 &~ \int_{\mathcal{G}_0} |s^{-1}(x) \cap U| ~d\mu(x) \\
+		=&~ \int_{\mathcal{G}_0} |s^{-1}(\rho(\gamma')(x)) \cap U| ~d\mu(\rho(\gamma')(x)) \\
+		=&~ \int_{\mathcal{G}_0} |s^{-1}(\rho(\gamma')(x)) \cap U| ~d\mu(x) \\
+		=&~ \int_{\mathcal{G}_0} |r^{-1}(x) \cap U| ~d\mu(x).
+	\end{align*}
+	Because each subset of $\G(\rho)$ is a countable disjoint union of such sets the equality holds for all $U \subset \G(\rho)$.
+\end{proof}
+From now on for a computing Turing dynamical system with action $\rho$, $\G(\rho)$ will always be equipped with the measure defined in the proof of \ref{act_group_discrete_meas}.
 \begin{Definition}
-	Let $(T_X)$ be a Turing dynamical system with group action $\rho$. Then $\G (T_X) \subset \G(\rho)$ is the smallest groupoid with $\G (T_X)_0 = \G(\rho)_0$, which contains all morphisms of the form $(x, \gamma_i)$ where $i = \Ind(x)$ is the index of the $X_i$ that $x$ is contained in.
+	Let $(T_X)$ be a computing Turing dynamical system with group action $\rho$. Then $\G (T_X) \subset \G(\rho)$ is the smallest groupoid with $\G (T_X)_0 = \G(\rho)_0$, which contains all morphisms of the form $(x, \gamma_i)$ where $i = \Ind(x)$ is the index of the $X_i$ that $x$ is contained in.
 \end{Definition}
+Because $\G (T_X)_0 = \G(\rho)_0$, $\G (T_X)$ is still a discrete measured groupoid with the measure inherited from $\G(\rho)$.
 \begin{Lemma} \label{TX_rel_groupoid}
 	$\G (T_X)$ is a relation groupoid with finite orbits for every computing Turing dynamical system $(T_X)$. In addition $A \cup R$ is a fundamental domain of $\G (T_X)$.
 \end{Lemma}
@@ -807,7 +865,7 @@ We can now define the action groupoid which will allow us to create a groupoid f
 
 	Because $(T_X)$ stops on any configuration there has to be a path of morphisms in $\G'$ from $x$ to a unique point in $A \cup R$ for almost any $x \in \G (T_X)_0$. Therefore the orbit $\G (T_X)x$ of almost any point $x \in \G (T_X)$ contains exactly one point in $A \cup R$ and $A \cup R$ is a fundamental domain.
 	
-	To prove that $\G (T_X)$ has finite orbits we restrict the groupoid $\G (T_X)$ to a groupoid $\G (T_X)^\#$ by restricting the objects to those objects $x$ with $\G (T_X)x \cap (A \cup R) \neq \emptyset$. Because $(T_X)$ stops on any configuration, $\G (T_X)^\#$ still has measure $1$.
+	To prove that $\G (T_X)$ has finite orbits we restrict the groupoid $\G (T_X)$ to a groupoid $\G (T_X)^\#$ by restricting the objects to those objects $x$ with $\G (T_X)x \cap (A \cup R) \neq \emptyset$. Because $(T_X)$ stops on any configuration, the set of those elements not contained in $\G (T_X)^\#$ has measure $0$
 	
 	For $i \in \N_0$, we define the set $Y_i \subset \G (T_X)_0^\#$ to be the set of points, such that for every point $y \in Y_i$ there is an acyclic path of length $i$ in $\G'$ from $y$ to a point in $A \cup R$, i.e. $T_X^i(y) \in A \cup R$ and $T_X^{i-1} \notin A \cup R$. These sets are disjoint and measurable because $T_X$ is measurable and therefore $\sum_{i \in \N_0} \mu(Y_i) = 1$. Therefore $\mu(Y_i)$ has to be a zero sequence.
 	
@@ -821,33 +879,44 @@ We can now define the action groupoid which will allow us to create a groupoid f
 	\end{align*}
 	where $\bigcup_{i \in \N_0 }T_X^{-i}(Y)$ contains all infinite orbits and $\bigcup_{i \in \N_0 }T_x^{-i}((A\cup R) \setminus Y$ contains all finite orbits. Because each point has only finitely many pre-images, each of the sets $T_X^{-i}(Y)$ has measure $0$ and therefore the countable union $\bigcup_{i \in \N }T_X^{-i}(Y)$ has measure $0$. Thus the orbit of almost any point is finite. 
 \end{proof} \todo{T measurable}
-We are now able to construct a groupoid from a Turing dynamical system. In addition we can construct the corresponding groupoid ring from this groupoid. But we still need a definition of a von Neumann dimension (and therefore some kind of trace) on elements of the groupoid ring (compare Figure \ref{Masterplan}).
+We are now able to construct a groupoid from a Turing dynamical system. In addition we can construct the corresponding groupoid ring from this groupoid. But we still need a definition a dimension (and therefore some kind of trace) on elements of the groupoid ring (compare Figure \ref{Masterplan}). Because the concepts are very similar we will also call this dimension the von Neumann dimension (and the von Neumann trace).
 \begin{Definition}
-	Let $\G$ be a groupoid. The \emph{trace} of an element $T \in \C \G$ in the groupoid ring is defined by
+	Let $\G$ be a groupoid. The \emph{von Neumann trace} of an element $T \in \C \G$ in the groupoid ring is defined by
 	\begin{align*}
-		\tr(T) = \langle T \chi_0, \chi_0 \rangle_{L^2 \G}
+		\tr_{\mathcal{N}(\G)}(T) = \langle T \chi_0, \chi_0 \rangle_{L^2 \G}
 	\end{align*}
 	where $\chi_0$ is the characteristic function of the objects $\G_0 \subset \G$.
 \end{Definition}
 \begin{Definition} \label{vNd_of_groupoids}
-	Let $\G$ be a groupoid, $X \subset L^2 \G$ and $\pr_X\colon L^2 \G \to X$ be a projection onto $X$. The \emph{von Neumann dimension} of $X$ is defined by
+	Let $\G$ be a groupoid and $X \subset L^2 \G$ be such that there exists a projection $\pr_X\colon L^2 \G \to X$ with $\pr_X \in \C \G$. The \emph{von Neumann dimension} of $X$ is defined by
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(X) = \tr(\pr_X).
+		\dim_{\mathcal{N}(\G)}(X) = \tr_{\mathcal{N}(\G)}(\pr_X).
 	\end{align*}
 \end{Definition}
 This definition of a von Neumann dimension is very similar to the one on $\ell^2 G$ given in \ref{vNd} when you consider the fact stated in \ref{vNd_for_subsets}. Again this definition is independent of the chosen projection.
+
+\begin{Remark}
+	Let $(T_X)$ be a computing Turing dynamical system with group action $\rho$. For set $X \subset L^2 \G (T_X)$ it holds that
+	\begin{align*}
+		\dim_{\mathcal{N}(\G(T_X))}(X) = \dim_{\mathcal{N}(\G(\rho))}(X)
+	\end{align*}
+	because $\G(T_X)_0 = \G(\rho)_0$.
+\end{Remark}
+\begin{Remark}
+	If $S \in \C\G$ is self-adjoint, then $\ker S$ has a well-defined von Neumann dimension. An argument for this will be given in the proof of \ref{pontr_vNd}.
+\end{Remark}
 
 Remember that for an element $\gamma \in \Gamma$ we can construct a measurable edge $\bar{\gamma}$ of the action groupoid (see \ref{mE_action_groupoid}) and that for a measurable edge $\Phi$ (or a map $f \in L^\infty (\G_0)$) the corresponding element in the groupoid ring is denoted by $\tilde{\Phi}$ (or $\tilde{f}$) (see \ref{groupoid_ring}).
 
 \begin{Lemma} \label{trgroupoid}
 	Let $\sum_{i \in I}  \widetilde{f_i} \widetilde{\bar{\gamma_i}} \in \C\G(\rho)$ with $\rho\colon\Gamma \to \Bij(X)$ and $\gamma \in \Gamma$ be an element in the groupoid ring of the action groupoid. Then
 	\begin{align*}
-	\tr(\sum_{i \in I} \widetilde{f_i} \widetilde{\bar{\gamma_i}} ) = \sum_{e \in E} \int_{\G(\rho)_0} f_e(x) ~ d\mu(x)
+	\tr_{\mathcal{N}(\G(\rho))}(\sum_{i \in I} \widetilde{f_i} \widetilde{\bar{\gamma_i}} ) = \sum_{e \in E} \int_{\G(\rho)_0} f_e(x) ~ d\mu(x)
 	\end{align*}
 	where $E$ is the set of indices $e$ such that $\gamma_e$ is the neutral element of $\Gamma$. If no such index exists the trace is zero.
 \end{Lemma}
 \begin{proof} 
-	Because $\tr$ is a homomorphism it is sufficient to show the statement for one summand.
+	Because $\tr_{\mathcal{N}(\G(\rho))}$ is a homomorphism it is sufficient to show the statement for one summand.
 	
 	If $\gamma \in \Gamma$ is not the neutral element then the corresponding measurable edge $\bar{\gamma}$ sends every element of $\C\G(\rho)_0$ (i.e. every identity morphism) to a different morphism not contained in $\C\G(\rho)_0$. Therefore for $x \in \G(\rho)_0$ it holds that
 	\begin{align*}
@@ -857,8 +926,8 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 	
 	Let $e \in \Gamma$ be the neutral element. Then it holds that
 	\begin{align*}
-	&~ \tr(\tilde{f} \widetilde{\bar{e}} ) \\
-	=&~ \tr(\tilde{f} \id_{L^2 \G} ) \\
+	&~ \tr_{\mathcal{N}(\G(\rho))}(\tilde{f} \widetilde{\bar{e}} ) \\
+	=&~ \tr_{\mathcal{N}(\G(\rho))}(\tilde{f} \id_{L^2 \G} ) \\
 	=&~ \langle \tilde{f} (\chi_0), \chi_0 \rangle_{L^2 \G(\rho)} \\
 	=&~ \langle f, \chi_0 \rangle_{L^2 \G(\rho)_0} \\
 	=&~ \int_{\G(\rho)_0} f(x) \cdot \chi_0(x) ~ d\mu(x) \\
@@ -868,8 +937,8 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 \end{proof}
 
 
-\subsection{Construction of the element $S$}
-For an arbitrary computing Turing dynamical system $(T_X)$ we will now construct an element $S \in \C \G (\rho)$ such that $\dim_{\mathcal{N}(G)}(\ker S) = \mu(I) - \Omega_1(T_X)$. Because $S$ is a map from $L^2 \G (\rho)$ to $L^2 \G (\rho)$ it has a kernel which is a subset of $L^2 \G (\rho)$ and therefore has a well-defined von Neumann dimension in the sense of \ref{vNd_of_groupoids}.
+\subsection{Construction of an element in the groupoid ring}
+For an arbitrary computing Turing dynamical system $(T_X)$ we will now construct an element $S \in \C \G (\rho)$ such that $\dim_{\mathcal{N}(\G(T_X))}(\ker S) = \mu(I) - \Omega_1(T_X)$. Because $S$ is a map from $L^2 \G (\rho)$ to $L^2 \G (\rho)$ it has a kernel which is a subset of $L^2 \G (\rho)$ and therefore has a well-defined von Neumann dimension in the sense of \ref{vNd_of_groupoids}.
 
 
 \begin{restatable}{Theorem}{groserSatz} \label{groserSatz}
@@ -879,7 +948,7 @@ For an arbitrary computing Turing dynamical system $(T_X)$ we will now construct
 	\end{align*}
 	of the groupoid ring $\C \G(T_X)$ it holds that
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(\ker S) = \mu(I) - \Omega_1(T_X).
+		\dim_{\mathcal{N}(\G(T_X))}(\ker S) = \mu(I) - \Omega_1(T_X).
 	\end{align*}
 \end{restatable}
 Before we can prove this Theorem we have to do some preparations. 
@@ -891,12 +960,16 @@ Before we can prove this Theorem we have to do some preparations.
 \end{Remark}
 We will state the following fact without proof. For a proof see \cite{GRAB}.\todo{genaue Stelle}
 \begin{Lemma} \label{T_to_Tx}
-	Let $\G$ be a relation groupoid with finite orbits and $D$ a fundamental domain of $\G$. Then for every $R \in \C \G$ it holds that
+	Let $\G$ be a relation groupoid with finite orbits and $D$ a fundamental domain of $\G$. Then for every self-adjoint $R \in \C \G$ it holds that
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(\ker R) = \int_D \dim (\ker R_x) \ d \mu (x).
+		\dim_{\mathcal{N}(\G)}(\ker R) = \int_D \dim (\ker R_x) \ d \mu (x).
 	\end{align*} 
 \end{Lemma}
-In addition with \ref{TX_rel_groupoid} we get that for the operator $S$ defined in \ref{groserSatz} it holds that $\dim_{\mathcal{N}(G)}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)$. So for a proof it is sufficient to compute the dimension of the kernel of $S_x$ for all $x \in A \cup R$. In addition because $T_X$ is computing it holds that
+In addition with \ref{TX_rel_groupoid} we get that for the operator $S$ defined in \ref{groserSatz} it holds that
+\begin{align*}
+	\dim_{\mathcal{N}(\G(T_X))}(\ker S) = \int_{A \cup R} \dim (\ker S_x) \ d \mu (x)
+\end{align*}
+So for a proof it is sufficient to compute the dimension of the kernel of $S_x$ for all $x \in A \cup R$. In addition because $T_X$ is computing it holds that
 \begin{itemize}
 	\item $T_X(X) \cap I= \emptyset$, for almost all $x \in X$,
 	\item $T_X^\infty(x) \in A \cup R$ for almost all $x \in X$,
@@ -974,9 +1047,11 @@ Because restricting $(T_X)$ to a subset with measure $1$ does not change the val
 We can now proof Theorem \ref{groserSatz}. For convenience we restate the Theorem.
 \groserSatz*
 \begin{proof}
+	First note that $\widetilde{\chi_A}$ is self-adjoint (see the proof of \ref{map_pantryagin} $iii)$ on how to compute the adjoint of an element in the groupoid ring) and therefore $S$ is self-adjoint.
+	
 	Let $U = \{\lambda \in \G (T_X)~|~ s(\lambda) \in I,~ r(\lambda) \in T_X^\infty(I)\}$. We then get
 	\begin{align*}
-		 &~ \dim_{\mathcal{N}(G)}(\ker S) \\
+		 &~ \dim_{\mathcal{N}(\G(T_X)))}(\ker S) \\
 		\overset{\ref{T_to_Tx}}{=}&~ \int_{A \cup R} \dim (\ker S_x) \ d \mu (x) \\
 		\overset{\ref{kerSx_berechnen}}{=}&~ \int_{T_X^\infty(I) \cap R} |I \cap \G (T_X)x| \ \mu (x) \\
 		=&~ \int_{T_X^\infty(I) \setminus A} |I \cap \G (T_X)x| \ \mu (x) \\
@@ -1076,14 +1151,14 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 	\end{align*}
 	be an element in the group ring. It then holds that
 	\begin{align*}
-		 &~ \tr_{\mathcal{N}(G)}(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\widehat{x_i}, \gamma_i)) \\
+		 &~ \tr_{\mathcal{N}(\hat{X} \rtimes_{\hat{\rho}} \Gamma)}(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\widehat{x_i}, \gamma_i)) \\
 		=&~ \langle ~(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\widehat{x_i}, \gamma_i))~(e_{\hat{X} \rtimes_{\hat{\rho}} \Gamma}),~ e_{\hat{X} \rtimes_{\hat{\rho}} \Gamma} \rangle \\
 		=&~ c_{(e_{\hat{X}}, e_\Gamma)}.
 	\end{align*}
 	We can use \ref{trgroupoid} to get
 	\begin{align*}
-		 &~ \tr(~ P \otimes 1 (\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\widehat{x_i}, \gamma_i))~) \\
-		=&~ \tr(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma}}) \\
+		 &~ \tr_{\mathcal{N}(\G(\rho))}(~ P \otimes 1 (\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot (\widehat{x_i}, \gamma_i))~) \\
+		=&~ \tr_{\mathcal{N}(\G(\rho))}(\sum_{(\hat{x}, \gamma) \in \hat{X} \rtimes_{\hat{\rho}} \Gamma} c_{(\hat{x}, \gamma)} \cdot \widetilde{P(\hat{x})} \odot_{\C\G(\rho)} \widetilde{\bar{\gamma}}) \\
 		=&~ \sum_{\hat{x} \in \hat{X}} \int_{\mathcal{G(\rho)}_0} c_{(\hat{x}, e_\Gamma)} P(\hat{x})(y)~ d\mu(y).
 	\end{align*}
 	Because $\mu(\G(\rho)_0) = 1$ it follows that
@@ -1164,7 +1239,7 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 \begin{Theorem} \label{pontr_vNd}
 	Let $R \in \C(\hat{X} \rtimes_{\hat{\rho}} \Gamma)$ be self-adjoint. Then it holds that
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(\ker R) = \dim_{\mathcal{N}(G)}(\ker P \otimes 1(R)).
+		\dim_{\mathcal{N}(\hat{X} \rtimes_{\hat{\rho}} \Gamma)}(\ker R) = \dim_{\mathcal{N}(\G(\rho))}(\ker P \otimes 1(R)).
 	\end{align*}
 \end{Theorem} 
 \begin{proof}
@@ -1178,7 +1253,10 @@ Remember that for an element $\gamma \in \Gamma$ we can construct a measurable e
 	\end{align*}
 	Because $L^2 \G (\rho)$ is also finite dimensional and $P \otimes 1(R)$ is still self-adjoint. In addition the spectrum stays the same (because $R|_{Eig(\lambda_i)} = \lambda_i \id$) and therefore $P \otimes 1 (Q)$ is a projection onto $\ker P \otimes 1 (R)$. Because $\ker R \subset \ell^2(\hat{X} \rtimes_{\hat{\rho}} \Gamma) $ it follows that
 	\begin{align*}
-		\dim_{\mathcal{N}(G)}(\ker R) = \tr_{\mathcal{N}(G)}(Q) = \tr(P \otimes 1 (Q)) = \dim_{\mathcal{N}(G)}(\ker P \otimes 1 (R)).
+		 &~ \dim_{\mathcal{N}(\hat{X} \rtimes_{\hat{\rho}} \Gamma)}(\ker R) \\
+		=&~ \tr_{\mathcal{N}(\hat{X} \rtimes_{\hat{\rho}} \Gamma)}(Q) \\
+		=&~ \tr_{\mathcal{N}(\G(\rho))}(P \otimes 1 (Q)) \\
+		=&~ \dim_{\mathcal{N}(\G(\rho))}(\ker P \otimes 1 (R)).
 	\end{align*}
 	This proofs the statement if $X$ and $\Gamma$ are finite.
 	
