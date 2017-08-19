@@ -150,8 +150,13 @@
   % Ab sofort Seitenzahlen in der Kopfzeile anzeigen
   \pagestyle{headings}
 
-\section{Introduction}
+\section{Introduction} 
+This article mainly focuses on the concept of $\ell^2$-Betti numbers. These are invariants defined for manifolds with group action introduced by Atiyah. Originally Atiyah asked if $\ell^2$-Betti numbers can be irrational. After that many statements about whether or not some numbers can be $\ell^2$-Betti numbers arising from specific groups are called the Atiyah conjecture.
 
+One of these conjectures, namely that every $\ell^2$-Betti number is always rational wll be called the strong Atiyah conjecture. Over the time this conjecture has been disproven several times. For example \L ukasz Grabowski showed in \cite{GRAB} that all real numbers are $\ell^2$-Betti numbers arising from some group. To show this he introduced a method of computing $\ell^2$-Betti numbers by creating an appropriate Turing machine. This article is mainly a reformulation of the work he has done in \cite{GRAB} with the exception of section \ref{sect_rat_numbers} where we will use his method to show that every rational number arises from the lamplighter group.
+
+In section 2 we will give a short introduction into the theory of $\ell^2$-Betti numbers. We will use this mainly to fix notation. At the end of this section we will show that an $\ell^2$-Betti number arising from group can be computed just from elements of the groupoid ring and without using manifolds or CW-complexes which we will heavily use later on. In section 3 we will introduce the notation of a Turing dynamical system, which is an extension of the definition of the Turing machine. In addition we will show how a Turing machine can be transformed into a Turing dynamical system. Section 4 then focuses mainly on proving the method used in \cite{GRAB}. This will be done by introducing groupoids and generating a groupoid for a Turing dynamical system. At last in section 5 we will use this theory. We will first show that every rational number arises from the lamplighter group $L$ and then construct a Turing machine which shows that an irrational number is an $\ell^2$-Betti number of $L^3$ as it is also done in \cite{GRAB}. 
+\newpage
 
 \section{$\ell^2$-Betti numbers}
 At first we will give a short introduction into the theory of $\ell^2$-Betti numbers. For a wider approach see \cite{LUECK}. We will assume some basic knowledge about cellular homology and the associated Betti numbers. For more information on this topic see e.g. \cite{HATCH}. As an alternative a reader not familiar with these topics may just accept the results of \ref{MCW} and study the definitions given in section \ref{fiss}.
@@ -418,10 +423,6 @@ We will now show that it is sufficient for our purpose to calculate the von Neum
 	We then repeat this for every row of $A$ and get that $d_3^{(2)} = A$. The resulting $G$-CW-complex $X$ is still free, finite type and because $X/G$ is finite $X$ is cocompact.
 \end{proof}
 
-
-
-
-\todo{ker(delta) = homology zeigen?}
 \begin{Remark}
 	One can show that \ref{MCW} also holds if $G$ is not finitely generated.
 \end{Remark}
@@ -556,8 +557,8 @@ For every Turing machine there is a Turing dynamical system which does the same 
 	which is of course a union of some $X_i$. $R$ and $I$ can be defined analogously. 
 	
 	The resulting Turing dynamical system $(T_X)$ accepts (rejects) an element in the initial set $Y \times \{\tilde{I}\} \subset I$ if and only if the Turing machine $T$ accepts (rejects) the input $Y \in \2^\Z$.
-\end{Example} \todo{A und R nur ein Zustand}
-Our ultimate goal is to use Turing dynamical systems to get $\ell^2$-Betti numbers arising from a group. For this purpose some additional definitions and restrictions are needed. \todo{praeziser}
+\end{Example}
+Our ultimate goal is to use Turing dynamical systems to get $\ell^2$-Betti numbers arising from a group. For this purpose some additional definitions and restrictions are needed.
 \begin{Definition}
 	The \emph{first fundamental set} $\mathcal{F}_1(T_X)$ is the subset of $I$ consisting of those points $x$ with $T_X^\infty(x) \in A$ such that there is no point $y$ with $T_X(y)=x$. The \emph{second fundamental set} is the subset of $A$ defined as $\mathcal{F}_2(T_X)=T_X^\infty(\mathcal{F}_1(T_X))$. The \emph{first (second) fundamental value} $\Omega_1(T_X) \ ( \Omega_2(T_X))$ is the measure of the corresponding fundamental set.
 \end{Definition}
@@ -588,7 +589,7 @@ Our ultimate goal is to use Turing dynamical systems to get $\ell^2$-Betti numbe
 	$(T_X)$ is called a \emph{computing} Turing dynamical system.
 \end{Definition}
 \begin{Remark}
-	For more information on Haar measure see e.g. \todo{Quelle fuer Haar measure}. For us it is only relevant that there always exists a unique normalized (left) Haar measure on $G$ if $G$ is a locally compact Hausdorff topological group.
+	For more information on Haar measure see e.g. \cite[ch. 2.2]{FOLL}. For us it is only relevant that there always exists a unique normalized (left) Haar measure on $G$ if $G$ is a locally compact Hausdorff topological group.
 	
 	Nate that the (left) Haar measure is left translation invariant.
 \end{Remark}
@@ -689,7 +690,7 @@ Figure \ref{Masterplan} shows our procedure to prove this Theorem. The main effo
 \counterwithin{Notation}{subsection} 
 \counterwithin{Remark}{subsection} 
 \counterwithin{Lemma}{subsection} 
-We begin by giving some algebraic definitions, namely the construct of groupoids which extends the definition of groups. Therefore we require some basic knowledge about categories. \todo{Quelle zu Kategorientheorie}
+We begin by giving some algebraic definitions, namely the construct of groupoids which extends the definition of groups. Therefore we require some basic knowledge about categories.\footnote{For more information about category theory see e.g. \cite{BOR}.}
 \begin{Definition}
 	A \emph{groupoid} is a small category whose morphisms are all invertible.
 \end{Definition}
@@ -739,7 +740,6 @@ Our main use of groupoids will be to construct a groupoid out of a Turing dynami
 	\end{align*}
 	holds, we call $\mathcal{G}$ \emph{discrete measured}.
 \end{Definition}
-\todo{Warum braucht man das eigentlich nochmal, was bedeutet das genau und stimmt das eigentlich? inverting map, mu auf G}
 From now on every groupoid will be discrete measured.
 \begin{Definition}
 	We say that a groupoid $\G$ has \emph{finite orbits} if $\G X$ is finite for almost all $X \in \G_0$.
@@ -761,16 +761,16 @@ A fundamental concept used for the calculation of $\ell^2$-Betti numbers of grou
 \begin{Definition}
 	Let $U$ be a subset of $\G_0$. A \emph{measurable edge} is a map $\Phi\colon U \to \G$ such that $s \circ \Phi = \id$ and $r \circ \Phi$ is injective.
 \end{Definition}
-\todo{Warum heißt das eigentlich messbar?}
 From the definition we see, that defining a measurable edge means taking a subset of $\G_0$ and associating a morphism to every object such that the morphism starts in this object and no two such morphisms end in the same object. We want to define the inverse of a measurable edge in such a way, that it is also a measurable edge. Therefore it does not suffice to take the inverse of the map $\Phi$. Instead we invert each morphism in the image of $\Phi$.
 \begin{Definition} \label{inv_meas}
 	Let $\Phi\colon U \to \G$ be a measurable edge. The \emph{inverse} of $\Phi$ will be called $\Phi^{-1}$ and is defined as \begin{align*}
 		\Phi^{-1}\colon r(\Ima(\Phi)) \to \G, x \mapsto \Phi (y)^{-1}
 	\end{align*}
 	where $y$ is the unique element in the preimage $(r \circ \Phi)^{-1} (x)$ and $\Phi (y)^{-1}$ is the inverse of the morphism $\Phi (y)$.
-\end{Definition}\todo{Anschauung}
+\end{Definition}
+One can understand this definition in the following way: If wee see a measurable edge as going one step further from every object, then taking the inverse means going one step back. This way of understanding plays a role when we look at groupoids of Turing dynamical systems where taking a measurable edge means applying $T_X$ once.
 
-We now come to the definition of the groupoid ring. We want it to be a ring of operators on	$L^2(\G)$, \todo{Quelle fuer l2} such that it is in a way generated by measurable edges.
+We now come to the definition of the groupoid ring. We want it to be a ring of operators on	$L^2(\G)$, such that it is in a way generated by measurable edges.
 \begin{Definition}\label{groupoid_ring}
 	For a measurable edge $\Phi$ we define an operator $\tilde \Phi$ by
 	\begin{align*}
@@ -778,14 +778,136 @@ We now come to the definition of the groupoid ring. We want it to be a ring of o
 	F(\gamma \odot_{\G} \Phi^{-1}(r(\gamma)) & \text{if } r(\gamma) \in \Dom(\Phi^{-1}) \\
 	0 & \text{otherwise}
 	\end{cases} \right] .
-	\end{align*}	\todo{da sollte man ein Bild zu malen}
+	\end{align*}
 	In addition for a map $f \in L^\infty (\G_0)$ we also define an operator $\tilde f$ on $L^2(\G)$ by
 	\begin{align*}
 	\tilde f\colon L^2(\G) \to L^2(\G), F \mapsto [\gamma \mapsto F(\gamma) \cdot f(r(\gamma))].
 	\end{align*}
 	For a groupoid $\G$ the \emph{groupoid ring} $\C\G$ is the ring of bounded operators on $L^2(\G)$ generated by all $\tilde{\Phi}$ with $\Phi$ measurable edge and all $\tilde{f}$ with $f \in L^\infty(\G_0)$.
 \end{Definition}
-We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} \widetilde{f_i} \odot_{\C \G} \widetilde{\Phi_i}$ (or $\sum_{i \in I} \widetilde{\Phi_i} \odot_{\C \G} \widetilde{f_i}$)\footnote{Note that $\C\G$ is not commutative in most cases.} where $I$ is a finite set, $\Phi_i$ is a measurable edge and $f_i \in L^\infty(\G_0)$. One can show that each element of $\C \G$ can be represented in such a way. Be aware that this representation is non-unique because there might be several pairs of operators such that their respective compositions are equal. In addition for $f \in L^\infty(\G)$ it holds that $\widetilde{\frac{1}{2}f} + \widetilde{\frac{1}{2}f} = \tilde{f}$. \todo{Evtl. könnte ich dazu noch ein bisschen was schreiben}
+Figure \ref{Graphik_groupoid_ring_1} to \ref{Graphik_groupoid_ring_3} show a simple example of how $\tilde{\Phi}$ can be computed from $\Phi$ (every blank black edge in the second and third picture means that the value of this morphism is zero).
+\begin{figure}[]
+	\centering
+	\begin{minipage}[t]{0.45\textwidth}
+	\begin{tikzpicture}[shorten >=1pt,on grid,auto]
+	\node[state] (0) {$1$};
+	\node[state] (1) [right = 3 of 0] {$2$};
+	\node[state] (2) [below = 3 of 1] {$3$};
+	
+	\path[->]
+	(0) edge [bend left, blue]
+		node {$\Phi(1)$} 
+	(1)
+	(1) edge []
+		node {} 
+	(0)
+	(1) edge [bend left, blue]
+		node {$\Phi(2)$} 
+	(2)
+	(2) edge []
+		node {} 
+	(1)
+	(0) edge []
+		node {} 
+	(2)
+	(2) edge [bend left, blue]
+		node {$\Phi(3)$} 
+	(0)
+	(0) edge [loop above]
+		node {} 
+	(0)
+	(1) edge [loop above]
+		node {} 
+	(1)
+	(2) edge [loop below]
+		node {} 
+	(2)
+	
+	;
+	\end{tikzpicture}
+	\caption{Definition of $\Phi$}
+	\label{Graphik_groupoid_ring_1}
+	\end{minipage}
+	\begin{minipage}[t]{0.45\textwidth}
+	\begin{tikzpicture}[shorten >=1pt,on grid,auto]
+	\node[state] (0) {};
+	\node[state] (1) [right = 3 of 0] {};
+	\node[state] (2) [below = 3 of 1] {};
+	
+	\path[->]
+	(0) edge [bend left, green]
+		node {$F(x)=1$} 
+	(1)
+	(1) edge [orange]
+		node {$F(x)=2$} 
+	(0)
+	(1) edge [bend left]
+		node {} 
+	(2)
+	(2) edge []
+		node {} 
+	(1)
+	(0) edge []
+		node {} 
+	(2)
+	(2) edge [bend left]
+		node {} 
+	(0)
+	(0) edge [loop above]
+		node {} 
+	(0)
+	(1) edge [loop above, red]
+		node {$F(x)=3$} 
+	(1)
+	(2) edge [loop below]
+		node {} 
+	(2)
+		;
+	\end{tikzpicture}
+	\caption{Definition of $F$.}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+	\begin{tikzpicture}[shorten >=1pt,on grid,auto]
+	\node[state] (0) {};
+	\node[state] (1) [right = 6 of 0] {};
+	\node[state] (2) [below = 3 of 1] {};
+	
+	\path[->]
+	(0) edge [bend left]
+	node {} 
+	(1)
+	(1) edge []
+	node {} 
+	(0)
+	(1) edge [bend left, red]
+	node {$\tilde{\Phi}(F)(x)=3$} 
+	(2)
+	(2) edge []
+	node {} 
+	(1)
+	(0) edge [green]
+	node {$\tilde{\Phi}(F)(x)=1$} 
+	(2)
+	(2) edge [bend left]
+	node {} 
+	(0)
+	(0) edge [loop above]
+	node {} 
+	(0)
+	(1) edge [loop above, right, orange]
+	node {$\tilde{\Phi}(F)(x)=2$} 
+	(1)
+	(2) edge [loop below]
+	node {} 
+	(2)
+	;
+	\end{tikzpicture}
+	\caption{Value of $\tilde{\Phi}(F)(x)$.}
+	\label{Graphik_groupoid_ring_3}
+\end{minipage}
+\end{figure}
+
+We always denote the elements of $\C\G$ by a linear combination $\sum_{i \in I} \widetilde{f_i} \odot_{\C \G} \widetilde{\Phi_i}$ (or $\sum_{i \in I} \widetilde{\Phi_i} \odot_{\C \G} \widetilde{f_i}$)\footnote{Note that $\C\G$ is not commutative in most cases.} where $I$ is a finite set, $\Phi_i$ is a measurable edge and $f_i \in L^\infty(\G_0)$. One can show that each element of $\C \G$ can be represented in such a way. Be aware that this representation is non-unique because there might be several pairs of operators such that their respective compositions are equal. In addition each element in $L^\infty$ can be separated into several elements of $L^\infty$ which sum is equal in the groupoid ring. For example for $f \in L^\infty(\G)$ it holds that $\widetilde{\frac{1}{2}f} + \widetilde{\frac{1}{2}f} = \tilde{f}$.
 \begin{Example} \label{groupoid_ring_of_groups}
 	Let $G$ be a group and $\G$ the corresponding groupoid as in Example \ref{group}. We want to show that the groupoid ring $\C \G$ as a ring is isomorphic to the group ring $\C G$. Because there is only one element in $\G_0$ the only measurable edges are the maps from $\{\bullet\}$ to $G$ (as a set). 
 	
@@ -867,7 +989,7 @@ Because $\G (T_X)_0 = \G(\rho)_0$, $\G (T_X)$ is still a discrete measured group
 	
 	To prove that $\G (T_X)$ has finite orbits we restrict the groupoid $\G (T_X)$ to a groupoid $\G (T_X)^\#$ by restricting the objects to those objects $x$ with $\G (T_X)x \cap (A \cup R) \neq \emptyset$. Because $(T_X)$ stops on any configuration, the set of those elements not contained in $\G (T_X)^\#$ has measure $0$
 	
-	For $i \in \N_0$, we define the set $Y_i \subset \G (T_X)_0^\#$ to be the set of points, such that for every point $y \in Y_i$ there is an acyclic path of length $i$ in $\G'$ from $y$ to a point in $A \cup R$, i.e. $T_X^i(y) \in A \cup R$ and $T_X^{i-1} \notin A \cup R$. These sets are disjoint and measurable because $T_X$ is measurable and therefore $\sum_{i \in \N_0} \mu(Y_i) = 1$. Therefore $\mu(Y_i)$ has to be a zero sequence.
+	For $i \in \N_0$, we define the set $Y_i \subset \G (T_X)_0^\#$ to be the set of points, such that for every point $y \in Y_i$ there is an acyclic path of length $i$ in $\G'$ from $y$ to a point in $A \cup R$, i.e. $T_X^i(y) \in A \cup R$ and $T_X^{i-1} \notin A \cup R$. These sets are disjoint and measurable because $T_X$ is measurable\footnote{This is the case because $T_X|_{X_i} = \rho(\gamma)$, $\rho$ is measure-preserving and there are only finitely many subsets $X_i$.} and therefore $\sum_{i \in \N_0} \mu(Y_i) = 1$. Therefore $\mu(Y_i)$ has to be a zero sequence.
 	
 	Now consider the set 
 	\begin{align*}
@@ -878,7 +1000,7 @@ Because $\G (T_X)_0 = \G(\rho)_0$, $\G (T_X)$ is still a discrete measured group
 		\G (T_X)_0^\# =\bigcup_{i \in \N_0 }T_X^{-i}(Y) ~\cup~ \bigcup_{i \in \N_0 }T_x^{-i}((A\cup R) \setminus Y)
 	\end{align*}
 	where $\bigcup_{i \in \N_0 }T_X^{-i}(Y)$ contains all infinite orbits and $\bigcup_{i \in \N_0 }T_x^{-i}((A\cup R) \setminus Y$ contains all finite orbits. Because each point has only finitely many pre-images, each of the sets $T_X^{-i}(Y)$ has measure $0$ and therefore the countable union $\bigcup_{i \in \N }T_X^{-i}(Y)$ has measure $0$. Thus the orbit of almost any point is finite. 
-\end{proof} \todo{T measurable}
+\end{proof}
 We are now able to construct a groupoid from a Turing dynamical system. In addition we can construct the corresponding groupoid ring from this groupoid. But we still need a definition a dimension (and therefore some kind of trace) on elements of the groupoid ring (compare Figure \ref{Masterplan}). Because the concepts are very similar we will also call this dimension the von Neumann dimension (and the von Neumann trace).
 \begin{Definition}
 	Let $\G$ be a groupoid. The \emph{von Neumann trace} of an element $T \in \C \G$ in the groupoid ring is defined by
@@ -958,7 +1080,7 @@ Before we can prove this Theorem we have to do some preparations.
 \begin{Remark}
 	If $\G$ is a relation groupoid with finite orbits then for almost all $x \in \G$ $\ell^2\G x$ is finite dimensional because $\G x$ is finite. In particular in this case $R_x$ has a finite dimensional kernel.
 \end{Remark}
-We will state the following fact without proof. For a proof see \cite{GRAB}.\todo{genaue Stelle}
+We will state the following fact without proof. For a proof see \cite[ch. 2.6]{GRAB}.
 \begin{Lemma} \label{T_to_Tx}
 	Let $\G$ be a relation groupoid with finite orbits and $D$ a fundamental domain of $\G$. Then for every self-adjoint $R \in \C \G$ it holds that
 	\begin{align*}
@@ -988,7 +1110,10 @@ Because restricting $(T_X)$ to a subset with measure $1$ does not change the val
 	\end{align*}
 	and therefore $x \in \ker A$. The other inclusion is trivial. 
 	
-	From the definition it is clear that $(R_1)_x + (R_2)_x = (R_1 + R_2)_x$ for every $R_1, R_2 \in \C \G$. In addition for an element $\sum_{i \in I} \widetilde{\Phi_i} \widetilde{f_i} \in \C\G$ of the  groupoid ring it follows that both $\widetilde{f_i}$ and $\widetilde{f_i}_x$ are self-adjoint. In addition $(\widetilde {\Phi_i}^*)_x = \widetilde {\Phi_i^{-1}}_x = (\widetilde {\Phi_i}_x)^*$ \todo{Genauer?} and therefore $R \mapsto R_x$ is $*$-preserving. Of course both summands of $S$ are positive operators and the claim follows.
+	From the definition it is clear that $(R_1)_x + (R_2)_x = (R_1 + R_2)_x$ for every $R_1, R_2 \in \C \G$. It remains to show that $R \mapsto R_x$ is $*$-preserving. Let $\chi$ be some characteristic function of a subset of $X$. Then it follows that both $\widetilde{\chi}$ and $\widetilde{\chi}_x$ are self-adjoint (see the proof of \ref{map_pantryagin} $iii)$ on how to compute the adjoint of an element in the groupoid ring). In addition for an element $\gamma \in \Gamma$ it holds that 
+	\begin{align*}
+		(~\widetilde{\bar{\gamma}}^{*}~)_x = (~\widetilde{\bar{\gamma}^{-1}}~)_x = (\widetilde {\bar{\gamma}}_x)^{*}.
+	\end{align*}
 \end{proof}
 \begin{Lemma} \label{kerSx_berechnen}
 	It holds that
@@ -1038,7 +1163,6 @@ Because restricting $(T_X)$ to a subset with measure $1$ does not change the val
 	
 	It follows that $\sum_{i = 1}^{k} (-1)^{i + 1} x_i \in \ker P$ is a non-zero vector in $ \ker P$. For each different point $x_1 \in  I \cap \G (T_X)x$ we get a new vector $\sum_{i = 1}^{k} (-1)^{i + 1} x_i$ in $\ker P$ and all of these vectors are linear independent. Therefore $\dim \ker P \ge |I \cap \G (T_X)x| $.
 	
-	\todo{anfangen mit nem element im kernel}
 	For the other direction let $x_1 \in \G (T_X)x \setminus I$. Then $P$ maps $x_1$ to $x_1 + x_2$ (or to $x_1$ if $x_1=x$) with $x_2 = T_X(x_1)$. To negate the vector $x_2$  we have to build a chain of vectors $x_2 \ldots x_k$ like we did above. To negate the vector $x_1$ we need another vector $x_0$ with $T_X(x_0) = x_1$. But if $x_0 \notin I$ then the vector $-x_0 + x_1$ is mapped to $-x_0 + x_2$. Therefore we have to add another vector $x_{-1}$ with $T_X(x_{-1}) = x_0$. We have to add (subtract) vectors like this until we add (subtract) a vector $x_{-j}$ with $j \in \N$ such that there is no vector $x_{-(j+1)}$ with $T_X(x_{-(j+1)}) = x_{-j}$. If this vector $x_{-j}$ lies in $I$ then the constructed vector lies in the kernel but is a linear combination of the above basis vectors. In fact there is one of the above vectors such that it equals this vector (or $-1$ times this vector). If $x_{-j} \notin I$ then $x_{-j}$ cannot be negated and therefore the constructed chain does not lie in the kernel of $P$.
 	
 	
@@ -1070,7 +1194,19 @@ We will now create a link between the groupoid ring and the group ring. For this
 For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is another group acting on $X$ by continuous group automorphisms. We will call this action $\rho\colon\Gamma \to \Aut(X)$.
 \begin{Definition}
 	A \emph{character} of $X$ is a continuous homomorphism $\hat{x}\colon X \to S$, where $S$ is the multiplicative group of complex numbers of absolute value 1. The group of all characters of $X$ is called the \emph{character group} or \emph{Pontryagin dual group} of $X$ and is denoted by $\hat{X}$.
-\end{Definition}\todo{Quelle Pontryagin und Aussagen ueber z2z}
+\end{Definition}
+\begin{Remark} \label{Pontr_berechnen}
+	It holds that
+	\begin{align*}
+		\widehat{\2} \cong \2
+	\end{align*}
+	and
+	\begin{align*}
+		\reallywidehat{\Pi_{j \in J} X_j} \cong \bigoplus_{j \in J} \widehat{X_j}
+	\end{align*}
+	for all compact abelian groups $X_j$.
+\end{Remark}
+For a proof of this statement and for further information on Pontryagin duals see e.g. \cite[ch. 4]{FOLL}.
 \begin{Definition}
 	The \emph{Pontryagin dual} $\hat{\rho}\colon\Gamma \to \Aut(\hat{X})$ of the action $\rho$ is an action on $\hat{X}$ and defined as
 	\begin{align*}
@@ -1088,12 +1224,12 @@ For the rest of this chapter $X$ is a locally compact abelian group, $\Gamma$ is
 	\end{align*}
 \end{Definition}
 
-For more information about semidirect products see e.g. \cite{ALG}.\todo{genauere Stelle}
+For more information about semidirect products see e.g. \cite[ch. IV.5]{ALG}.
 
 We can now define a map from the group ring to the groupoid ring. 
 
 Remember that for an element $\gamma \in \Gamma$ we can construct a measurable edge $\bar{\gamma}$ of the action groupoid (see \ref{mE_action_groupoid}) and that for a measurable edge $\Phi$ (or a map $f \in L^\infty (\G_0)$) the corresponding element in the groupoid ring is denoted by $\tilde{\Phi}$ (or $\tilde{f}$) (see \ref{groupoid_ring}).
-\begin{Theorem}\label{map_pantryagin} \todo{anderer Name fuer P tens 1}
+\begin{Theorem}\label{map_pantryagin}
 	The map 
 	\begin{align*}
 		P \otimes 1\colon\C(\hat{X} \rtimes_{\hat{\rho}} \Gamma) \to \C\G(\rho), 
@@ -1268,15 +1404,13 @@ We now have everything we need to prove Theorem \ref{HS}.
 \begin{proof}\label{image_of_P}
 	With \ref{pontr_vNd} it remains to show that the map $S$ from \ref{groserSatz} is contained in $P \otimes 1(\Q (\hat{X} \rtimes_{\hat{\rho}} \Gamma))$ and that there is a self-adjoint pre-image of $S$ in $\Q (\hat{X} \rtimes_{\hat{\rho}} \Gamma)$.\footnote{compare \ref{def_arising}}
 	
-	Because our Turing dynamical system is computable, $X$ is an infinite product of $\2$. The group $\widehat{\2}$ consists of only two elements. The neutral element, which maps all of $\2$ to $1$ and the element which maps $\0$ to $1$ and $\1$ to $-1$. Therefore $\widehat{\2}$ is isomorphic to $\2$. In addition one can see \todo{Quelle} that the Pontryagin dual of an infinite product is an infinite sum. Therefore 
+	Because our Turing dynamical system is computable, $X$ is an infinite product of $\2$. The group $\widehat{\2}$ consists of only two elements. The neutral element, which maps all of $\2$ to $1$ and the element which maps $\0$ to $1$ and $\1$ to $-1$ and is therefore isomorphic to $\2$. With the fact stated in \ref{Pontr_berechnen} it holds that 
 	\begin{align*}
 		 &~\hat{X} \\
-		=&~ \widehat{\Pi_{j \in J} \2} \\
+		=&~ \reallywidehat{\Pi_{j \in J} \2} \\
 		\cong&~ \bigoplus_{j \in J} \widehat{\2} \\
-		\cong&~ \bigoplus_{j \in J} \2
+		\cong&~ \bigoplus_{j \in J} \2.
 	\end{align*}
-	holds.
-		
 	Let $g_i \in \hat{X}$ be
 	\begin{align*}
 		g_i\colon X \to \C, (x_j)_{j \in J} \mapsto \begin{cases}
@@ -1323,7 +1457,7 @@ We now have everything we need to prove Theorem \ref{HS}.
 \end{proof}
 
 \section{The lamplighter group} \label{chlamplighter}
-\subsection{Rational $\ell^2$-Betti numbers}
+\subsection{Rational $\ell^2$-Betti numbers} \label{sect_rat_numbers}
 \begin{Definition}
 	The \emph{lamplighter group} $L$ is defined as
 	\begin{align*}
@@ -1384,8 +1518,8 @@ Let us start by considering only a subset of $\Q$.
 			(s_R, \1, 0) &~ \text{if} \ a_i = 0
 		\end{cases}
 	\end{align*}
-	for all $i \in \{1 \ldots k\}$. Figure \ref{Graphik_erste_TM} shows an example of this Turing machine for the number $\frac{1}{m} = 0.1001$. In the figure the first number always indicates the number which the Turing machines reads on the
-	tape. The second number refers to shifting the tape, e.g. a $1$ on the second coordinate means shifting the tape one to the left.\todo{akz rej Pfeile krumm}
+	for all $i \in \{1 \ldots k\}$. Figure \ref{Graphik_erste_TM} shows an example of this Turing machine for the number $\frac{1}{16} = 0.0001$. In the figure the first number always indicates the number which the Turing machines reads on the
+	tape. The second number refers to shifting the tape, e.g. a $1$ on the second coordinate means shifting the tape one to the left.
 	\begin{figure}[]
 		\centering
 		\begin{tikzpicture}[shorten >=1pt,on grid,auto]
@@ -1394,7 +1528,7 @@ Let us start by considering only a subset of $\Q$.
 		\node[state] (2) [right = 3 of 1] {$s_2$};
 		\node[state] (3) [right = 3 of 2] {$s_3$};
 		\node[state] (4) [right = 3 of 3] {$s_4$};
-		\node[state] (5) [above = 3 of 3] {$s_A$};
+		\node[state] (5) [above = 3 of 4] {$s_A$};
 		\node[state] (6) [below = 3 of 3] {$s_R$};
 		
 		\path[->]
@@ -1410,9 +1544,9 @@ Let us start by considering only a subset of $\Q$.
 		(3) edge []
 		node {$(\0, 1)$} 
 		(4)
-		(1) edge [above left]
+		(1) edge [bend right, left]
 		node {$(\1, 0)$} 
-		(5)
+		(6)
 		(2) edge [below left]
 		node {$(\1, 0)$} 
 		(6)
@@ -1422,12 +1556,12 @@ Let us start by considering only a subset of $\Q$.
 		(4) edge [above right]
 		node {$(\1, 0)$} 
 		(5)
-		(4) edge [below right]
+		(4) edge [, bend left, below right]
 		node {$(\0, 0)$} 
 		(6)
 		;
 		\end{tikzpicture}
-		\caption{Example of the first Turing machine for the number $0.1001$.}
+		\caption{Example of the first Turing machine for the number $\frac{1}{16}= 0.0001$.}
 		\label{Graphik_erste_TM}
 	\end{figure}
 
@@ -1501,57 +1635,43 @@ We will state the following basic fact without proof.
 			(s_R, \1, 0) &~ \text{if} \ b_i = 0
 		\end{cases}
 	\end{align*}
-	which takes care of the repeating part of $\frac{1}{m}$. The rest of the transition function $\delta$ stays the same as in \ref{1TM}. Figure \ref{Graphik_zweite_TM} shows an example of this Turing machine for the number $\frac{1}{m} = 0.10 \overline{101}$.\todo{zahl, die es gibt}
+	which takes care of the repeating part of $\frac{1}{m}$. The rest of the transition function $\delta$ stays the same as in \ref{1TM}. Figure \ref{Graphik_zweite_TM} shows an example of this Turing machine for the number $\frac{1}{6} = 0.0 \overline{01}$.
 	
 	\begin{figure}[]
 		\centering
 		\begin{tikzpicture}[shorten >=1pt,on grid,auto]
 		\node[state] (0) {$s_I$};
 		\node[state] (1) [below = 3 of 0] {$s_1$};
-		\node[state] (2) [right = 3 of 1] {$s_2$};
-		\node[state] (3) [right = 3 of 2] {$r_1$};
-		\node[state] (4) [right = 3 of 3] {$r_2$};
-		\node[state] (5) [right = 3 of 4] {$r_3$};
-		\node[state] (6) [above = 3 of 3] {$s_A$};
-		\node[state] (7) [below = 3 of 3] {$s_R$};
+		\node[state] (2) [right = 3 of 1] {$r_1$};
+		\node[state] (3) [right = 3 of 2] {$r_2$};
+		\node[state] (4) [above = 3 of 3] {$s_A$};
+		\node[state] (5) [below = 3 of 2] {$s_R$};
 		
 		\path[->]
 		(0) edge [left]
 			node {$(\0 / \1, 1)$} 
 			(1)
-		(1) edge [below]
+		(1) edge []
 			node {$(\0, 1)$} 
 			(2)
-		(2) edge []
+		(2) edge [bend left]
 			node {$(\0, 1)$} 
 			(3)
-		(3) edge []
+		(3) edge [bend left]
 			node {$(\0, 1)$} 
-			(4)
-		(4) edge []
-			node {$(\0, 1)$} 
+			(2)
+		(1) edge [left]
+			node {$(\1, 0)$} 
 			(5)
-		(5) edge [bend left, blue]
-			node {$(\0, 1)$} 
-			(3)
-		(1) edge [above left]
+		(2) edge [near end]
 			node {$(\1, 0)$} 
-			(6)
-		(2) edge [below left]
+			(5)
+		(3) edge [near end]
 			node {$(\1, 0)$} 
-			(7)
-		(3) edge [above right]
-			node {$(\1, 0)$} 
-			(6)
-		(4) edge [below right]
-			node {$(\1, 0)$} 
-			(7)
-		(5) edge [above right]
-			node {$(\1, 0)$} 
-			(6)
+			(4)
 		;
 		\end{tikzpicture}
-		\caption{Example of the second Turing machine for a number $0.10 \overline{101}$.}
+		\caption{Example of the second Turing machine for a number $\frac{1}{6} = 0.0 \overline{01}$.}
 		\label{Graphik_zweite_TM}
 	\end{figure}
 	
@@ -1585,7 +1705,7 @@ We can now start to prove \ref{mainTh}.
 	\begin{align*}
 		\frac{1}{2^{k' + 1}} (1 - \frac{1}{m})
 	\end{align*}
-	is an $\ell^2$-Betti number of $L \times (\2^{k'} \rtimes_{\rho|_{\Rot}} \Rot)$. With the multiplicativity \todo{evtl nicht bewiesen}proven in \ref{mult} it follows that 
+	is an $\ell^2$-Betti number of $L \times (\2^{k'} \rtimes_{\rho|_{\Rot}} \Rot)$. With the multiplicativity stated in \ref{mult} it follows that 
 	\begin{align*}
 		 &~ |(\2^{k'} \rtimes_{\rho|_{\Rot}} \Rot)| \cdot \frac{1}{2^{k' + 1}} (1 - \frac{1}{m}) \\
 		=&~ 2^{k'} \cdot 2^h \cdot \frac{1}{2^{k' + 1}} (1 - \frac{1}{m}) \\
@@ -1910,7 +2030,13 @@ We have seen in the last section that every rational number arises from the lamp
 	\begin{align*}
 		\mu (I) - \Omega_1(T_X) = \frac{1}{64} - \frac{1}{8} \sum_{j = 1}^{\infty} \frac{1}{2^{j^2 + 3j + 6}}.
 	\end{align*}
-	It remains to show that $(T_X)$ is computable. \todo{wiederholen, was man braucht} First let us look at the set 
+	It remains to show that $(T_X)$ is computable, which means that we have to show that
+	\begin{itemize}
+		\item the set $\{x \in X ~|~ T_X^\infty(x) \notin A \cup R\}$ has measure $0$
+		\item $T_X(X) \cap I$ has measure $0$
+		\item $T_X^\infty (x) \neq T_X^\infty (y)$ for almost all $x, y \in \mathcal{F}_1(T_X)$ with $x \neq y$.
+	\end{itemize}
+	First let us look at the set 
 	\begin{align*}
 		\{x \in X ~|~ T_X^\infty(x) \notin A \cup R\}.
 	\end{align*}
@@ -1930,7 +2056,9 @@ We have seen in the last section that every rational number arises from the lamp
 	\end{align*}
 	There are only two ways to get into an infinite loop. We can remain indefinitely at $s_1$ if we do not find any $\1$ on the right side of one of the first two tapes. The second possibility is that we remain forever in $s_2$ and $s_3$. But as we can see from the transition function this is only possible if we do not find any $\1$ on the  right side of the third tape. So we see the above inclusion and because each of the sets of the union has measure zero and thus $(T_X)$ stops on any configuration. 
 
-	Because there is no way to get back to $s_I$, $(T_X)$ does not restart. In addition each element $x$ of the set $A$ is contained in some set of the form
+	Because there is no way to get back to $s_I$, $T_X(X) \cap I = \emptyset$ and therefore $(T_X)$ does not restart.
+	
+	In addition each element $x$ of the set $A$ is contained in some set of the form
 	\begin{align*}
 		\begin{bmatrix}
 			\1 \0^{j - 1} \underline{\0} \1 \\
@@ -1956,6 +2084,7 @@ It is easy to see that
 is in fact irrational:
 Let us look at the binary expansion of $x$. Because of the $i^2$-part in the sum the distance between two consequent $1$ gets bigger at the latter part of this expansion. Therefore the binary expansion of $x$ cannot be of the form mentioned in \ref{frac} and is therefore irrational.
 
+This shows that an irrational number can in fact be an $\ell^2$-Betti number arising from a group which disproves the strong Atiyah conjecture.
 
 
   % Literaturverzeichnis (beginnt auf einer ungeraden Seite)
@@ -1966,6 +2095,8 @@ Let us look at the binary expansion of $x$. Because of the $i^2$-part in the sum
  \bibitem{LUECK} Lück, Wolfgang $L^2$\emph{-Invariants: Theory and Applications to Geometry and K-Theory}, Springer, 2002
  \bibitem{HATCH} Hatcher, Allen \emph{Algebraic topology}, Cambridge University Press, 2015
  \bibitem{ALG} Aluffi, Paolo \emph{Algebra: Chapter 0}, in: Graduate Studies in Mathematics, Volume 104, American Mathematical Society, 2009
+ \bibitem{FOLL} Folland, Gerald B.: \emph{A course in abstract harmonic analysis}, CRC Press, 1995
+ \bibitem{BOR} Borceux, Francis: \emph{Handbook of categorical algebra 1}, Cambridge University Press, 1994
 \end{thebibliography}
  
       
