@@ -468,11 +468,11 @@ The statement of \ref{MCW} will be implicitly used in many points of this work. 
 	is an $\ell^2$-Betti number arising from $G$.
 \end{proof}
 \begin{Lemma}\label{mult}
-	Let $G$ be a discrete countable group and $H$ a discrete finite group. If $x \in \R$ arises from $G \times H$ then $x \cdot |H|$ arises from $G$.
+	Let $G$ be a discrete countable group and let $H$ be a discrete finite group. If $x \in \R$ arises from $G \times H$ then $x \cdot |H|$ arises from $G$.
 \end{Lemma}
-For a proof of this lemma, one can use the fact that if $G_1 \subset G_2$ is a subgroup of finite index $[G : H]$, then
+To prove this lemma, one can use the fact that if $G_1 \subset G_2$ is a subgroup of finite index $[G_2 : G_1]$, then
 \begin{align*}
-	g_1 = g_2 \cdot [G : H]
+	g_1 = g_2 \cdot [G_2 : G_1]
 \end{align*}
 is an $\ell^2$-Betti number arising from $G_1$ for every $\ell^2$-Betti number $g_2$ arising from $G_2$.\footnote{For a proof of this fact see e.g. \cite[p.38]{LUECK}.}
 \section{Turing dynamical systems}
@@ -831,7 +831,7 @@ Figure \ref{Graphik_groupoid_ring_1} to \ref{Graphik_groupoid_ring_3} show a sim
 	
 	;
 	\end{tikzpicture}
-	\caption{Definition of $\Phi$}
+	\caption{Definition of $\Phi$.}
 	\label{Graphik_groupoid_ring_1}
 	\end{minipage}
 	\begin{minipage}[t]{0.45\textwidth}
@@ -842,10 +842,10 @@ Figure \ref{Graphik_groupoid_ring_1} to \ref{Graphik_groupoid_ring_3} show a sim
 	
 	\path[->]
 	(0) edge [bend left, green]
-		node {$F(x)=1$} 
+		node {$F(\to)=1$} 
 	(1)
 	(1) edge [orange]
-		node {$F(x)=2$} 
+		node {$F(\to)=2$} 
 	(0)
 	(1) edge [bend left]
 		node {} 
@@ -863,7 +863,7 @@ Figure \ref{Graphik_groupoid_ring_1} to \ref{Graphik_groupoid_ring_3} show a sim
 		node {} 
 	(0)
 	(1) edge [loop above, red]
-		node {$F(x)=3$} 
+		node {$F(\to)=3$} 
 	(1)
 	(2) edge [loop below]
 		node {} 
@@ -886,13 +886,13 @@ Figure \ref{Graphik_groupoid_ring_1} to \ref{Graphik_groupoid_ring_3} show a sim
 	node {} 
 	(0)
 	(1) edge [bend left, red]
-	node {$\tilde{\Phi}(F)(x)=3$} 
+	node {$\tilde{\Phi}(F)(\to)=3$} 
 	(2)
 	(2) edge []
 	node {} 
 	(1)
 	(0) edge [green]
-	node {$\tilde{\Phi}(F)(x)=1$} 
+	node {$\tilde{\Phi}(F)(\to)=1$} 
 	(2)
 	(2) edge [bend left]
 	node {} 
@@ -901,7 +901,7 @@ Figure \ref{Graphik_groupoid_ring_1} to \ref{Graphik_groupoid_ring_3} show a sim
 	node {} 
 	(0)
 	(1) edge [loop above, right, orange]
-	node {$\tilde{\Phi}(F)(x)=2$} 
+	node {$\tilde{\Phi}(F)(\to)=2$} 
 	(1)
 	(2) edge [loop below]
 	node {} 
@@ -1798,7 +1798,7 @@ We have seen in the last section that every rational number arises from the lamp
 	\end{align*}
 	Figure \ref{Graphik_dritte_TM} shows the transition function in the same way as in Figure \ref{Graphik_erste_TM}. In Figure \ref{Graphik_dritte_TM} the rejecting state is omitted. Instead we go to the rejecting state when we encounter a tape configuration not explicitly noted.
 	
-	Figure \ref{Beispiel_dritte_TM} shows an example of the workflow of this Turing machine. The rightmost column shows the current state, the other rows show a port of the content of the $3$ tapes. The current position of the head (i.e. the element at the position with index $0$) is painted gray.
+	Figure \ref{Beispiel_dritte_TM} shows an example of the workflow of this Turing machine. The rightmost column shows the current state, the other rows show a part of the content of the $3$ tapes. The current position of the head (i.e. the element at the position with index $0$) is painted gray.
 	\begin{figure}[]
 		\centering
 		\begin{tikzpicture}[shorten >=1pt,on grid,auto]
@@ -2120,10 +2120,10 @@ This shows that an irrational number can in fact be an $\ell^2$-Betti number ari
 
 \section*{Erklärung}
 
-Hiermit versichere ich, dass ich diese Arbeit selbständig verfasst und keine anderen, als die angegebenen Quellen und Hilfsmittel benutzt, die wörtlich oder inhaltlich übernommenen Stellen als solche kenntlich gemacht und die Satzung des Karlsruher Instituts für Technologie zur Sicherung guter wissenschaftlicher Praxis in der jeweils gültigen Fassung beachtet habe. \\[2ex] 
+Hiermit versichere ich, dass ich diese Arbeit selbständig verfasst und keine anderen, als die angegebenen Quellen und Hilfsmittel benutzt, die wörtlich oder inhaltlich übernommenen Stellen als solche kenntlich gemacht und die Satzung des Karlsruher Instituts für Technologie zur Sicherung guter wissenschaftlicher Praxis in der jeweils gültigen Fassung beachtet habe. \\[10ex] 
 
 \noindent
-Ort, den Datum\\[5ex]
+Karlsruhe, den 20.08.2017\\[5ex]
 
 % Unterschrift (handgeschrieben)
 
