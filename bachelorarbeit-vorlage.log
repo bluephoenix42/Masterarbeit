@@ -1,19 +1,19 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.8.3)  20 AUG 2017 21:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2018.3.5)  11 APR 2018 11:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **bachelorarbeit-vorlage.tex
 (./bachelorarbeit-vorlage.tex
 LaTeX2e <2017-04-15>
-Babel <3.12> and hyphenation patterns for 84 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texmf-dist/tex/latex/koma-script/scrartcl.cls
-Document Class: scrartcl 2017/04/13 v3.23 KOMA-Script document class (article)
+Document Class: scrartcl 2017/09/07 v3.24 KOMA-Script document class (article)
 (/usr/share/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2017/04/13 v3.23 KOMA-Script package (KOMA-Script-dependent b
+Package: scrkbase 2017/09/07 v3.24 KOMA-Script package (KOMA-Script-dependent b
 asics and keyval usage)
 
 (/usr/share/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2017/04/13 v3.23 KOMA-Script package (KOMA-Script-independent 
+Package: scrbase 2017/09/07 v3.24 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
 (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
@@ -21,25 +21,22 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2017/04/13 v3.23 KOMA-Script package (loading files)
-
-Package scrlfile, 2017/04/13 v3.23 KOMA-Script package (loading files)
-                  Copyright (C) Markus Kohm
-
-))) (/usr/share/texmf-dist/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2017/04/13 v3.23 KOMA-Script package (handling toc-files)
+Package: scrlfile 2017/09/07 v3.24 KOMA-Script package (loading files)
+)))
+(/usr/share/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2017/09/07 v3.24 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip41
 \scr@dte@tocline@numbox=\box26
 )
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 131.
+(tocbasic)             for `toc' on input line 133.
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 133.
+(tocbasic)             for `lof' on input line 135.
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 134.
+(tocbasic)             for `lot' on input line 136.
 Package scrartcl Info: You've used standard option `12pt'.
 (scrartcl)             This is correct!
 (scrartcl)             Internally I'm using `fontsize=12pt'.
@@ -47,14 +44,14 @@ Package scrartcl Info: You've used standard option `12pt'.
 (scrartcl)             you'd have to use `fontsize=12pt' there
 (scrartcl)             instead of `12pt', too.
 Class scrartcl Info: File `scrsize12pt.clo' used to setup font sizes on input l
-ine 2059.
+ine 2080.
 
 (/usr/share/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
-File: scrsize12pt.clo 2017/04/13 v3.23 KOMA-Script font size class option (12pt
+File: scrsize12pt.clo 2017/09/07 v3.24 KOMA-Script font size class option (12pt
 )
 )
 (/usr/share/texmf-dist/tex/latex/koma-script/typearea.sty
-Package: typearea 2017/04/13 v3.23 KOMA-Script package (type area)
+Package: typearea 2017/09/07 v3.24 KOMA-Script package (type area)
 \ta@bcor=\skip42
 \ta@div=\count79
 Package typearea Info: You've used standard option `a4paper'.
@@ -83,7 +80,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 1647.
+(typearea)              on input line 1686.
 )
 \c@part=\count80
 \c@section=\count81
@@ -97,13 +94,13 @@ Package typearea Info: These are the values describing the layout:
 \scr@dte@subsubsection@maxnumwidth=\skip50
 \scr@dte@paragraph@maxnumwidth=\skip51
 \scr@dte@subparagraph@maxnumwidth=\skip52
-LaTeX Info: Redefining \textsubscript on input line 4094.
+LaTeX Info: Redefining \textsubscript on input line 4161.
 \abovecaptionskip=\skip53
 \belowcaptionskip=\skip54
 \c@pti@nb@sid@b@x=\box27
 \c@figure=\count86
 \c@table=\count87
-Class scrartcl Info: Redefining `\numberline' on input line 5233.
+Class scrartcl Info: Redefining `\numberline' on input line 5319.
 \bibindent=\dimen102
 )
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
@@ -440,7 +437,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
 (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 )
 (/usr/share/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
@@ -491,7 +488,7 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/11/05 v2.16a AMS math features
+Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip58
 
 For additional information on amsmath, use the `?' option.
@@ -559,7 +556,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2015/03/04 v2.20.2
+Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks24
 \thm@bodyfont=\toks25
 \thm@headfont=\toks26
@@ -910,7 +907,7 @@ Package: scalerel 2016/12/29 v1.8 Routines for constrained scaling and stretchi
 ng of objects, relative to a reference object or in absolute terms
 
 (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count127
 )
 \thesrwidth=\skip67
@@ -929,8 +926,8 @@ ways
 (/usr/share/texmf-dist/tex/generic/listofitems/listofitems.tex
 \loi_nestcnt=\count128
 )
-Package: listofitems 2016/11/18 v1.3 Grab items in lists using user-specified s
-ep char
+Package: listofitems 2018/01/13 v1.52 Grab items in lists using user-specified 
+sep char (CT)
 )
 \c@@stackindex=\count129
 \@boxshift=\skip74
@@ -1029,7 +1026,7 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
@@ -1055,10 +1052,8 @@ ABD: EveryShipout initializing macros
 <kit-logo.jpg, id=4, 199.7061pt x 91.3011pt>
 File: kit-logo.jpg Graphic file (type jpg)
 <use kit-logo.jpg>
-Package pdftex.def Info: kit-logo.jpg  used on input line 117. on input line 11
-7.
-Package pdftex.def Info: Requested size: 89.86691pt x 41.08511pt on input line 
-117.
+Package pdftex.def Info: kit-logo.jpg  used on input line 117.
+(pdftex.def)             Requested size: 89.86691pt x 41.08511pt.
 LaTeX Font Info:    Try loading font information for U+lasy on input line 125.
 
 (/usr/share/texmf-dist/tex/latex/base/ulasy.fd
@@ -1115,8 +1110,8 @@ Overfull \hbox (55.41403pt too wide) in paragraph at lines 910--911
  []
 
 [18] [19] [20] [21] [22] [23] [24] [25]
-Overfull \hbox (17.8352pt too wide) in paragraph at lines 1194--1194
-[] 
+Overfull \hbox (17.8352pt too wide) detected at line 1194
+[]
  []
 
 [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
@@ -1150,10 +1145,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 2125--2127
 
 [46] (./bachelorarbeit-vorlage.aux) ) 
 Here is how much of TeX's memory you used:
- 17891 strings out of 492990
- 346542 string characters out of 6138689
- 546216 words of memory out of 5000000
- 21028 multiletter control sequences out of 15000+600000
+ 17917 strings out of 492982
+ 346962 string characters out of 6138580
+ 548424 words of memory out of 5000000
+ 21062 multiletter control sequences out of 15000+600000
  31456 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,26n,68p,8833b,1044s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1184,7 +1179,7 @@ c/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx
 1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/
 share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dis
 t/fonts/type1/public/wasy2-ps/wasy10.pfb>
-Output written on bachelorarbeit-vorlage.pdf (46 pages, 1234123 bytes).
+Output written on bachelorarbeit-vorlage.pdf (46 pages, 1234055 bytes).
 PDF statistics:
  286 PDF objects out of 1000 (max. 8388607)
  202 compressed objects within 3 object streams

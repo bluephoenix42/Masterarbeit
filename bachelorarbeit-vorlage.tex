@@ -607,13 +607,13 @@ Our ultimate goal is to use Turing dynamical systems to get $\ell^2$-Betti numbe
 	with $I_1, I_2 \subset J$ it holds that
 	\begin{align*}
 	\mu (M) = \begin{cases}
-	\frac{1}{2^{|I_0| \cdot |I_1|}} & ~\text{if $I_0$ and $I_1$ are finite} \\
+	\frac{1}{2^{|I_0| + |I_1|}} & ~\text{if $I_0$ and $I_1$ are finite} \\
 	0 & ~ \text{if $I_0$ or $I_1$ is infinite.}
 	\end{cases}
 	\end{align*}
 \end{Lemma}
 \begin{proof}
-	Let $x \in X$ be an element with $\0$ on every coordinate $i \notin I_0 \cup I_1$ and $\1$ on at least one coordinate $i \in I_0 \cup I_1$. Then $xM$ and $M$ are disjoint and because of the left translation invariance of the measure it holds that $\mu (M) = \mu (xM)$. Because for every $i \in I_0 \cup I_1$ we can set the corresponding coordinate either to $\1$ or to $\0$ we get $2^{|I_0| \cdot |I_1|}$ of these sets if $I_0$ and $I_1$ are finite and an infinite amount of sets if one of them is infinite. The disjoint union of all of these sets is the whole set $X$ so the sum of these measures equals 1 and the claim follows.
+	Let $x \in X$ be an element with $\0$ on every coordinate $i \notin I_0 \cup I_1$ and $\1$ on at least one coordinate $i \in I_0 \cup I_1$. Then $xM$ and $M$ are disjoint and because of the left translation invariance of the measure it holds that $\mu (M) = \mu (xM)$. Because for every $i \in I_0 \cup I_1$ we can set the corresponding coordinate either to $\1$ or to $\0$ we get $2^{|I_0| + |I_1|}$ of these sets if $I_0$ and $I_1$ are finite and an infinite amount of sets if one of them is infinite. The disjoint union of all of these sets is the whole set $X$ so the sum of these measures equals 1 and the claim follows.
 \end{proof}
  
 Before we give an example of a computing Turing dynamical system we fix the notation of the shifting operation, because we will need it later on.
